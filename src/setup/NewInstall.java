@@ -7,7 +7,7 @@ import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
 public class NewInstall {
-    private static String INSTALL_FILE = "430.conf";
+    private final String INSTALL_FILE = "430.conf";
     private String osName;
     //private Boolean installed;
     private String username;

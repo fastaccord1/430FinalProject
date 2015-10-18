@@ -4,29 +4,34 @@ package setup;
  * Created by kreuter on 10/18/15.
  */
 import javax.crypto.*;
+import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
+import java.util.Arrays;
+import java.util.Random;
 
 public class Cryptography {
-    private static String KEYFILE = "setup/key.txt";
+    private final String KEYFILE = "setup/key.txt";
+    private final int SALT_LENGTH = 16;
+    private final String KEYGEN_SPEC = "PBKDF2WithHmacSHA1";
+    private final int INTERATIONS = 32768;
+    private final int AUTH_KEY_LENGTH = 24;
     private SecretKey secretKey;
     private Cipher aesCipher;
+    private byte[] salt;
 
     public Cryptography() {
-        String key = null;
-        try {
-            key = new String(Files.readAllBytes(Paths.get(KEYFILE)));
-            System.out.println(key);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        byte[] keyBytes = key.getBytes();
-        secretKey = new SecretKeySpec(keyBytes, "AES");
+
         aesCipher = null;
+        secretKey = null;
+        salt = null;
         try {
             aesCipher = Cipher.getInstance("AES");
         } catch (NoSuchAlgorithmException e) {
@@ -34,6 +39,41 @@ public class Cryptography {
         } catch (NoSuchPaddingException e) {
             e.printStackTrace();
         }
+    }
+
+    private void keygen(){
+        String baseKey = null;
+        try {
+            baseKey = new String(Files.readAllBytes(Paths.get(KEYFILE)));
+            System.out.println(baseKey);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        char[] keyChars = baseKey.toCharArray();
+
+        SecretKeyFactory factory = null;
+        try {
+            factory = SecretKeyFactory.getInstance(KEYGEN_SPEC);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        KeySpec spec = new PBEKeySpec(keyChars, salt, INTERATIONS, 256 + AUTH_KEY_LENGTH * 8);
+
+        SecretKey tmp = null;
+        try {
+            tmp = factory.generateSecret(spec);
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+        }
+
+        byte[] fullKey = tmp.getEncoded();
+
+        SecretKey encKey = new SecretKeySpec(Arrays.copyOfRange(fullKey, AUTH_KEY_LENGTH, fullKey.length), "AES");
+
+        this.secretKey = encKey;
+
+
     }
 
     protected String decrypt(String encrypted){
@@ -67,5 +107,18 @@ public class Cryptography {
         }
 
         return null;
+    }
+
+    private void generateSalt(){
+        Random r = new SecureRandom();
+        byte[] salt = new byte[SALT_LENGTH];
+        r.nextBytes(salt);
+        //return salt;
+        this.salt = salt;
+
+    }
+
+    private void generateSalt(String salt){
+        this.salt = salt.getBytes();
     }
 }

@@ -9,7 +9,7 @@ import java.io.*;
 public class newInstall {
     private static String INSTALL_FILE = "430.conf";
     private String osName;
-    private Boolean installed;
+    //private Boolean installed;
     private String username;
     private String password;
     private String installPath;
@@ -17,7 +17,6 @@ public class newInstall {
     public newInstall(String username, String password){
         this.password = password;
         this.username = username;
-        this.installed = false;
         this.osName = System.getProperty("os.name");
 
         this.installPath = null;
@@ -32,7 +31,6 @@ public class newInstall {
 
     }
     protected Boolean checkInstall(){
-        if(installed) return true;
 
         File f = new File(installPath);
         if(f.exists() && !f.isDirectory()) {
@@ -45,6 +43,5 @@ public class newInstall {
 
     protected void createInstall(){
 
-        installed = true;
     }
 }

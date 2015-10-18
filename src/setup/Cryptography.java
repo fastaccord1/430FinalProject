@@ -12,7 +12,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 public class Cryptography {
-    private static String KEYFILE = "key.txt";
+    private static String KEYFILE = "setup/key.txt";
     private SecretKey secretKey;
     private Cipher aesCipher;
 
@@ -20,6 +20,7 @@ public class Cryptography {
         String key = null;
         try {
             key = new String(Files.readAllBytes(Paths.get(KEYFILE)));
+            System.out.println(key);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -36,7 +37,6 @@ public class Cryptography {
     }
 
     protected String decrypt(String encrypted){
-        String decrypted = null;
         byte[] encryptedBytes = encrypted.getBytes();
         try {
             aesCipher.init(Cipher.DECRYPT_MODE, secretKey);
@@ -49,11 +49,10 @@ public class Cryptography {
         } catch (IllegalBlockSizeException e) {
             e.printStackTrace();
         }
-        return decrypted;
+        return null;
     }
 
     protected String encrypt(String plainText){
-        String encrypted = null;
         byte[] plainTextBytes = plainText.getBytes();
         try {
             aesCipher.init(Cipher.ENCRYPT_MODE, secretKey);
@@ -67,6 +66,6 @@ public class Cryptography {
             e.printStackTrace();
         }
 
-        return encrypted;
+        return null;
     }
 }

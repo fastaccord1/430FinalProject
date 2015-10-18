@@ -5,6 +5,9 @@ import backEnd.*;
 import setup.*;
 public class mainClass {
     public static void main(String[] args){
-
+        NewInstall test = new NewInstall("test", "test");
+        if(!test.checkInstall()){
+            test.createInstall();
+        }
     }
 }

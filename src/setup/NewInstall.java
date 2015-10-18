@@ -6,7 +6,7 @@ package setup;
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
-public class newInstall {
+public class NewInstall {
     private static String INSTALL_FILE = "430.conf";
     private String osName;
     //private Boolean installed;
@@ -14,7 +14,7 @@ public class newInstall {
     private String password;
     private String installPath;
 
-    public newInstall(String username, String password){
+    public NewInstall(String username, String password){
         this.password = password;
         this.username = username;
         this.osName = System.getProperty("os.name");
@@ -30,7 +30,7 @@ public class newInstall {
         }
 
     }
-    protected Boolean checkInstall(){
+    public Boolean checkInstall(){
 
         File f = new File(installPath);
         if(f.exists() && !f.isDirectory()) {
@@ -41,7 +41,10 @@ public class newInstall {
         }
     }
 
-    protected void createInstall(){
-
+    public void createInstall(){
+        String output;
+        Cryptography crypto = new Cryptography();
+        String encryptedPass = crypto.encrypt(password);
+        System.out.println(encryptedPass);
     }
 }

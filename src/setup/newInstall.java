@@ -6,6 +6,7 @@ package setup;
 import java.io.*;
 public class newInstall {
     private static String INSTALL_FILE = "430.conf";
+    private String osName;
     private Boolean installed;
     private String username;
     private String password;
@@ -14,10 +15,21 @@ public class newInstall {
         this.password = password;
         this.username = username;
         this.installed = false;
+        this.osName = System.getProperty("os.name");
         checkInstall();
     }
     protected void checkInstall(){
-        File f = new File(System.getProperty("user.home") + "/" + INSTALL_FILE);
+        if(installed) return;
+        String installPath = null;
+        String userHome = System.getProperty("user.home");
+        if(osName.equals("Windows")) {
+            installPath = userHome + "\\" + INSTALL_FILE;
+        } else if(osName.equals("Linux")){
+            installPath = userHome + "/" + INSTALL_FILE;
+        } else{
+            System.out.println("Something didn't go right");
+        }
+        File f = new File(installPath);
         if(f.exists() && !f.isDirectory()) {
             createInstall();
         } else{

@@ -32,7 +32,7 @@ public class newInstall {
 
     }
     protected Boolean checkInstall(){
-        if(installed) return;
+        if(installed) return true;
 
         File f = new File(installPath);
         if(f.exists() && !f.isDirectory()) {

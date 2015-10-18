@@ -49,9 +49,19 @@ public class Database {
         }
     }
 
-    protected ResultSet executeQuery(Statement query){
+    protected ResultSet executeQuery(String query){
+        ResultSet rs = null;
+        try {
+            rs = statement.executeQuery(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return rs;
 
     }
+
+
 
     public void closeConnection(){
         try {

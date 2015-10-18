@@ -41,12 +41,16 @@ public class Database {
         this.conn = conn;
     }
 
-    protected void setStatment(String query){
+    protected void createStatement(){
         try {
-            statement = conn.prepareStatement(query);
+            statement = conn.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    protected ResultSet executeQuery(Statement query){
+
     }
 
     public void closeConnection(){

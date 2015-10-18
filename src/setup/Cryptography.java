@@ -9,7 +9,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 public class Cryptography {
-    private static String INITIALKEY = "hrgYKTyUZP7OHhKAv04d";
+    private static String INITIALKEY = "REPLACETHIS";
     private SecretKey secretKey;
     private Cipher aesCipher;
 
@@ -41,5 +41,23 @@ public class Cryptography {
             e.printStackTrace();
         }
         return decrypted;
+    }
+
+    protected String encrypt(String plainText){
+        String encrypted = null;
+        byte[] plainTextBytes = plainText.getBytes();
+        try {
+            aesCipher.init(Cipher.ENCRYPT_MODE, secretKey);
+            byte[] encryptedBytes = aesCipher.doFinal(plainTextBytes);
+            return encryptedBytes.toString();
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        } catch (BadPaddingException e) {
+            e.printStackTrace();
+        } catch (IllegalBlockSizeException e) {
+            e.printStackTrace();
+        }
+
+        return encrypted;
     }
 }

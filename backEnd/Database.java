@@ -11,12 +11,15 @@ public class Database {
     private String url;
     private String username;
     private String password;
-    Connection conn;
+    private Statement statement;
+    private Connection conn;
 
     public Database(String url, String username, String password){
         this.url = url;
         this.username = username;
         this.password = password;
+        statement = null;
+        conn = null;
 
 
         try {
@@ -24,18 +27,43 @@ public class Database {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        conn = connect();
+        connect();
 
     }
 
-    public Connection connect(){
+    public void connect(){
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url,username,password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return conn;
+        this.conn = conn;
+    }
+
+    protected void setStatment(String query){
+        try {
+            statement = conn.prepareStatement(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void closeConnection(){
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void statementClose(){
+        try {
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

@@ -61,7 +61,13 @@ public class Database {
 
     }
 
-
+    protected void executeInsertUpdate(String insert){
+        try {
+            statement.execute(insert);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void closeConnection(){
         try {

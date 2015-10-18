@@ -1,9 +1,10 @@
+package backEnd;
 /**
  * Created by kreuter on 10/18/15.
  */
 import java.sql.*;
 
-package backEnd;
+
 
 public class Database {
     private static String DRIVER = "oracle.jdbc.driver.OracleDriver";

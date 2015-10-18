@@ -5,16 +5,25 @@ package setup;
  */
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 public class Cryptography {
-    private static String INITIALKEY = "REPLACETHIS";
+    private static String KEYFILE = "key.txt";
     private SecretKey secretKey;
     private Cipher aesCipher;
 
     public Cryptography() {
-        byte[] keyBytes = INITIALKEY.getBytes();
+        String key = null;
+        try {
+            key = new String(Files.readAllBytes(Paths.get(KEYFILE)));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        byte[] keyBytes = key.getBytes();
         secretKey = new SecretKeySpec(keyBytes, "AES");
         aesCipher = null;
         try {

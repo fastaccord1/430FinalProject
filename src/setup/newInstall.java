@@ -3,6 +3,8 @@ package setup;
 /**
  * Created by kreuter on 10/18/15.
  */
+import javax.crypto.*;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
 public class newInstall {
     private static String INSTALL_FILE = "430.conf";
@@ -28,18 +30,16 @@ public class newInstall {
             System.out.println("Something didn't go right");
         }
 
-        checkInstall();
     }
-    protected void checkInstall(){
+    protected Boolean checkInstall(){
         if(installed) return;
 
         File f = new File(installPath);
         if(f.exists() && !f.isDirectory()) {
-            createInstall();
+            return true;
 
         } else{
-            installed = true;
-            return;
+            return false;
         }
     }
 

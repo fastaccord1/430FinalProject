@@ -17,6 +17,7 @@ import java.security.spec.KeySpec;
 import java.util.Arrays;
 import java.util.Random;
 
+
 public class Cryptography {
     private final String KEYFILE = "setup/key.txt";
     private final int SALT_LENGTH = 16;
@@ -27,6 +28,9 @@ public class Cryptography {
     private Cipher aesCipher;
     private byte[] salt;
 
+    /**
+     *
+     */
     public Cryptography() {
 
         aesCipher = null;

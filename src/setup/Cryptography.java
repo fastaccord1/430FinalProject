@@ -29,7 +29,7 @@ public class Cryptography {
     private byte[] salt;
 
     /**
-     *
+     *  Default constructor that initializes variables to be used
      */
     public Cryptography() {
 
@@ -45,6 +45,9 @@ public class Cryptography {
         }
     }
 
+    /**
+     *  This method creates the key to be used for AES
+     */
     private void keygen(){
         String baseKey = null;
         try {
@@ -80,6 +83,11 @@ public class Cryptography {
 
     }
 
+    /**
+     *
+     * @param encrypted encrypted text to be decrypted
+     * @return String of decrypted data
+     */
     protected String decrypt(String encrypted){
         byte[] encryptedBytes = encrypted.getBytes();
         try {
@@ -96,6 +104,11 @@ public class Cryptography {
         return null;
     }
 
+    /**
+     *
+     * @param plainText plain text input of password
+     * @return String of encrypted data
+     */
     protected String encrypt(String plainText){
         byte[] plainTextBytes = plainText.getBytes();
         try {

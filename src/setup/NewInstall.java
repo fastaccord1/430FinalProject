@@ -5,36 +5,27 @@ package setup;
  */
 import backEnd.Database;
 
-import javax.crypto.*;
-import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
 public class NewInstall {
-    private final String INSTALL_FILE = "430.conf";
-    private String osName;
+    private static final String INSTALL_FILE = "430.conf";
     //private Boolean installed;
     private String username;
     private String password;
-    private String installPath;
+    private static final String INSTALLPATHWIN = System.getProperty("user.home") + "\\" + INSTALL_FILE;
+    private static final String INSTALLPATHLIN = System.getProperty("user.home") + "/" + INSTALL_FILE;
 
     public NewInstall(String username, String password){
         this.password = password;
         this.username = username;
-        this.osName = System.getProperty("os.name");
 
-        this.installPath = null;
-        String userHome = System.getProperty("user.home");
-        if(osName.equals("Windows")) {
-            this.installPath = userHome + "\\" + INSTALL_FILE;
-        } else if(osName.equals("Linux")){
-            this.installPath = userHome + "/" + INSTALL_FILE;
-        } else{
-            System.out.println("Something didn't go right");
-        }
+
 
     }
-    public Boolean checkInstall(){
+    public static Boolean checkInstall(){
+        File f = null;
 
-        File f = new File(installPath);
+        f = new File(getPath());
+
         if(f.exists() && !f.isDirectory()) {
             return true;
 
@@ -43,11 +34,33 @@ public class NewInstall {
         }
     }
 
+    public static String getPath(){
+        String path = null;
+        if(System.getProperty("os.name").equals("Windows")){
+            path = INSTALLPATHWIN;
+        }else if(System.getProperty("os.name").equals("Linux")){
+            path = INSTALLPATHLIN;
+        }else{
+            System.out.println("Something went wrong");
+        }
+        return path;
+    }
+
     public void createInstall(){
-        String output;
+        String output = null;
+        /*
         Cryptography crypto = new Cryptography();
         String encryptedPass = crypto.encrypt(password);
-        System.out.println(encryptedPass);
+        System.out.println(encryptedPass);*/
+        output = "Username:" + username + "\nPassword:" + password;
+        try {
+            FileWriter out = new FileWriter(new File(getPath()));
+            BufferedWriter outWriter = new BufferedWriter(out);
+            outWriter.write(output);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void createTables(){

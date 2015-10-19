@@ -4,7 +4,9 @@ package setup;
  * Created by kreuter on 10/18/15.
  */
 import backEnd.Database;
+import frontEnd.InitialSetup;
 
+import javax.swing.*;
 import java.io.*;
 public class NewInstall {
     private static final String INSTALL_FILE = "430.conf";
@@ -14,9 +16,9 @@ public class NewInstall {
     private static final String INSTALLPATHWIN = System.getProperty("user.home") + "\\" + INSTALL_FILE;
     private static final String INSTALLPATHLIN = System.getProperty("user.home") + "/" + INSTALL_FILE;
 
-    public NewInstall(String username, String password){
-        this.password = password;
-        this.username = username;
+    public NewInstall(){
+        this.password = null;
+        this.username = null;
 
 
 
@@ -53,16 +55,7 @@ public class NewInstall {
         Cryptography crypto = new Cryptography();
         String encryptedPass = crypto.encrypt(password);
         System.out.println(encryptedPass);*/
-        output = "Username:" + username + "\nPassword:" + password;
-        try {
-            FileWriter out = new FileWriter(new File(getPath()));
-            BufferedWriter outWriter = new BufferedWriter(out);
-            outWriter.write(output);
-            outWriter.flush();
-            outWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        InitialSetup.main(null);
 
     }
 

@@ -40,7 +40,7 @@ public class InitialSetup extends JFrame{
                     outputWriter.write(output);
                     outputWriter.flush();
                     outputWriter.close();
-
+                    frame.dispose();
 
                 } catch (IOException e1) {
                     e1.printStackTrace();
@@ -61,7 +61,7 @@ public class InitialSetup extends JFrame{
     public static void main(String[] args) {
         frame = new JFrame("InitialSetup");
         frame.setContentPane(new InitialSetup().InitialSetupPane);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }

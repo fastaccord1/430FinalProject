@@ -3,6 +3,8 @@ package setup;
 /**
  * Created by kreuter on 10/18/15.
  */
+import backEnd.Database;
+
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
@@ -46,5 +48,14 @@ public class NewInstall {
         Cryptography crypto = new Cryptography();
         String encryptedPass = crypto.encrypt(password);
         System.out.println(encryptedPass);
+    }
+
+    public void createTables(){
+        Database conn = new Database(username, password);
+
+        String createStudent = "CREATE TABLE Student(sid INT, sname VARCHAR(50), major VARCHAR(50), level VARCHAR(50), age INT, PRIMARY KEY(sid)";
+        conn.executeInsertUpdate(createStudent);
+
+
     }
 }

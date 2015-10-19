@@ -7,15 +7,15 @@ import java.sql.*;
 
 
 public class Database {
-    private static String DRIVER = "oracle.jdbc.driver.OracleDriver";
+    private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+    private final String url = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
     private String url;
     private String username;
     private String password;
     private Statement statement;
     private Connection conn;
 
-    public Database(String url, String username, String password){
-        this.url = url;
+    public Database(String username, String password){
         this.username = username;
         this.password = password;
         statement = null;
@@ -39,6 +39,7 @@ public class Database {
             e.printStackTrace();
         }
         this.conn = conn;
+        createStatement();
     }
 
     protected void createStatement(){
@@ -49,7 +50,7 @@ public class Database {
         }
     }
 
-    protected ResultSet executeQuery(String query){
+    public ResultSet executeQuery(String query){
         ResultSet rs = null;
         try {
             rs = statement.executeQuery(query);
@@ -61,7 +62,7 @@ public class Database {
 
     }
 
-    protected void executeInsertUpdate(String insert){
+    public void executeInsertUpdate(String insert){
         try {
             statement.execute(insert);
         } catch (SQLException e) {

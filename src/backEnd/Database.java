@@ -8,8 +8,8 @@ import java.sql.*;
 
 public class Database {
     private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
-    private final String url = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
-    private String url;
+    private final String URL = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
+
     private String username;
     private String password;
     private Statement statement;
@@ -34,7 +34,7 @@ public class Database {
     public void connect(){
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection(url,username,password);
+            conn = DriverManager.getConnection(URL,username,password);
         } catch (SQLException e) {
             e.printStackTrace();
         }

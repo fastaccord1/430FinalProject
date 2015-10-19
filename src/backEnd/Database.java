@@ -10,7 +10,6 @@ import java.sql.*;
 public class Database {
     private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private final String URL = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
-
     private String username;
     private String password;
     private Connection conn;
@@ -19,8 +18,6 @@ public class Database {
         this.username = username;
         this.password = password;
         conn = null;
-
-
         try {
             Class.forName(DRIVER);
         } catch (ClassNotFoundException e) {
@@ -42,10 +39,17 @@ public class Database {
 
 
 
-    public ResultSet executeQuery(String preparedStatementString){
+    public ResultSet executeQuery(String preparedStatementString, String[] types, String [] inputStrings,
+                                  int[] inputInts, float[] inputFloats){
         ResultSet rs = null;
+
         try {
             PreparedStatement prep = conn.prepareStatement(preparedStatementString);
+            for(int i=0; i <= types.length; i++){
+                if(types[i].equals("String")){
+                    //prep.setString(i, s);
+                }
+            }
             rs = prep.executeQuery();
             prep.close();
 
@@ -58,6 +62,10 @@ public class Database {
 
     }
 
+    /**
+     * This method executes insert
+     * @param preparedStatementString
+     */
     public void executeInsertUpdate(String preparedStatementString){
         try {
             PreparedStatement prep = conn.prepareStatement(preparedStatementString);

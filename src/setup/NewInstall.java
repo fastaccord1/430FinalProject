@@ -43,6 +43,7 @@ public class NewInstall {
         }else{
             System.out.println("Something went wrong");
         }
+        System.out.println(path);
         return path;
     }
 
@@ -57,6 +58,8 @@ public class NewInstall {
             FileWriter out = new FileWriter(new File(getPath()));
             BufferedWriter outWriter = new BufferedWriter(out);
             outWriter.write(output);
+            outWriter.flush();
+            outWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

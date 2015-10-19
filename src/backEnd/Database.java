@@ -76,13 +76,5 @@ public class Database {
         }
     }
 
-    public void statementClose(){
-        try {
-            statement.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-    }
 
 }

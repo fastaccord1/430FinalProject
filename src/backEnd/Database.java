@@ -2,6 +2,7 @@ package backEnd;
 /**
  * Created by kreuter on 10/18/15.
  */
+import javax.xml.transform.Result;
 import java.sql.*;
 
 
@@ -12,13 +13,11 @@ public class Database {
 
     private String username;
     private String password;
-    private Statement statement;
     private Connection conn;
 
     public Database(String username, String password){
         this.username = username;
         this.password = password;
-        statement = null;
         conn = null;
 
 
@@ -39,32 +38,31 @@ public class Database {
             e.printStackTrace();
         }
         this.conn = conn;
-        createStatement();
     }
 
-    protected void createStatement(){
-        try {
-            statement = conn.createStatement();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public ResultSet executeQuery(String query){
+
+    public ResultSet executeQuery(String preparedStatementString){
         ResultSet rs = null;
         try {
-            rs = statement.executeQuery(query);
+            PreparedStatement prep = conn.prepareStatement(preparedStatementString);
+            rs = prep.executeQuery();
+            prep.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
 
         return rs;
 
     }
 
-    public void executeInsertUpdate(String insert){
+    public void executeInsertUpdate(String preparedStatementString){
         try {
-            statement.execute(insert);
+            PreparedStatement prep = conn.prepareStatement(preparedStatementString);
+            prep.execute();
+            prep.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

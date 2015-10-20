@@ -5,6 +5,10 @@
  */
 package frontEnd;
 
+import backEnd.Database;
+
+
+
 /**
  *
  * @author kreuter
@@ -17,6 +21,12 @@ public class MainForm extends javax.swing.JFrame {
     public MainForm() {
         initComponents();
         tableValues = null;
+        database = null;
+        
+    }
+    
+    public void setDatabase(Database database){
+        this.database = database;
         
     }
 
@@ -179,4 +189,5 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
     private Object[][] tableValues;
+    private Database database;
 }

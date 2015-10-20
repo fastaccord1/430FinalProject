@@ -186,10 +186,10 @@ public class InitialSetup extends javax.swing.JFrame {
                 String message = "Created config file in your hoome directory named 430.txt\n" +
                         "This file stores an encrypted version of your password.\n" +
                         "Please delete this when finished";
-                JOptionPane.showConfirmDialog(null, message);
+                JOptionPane.showMessageDialog(null, message);
                 String message2 = "Install finished.\n" +
                         "Please rerun the file to continue.";
-                JOptionPane.showConfirmDialog(null, message);
+                JOptionPane.showMessageDialog(null, message2);
                 System.exit(0);
 
             }

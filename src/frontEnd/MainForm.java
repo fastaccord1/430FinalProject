@@ -16,6 +16,8 @@ public class MainForm extends javax.swing.JFrame {
      */
     public MainForm() {
         initComponents();
+        tableValues = null;
+        
     }
 
     /**
@@ -164,7 +166,7 @@ public class MainForm extends javax.swing.JFrame {
     }
     
     protected void getStudenTable(){
-        
+        //tableValues = ;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -176,4 +178,5 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+    private Object[][] tableValues;
 }

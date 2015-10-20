@@ -185,7 +185,9 @@ public class InitialSetup extends javax.swing.JFrame {
             Logger.getLogger(InitialSetup.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
-                writerOut.close();
+                if (writerOut != null) {
+                    writerOut.close();
+                }
             } catch (IOException ex) {
                 Logger.getLogger(InitialSetup.class.getName()).log(Level.SEVERE, null, ex);
             }

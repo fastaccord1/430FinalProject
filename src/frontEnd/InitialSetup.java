@@ -12,6 +12,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import setup.NewInstall;
 
+import javax.swing.*;
+
 /**
  *
  * @author kreuter
@@ -180,6 +182,16 @@ public class InitialSetup extends javax.swing.JFrame {
                 output += "Password:" + new String(passwordInput.getPassword());
                 outputWriter.write(output);
                 outputWriter.flush();
+
+                String message = "Created config file in your hoome directory named 430.txt\n" +
+                        "This file stores an encrypted version of your password.\n" +
+                        "Please delete this when finished";
+                JOptionPane.showConfirmDialog(null, message);
+                String message2 = "Install finished.\n" +
+                        "Please rerun the file to continue.";
+                JOptionPane.showConfirmDialog(null, message);
+                System.exit(0);
+
             }
         } catch (IOException ex) {
             Logger.getLogger(InitialSetup.class.getName()).log(Level.SEVERE, null, ex);

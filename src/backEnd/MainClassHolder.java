@@ -5,7 +5,9 @@ import setup.NewInstall;
 
 
 /**
+ * 430FinalProject
  * Created by kreuter on 10/20/15.
+ * @author Kevin Reuter
  */
 public class MainClassHolder {
     // Database object to be used for connection

@@ -1,6 +1,8 @@
 package backEnd;
 /**
+ * 430FinalProject
  * Created by kreuter on 10/18/15.
+ * @author Kevin Reuter
  */
 import java.sql.*;
 import java.util.ArrayList;

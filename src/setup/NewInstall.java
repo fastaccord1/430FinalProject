@@ -5,9 +5,9 @@ package setup;
  */
 import backEnd.Database;
 import frontEnd.InitialSetup;
+import java.io.File;
 
-import javax.swing.*;
-import java.io.*;
+
 public class NewInstall {
     private static final String INSTALL_FILE = "430.conf";
     //private Boolean installed;
@@ -15,12 +15,10 @@ public class NewInstall {
     private String password;
     private static final String INSTALLPATHWIN = System.getProperty("user.home") + "\\" + INSTALL_FILE;
     private static final String INSTALLPATHLIN = System.getProperty("user.home") + "/" + INSTALL_FILE;
-    private Cryptography cryptography;
 
-    public NewInstall(Cryptography cryptography){
+    public NewInstall(){
         this.password = null;
         this.username = null;
-        this.cryptography = cryptography;
 
 
     }

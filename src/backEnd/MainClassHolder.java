@@ -20,25 +20,16 @@ public class MainClassHolder {
     public MainClassHolder(){
         database = null;
         InitialSetup.main(null);
-        //cryptography = new Cryptography();
-        newInstall = new NewInstall();
-        //postInstall = new PostInstall();
-
-
-        newInstall.initialSetup();
-        newInstall.checkInstall();
+        newInstall = null;
 
 
     }
 
 
-    /*public static Cryptography getCryptography() {
-        return cryptography;
-    }*/
-
-    /*public static void setCryptography(Cryptography cryptography) {
-        MainClassHolder.cryptography = cryptography;
-    }*/
+    public static void checkInstall(){
+        newInstall = new NewInstall(database);
+        newInstall.checkInstall();
+    }
 
     public static Database getDatabase() {
         return database;

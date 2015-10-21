@@ -172,6 +172,7 @@ public class InitialSetup extends javax.swing.JFrame {
         String username = userNameInput.getText();
         String password = new String(passwordInput.getPassword());
         MainClassHolder.setDatabase(username, password);
+        MainClassHolder.checkInstall();
 
         
     }//GEN-LAST:event_submitButtonActionPerformed

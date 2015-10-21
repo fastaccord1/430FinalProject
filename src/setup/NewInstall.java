@@ -6,7 +6,8 @@ package setup;
 import backEnd.Database;
 import backEnd.MainClassHolder;
 import frontEnd.InitialSetup;
-import java.io.File;
+
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
 
@@ -15,13 +16,16 @@ public class NewInstall {
     //private Boolean installed;
     private Database database;
 
-    public NewInstall(){
-        database = MainClassHolder.getDatabase();
-
+    /**
+     * Default constructor that creates a NewInstall object
+     * @param database
+     */
+    public NewInstall(Database database){
+        this.database = null;
     }
 
     /**
-     *
+     * This method checks to see if the program was run previously
      * @return Boolean value for whether install was run previously
      */
     public Boolean checkInstall(){
@@ -31,17 +35,16 @@ public class NewInstall {
     }
 
     /**
-     *
-     * @return String path of configuration file
+     * This method sets the database
+     * @param database a Database object for the database connection
      */
-
-
-    public void initialSetup(){
-
-        InitialSetup.main(null);
-
+    public void setDatabase(Database database){
+        this.database = database;
     }
 
+    /**
+     * This method creates the tables required for running the program
+     */
     public void createTables(){
 
 

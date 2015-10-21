@@ -4,17 +4,17 @@ package setup;
  * Created by kreuter on 10/18/15.
  */
 import backEnd.Database;
+import backEnd.MainClassHolder;
 import frontEnd.InitialSetup;
 import java.io.File;
 
 
 public class NewInstall {
-    private static final String INSTALL_FILE = "430.conf";
+
     //private Boolean installed;
     private String username;
     private String password;
-    private static final String INSTALLPATHWIN = System.getProperty("user.home") + "\\" + INSTALL_FILE;
-    private static final String INSTALLPATHLIN = System.getProperty("user.home") + "/" + INSTALL_FILE;
+
 
     public NewInstall(){
         this.password = null;
@@ -28,7 +28,7 @@ public class NewInstall {
      * @return Boolean value for whether install was run previously
      */
     public static Boolean checkInstall(){
-        File f = new File(getPath());
+        File f = new File(MainClassHolder.getPath());
 
         if(f.exists() && !f.isDirectory()) {
             return true;
@@ -42,18 +42,7 @@ public class NewInstall {
      *
      * @return String path of configuration file
      */
-    public static String getPath(){
-        String path = null;
-        if(System.getProperty("os.name").equals("Windows")){
-            path = INSTALLPATHWIN;
-        }else if(System.getProperty("os.name").equals("Linux")){
-            path = INSTALLPATHLIN;
-        }else{
-            System.out.println("Something went wrong");
-        }
-        System.out.println(path);
-        return path;
-    }
+
 
     public void createInstall(){
 

@@ -116,7 +116,7 @@ public class Cryptography {
         try {
             aesCipher.init(Cipher.ENCRYPT_MODE, secretKey);
             byte[] encryptedBytes = aesCipher.doFinal(plainTextBytes);
-            return encryptedBytes.toString();
+            return new String(encryptedBytes);
         } catch (InvalidKeyException e) {
             e.printStackTrace();
         } catch (BadPaddingException e) {

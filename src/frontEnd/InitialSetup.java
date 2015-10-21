@@ -5,7 +5,7 @@
  */
 package frontEnd;
 
-import MainClass;
+
 import backEnd.MainClassHolder;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -181,7 +181,7 @@ public class InitialSetup extends javax.swing.JFrame {
         
         try {
             // TODO add your handling code here:
-            writerOut = new FileWriter(NewInstall.getPath());
+            writerOut = new FileWriter(MainClassHolder.getPath());
             try (BufferedWriter outputWriter = new BufferedWriter(writerOut)) {
                 String output;
                 output = "Username:" + userNameInput.getText() + "\n";

@@ -5,6 +5,8 @@
  */
 package frontEnd;
 
+import MainClass;
+import backEnd.MainClassHolder;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,6 +15,7 @@ import java.util.logging.Logger;
 import setup.NewInstall;
 
 import javax.swing.*;
+import setup.Cryptography;
 
 /**
  *
@@ -173,13 +176,20 @@ public class InitialSetup extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         FileWriter writerOut = null;
+        
+        Cryptography cryptography = MainClassHolder.getCryptography();
+        
         try {
             // TODO add your handling code here:
             writerOut = new FileWriter(NewInstall.getPath());
             try (BufferedWriter outputWriter = new BufferedWriter(writerOut)) {
                 String output;
                 output = "Username:" + userNameInput.getText() + "\n";
-                output += "Password:" + new String(passwordInput.getPassword());
+                String decryptedPassword;
+                decryptedPassword = new String(passwordInput.getPassword());
+                String encryptedPassword = cryptography.encrypt(decryptedPassword);
+                output += "Password:" + encryptedPassword;
+                
                 outputWriter.write(output);
                 outputWriter.flush();
 

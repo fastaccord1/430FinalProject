@@ -86,7 +86,7 @@ public class Database {
     }
 
     public ArrayList<String> getTables(){
-        ArrayList<String> tables = new ArrayList<>();
+        ArrayList<String> tables = new ArrayList<String>();
         int count = 1;
         try {
             DatabaseMetaData dbmd = conn.getMetaData();

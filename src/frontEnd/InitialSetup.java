@@ -12,10 +12,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import setup.NewInstall;
 
 import javax.swing.*;
-import setup.Cryptography;
 
 /**
  *
@@ -175,45 +173,13 @@ public class InitialSetup extends javax.swing.JFrame {
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        FileWriter writerOut = null;
+        //FileWriter writerOut = null;
         
-        Cryptography cryptography = MainClassHolder.getCryptography();
-        
-        try {
-            // TODO add your handling code here:
-            writerOut = new FileWriter(MainClassHolder.getPath());
-            try (BufferedWriter outputWriter = new BufferedWriter(writerOut)) {
-                String output;
-                output = "Username:" + userNameInput.getText() + "\n";
-                String decryptedPassword;
-                decryptedPassword = new String(passwordInput.getPassword());
-                String encryptedPassword = cryptography.encrypt(decryptedPassword);
-                output += "Password:" + encryptedPassword;
-                
-                outputWriter.write(output);
-                outputWriter.flush();
+        //Cryptography cryptography = MainClassHolder.getCryptography();
+        String username = userNameInput.getText();
+        String password = new String(passwordInput.getPassword());
+        MainClassHolder.setDatabase(username, password);
 
-                String message = "Created config file in your hoome directory named 430.txt\n" +
-                        "This file stores an encrypted version of your password.\n" +
-                        "Please delete this when finished";
-                JOptionPane.showMessageDialog(null, message);
-                String message2 = "Install finished.\n" +
-                        "Please rerun the file to continue.";
-                JOptionPane.showMessageDialog(null, message2);
-                System.exit(0);
-
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(InitialSetup.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                if (writerOut != null) {
-                    writerOut.close();
-                }
-            } catch (IOException ex) {
-                Logger.getLogger(InitialSetup.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
         
     }//GEN-LAST:event_submitButtonActionPerformed
 

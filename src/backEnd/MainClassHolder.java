@@ -51,4 +51,11 @@ public class MainClassHolder {
         MainClassHolder.database = new Database(username, password);
     }
 
+    /**
+     * Closes the connection on the database
+     */
+    public void close(){
+        database.closeConnection();
+    }
+
 }

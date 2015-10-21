@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Database {
     // Stores the driver name to be used
-    private final String DRIVER = "oracle.jdbc.driver.oracledriver";
+    private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     // Stores the url to the database
     private final String URL = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
     // Username for the database

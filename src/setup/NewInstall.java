@@ -7,6 +7,7 @@ import backEnd.Database;
 import backEnd.MainClassHolder;
 import frontEnd.InitialSetup;
 import java.io.File;
+import java.util.ArrayList;
 
 
 public class NewInstall {
@@ -23,7 +24,8 @@ public class NewInstall {
      *
      * @return Boolean value for whether install was run previously
      */
-    public static Boolean checkInstall(){
+    public Boolean checkInstall(){
+        ArrayList<String> tables = database.getTables();
 
         return false;
     }
@@ -34,7 +36,7 @@ public class NewInstall {
      */
 
 
-    public void createInstall(){
+    public void initialSetup(){
 
         InitialSetup.main(null);
 

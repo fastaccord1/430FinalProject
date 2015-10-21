@@ -4,11 +4,11 @@ package backEnd;
  */
 import javax.xml.transform.Result;
 import java.sql.*;
-
+import java.util.ArrayList;
 
 
 public class Database {
-    private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+    private final String DRIVER = "oracle.jdbc.driver.oracledriver";
     private final String URL = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
     private String username;
     private String password;
@@ -84,6 +84,25 @@ public class Database {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public ArrayList<String> getTables(){
+        ArrayList<String> tables = new ArrayList<>();
+        int count = 1;
+        try {
+            DatabaseMetaData dbmd = conn.getMetaData();
+            ResultSet rs = dbmd.getTables("", "cs", "*", null);
+            while(rs.next()){
+                System.out.println(rs.getString(1));
+                //tables.add(rs.getString(count));
+                //count++;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return tables;
     }
 
 

@@ -24,12 +24,9 @@ public class MainClassHolder {
         newInstall = new NewInstall();
         //postInstall = new PostInstall();
 
-        if(!NewInstall.checkInstall()){
-            newInstall.createInstall();
-        }
-        else{
-            //postInstall.createDatabase();
-        }
+
+        newInstall.initialSetup();
+        newInstall.checkInstall();
 
 
     }

@@ -15,11 +15,12 @@ public class NewInstall {
     private String password;
     private static final String INSTALLPATHWIN = System.getProperty("user.home") + "\\" + INSTALL_FILE;
     private static final String INSTALLPATHLIN = System.getProperty("user.home") + "/" + INSTALL_FILE;
+    private Cryptography cryptography;
 
-    public NewInstall(){
+    public NewInstall(Cryptography cryptography){
         this.password = null;
         this.username = null;
-
+        this.cryptography = cryptography;
 
 
     }
@@ -58,10 +59,6 @@ public class NewInstall {
 
     public void createInstall(){
 
-        /*
-        Cryptography crypto = new Cryptography();
-        String encryptedPass = crypto.encrypt(password);
-        System.out.println(encryptedPass);*/
         InitialSetup.main(null);
 
     }

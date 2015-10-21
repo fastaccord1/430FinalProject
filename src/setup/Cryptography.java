@@ -43,6 +43,8 @@ public class Cryptography {
         } catch (NoSuchPaddingException e) {
             e.printStackTrace();
         }
+        generateSalt();
+        keygen();
     }
 
     /**
@@ -88,7 +90,7 @@ public class Cryptography {
      * @param encrypted encrypted text to be decrypted
      * @return String of decrypted data
      */
-    protected String decrypt(String encrypted){
+    public String decrypt(String encrypted){
         byte[] encryptedBytes = encrypted.getBytes();
         try {
             aesCipher.init(Cipher.DECRYPT_MODE, secretKey);
@@ -109,7 +111,7 @@ public class Cryptography {
      * @param plainText plain text input of password
      * @return String of encrypted data
      */
-    protected String encrypt(String plainText){
+    public String encrypt(String plainText){
         byte[] plainTextBytes = plainText.getBytes();
         try {
             aesCipher.init(Cipher.ENCRYPT_MODE, secretKey);

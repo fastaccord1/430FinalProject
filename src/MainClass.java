@@ -7,18 +7,26 @@ import setup.*;
 
 public class MainClass {
     private static Database database;
+    private static Cryptography cryptography;
 
     public MainClass(){
         database = null;
+        cryptography = new Cryptography();
     }
 
     public static void main(String[] args){
+        MainClass mainClass = new MainClass();
+
         if(!NewInstall.checkInstall()){
 
-            NewInstall install = new NewInstall();
+            NewInstall install = new NewInstall(cryptography);
 
             install.createInstall();
         }
+
+
+
+
 
 
     }
@@ -29,5 +37,9 @@ public class MainClass {
 
     public static Database getDatabase(){
         return database;
+    }
+
+    public static Cryptography getCryptography(){
+        return cryptography;
     }
 }

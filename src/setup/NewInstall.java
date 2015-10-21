@@ -18,7 +18,7 @@ public class NewInstall {
 
     /**
      * Default constructor that creates a NewInstall object
-     * @param database
+     * @param database Database object to be used for connection
      */
     public NewInstall(Database database){
         this.database = null;
@@ -69,6 +69,13 @@ public class NewInstall {
                 "FOREIGN KEY(sid) REFERENCES Student(sid), FOREIGN KEY(cid) REFERENCES Course(cid))";
         database.executeInsertUpdate(createEnrolled);
 
+
+    }
+
+    /**
+     * This method creates the data within the database
+     */
+    public void createData(){
 
     }
 }

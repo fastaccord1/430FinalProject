@@ -2,9 +2,16 @@
  * Created by kreuter on 10/18/15.
  */
 
+import backEnd.Database;
 import setup.*;
 
 public class MainClass {
+    private static Database database;
+
+    public MainClass(){
+        database = null;
+    }
+
     public static void main(String[] args){
         if(!NewInstall.checkInstall()){
             /*
@@ -24,5 +31,13 @@ public class MainClass {
         }
 
 
+    }
+
+    private void setDatabase(String username, String password){
+        database = new Database(username, password);
+    }
+
+    public static Database getDatabase(){
+        return database;
     }
 }

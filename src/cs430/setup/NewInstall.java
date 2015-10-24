@@ -1,15 +1,12 @@
-package setup;
+package cs430.setup;
 
 /**
  * 430FinalProject
  * Created by kreuter on 10/18/15.
  * @author Kevin Reuter
  */
-import backEnd.Database;
-import backEnd.MainClassHolder;
-import frontEnd.InitialSetup;
+import cs430.backEnd.Database;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
 

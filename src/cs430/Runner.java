@@ -1,9 +1,9 @@
-/**
+package cs430; /**
  * 430FinalProject
  * Created by kreuter on 10/18/15.
  * @author Kevin Reuter
  */
-import backEnd.MainClassHolder;
+import cs430.backEnd.MainClassHolder;
 
 public class Runner {
 

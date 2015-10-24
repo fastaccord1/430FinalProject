@@ -52,9 +52,23 @@
 
     <dirname property="module.430FinalProject.basedir" file="${ant.file}"/>
 
-    <path id="library.ojdbc7.classpath">
-        <pathelement location="${basedir}/jar/ojdbc7.jar"/>
-    </path>
+    <target name="clean">
+        <delete dir="out" />
+    </target>
+
+    <target name="init">
+        <mkdir dir="out/" />
+    </target>
+
+    <target name="compile.program">
+        <javac destdir="out" classpath="src" includeantruntime="false">
+            <src path="src/"
+        </javac>
+    </target>
+
+
+
+
 
 
 

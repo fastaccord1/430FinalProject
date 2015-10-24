@@ -58,7 +58,6 @@ public class FacultyForm extends javax.swing.JFrame {
         studentSearchAgeField = new javax.swing.JTextField();
         studentSearchSubmitButton = new javax.swing.JButton();
         studentSearchClearButton = new javax.swing.JButton();
-        studentSearchRefreshButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
@@ -216,15 +215,8 @@ public class FacultyForm extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(studentSearchSubmitButton)
                     .addComponent(studentSearchClearButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
-
-        studentSearchRefreshButton.setText("Refresh");
-        studentSearchRefreshButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                studentSearchRefreshButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout searchTabLayout = new javax.swing.GroupLayout(searchTab);
         searchTab.setLayout(searchTabLayout);
@@ -234,31 +226,20 @@ public class FacultyForm extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(searchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(searchTabLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchTabLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(studentSearchRefreshButton)
-                        .addGap(217, 217, 217))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE))
         );
         searchTabLayout.setVerticalGroup(
             searchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchTabLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(searchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(searchTabLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(searchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(searchTabLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(studentSearchRefreshButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(searchTabLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         studentTab.addTab("Search", searchTab);
@@ -314,10 +295,6 @@ public class FacultyForm extends javax.swing.JFrame {
     private void studentSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchClearButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_studentSearchClearButtonActionPerformed
-
-    private void studentSearchRefreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchRefreshButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_studentSearchRefreshButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -381,7 +358,6 @@ public class FacultyForm extends javax.swing.JFrame {
     private javax.swing.JComboBox studentSearchLevelField;
     private javax.swing.JComboBox studentSearchMajorField;
     private javax.swing.JTextField studentSearchNameField;
-    private javax.swing.JButton studentSearchRefreshButton;
     private javax.swing.JButton studentSearchSubmitButton;
     private javax.swing.JTabbedPane studentTab;
     // End of variables declaration//GEN-END:variables

@@ -52,25 +52,49 @@
 
     <dirname property="module.430FinalProject.basedir" file="${ant.file}"/>
 
+
+
     <target name="clean">
         <delete dir="out" />
     </target>
 
     <target name="init">
-        <mkdir dir="out/" />
+        <mkdir dir="out/temp" />
+        <mkdir dir="out/jar" />
+        <mkdir dir="out/tempLib" />
     </target>
 
     <target name="compile.program">
-        <javac destdir="out" classpath="src" includeantruntime="false">
-            <src path="src/"
+        <javac destdir="out/tmp" classpath="src" includeantruntime="false">
+            <src path="src/430/backEnd"/>
+            <src path="src/430/frontEnd"/>
+            <src path="src/430/setup"/>
+            <src path="src/430"/>
         </javac>
     </target>
 
+    <target name="jar.program" >
+        <jar destfile="out/jar/430FinalProject.jar" >
+            <manifest>
+                <attribute name="Main-Class" value="cs430.Runner"/>
+            </manifest>
+            <zipfileset dir="out/temp" includes="**/*.class" />
+        </jar>
+    </target>
 
+    <target name="unzip-lib">
+        <unzip dest="out/tempLib" >
+            <zipfileset dir="jar">
+                <include name="**/*.jar" />
+            </zipfileset>
+        </unzip>
+    </target>
 
+    <target name="cleanup">
+        <delete dir="out/temp" />
+        <delete dir="out/tempLib" />
+    </target>
 
-
-
-
+    <target name="all" depends="clean,compile.program,jar.program, cleanup" description="Make-All" />
 
 </project>

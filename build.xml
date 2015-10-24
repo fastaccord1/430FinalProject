@@ -66,7 +66,7 @@
 
     <target name="compile.program">
         <javac destdir="out/temp" classpath="src" includeantruntime="false">
-            <src path="src/430/finalProject" />
+            <src path="src/cs430/finalProject" />
         </javac>
     </target>
 
@@ -92,6 +92,6 @@
         <delete dir="out/tempLib" />
     </target>
 
-    <target name="all" depends="clean,init,compile.program,jar.program, cleanup" description="Make-All" />
+    <target name="all" depends="clean,init,compile.program,jar.program,cleanup" description="Make-All" />
 
 </project>

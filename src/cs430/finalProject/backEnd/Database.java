@@ -112,4 +112,49 @@ public class Database {
         }
         return tables;
     }
+
+    public Object[][] searchStudent(int id, String name, String major, String level, int age){
+        String query = "SELECT * FROM Student WHERE sid=? AND sname=? AND major=? AND level=?" +
+                "AND age=?";
+        Object[][] output = null;
+        try {
+            PreparedStatement preparedStatement = conn.prepareStatement(query);
+            if(id != -1){
+                preparedStatement.setInt(1, id);
+            } else{
+                preparedStatement.setString(1, "%");
+            }
+
+            if(name != null){
+                preparedStatement.setString(2, name);
+            } else{
+                preparedStatement.setString(2, "%");
+            }
+
+            if(major != null){
+                preparedStatement.setString(3, major);
+            } else{
+                preparedStatement.setString(3, "%");
+            }
+
+            if(level != null){
+                preparedStatement.setString(4, level);
+            } else{
+                preparedStatement.setString(4, "%");
+            }
+
+            if(age != -1){
+                preparedStatement.setInt(5, age);
+            } else{
+                preparedStatement.setString(5, "%");
+            }
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return output;
+    }
 }

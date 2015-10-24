@@ -95,6 +95,6 @@
         <delete dir="out/tempLib" />
     </target>
 
-    <target name="all" depends="clean,compile.program,jar.program, cleanup" description="Make-All" />
+    <target name="all" depends="clean,init,compile.program,jar.program, cleanup" description="Make-All" />
 
 </project>

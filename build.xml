@@ -65,7 +65,7 @@
     </target>
 
     <target name="compile.program">
-        <javac destdir="out/tmp" classpath="src" includeantruntime="false">
+        <javac destdir="out/temp" classpath="src" includeantruntime="false">
             <src path="src/430/backEnd"/>
             <src path="src/430/frontEnd"/>
             <src path="src/430/setup"/>

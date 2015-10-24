@@ -1,11 +1,11 @@
-package cs430.setup;
+package cs430.finalProject.setup;
 
 /**
  * 430FinalProject
  * Created by kreuter on 10/18/15.
  * @author Kevin Reuter
  */
-import cs430.backEnd.Database;
+import cs430.finalProject.backEnd.Database;
 
 import java.util.ArrayList;
 

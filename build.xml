@@ -66,17 +66,14 @@
 
     <target name="compile.program">
         <javac destdir="out/temp" classpath="src" includeantruntime="false">
-            <src path="src/430/backEnd"/>
-            <src path="src/430/frontEnd"/>
-            <src path="src/430/setup"/>
-            <src path="src/430"/>
+            <src path="src/430/finalProject" />
         </javac>
     </target>
 
     <target name="jar.program" >
         <jar destfile="out/jar/430FinalProject.jar" >
             <manifest>
-                <attribute name="Main-Class" value="cs430.Runner"/>
+                <attribute name="Main-Class" value="cs430.finalProject.Runner"/>
             </manifest>
             <zipfileset dir="out/temp" includes="**/*.class" />
         </jar>

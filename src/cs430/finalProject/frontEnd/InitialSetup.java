@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cs430.frontEnd;
+package cs430.finalProject.frontEnd;
 
 
-import cs430.backEnd.MainClassHolder;
+import cs430.finalProject.backEnd.MainClassHolder;
 
 /**
  *

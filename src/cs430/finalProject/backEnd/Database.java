@@ -1,4 +1,4 @@
-package cs430.backEnd;
+package cs430.finalProject.backEnd;
 /**
  * 430FinalProject
  * Created by kreuter on 10/18/15.

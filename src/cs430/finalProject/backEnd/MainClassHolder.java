@@ -1,7 +1,7 @@
-package cs430.backEnd;
+package cs430.finalProject.backEnd;
 
-import cs430.frontEnd.InitialSetup;
-import cs430.setup.NewInstall;
+import cs430.finalProject.frontEnd.InitialSetup;
+import cs430.finalProject.setup.NewInstall;
 
 
 /**

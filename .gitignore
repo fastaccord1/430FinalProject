@@ -23,7 +23,7 @@ nbproject/*
 hs_err_pid*
 
 #excluding database config
-*/*.conf
+*/config/*.conf
 
 #output of building
 out

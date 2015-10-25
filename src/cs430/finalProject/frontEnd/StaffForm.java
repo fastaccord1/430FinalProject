@@ -828,7 +828,9 @@ public class StaffForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         JTable target = (JTable)evt.getSource();
         int row = target.getSelectedRow();
-        studentUpdateIDField.setText(row + "");
+        int column = target.getSelectedColumn();
+        
+        studentUpdateIDField.setText(row + "," + column);
     }//GEN-LAST:event_studentUpdateTableMousePressed
 
 

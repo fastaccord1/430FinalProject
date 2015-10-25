@@ -13,8 +13,8 @@ public class Runner {
      * @param args String array of arguments
      */
     public static void main(String[] args){
-        StaffForm.main(null);
-        //MainClassHolder mainClass = new MainClassHolder();
-        //mainClass.close();
+        //StaffForm.main(null);
+        MainClassHolder mainClass = new MainClassHolder();
+        mainClass.close();
     }
 }

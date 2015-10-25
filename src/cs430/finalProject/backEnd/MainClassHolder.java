@@ -49,6 +49,7 @@ public class MainClassHolder {
      */
     public static void setDatabase(String username, String password) {
         MainClassHolder.database = new Database(username, password);
+        MainClassHolder.database.searchStudent(-1, null, null, null, -1);
     }
 
     /**

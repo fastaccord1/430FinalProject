@@ -66,6 +66,7 @@
 
     <target name="compile.program">
         <javac destdir="out/temp" classpath="src" includeantruntime="false">
+            <classpath path="/usr/lib/ojdbc6.jar"/>
             <src path="src/cs430/finalProject" />
         </javac>
     </target>

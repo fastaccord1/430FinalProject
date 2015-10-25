@@ -6,6 +6,7 @@ package cs430.finalProject.backEnd;
  */
 import java.sql.*;
 import java.util.ArrayList;
+import oracle.jdbc.driver.*;
 
 
 public class Database {
@@ -13,10 +14,6 @@ public class Database {
     private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     // Stores the url to the database
     private final String URL = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
-    // Username for the database
-    private String username;
-    // Password for the database
-    private String password;
     // Connection object for the database
     private Connection conn;
 
@@ -26,29 +23,16 @@ public class Database {
      * @param password String password for database connection
      */
     public Database(String username, String password){
-        this.username = username;
-        this.password = password;
         conn = null;
         try {
-            Class.forName(DRIVER);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        connect();
-    }
-
-    /**
-     * Method that initiates the connection to the database
-     */
-    public void connect(){
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(URL,username,password);
+            DriverManager.registerDriver(new OracleDriver());
+            conn = DriverManager.getConnection(URL, username, password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        this.conn = conn;
     }
+
+
 
     /**
      * Method that executes query against the database
@@ -119,35 +103,11 @@ public class Database {
         Object[][] output = null;
         try {
             PreparedStatement preparedStatement = conn.prepareStatement(query);
-            if(id != -1){
-                preparedStatement.setInt(1, id);
-            } else{
-                preparedStatement.setString(1, "%");
-            }
-
-            if(name != null){
-                preparedStatement.setString(2, name);
-            } else{
-                preparedStatement.setString(2, "%");
-            }
-
-            if(major != null){
-                preparedStatement.setString(3, major);
-            } else{
-                preparedStatement.setString(3, "%");
-            }
-
-            if(level != null){
-                preparedStatement.setString(4, level);
-            } else{
-                preparedStatement.setString(4, "%");
-            }
-
-            if(age != -1){
-                preparedStatement.setInt(5, age);
-            } else{
-                preparedStatement.setString(5, "%");
-            }
+            replaceInt(preparedStatement, 1, id);
+            replaceString(preparedStatement, 2, name);
+            replaceString(preparedStatement, 3, major);
+            replaceString(preparedStatement, 4, level);
+            replaceInt(preparedStatement, 5, age);
 
             ResultSet rs = preparedStatement.executeQuery();
 
@@ -156,5 +116,46 @@ public class Database {
         }
 
         return output;
+    }
+
+    public int getCount(PreparedStatement tempStatement) throws SQLException {
+        int out = 0;
+        String countQuery = "SELECT COUNT(*) FROM (";
+        countQuery += tempStatement.toString();
+        countQuery += ")";
+
+        System.out.println(countQuery);
+        //PreparedStatement preparedStatement = conn.prepareStatement(countQuery);
+
+
+
+
+
+        return out;
+    }
+
+    public void replaceString(PreparedStatement preparedStatement, int index, String input) throws SQLException {
+
+        if(input != null){
+            preparedStatement.setString(index, input);
+        } else{
+            preparedStatement.setString(index, "%");
+        }
+    }
+
+    public void replaceInt(PreparedStatement preparedStatement, int index, int input) throws SQLException {
+        if(input != -1){
+            preparedStatement.setInt(index, input);
+        } else{
+            preparedStatement.setString(index, "%");
+        }
+    }
+
+    public void replaceFloat(PreparedStatement preparedStatement, int index, float input) throws SQLException {
+        if(input != -1){
+            preparedStatement.setFloat(index, input);
+        } else{
+            preparedStatement.setString(index, "%");
+        }
     }
 }

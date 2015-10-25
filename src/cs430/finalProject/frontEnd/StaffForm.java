@@ -30,6 +30,10 @@ public class StaffForm extends javax.swing.JFrame {
         this.database = database;
         
     }
+    
+    public void redrawTable(JComponent table, Object[][] values){
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -828,7 +832,9 @@ public class StaffForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         JTable target = (JTable)evt.getSource();
         int row = target.getSelectedRow();
-        int column = target.getSelectedColumn();
+        int column = 0;
+        
+        int id = (int)target.getValueAt(row, column);
         
         studentUpdateIDField.setText(row + "," + column);
     }//GEN-LAST:event_studentUpdateTableMousePressed

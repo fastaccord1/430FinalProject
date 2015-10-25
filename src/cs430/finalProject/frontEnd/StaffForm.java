@@ -437,9 +437,9 @@ public class StaffForm extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        studentUpdateTable.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                studentUpdateTablePropertyChange(evt);
+        studentUpdateTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                studentUpdateTableMousePressed(evt);
             }
         });
         jScrollPane2.setViewportView(studentUpdateTable);
@@ -823,6 +823,13 @@ public class StaffForm extends javax.swing.JFrame {
     private void studentSearchClearButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchClearButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_studentSearchClearButton1ActionPerformed
+
+    private void studentUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTableMousePressed
+        // TODO add your handling code here:
+        JTable target = (JTable)evt.getSource();
+        int row = target.getSelectedRow();
+        studentUpdateIDField.setText(row + "");
+    }//GEN-LAST:event_studentUpdateTableMousePressed
 
 
     /**

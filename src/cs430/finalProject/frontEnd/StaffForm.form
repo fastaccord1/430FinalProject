@@ -612,7 +612,7 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="studentUpdateTablePropertyChange"/>
+                        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="studentUpdateTableMousePressed"/>
                       </Events>
                     </Component>
                   </SubComponents>

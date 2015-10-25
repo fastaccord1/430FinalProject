@@ -437,11 +437,6 @@ public class StaffForm extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        studentUpdateTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                studentUpdateTableMousePressed(evt);
-            }
-        });
         studentUpdateTable.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 studentUpdateTablePropertyChange(evt);
@@ -812,13 +807,6 @@ public class StaffForm extends javax.swing.JFrame {
     private void studentAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddClearButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_studentAddClearButtonActionPerformed
-
-    private void studentUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTableMousePressed
-        // TODO add your handling code here:
-        JTable target = (JTable)evt.getSource();
-        int row = target.getSelectedRow();
-        
-    }//GEN-LAST:event_studentUpdateTableMousePressed
 
     private void studentUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateSubmitButtonActionPerformed
         // TODO add your handling code here:

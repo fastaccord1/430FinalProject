@@ -97,6 +97,15 @@ public class Database {
         return tables;
     }
 
+    /**
+     * Searches the database for a specific student
+     * @param id int for the wanted student's id
+     * @param name String for the wanted student's name
+     * @param major String for the wanted student's major
+     * @param level String for the wanted student's level
+     * @param age String for the wanted student's age
+     * @return Object[][] double array to be used in the table
+     */
     public Object[][] searchStudent(int id, String name, String major, String level, int age){
         String query = "SELECT * FROM Student WHERE sid=? AND sname=? AND major=? AND level=?" +
                 "AND age=?";
@@ -118,6 +127,12 @@ public class Database {
         return output;
     }
 
+    /**
+     * Method to get the count for a specific query
+     * @param tempStatement PreparedStatement to be used for the count
+     * @return int count for results
+     * @throws SQLException
+     */
     public int getCount(PreparedStatement tempStatement) throws SQLException {
         int out = 0;
         String countQuery = "SELECT COUNT(*) FROM (";
@@ -127,13 +142,16 @@ public class Database {
         System.out.println(countQuery);
         //PreparedStatement preparedStatement = conn.prepareStatement(countQuery);
 
-
-
-
-
         return out;
     }
 
+    /**
+     * Method to replace String objects in a PreparedStatement
+     * @param preparedStatement PreparedStatement to be used
+     * @param index int index for the position to be replaced
+     * @param input String input to use in replacement
+     * @throws SQLException
+     */
     public void replaceString(PreparedStatement preparedStatement, int index, String input) throws SQLException {
 
         if(input != null){
@@ -143,6 +161,13 @@ public class Database {
         }
     }
 
+    /**
+     * Method to replace integers in PreparedStatement
+     * @param preparedStatement PreparedStatement to be used
+     * @param index int index for the position to be replaced
+     * @param input int input to be used in completed statement
+     * @throws SQLException
+     */
     public void replaceInt(PreparedStatement preparedStatement, int index, int input) throws SQLException {
         if(input != -1){
             preparedStatement.setInt(index, input);
@@ -151,6 +176,13 @@ public class Database {
         }
     }
 
+    /**
+     * Method to replace floats in PreparedStatement
+     * @param preparedStatement PreparedStatement to be used
+     * @param index int index for the position to be replaced
+     * @param input float input to be used in completed statement
+     * @throws SQLException
+     */
     public void replaceFloat(PreparedStatement preparedStatement, int index, float input) throws SQLException {
         if(input != -1){
             preparedStatement.setFloat(index, input);

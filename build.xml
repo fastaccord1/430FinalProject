@@ -75,12 +75,18 @@
         </javac>
     </target>
 
+    <target name="move.files">
+        <copy todir="out/temp/cs430/finalProject/config">
+            <fileset dir="src/cs430/finalProject/config" includes="**/*.conf" />
+        </copy>
+    </target>
+
     <target name="jar.program" depends="unzip-lib">
         <jar destfile="out/jar/430FinalProject.jar" >
             <manifest>
                 <attribute name="Main-Class" value="cs430.finalProject.Runner"/>
             </manifest>
-            <fileset dir="out/temp" includes="**/*.class" />
+            <fileset dir="out/temp" includes="**/*.conf,**/*.class" />
             <zipfileset dir="out/tempLib" includes="**/*.class" />
         </jar>
     </target>
@@ -98,6 +104,6 @@
         <delete dir="out/tempLib" />
     </target>
 
-    <target name="all" depends="clean,init,compile.program,jar.program,cleanup" description="Make-All" />
+    <target name="all" depends="clean,init,compile.program,move.files,jar.program,cleanup" description="Make-All" />
 
 </project>

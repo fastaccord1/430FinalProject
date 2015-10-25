@@ -7,6 +7,7 @@ package cs430.finalProject.frontEnd;
 
 import cs430.finalProject.backEnd.Database;
 
+import javax.swing.*;
 
 
 /**
@@ -479,6 +480,7 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void jTable2PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTable2PropertyChange
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "This worked somehow");
         
     }//GEN-LAST:event_jTable2PropertyChange
 

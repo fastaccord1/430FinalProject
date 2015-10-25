@@ -4,6 +4,7 @@ package cs430.finalProject; /**
  * @author Kevin Reuter
  */
 import cs430.finalProject.backEnd.MainClassHolder;
+import cs430.finalProject.frontEnd.StaffForm;
 
 public class Runner {
 
@@ -12,7 +13,8 @@ public class Runner {
      * @param args String array of arguments
      */
     public static void main(String[] args){
-        MainClassHolder mainClass = new MainClassHolder();
-        mainClass.close();
+        StaffForm.main(null);
+        //MainClassHolder mainClass = new MainClassHolder();
+        //mainClass.close();
     }
 }

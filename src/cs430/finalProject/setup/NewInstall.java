@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class NewInstall {
 
-    //private Boolean installed;
     private Database database;
 
     /**
@@ -71,6 +70,9 @@ public class NewInstall {
 
     }
 
+    /**
+     * Method to insert data into Student table
+     */
     public void instertStudentData(){
         String query = "INSERT ALL" +
                 "INTO Student VALUES(101, '', 'Computer Science', 'Junior', 21)" +

@@ -52,6 +52,10 @@
 
     <dirname property="module.430FinalProject.basedir" file="${ant.file}"/>
 
+    <path id="library.ojdbc7.classpath">
+        <pathelement location="${basedir}/jar/ojdbc7.jar" />
+    </path>
+
 
 
     <target name="clean">
@@ -66,17 +70,18 @@
 
     <target name="compile.program">
         <javac destdir="out/temp" classpath="src" includeantruntime="false">
-            <classpath path="/usr/lib/ojdbc7.jar"/>
+            <classpath path="jar/ojdbc7.jar"/>
             <src path="src/cs430/finalProject" />
         </javac>
     </target>
 
-    <target name="jar.program" >
+    <target name="jar.program" depends="unzip-lib">
         <jar destfile="out/jar/430FinalProject.jar" >
             <manifest>
                 <attribute name="Main-Class" value="cs430.finalProject.Runner"/>
             </manifest>
-            <zipfileset dir="out/temp" includes="**/*.class" />
+            <fileset dir="out/temp" includes="**/*.class" />
+            <zipfileset dir="out/tempLib" includes="**/*.class" />
         </jar>
     </target>
 

@@ -282,11 +282,7 @@ public class StaffForm extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable2.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jTable2PropertyChange(evt);
-            }
-        });
+
         jScrollPane2.setViewportView(jTable2);
         if (jTable2.getColumnModel().getColumnCount() > 0) {
             jTable2.getColumnModel().getColumn(0).setResizable(false);
@@ -478,11 +474,6 @@ public class StaffForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_studentAddClearButtonActionPerformed
 
-    private void jTable2PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTable2PropertyChange
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "This worked somehow");
-        
-    }//GEN-LAST:event_jTable2PropertyChange
 
     /**
      * @param args the command line arguments

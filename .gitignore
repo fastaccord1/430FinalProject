@@ -23,7 +23,7 @@ nbproject/*
 hs_err_pid*
 
 #excluding database config
-*/config/*.conf
+/cs430/finalProject/config/database.conf
 
 #output of building
 out

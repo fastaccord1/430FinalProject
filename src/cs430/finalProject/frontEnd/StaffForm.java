@@ -855,7 +855,7 @@ public class StaffForm extends javax.swing.JFrame {
         int row = target.getSelectedRow();
         int column = 0;
         
-        int id = (int)target.getValueAt(row, column);
+        int id = (Integer)target.getValueAt(row, column);
         
         studentUpdateIDField.setText(row + "," + column);
     }//GEN-LAST:event_studentUpdateTableMousePressed

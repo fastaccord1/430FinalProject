@@ -71,6 +71,22 @@ public class NewInstall {
 
     }
 
+    public void instertStudentData(){
+        String query = "INSERT ALL" +
+                "INTO Student VALUES(101, '', 'Computer Science', 'Junior', 21)" +
+                "INTO Student VALUES(102, '', 'Electrical Engineering', 'Sophomore', 20" +
+                "INTO Student VALUES(103, '', 'English', 'Freshman', 18" +
+                "INTO Student VALUES(104, '', 'Philosophy', 'Masters', 24" +
+                "INTO Student VALUES(105, '', 'Computer Science', 'Senior', 22" +
+                "INTO Student VALUES(106, '', 'English', 'PHD', 26" +
+                "INTO Student VALUES(107, '', 'Information Systems Technology', 'Freshman', 18" +
+                "INTO Student VALUES(108, '', 'Business Administration', 'Masters', 24" +
+                "INTO Student VALUES(109, '', 'Computer Science', 'PHD', 25" +
+                "INTO Student VALUES(110, '', 'Electrical Engineering', 'Junior', 30" +
+                "SELECT * FROM dual";
+        database.executeInsertUpdate(query);
+    }
+
     /**
      * This method creates the data within the database
      */

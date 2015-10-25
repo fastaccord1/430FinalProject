@@ -802,6 +802,12 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void studentSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchClearButtonActionPerformed
         // TODO add your handling code here:
+        studentSearchIDField.setText("");
+        studentSearchNameField.setText("");
+        studentSearchMajorField.setSelectedIndex(0);
+        studentSearchLevelField.setSelectedIndex(0);
+        studentSearchAgeField.setText("");
+        // TODO add search with no items
     }//GEN-LAST:event_studentSearchClearButtonActionPerformed
 
     private void studentAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddSubmitButtonActionPerformed
@@ -810,6 +816,11 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void studentAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddClearButtonActionPerformed
         // TODO add your handling code here:
+        studentAddIDField.setText("");
+        studentAddNameField.setText("");
+        studentAddMajorField.setText("");
+        studentAddLevelCombo.setSelectedIndex(0);
+        studentAddAgeField.setText("");
     }//GEN-LAST:event_studentAddClearButtonActionPerformed
 
     private void studentUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateSubmitButtonActionPerformed
@@ -818,6 +829,11 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void studentUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateClearButtonActionPerformed
         // TODO add your handling code here:
+        studentUpdateIDField.setText("");
+        studentUpdateNameField.setText("");
+        studentUpdateMajorField.setText("");
+        studentUpdateLevelField.setText("");
+        studentUpdateAgeField.setText("");
     }//GEN-LAST:event_studentUpdateClearButtonActionPerformed
 
     private void studentSearchSubmitButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchSubmitButton1ActionPerformed
@@ -826,6 +842,11 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void studentSearchClearButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchClearButton1ActionPerformed
         // TODO add your handling code here:
+        studentSearchIDField.setText("");
+        studentSearchNameField.setText("");
+        studentSearchMajorField.setSelectedIndex(0);
+        studentSearchLevelField.setSelectedIndex(0);
+        studentSearchAgeField.setText("");
     }//GEN-LAST:event_studentSearchClearButton1ActionPerformed
 
     private void studentUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTableMousePressed

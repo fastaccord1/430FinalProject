@@ -16,4 +16,6 @@ Once you have compiled the program you run it with `java -jar 430FinalProject.ja
 
 # Database config
 The database.conf file must be in the following format:
-`[username]\n[password]`
+
+`[username]
+[password]`

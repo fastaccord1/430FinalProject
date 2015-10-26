@@ -69,6 +69,7 @@
     </target>
 
     <target name="compile.program">
+        <property name="javac.target" value="1.7" />
         <javac destdir="out/temp" classpath="src" includeantruntime="false">
             <classpath path="jar/ojdbc7.jar"/>
             <src path="src/cs430/finalProject" />

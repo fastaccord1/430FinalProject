@@ -7,6 +7,7 @@ package cs430.finalProject.setup;
  */
 import cs430.finalProject.backEnd.Database;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 
@@ -27,8 +28,11 @@ public class NewInstall {
      * @return Boolean value for whether install was run previously
      */
     public Boolean checkInstall(){
-        ArrayList<String> tables = database.getTables();
-
+        String query = "SELECT * FROM Student";
+        ResultSet rs = database.executeQuery(query);
+        if(rs != null){
+            return true;
+        }
         return false;
     }
 
@@ -44,8 +48,6 @@ public class NewInstall {
      * This method creates the tables required for running the program
      */
     public void createTables(){
-
-
         String createStudent = "CREATE TABLE Student(sid INT, sname VARCHAR(50), major VARCHAR(50), " +
                 "level VARCHAR(50), age INT, PRIMARY KEY(sid)";
         database.executeInsertUpdate(createStudent);
@@ -66,8 +68,6 @@ public class NewInstall {
         String createEnrolled = "CREATE TABLE Enrolled(sid INT, cid INT, exam1 INT, exam2 INT, final INT, " +
                 "FOREIGN KEY(sid) REFERENCES Student(sid), FOREIGN KEY(cid) REFERENCES Course(cid))";
         database.executeInsertUpdate(createEnrolled);
-
-
     }
 
     /**
@@ -75,18 +75,53 @@ public class NewInstall {
      */
     public void instertStudentData(){
         String query = "INSERT ALL" +
-                "INTO Student VALUES(101, '', 'Computer Science', 'Junior', 21)" +
-                "INTO Student VALUES(102, '', 'Electrical Engineering', 'Sophomore', 20" +
-                "INTO Student VALUES(103, '', 'English', 'Freshman', 18" +
-                "INTO Student VALUES(104, '', 'Philosophy', 'Masters', 24" +
-                "INTO Student VALUES(105, '', 'Computer Science', 'Senior', 22" +
-                "INTO Student VALUES(106, '', 'English', 'PHD', 26" +
-                "INTO Student VALUES(107, '', 'Information Systems Technology', 'Freshman', 18" +
-                "INTO Student VALUES(108, '', 'Business Administration', 'Masters', 24" +
-                "INTO Student VALUES(109, '', 'Computer Science', 'PHD', 25" +
-                "INTO Student VALUES(110, '', 'Electrical Engineering', 'Junior', 30" +
+                "INTO Student VALUES(101, 'Kimberleigh Vernon', 'Computer Science', 'Junior', 21)" +
+                "INTO Student VALUES(102, 'Fern Aukes', 'Electrical Engineering', 'Sophomore', 20" +
+                "INTO Student VALUES(103, 'Gerlinde Ravenna', 'English', 'Freshman', 18" +
+                "INTO Student VALUES(104, 'Lois P. Huff', 'Philosophy', 'Masters', 24" +
+                "INTO Student VALUES(105, 'Lorraine J. Bailey', 'Computer Science', 'Senior', 22" +
+                "INTO Student VALUES(106, 'Anthony B. Lucero', 'English', 'PHD', 26" +
+                "INTO Student VALUES(107, 'Donna A. Wegman', 'Information Systems Technology', 'Freshman', 18" +
+                "INTO Student VALUES(108, 'Margaret J. Bishop', 'Business Administration', 'Masters', 24" +
+                "INTO Student VALUES(109, 'Vivian D. Shive', 'Computer Science', 'PHD', 25" +
+                "INTO Student VALUES(110, 'Joann O. Cormack', 'Electrical Engineering', 'Junior', 30" +
                 "SELECT * FROM dual";
         database.executeInsertUpdate(query);
+    }
+
+    /**
+     * Inserts faculty data into the database
+     */
+    public void insertFacultyData(){
+
+    }
+
+    /**
+     * Inserts Staff data into the database
+     */
+    public void insertStaffData(){
+
+    }
+
+    /**
+     * Inserts course data into the database
+     */
+    public void insertCoursesData(){
+
+    }
+
+    /**
+     * Inserts department data into the database
+     */
+    public void insertDepartmentData(){
+
+    }
+
+    /**
+     * Inserts enrolled data into the database
+     */
+    public void insertEnrolledData(){
+
     }
 
     /**

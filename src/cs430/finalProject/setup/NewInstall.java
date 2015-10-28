@@ -8,6 +8,7 @@ package cs430.finalProject.setup;
 import cs430.finalProject.backEnd.Database;
 
 import java.sql.ResultSet;
+import java.util.Random;
 
 
 public class NewInstall {
@@ -32,10 +33,14 @@ public class NewInstall {
         return rs != null;
     }
 
+    /**
+     * This method creates the install by calling the installation methods. It first
+     * creates the tables and then inserts the data.
+     */
     public void createInstall(){
         createTables();
         insertDepartmentData();
-        insertStudentData();
+        insertStudentData(null);
         insertFacultyData();
         insertStaffData();
         insertCoursesData();
@@ -80,8 +85,9 @@ public class NewInstall {
 
     /**
      * Method to insert data into Student table
+     * @param sID Array of ints for randomly generated student IDs
      */
-    public void insertStudentData(){
+    public void insertStudentData(int[] sID){
         String query = "INSERT ALL" +
                 "INTO Student VALUES(101, 'Kimberleigh Vernon', 'Computer Science', 'Junior', 21)" +
                 "INTO Student VALUES(102, 'Fern Aukes', 'Electrical Engineering', 'Sophomore', 20" +
@@ -120,7 +126,19 @@ public class NewInstall {
      * Inserts Staff data into the database
      */
     public void insertStaffData(){
-
+        String query = "INSERT ALL" +
+                "INTO Staff VALUES(301, '', 21)" +
+                "INTO Staff VALUES(302, '', 30)" +
+                "INTO Staff VALUES(303, '', 11)" +
+                "INTO Staff VALUES(304, '', 10)" +
+                "INTO Staff VALUES(305, '', 15)" +
+                "INTO Staff VALUES(306, '', 25)" +
+                "INTO Staff VALUES(307, '', 26)" +
+                "INTO Staff VALUES(308, '', 27)" +
+                "INTO Staff VALUES(309, '', 28)" +
+                "INTO Staff Values(310, '', 31)" +
+                "SELECT * FROM dual";
+        database.executeInsertUpdate(query);
     }
 
     /**
@@ -157,10 +175,12 @@ public class NewInstall {
 
     }
 
-    /**
-     * This method creates the data within the database
-     */
-    public void createData(){
-
+    public int[] generateDepartmentNums(int length){
+        int[] output = new int[length];
+        Random random = new Random();
+        for(int i = 0; i < length; i++){
+            output[i] = random.nextInt() % 100;
+        }
+        return output;
     }
 }

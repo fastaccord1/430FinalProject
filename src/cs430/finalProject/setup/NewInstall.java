@@ -29,10 +29,7 @@ public class NewInstall {
     public Boolean checkInstall(){
         String query = "SELECT * FROM Student";
         ResultSet rs = database.executeQuery(query);
-        if(rs != null){
-            return true;
-        }
-        return false;
+        return rs != null;
     }
 
     public void createInstall(){
@@ -106,8 +103,17 @@ public class NewInstall {
     public void insertFacultyData(){
         String query = "INSERT ALL" +
                 "INTO Faculty VALUES(201, '', 21)" +
-                "INTO Faculty VALUES(202, '', 30)";
-
+                "INTO Faculty VALUES(202, '', 30)" +
+                "INTO Faculty VALUES(203, '', 11)" +
+                "INTO Faculty VALUES(204, '', 10)" +
+                "INTO Faculty VALUES(205, '', 15)" +
+                "INTO Faculty VALUES(206, '', 25)" +
+                "INTO Faculty VALUES(207, '', 26)" +
+                "INTO Faculty VALUES(208, '', 27)" +
+                "INTO Faculty VALUES(209, '', 28)" +
+                "INTO Faculty VALUES(210, '', 31)" +
+                "SELECT * FROM dual";
+        database.executeInsertUpdate(query);
     }
 
     /**

@@ -183,4 +183,15 @@ public class NewInstall {
         }
         return output;
     }
+
+    public int[] generateStudentID(int length){
+        return null;
+    }
+    public int[] generateFacutlyID(int length){
+        return null;
+    }
+
+    public int[] generateStaffID(int length){
+        return null;
+    }
 }

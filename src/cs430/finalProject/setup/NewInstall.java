@@ -8,7 +8,6 @@ package cs430.finalProject.setup;
 import cs430.finalProject.backEnd.Database;
 
 import java.sql.ResultSet;
-import java.util.ArrayList;
 
 
 public class NewInstall {
@@ -36,6 +35,16 @@ public class NewInstall {
         return false;
     }
 
+    public void createInstall(){
+        createTables();
+        insertDepartmentData();
+        insertStudentData();
+        insertFacultyData();
+        insertStaffData();
+        insertCoursesData();
+        insertEnrolledData();
+    }
+
     /**
      * This method sets the database
      * @param database a Database object for the database connection
@@ -49,20 +58,22 @@ public class NewInstall {
      */
     public void createTables(){
         String createStudent = "CREATE TABLE Student(sid INT, sname VARCHAR(50), major VARCHAR(50), " +
-                "level VARCHAR(50), age INT, PRIMARY KEY(sid)";
+                "level VARCHAR(50), age INT, PRIMARY KEY(sid))";
         database.executeInsertUpdate(createStudent);
 
-        String createFaculty = "CREATE TABLE Faculty(fid INT, fname VARCHAR(50), deptid INT, PRIMARY KEY(fid))";
-        database.executeInsertUpdate(createFaculty);
-
-        String createStaff = "CREATE TABLE Staff(sid INT, sname VARCHAR(50), deptid INT, PRIMARY KEY(sid)";
-        database.executeInsertUpdate(createStaff);
-
-        String createDepartment = "CREATE TABLE Department(did INT, dname VARCHAR(50), PRIMARY KEY(did)";
+        String createDepartment = "CREATE TABLE Department(did INT, dname VARCHAR(50), PRIMARY KEY(did))";
         database.executeInsertUpdate(createDepartment);
 
+        String createStaff = "CREATE TABLE Staff(sid INT, sname VARCHAR(50), deptid INT, PRIMARY KEY(sid), " +
+                "FOREIGN KEY(deptid) REFERENCES Department(did))";
+        database.executeInsertUpdate(createStaff);
+
+        String createFaculty = "CREATE TABLE Faculty(fid INT, fname VARCHAR(50), deptid INT, PRIMARY KEY(fid), " +
+                "FOREIGN KEY(deptid) REFERENCES Department(did))";
+        database.executeInsertUpdate(createFaculty);
+
         String createCourses = "CREATE TABLE Courses(cid INT, cname VARCHAR(50), meets_at VARCHAR(50), " +
-                "room VARCHAR(50), fid INT REFERENCES Facutly(fid), limit INT, PRIMARY KEY(cid)";
+                "room VARCHAR(50), fid INT REFERENCES Facutly(fid), limit INT, PRIMARY KEY(cid))";
         database.executeInsertUpdate(createCourses);
 
         String createEnrolled = "CREATE TABLE Enrolled(sid INT, cid INT, exam1 INT, exam2 INT, final INT, " +
@@ -73,7 +84,7 @@ public class NewInstall {
     /**
      * Method to insert data into Student table
      */
-    public void instertStudentData(){
+    public void insertStudentData(){
         String query = "INSERT ALL" +
                 "INTO Student VALUES(101, 'Kimberleigh Vernon', 'Computer Science', 'Junior', 21)" +
                 "INTO Student VALUES(102, 'Fern Aukes', 'Electrical Engineering', 'Sophomore', 20" +
@@ -93,6 +104,9 @@ public class NewInstall {
      * Inserts faculty data into the database
      */
     public void insertFacultyData(){
+        String query = "INSERT ALL" +
+                "INTO Faculty VALUES(201, '', 21)" +
+                "INTO Faculty VALUES(202, '', 30)";
 
     }
 
@@ -114,6 +128,19 @@ public class NewInstall {
      * Inserts department data into the database
      */
     public void insertDepartmentData(){
+        String query = "INSERT ALL" +
+                "INTO Department VALUES(21, 'Computer Science')" +
+                "INTO Department VALUES(11, 'English')" +
+                "INTO Department VALUES(30, 'Electrical Engineering)" +
+                "INTO Department VALUES(10, 'Philosophy')" +
+                "INTO Department VALUES(15, 'Political Science')" +
+                "INTO Department VALUES(25, 'Math')" +
+                "INTO Department VALUES(26, 'Physics')" +
+                "INTO Department VALUES(27, 'Biology')" +
+                "INTO Department VALUES(28, 'Chemistry)" +
+                "INTO Department VALUES(31, 'Structural Engineering')" +
+                "SELECT * FROM dual";
+        database.executeInsertUpdate(query);
 
     }
 

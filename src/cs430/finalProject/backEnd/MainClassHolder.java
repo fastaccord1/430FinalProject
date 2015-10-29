@@ -1,7 +1,11 @@
 package cs430.finalProject.backEnd;
 
-import cs430.finalProject.frontEnd.InitialSetup;
 import cs430.finalProject.setup.NewInstall;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 
 /**
@@ -20,7 +24,7 @@ public class MainClassHolder {
      */
     public MainClassHolder(){
         database = null;
-        InitialSetup.main(null);
+        //InitialSetup.main(null);
         newInstall = null;
     }
 
@@ -30,7 +34,7 @@ public class MainClassHolder {
     public static void checkInstall(){
         newInstall = new NewInstall(database);
         if(!newInstall.checkInstall()){
-
+            newInstall.createInstall();
         }
     }
 
@@ -57,6 +61,24 @@ public class MainClassHolder {
      */
     public void close(){
         database.closeConnection();
+    }
+
+    public void getDatabaseInfo() throws IOException {
+        FileReader fileReader = new FileReader("../config/database.conf");
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String line, username = null, password = null;
+        while((line = bufferedReader.readLine()) != null){
+            if(line.contains("username:")){
+                username = line.substring(12);
+            }
+            if(line.contains("password:")){
+                password = line.substring(12);
+            }
+        }
+        if(username == null || password == null){
+            System.err.println((username == null) ? "Username" : "Password" + " not initialized");
+            System.exit(1);
+        }
     }
 
 }

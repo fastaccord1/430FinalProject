@@ -1,5 +1,6 @@
 package cs430.finalProject.backEnd;
 
+import cs430.finalProject.frontEnd.SelectRole;
 import cs430.finalProject.setup.NewInstall;
 
 import java.io.BufferedReader;
@@ -18,21 +19,38 @@ public class MainClassHolder {
     private static Database database;
     // NewInstall object to be used for initializing database
     private static NewInstall newInstall;
+    // String constant for the path to the config file
+    private final String PATH = "../config/database.conf";
 
     /**
      * Default constructor to initialize variables
      */
     public MainClassHolder(){
-        database = null;
-        //InitialSetup.main(null);
-        newInstall = null;
+        String[] userPass = null;
+        try {
+
+            userPass = getDatabaseInfo(PATH);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(userPass != null){
+            String username = userPass[0];
+            String password = userPass[1];
+            database = new Database(username, password);
+            newInstall = new NewInstall(database);
+            checkInstall();
+            SelectRole.main(null);
+        }
+        else{
+            System.err.println("Something went wrong!");
+            System.exit(1);
+        }
     }
 
     /**
      * Method that initiates a check for the database tables
      */
     public static void checkInstall(){
-        newInstall = new NewInstall(database);
         if(!newInstall.checkInstall()){
             newInstall.createInstall();
         }
@@ -63,7 +81,7 @@ public class MainClassHolder {
         database.closeConnection();
     }
 
-    public void getDatabaseInfo() throws IOException {
+    public String[] getDatabaseInfo(String path) throws IOException {
         FileReader fileReader = new FileReader("../config/database.conf");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String line, username = null, password = null;
@@ -79,6 +97,7 @@ public class MainClassHolder {
             System.err.println((username == null) ? "Username" : "Password" + " not initialized");
             System.exit(1);
         }
+        return new String[]{username, password};
     }
 
 }

@@ -81,8 +81,14 @@ public class MainClassHolder {
         database.closeConnection();
     }
 
+    /**
+     * This method gets the username and password from the config file
+     * @param path String for the path to the config file
+     * @return Array of strings for the username and password
+     * @throws IOException
+     */
     public String[] getDatabaseInfo(String path) throws IOException {
-        FileReader fileReader = new FileReader("../config/database.conf");
+        FileReader fileReader = new FileReader(path);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String line, username = null, password = null;
         while((line = bufferedReader.readLine()) != null){

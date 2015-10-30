@@ -7,6 +7,7 @@ package cs430.finalProject.setup;
  */
 import cs430.finalProject.backEnd.Database;
 
+import java.security.SecureRandom;
 import java.sql.ResultSet;
 import java.util.Random;
 
@@ -14,7 +15,8 @@ import java.util.Random;
 public class NewInstall {
 
     private Database database;
-
+    private final int NUM_GENERATE = 10;
+    private final String[] LEVELS = {"Freshman", "Sophomore", "Junior", "Senior", "Masters", "PHD"};
     /**
      * Default constructor that creates a NewInstall object
      * @param database Database object to be used for connection
@@ -177,21 +179,48 @@ public class NewInstall {
 
     public int[] generateDepartmentNums(int length){
         int[] output = new int[length];
-        Random random = new Random();
         for(int i = 0; i < length; i++){
-            output[i] = random.nextInt() % 100;
+            output[i] = generateRandomInt();
         }
         return output;
     }
 
     public int[] generateStudentID(int length){
-        return null;
+        int high = 1999;
+        int low = 1000;
+        int[] output = new int[length];
+        for(int i = 0; i< length; i++){
+            output[i] = generateRandomInt(high, low);
+        }
+        return output;
     }
     public int[] generateFacutlyID(int length){
-        return null;
+        int high = 2999;
+        int low = 2000;
+        int[] output = new int[length];
+        for(int i = 0; i < length; i++){
+            output[i] = generateRandomInt(high, low);
+        }
+        return output;
     }
 
     public int[] generateStaffID(int length){
-        return null;
+        int high = 3999;
+        int low = 3000;
+        int[] output = new int[length];
+        for(int i = 0; i < length; i++){
+            output[i] = generateRandomInt(high, low);
+        }
+        return output;
+    }
+
+    public int generateRandomInt(int high, int low){
+        Random random = new SecureRandom();
+        return random.nextInt() % (high - low) + low;
+    }
+
+    public int generateRandomInt(){
+        Random random = new SecureRandom();
+        return random.nextInt();
     }
 }

@@ -80,6 +80,9 @@
         <copy todir="out/temp/cs430/finalProject/config">
             <fileset dir="src/cs430/finalProject/config" includes="**/*.conf" />
         </copy>
+        <copy todir="out/temp/cs430/finalProject/SQL_Scripts">
+            <fileset dir="src/cs430/finalProject/SQL_Scripts" includes="**/*.sql" />
+        </copy>
     </target>
 
     <target name="jar.program" depends="unzip-lib">
@@ -87,7 +90,7 @@
             <manifest>
                 <attribute name="Main-Class" value="cs430.finalProject.Runner"/>
             </manifest>
-            <fileset dir="out/temp" includes="**/*.conf,**/*.class" />
+            <fileset dir="out/temp" includes="**/*.conf,**/*.class,**/*.sql" />
             <zipfileset dir="out/tempLib" includes="**/*.class" />
         </jar>
     </target>

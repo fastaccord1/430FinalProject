@@ -51,9 +51,9 @@ public class MainClassHolder {
      * Method that initiates a check for the database tables
      */
     public static void checkInstall(){
-        if(!newInstall.checkInstall()){
+        /*if(!newInstall.checkInstall()){
             newInstall.createInstall();
-        }
+        }*/
     }
 
     /**

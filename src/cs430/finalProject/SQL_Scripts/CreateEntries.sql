@@ -42,3 +42,4 @@ INSERT INTO Student VALUES(173541, 'Margaret J. Bishop', 'Business Administratio
 INSERT INTO Student VALUES(169810, 'Vivian D. Shive', 'Computer Science', 'PHD', 25);
 INSERT INTO Student VALUES(130412, 'Joann O. Cormack', 'Electrical Engineering', 'Junior', 30);
 
+INSERT INTO Courses VALUES ('CS 430', 'Introduction to Databases', 'MWF 10-11', 'ENG A320', 215748, 35);

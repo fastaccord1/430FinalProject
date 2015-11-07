@@ -37,9 +37,6 @@ public class MainClassHolder {
             String username = userPass[0];
             String password = userPass[1];
             database = new Database(username, password);
-            newInstall = new NewInstall(database);
-            checkInstall();
-            SelectRole.main(null);
         }
         else{
             System.err.println("Something went wrong!");
@@ -47,13 +44,8 @@ public class MainClassHolder {
         }
     }
 
-    /**
-     * Method that initiates a check for the database tables
-     */
-    public static void checkInstall(){
-        /*if(!newInstall.checkInstall()){
-            newInstall.createInstall();
-        }*/
+    public void freshInstall(){
+        new NewInstall(database);
     }
 
     /**
@@ -62,16 +54,6 @@ public class MainClassHolder {
      */
     public static Database getDatabase() {
         return database;
-    }
-
-    /**
-     * Setter method that creates a new Database object
-     * @param username String username to be used for database
-     * @param password String password to be used for the database
-     */
-    public static void setDatabase(String username, String password) {
-        MainClassHolder.database = new Database(username, password);
-        MainClassHolder.database.searchStudent(-1, null, null, null, -1);
     }
 
     /**

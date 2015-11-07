@@ -15,6 +15,13 @@ public class Runner {
     public static void main(String[] args){
         //StaffForm.main(null);
         MainClassHolder mainClass = new MainClassHolder();
+
+        if(args.length == 1){
+            if(args[0].equals("--fresh")){
+                mainClass.freshInstall();
+            }
+        }
+
         mainClass.close();
     }
 }

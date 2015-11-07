@@ -16,12 +16,15 @@ public class NewInstall {
 
     private Database database;
     private final int NUM_GENERATE = 10;
+    private String[] firstNames;
+    private String[] lastNames;
     private final String[] LEVELS = {"Freshman", "Sophomore", "Junior", "Senior", "Masters", "PHD"};
     /**
      * Default constructor that creates a NewInstall object
      * @param database Database object to be used for connection
      */
     public NewInstall(Database database){
+        //firstNames = {};
         this.database = null;
     }
 

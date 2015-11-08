@@ -97,6 +97,21 @@ public class Database {
         return tables;
     }
 
+    public int findType(int id){
+        int output = -1;
+        String queryStudent = "SELECT * FROM Student WHERE sid = " + id;
+        String queryStaff = "SELECT * FROM Staff WHERE sid = " + id;
+        String queryFaculty = "SELECT * FROM Faculty WHERE fid = " + id;
+        if(executeQuery(queryStudent) != null){
+            return 1;
+        } else if(executeQuery(queryStaff) != null){
+            return 2;
+        } else if(executeQuery(queryFaculty) != null){
+            return 3;
+        }
+        return output;
+    }
+
     /**
      * Searches the database for a specific student
      * @param id int for the wanted student's id

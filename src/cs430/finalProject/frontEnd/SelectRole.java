@@ -5,6 +5,9 @@
  */
 package cs430.finalProject.frontEnd;
 
+import cs430.finalProject.backEnd.Database;
+import cs430.finalProject.backEnd.MainClassHolder;
+
 /**
  *
  * @author kreuter
@@ -113,7 +116,25 @@ public class SelectRole extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-        
+        Database database = MainClassHolder.getDatabase();
+        String idString = userName.getText();
+        int id = Integer.parseInt(idString);
+        int type = database.findType(id);
+        switch(type){
+            case 1:
+                System.out.println("Student");
+                break;
+            case 2:
+                System.out.println("Staff");
+                break;
+            case 3:
+                System.out.println("Faculty");
+                break;
+            default:
+                System.out.println("Not Found");
+                userName.setText("");
+                break;
+        }
         
     }//GEN-LAST:event_submitButtonActionPerformed
 

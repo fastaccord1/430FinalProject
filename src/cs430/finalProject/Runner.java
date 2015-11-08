@@ -17,8 +17,8 @@ public class Runner {
 
         if(args.length == 1){
             if(args[0].equals("--fresh")){
-                System.out.println("We made it!");
-                //mainClass.freshInstall();
+                //System.out.println("We made it!");
+                mainClass.freshInstall();
             } else{
                 System.exit(1);
             }

@@ -6,8 +6,10 @@
 package cs430.finalProject.frontEnd;
 
 import cs430.finalProject.backEnd.Database;
+import cs430.finalProject.backEnd.MainClassHolder;
 
 import javax.swing.*;
+import java.sql.SQLException;
 
 
 /**
@@ -22,18 +24,13 @@ public class StaffForm extends javax.swing.JFrame {
     public StaffForm() {
         initComponents();
         tableValues = null;
-        database = null;
+        database = MainClassHolder.getDatabase();
         
     }
     
-    public void setDatabase(Database database){
-        this.database = database;
-        
-    }
+
     
-    public void redrawTable(JComponent table, Object[][] values){
-        
-    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -798,6 +795,13 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void studentSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchSubmitButtonActionPerformed
         // TODO add your handling code here:
+        String sid = studentSearchIDField.getText();
+        int id = Integer.parseInt(sid);
+        try {
+            Object[][] newData = database.searchStudent(id, null, null, null, -1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_studentSearchSubmitButtonActionPerformed
 
     private void studentSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchClearButtonActionPerformed
@@ -870,6 +874,7 @@ public class StaffForm extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

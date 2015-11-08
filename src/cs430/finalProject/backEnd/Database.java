@@ -77,23 +77,33 @@ public class Database {
         }
     }
 
-
+    /**
+     * Finds the type of a certain id
+     * @param id The id to be checked against the database
+     * @return An int representing the type of employee. -1 if not found
+     * @throws SQLException
+     */
     public int findType(int id) throws SQLException {
         int output = -1;
         String queryStudent = "SELECT * FROM Student WHERE sid = " + id;
         String queryStaff = "SELECT * FROM Staff WHERE sid = " + id;
         String queryFaculty = "SELECT * FROM Faculty WHERE fid = " + id;
-        if(searchID(queryStudent)){
+        if(searchDB(queryStudent)){
             return 1;
-        } else if(searchID(queryStaff)){
+        } else if(searchDB(queryStaff)){
             return 2;
-        } else if(searchID(queryFaculty)){
+        } else if(searchDB(queryFaculty)){
             return 3;
         }
         return output;
     }
 
-    private boolean searchID(String query){
+    /**
+     * Searches database for query and returns true if found
+     * @param query The query to be run against the database
+     * @return Returns true if the query returned a result. False if query didn't return a result.
+     */
+    private boolean searchDB(String query){
         Statement statement = null;
         try {
             statement = conn.createStatement();

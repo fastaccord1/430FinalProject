@@ -25,7 +25,6 @@ public class NewInstall {
      * @param database Database object to be used for connection
      */
     public NewInstall(Database database){
-        //firstNames = {};
         this.database = database;
         try {
             createTables();

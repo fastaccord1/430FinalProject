@@ -58,6 +58,7 @@ public class Database {
     public void executeInsertUpdate(String preparedStatementString){
         try {
             PreparedStatement prep = conn.prepareStatement(preparedStatementString);
+            System.out.println("Created prepared statement");
             prep.execute();
             prep.close();
         } catch (SQLException e) {

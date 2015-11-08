@@ -8,15 +8,12 @@ package cs430.finalProject.setup;
 import cs430.finalProject.backEnd.Database;
 
 import java.io.*;
-import java.security.SecureRandom;
-import java.sql.ResultSet;
-import java.util.Random;
 
 
 public class NewInstall {
 
     private Database database;
-    private final String PATH = "/cs430/finalProject/SQL_SCRIPTS/";
+    private final String PATH = "/SQL_Scripts/";
     private final String CREATENAME = "CreateDatabase.sql";
     private final String FILLNAME = "CreateEntries.sql";
 
@@ -43,7 +40,10 @@ public class NewInstall {
         BufferedReader bufferedReader = getBufferedReader(PATH + CREATENAME);
         String line;
         while((line = bufferedReader.readLine()) != null){
-            database.executeInsertUpdate(line);
+            if(!line.equals("") && !line.contains("/*")) {
+                System.out.println(line);
+                database.executeInsertUpdate(line);
+            }
         }
     }
 
@@ -51,7 +51,11 @@ public class NewInstall {
         BufferedReader bufferedReader = getBufferedReader(PATH + FILLNAME);
         String line;
         while((line = bufferedReader.readLine()) != null){
-            database.executeInsertUpdate(line);
+            if(!line.equals("") && !line.contains("/*")) {
+                line = line.replace(';', ' ');
+                System.out.println(line);
+                database.executeInsertUpdate(line);
+            }
         }
     }
 

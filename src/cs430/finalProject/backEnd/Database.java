@@ -5,6 +5,7 @@ package cs430.finalProject.backEnd;
  * @author Kevin Reuter
  */
 import java.sql.*;
+import java.util.ArrayList;
 
 import oracle.jdbc.driver.*;
 
@@ -136,42 +137,79 @@ public class Database {
      * @param age String for the wanted student's age
      * @return Object[][] double array to be used in the table
      */
-    public Object[][] searchStudent(int id, String name, String major, String level, int age){
-        String query = "SELECT * FROM Student WHERE sid=? AND sname=? AND major=? AND level=?" +
-                "AND age=?";
-        Object[][] output = null;
-        try {
-            PreparedStatement preparedStatement = conn.prepareStatement(query);
-            replaceInt(preparedStatement, 1, id);
-            replaceString(preparedStatement, 2, name);
-            replaceString(preparedStatement, 3, major);
-            replaceString(preparedStatement, 4, level);
-            replaceInt(preparedStatement, 5, age);
-
-            ResultSet rs = preparedStatement.executeQuery();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public Object[][] searchStudent(int id, String name, String major, String level, int age) throws SQLException {
+        String query = "SELECT * FROM Student WHERE";
+        if(id != -1){
+            query += " sid = " + id;
         }
+        if(name != null){
+            query += " sname = " + name;
+        }
+        if(major != null){
+            query += " major = " + major;
+        }
+        if(level != null){
+            query += " s_level = " + level;
+        }
+        if(age != -1){
+            query += " age = " + age;
+        }
+        int length = getCount(query);
+        Object[][] output = new Object[length][5];
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery(query);
+        for(int i = 0; rs.next(); i++){
+            output[i][0] = rs.getInt("sid");
+            output[i][1] = rs.getString("sname");
+            output[i][2] = rs.getString("major");
+            output[i][3] = rs.getString("s_level");
+            output[i][4] = rs.getInt("age");
+        }
+        return output;
+    }
 
-        return null;
+    public Object[][] searchStudent() throws SQLException {
+        String query = "SELECT * FROM Student";
+        int length = getCount(query);
+        Object[][] output = new Object[length][5];
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery(query);
+        int i = 0;
+        while(rs.next()){
+            output[i][0] = rs.getInt("sid");
+            output[i][1] = rs.getString("sname");
+            output[i][2] = rs.getString("major");
+            output[i][3] = rs.getString("s_level");
+            output[i][4] = rs.getInt("age");
+            i++;
+        }
+        rs.close();
+        statement.close();
+        return output;
     }
 
     /**
      * Method to get the count for a specific query
-     * @param tempStatement PreparedStatement to be used for the count
+     * @param startingQuery PreparedStatement to be used for the count
      * @return int count for results
      * @throws SQLException
      */
-    public int getCount(PreparedStatement tempStatement) throws SQLException {
-        int out = 0;
+    public int getCount(String startingQuery) throws SQLException {
+        int out;
         String countQuery = "SELECT COUNT(*) FROM (";
-        countQuery += tempStatement.toString();
+        countQuery += startingQuery;
         countQuery += ")";
 
         System.out.println(countQuery);
-        //PreparedStatement preparedStatement = conn.prepareStatement(countQuery);
-
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery(countQuery);
+        if(rs.next()){
+            out = rs.getInt(1);
+        } else{
+            return -1;
+        }
+        rs.close();
+        statement.close();
         return out;
     }
 
@@ -220,4 +258,5 @@ public class Database {
             preparedStatement.setString(index, "%");
         }
     }
+
 }

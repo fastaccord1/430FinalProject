@@ -26,8 +26,7 @@ public class MainClassHolder {
     public MainClassHolder() {
         String[] userPass = null;
         try {
-
-            userPass = getDatabaseInfo(PATH);
+            userPass = getDatabaseInfo();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -67,11 +66,10 @@ public class MainClassHolder {
     /**
      * This method gets the username and password from the config file
      *
-     * @param path String for the path to the config file
      * @return Array of strings for the username and password
      * @throws IOException
      */
-    public String[] getDatabaseInfo(String path) throws IOException {
+    public String[] getDatabaseInfo() throws IOException {
         InputStream inputStream = getClass().getResourceAsStream(PATH);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -79,16 +77,13 @@ public class MainClassHolder {
         while ((line = bufferedReader.readLine()) != null) {
             if (line.contains("username:")) {
                 username = line.substring(10);
-                System.out.println(line);
-                System.out.println(username);
             }
             if (line.contains("password:")) {
                 password = line.substring(10);
-                System.out.println("We found the password");
             }
         }
         if (username == null || password == null) {
-            System.err.println((username == null) ? "Username" : "Password" + " not initialized");
+            System.err.println((username == null) ? "Username" : "Password" + " not found. Exiting program.");
             System.exit(1);
         }
         return new String[]{username, password};

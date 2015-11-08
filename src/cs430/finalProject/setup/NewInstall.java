@@ -7,10 +7,7 @@ package cs430.finalProject.setup;
  */
 import cs430.finalProject.backEnd.Database;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.security.SecureRandom;
 import java.sql.ResultSet;
 import java.util.Random;
@@ -19,7 +16,7 @@ import java.util.Random;
 public class NewInstall {
 
     private Database database;
-    private final String PATH = "../SQL_SCRIPTS/";
+    private final String PATH = "/cs430/finalProject/SQL_SCRIPTS/";
     private final String CREATENAME = "CreateDatabase.sql";
     private final String FILLNAME = "CreateEntries.sql";
 
@@ -44,8 +41,7 @@ public class NewInstall {
 
 
     private void createTables() throws IOException {
-        FileReader fileReader = new FileReader(PATH + CREATENAME);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        BufferedReader bufferedReader = getBufferedReader(PATH + CREATENAME);
         String line;
         while((line = bufferedReader.readLine()) != null){
             database.executeInsertUpdate(line);
@@ -53,12 +49,17 @@ public class NewInstall {
     }
 
     private void createEntries() throws IOException {
-        FileReader fileReader = new FileReader(PATH + FILLNAME);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        BufferedReader bufferedReader = getBufferedReader(PATH + FILLNAME);
         String line;
         while((line = bufferedReader.readLine()) != null){
             database.executeInsertUpdate(line);
         }
+    }
+
+    private BufferedReader getBufferedReader(String path){
+        InputStream inputStream = getClass().getResourceAsStream(path);
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        return new BufferedReader(inputStreamReader);
     }
 
 }

@@ -3,7 +3,10 @@ package cs430.finalProject.backEnd;
 import cs430.finalProject.frontEnd.SelectRole;
 import cs430.finalProject.setup.NewInstall;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 
 /**
@@ -42,25 +45,25 @@ public class MainClassHolder {
     }
 
     /**
+     * Getter for the Database object used for the main connection
+     * @return Database object for the database connection
+     */
+    public static Database getDatabase() {
+        return database;
+    }
+
+    /**
      * This method creates a fresh instance of the database tables to be used.
      */
-    public void freshInstall(){
+    public void freshInstall() {
         new NewInstall(database);
     }
 
     /**
      * This method is called when a fresh install isn't required.
      */
-    public void noInstall(){
+    public void noInstall() {
         SelectRole.main(null);
-    }
-
-    /**
-     * Getter for the Database object used for the main connection
-     * @return Database object for the database connection
-     */
-    public static Database getDatabase() {
-        return database;
     }
 
     /**

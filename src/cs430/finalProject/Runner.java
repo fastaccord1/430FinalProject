@@ -13,15 +13,18 @@ public class Runner {
      * @param args String array of arguments
      */
     public static void main(String[] args){
-        //StaffForm.main(null);
         MainClassHolder mainClass = new MainClassHolder();
 
         if(args.length == 1){
             if(args[0].equals("--fresh")){
-                mainClass.freshInstall();
+                System.out.println("We made it!");
+                //mainClass.freshInstall();
+            } else{
+                System.exit(1);
             }
+        } else{
+            mainClass.noInstall();
         }
-
         mainClass.close();
     }
 }

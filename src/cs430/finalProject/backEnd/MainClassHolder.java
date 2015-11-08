@@ -3,10 +3,7 @@ package cs430.finalProject.backEnd;
 import cs430.finalProject.frontEnd.SelectRole;
 import cs430.finalProject.setup.NewInstall;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 
 /**
@@ -20,7 +17,7 @@ public class MainClassHolder {
     // NewInstall object to be used for initializing database
     private static NewInstall newInstall;
     // String constant for the path to the config file
-    private final String PATH = "../config/database.conf";
+    private final String PATH = "/cs430/finalProject/config/database.conf";
 
     /**
      * Default constructor to initialize variables
@@ -44,8 +41,18 @@ public class MainClassHolder {
         }
     }
 
+    /**
+     * This method creates a fresh instance of the database tables to be used.
+     */
     public void freshInstall(){
         new NewInstall(database);
+    }
+
+    /**
+     * This method is called when a fresh install isn't required.
+     */
+    public void noInstall(){
+        SelectRole.main(null);
     }
 
     /**
@@ -70,15 +77,19 @@ public class MainClassHolder {
      * @throws IOException
      */
     public String[] getDatabaseInfo(String path) throws IOException {
-        FileReader fileReader = new FileReader(path);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        InputStream inputStream = getClass().getResourceAsStream(PATH);
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         String line, username = null, password = null;
         while((line = bufferedReader.readLine()) != null){
             if(line.contains("username:")){
-                username = line.substring(12);
+                username = line.substring(10);
+                System.out.println(line);
+                System.out.println(username);
             }
             if(line.contains("password:")){
-                password = line.substring(12);
+                password = line.substring(10);
+                System.out.println("We found the password");
             }
         }
         if(username == null || password == null){

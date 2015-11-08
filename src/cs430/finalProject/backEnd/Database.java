@@ -4,15 +4,12 @@ package cs430.finalProject.backEnd;
  * Created by kreuter on 10/18/15.
  * @author Kevin Reuter
  */
-import java.sql.*;
-import java.util.ArrayList;
+import oracle.jdbc.driver.OracleDriver;
 
-import oracle.jdbc.driver.*;
+import java.sql.*;
 
 
 public class Database {
-    // Stores the driver name to be used
-    private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     // Stores the url to the database
     private final String URL = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
     // Connection object for the database
@@ -31,25 +28,6 @@ public class Database {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-
-
-    /**
-     * Method that executes query against the database
-     * @param preparedStatementString String query to be run
-     * @return ResultSet of the results from query
-     */
-    public ResultSet executeQuery(String preparedStatementString){
-        ResultSet rs = null;
-        try {
-            PreparedStatement prep = conn.prepareStatement(preparedStatementString);
-            rs = prep.executeQuery();
-            prep.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return rs;
     }
 
     /**
@@ -109,7 +87,6 @@ public class Database {
         try {
             statement = conn.createStatement();
             ResultSet rs = statement.executeQuery(query);
-            //System.out.println(rs.getStatement().toString());
             if(rs.next()){
                 rs.close();
                 statement.close();
@@ -135,7 +112,7 @@ public class Database {
      * @param major String for the wanted student's major
      * @param level String for the wanted student's level
      * @param age String for the wanted student's age
-     * @return Object[][] double array to be used in the table
+     * @return Object[][] Two-dimensional array of results.
      */
     public Object[][] searchStudent(int id, String name, String major, String level, int age) throws SQLException {
         String query = "SELECT * FROM Student WHERE";
@@ -168,6 +145,11 @@ public class Database {
         return output;
     }
 
+    /**
+     * This method returns entire Student table
+     * @return Two dimensional array of results
+     * @throws SQLException
+     */
     public Object[][] searchStudent() throws SQLException {
         String query = "SELECT * FROM Student";
         int length = getCount(query);

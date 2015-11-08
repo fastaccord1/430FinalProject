@@ -1,7 +1,7 @@
 /* Drop tables from database */
-DROP TABLE Student;
-DROP TABLE Courses;
 DROP TABLE Enrolled;
+DROP TABLE Courses;
+DROP TABLE Student;
 DROP TABLE Faculty;
 DROP TABLE Staff;
 DROP TABLE Department;
@@ -22,7 +22,7 @@ CREATE TABLE Faculty(fid INTEGER, fname VARCHAR(100), deptid INTEGER REFERENCES 
 CREATE TABLE Staff(sid INTEGER, sname VARCHAR(100), deptid INTEGER REFERENCES Department(did), PRIMARY KEY(sid));
 
 /* Create Courses table */
-CREATE TABLE Courses(cid VARCHAR(10), cname VARCHAR(50), meets_at VARCHAR(20), room VARCHAR(30), fid INTEGER REFERENCES
+CREATE TABLE Courses(cid VARCHAR(10), cname VARCHAR(100), meets_at VARCHAR(20), room VARCHAR(30), fid INTEGER REFERENCES
 Faculty(fid), limit INTEGER CHECK(limit < 200), PRIMARY KEY(cid));
 
 /* Create Enrolled table */

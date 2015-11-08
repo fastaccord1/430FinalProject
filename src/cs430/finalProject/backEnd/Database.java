@@ -5,7 +5,7 @@ package cs430.finalProject.backEnd;
  * @author Kevin Reuter
  */
 import java.sql.*;
-import java.util.ArrayList;
+
 import oracle.jdbc.driver.*;
 
 
@@ -77,40 +77,45 @@ public class Database {
         }
     }
 
-    /**
-     * This method gets a list of tables in the database
-     * @return ArrayList of tables
-     */
-    public ArrayList<String> getTables(){
-        ArrayList<String> tables = new ArrayList<String>();
-        int count = 1;
-        try {
-            DatabaseMetaData dbmd = conn.getMetaData();
-            ResultSet rs = dbmd.getTables("", "cs", "*", null);
-            while(rs.next()){
-                System.out.println(rs.getString(1));
-                //tables.add(rs.getString(count));
-                //count++;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return tables;
-    }
 
-    public int findType(int id){
+    public int findType(int id) throws SQLException {
         int output = -1;
         String queryStudent = "SELECT * FROM Student WHERE sid = " + id;
         String queryStaff = "SELECT * FROM Staff WHERE sid = " + id;
         String queryFaculty = "SELECT * FROM Faculty WHERE fid = " + id;
-        if(executeQuery(queryStudent) != null){
+        if(searchID(queryStudent)){
             return 1;
-        } else if(executeQuery(queryStaff) != null){
+        } else if(searchID(queryStaff)){
             return 2;
-        } else if(executeQuery(queryFaculty) != null){
+        } else if(searchID(queryFaculty)){
             return 3;
         }
         return output;
+    }
+
+    private boolean searchID(String query){
+        Statement statement = null;
+        try {
+            statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            //System.out.println(rs.getStatement().toString());
+            while(rs.next()){
+                int id = rs.getInt(1);
+                System.out.println(id);
+                if(id != 0){
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
     }
 
     /**

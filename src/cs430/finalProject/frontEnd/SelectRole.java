@@ -8,6 +8,8 @@ package cs430.finalProject.frontEnd;
 import cs430.finalProject.backEnd.Database;
 import cs430.finalProject.backEnd.MainClassHolder;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author kreuter
@@ -119,7 +121,12 @@ public class SelectRole extends javax.swing.JFrame {
         Database database = MainClassHolder.getDatabase();
         String idString = userName.getText();
         int id = Integer.parseInt(idString);
-        int type = database.findType(id);
+        int type = 0;
+        try {
+            type = database.findType(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         switch(type){
             case 1:
                 System.out.println("Student");

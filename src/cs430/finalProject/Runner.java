@@ -25,6 +25,6 @@ public class Runner {
         } else{
             mainClass.noInstall();
         }
-        mainClass.close();
+        //mainClass.close();
     }
 }

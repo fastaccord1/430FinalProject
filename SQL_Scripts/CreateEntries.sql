@@ -21,7 +21,7 @@ INSERT INTO Faculty VALUES (292016, 'Janice Cunningham', 498654);
 INSERT INTO Faculty VALUES (215748, 'Emily Ward', 435339);
 
 INSERT INTO Courses VALUES ('CS 430', 'Introduction to Databases', 'MWF 10-11', 'A320', 214074, 35);
-INSERT INTO Courses VALUES ('ENGL 101', 'English Literature & Comp', 'MWF 1-2', 'B1024', 283132, 100);
+INSERT INTO Courses VALUES ('ENGL 101', 'English Literature and Comp', 'MWF 1-2', 'B1024', 283132, 100);
 INSERT INTO Courses VALUES ('EL 102', 'Introduction to Electrical Eng', 'TR 10-12', 'B1020', 268862, 40);
 INSERT INTO Courses VALUES ('PHIL 304', 'Philosophy Through the Years', 'MWF 8-9', 'A200', 292016, 30);
 INSERT INTO Courses VALUES ('LAW 400', 'Contract Law', 'TR 6-8', 'B2048', 217222, 150);

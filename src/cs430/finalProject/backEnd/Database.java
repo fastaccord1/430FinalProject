@@ -2,8 +2,10 @@ package cs430.finalProject.backEnd;
 /**
  * 430FinalProject
  * Created by kreuter on 10/18/15.
+ *
  * @author Kevin Reuter
  */
+
 import oracle.jdbc.driver.OracleDriver;
 
 import java.sql.*;
@@ -17,10 +19,11 @@ public class Database {
 
     /**
      * Constructor that initiates database connection
+     *
      * @param username String username for database connection
      * @param password String password for database connection
      */
-    public Database(String username, String password){
+    public Database(String username, String password) {
         conn = null;
         try {
             DriverManager.registerDriver(new OracleDriver());
@@ -32,9 +35,10 @@ public class Database {
 
     /**
      * This method executes insert or update operations
+     *
      * @param preparedStatementString String query to be run
      */
-    public void executeInsertUpdate(String preparedStatementString){
+    public void executeInsertUpdate(String preparedStatementString) {
         try {
             PreparedStatement prep = conn.prepareStatement(preparedStatementString);
             System.out.println("Created prepared statement");
@@ -48,7 +52,7 @@ public class Database {
     /**
      * This method closes the connection to the database
      */
-    public void closeConnection(){
+    public void closeConnection() {
         try {
             conn.close();
         } catch (SQLException e) {
@@ -58,6 +62,7 @@ public class Database {
 
     /**
      * Finds the type of a certain id
+     *
      * @param id The id to be checked against the database
      * @return An int representing the type of employee. -1 if not found
      * @throws SQLException
@@ -67,11 +72,11 @@ public class Database {
         String queryStudent = "SELECT * FROM Student WHERE sid = " + id;
         String queryStaff = "SELECT * FROM Staff WHERE sid = " + id;
         String queryFaculty = "SELECT * FROM Faculty WHERE fid = " + id;
-        if(searchDB(queryStudent)){
+        if (searchDB(queryStudent)) {
             return 1;
-        } else if(searchDB(queryStaff)){
+        } else if (searchDB(queryStaff)) {
             return 2;
-        } else if(searchDB(queryFaculty)){
+        } else if (searchDB(queryFaculty)) {
             return 3;
         }
         return output;
@@ -79,15 +84,16 @@ public class Database {
 
     /**
      * Searches database for query and returns true if found
+     *
      * @param query The query to be run against the database
      * @return Returns true if the query returned a result. False if query didn't return a result.
      */
-    private boolean searchDB(String query){
+    private boolean searchDB(String query) {
         Statement statement = null;
         try {
             statement = conn.createStatement();
             ResultSet rs = statement.executeQuery(query);
-            if(rs.next()){
+            if (rs.next()) {
                 rs.close();
                 statement.close();
                 return true;
@@ -107,35 +113,36 @@ public class Database {
 
     /**
      * Searches the database for a specific student
-     * @param id int for the wanted student's id
-     * @param name String for the wanted student's name
+     *
+     * @param id    int for the wanted student's id
+     * @param name  String for the wanted student's name
      * @param major String for the wanted student's major
      * @param level String for the wanted student's level
-     * @param age String for the wanted student's age
+     * @param age   String for the wanted student's age
      * @return Object[][] Two-dimensional array of results.
      */
     public Object[][] searchStudent(int id, String name, String major, String level, int age) throws SQLException {
         String query = "SELECT * FROM Student WHERE";
-        if(id != -1){
+        if (id != -1) {
             query += " sid = " + id;
         }
-        if(name != null){
+        if (name != null) {
             query += " sname = " + name;
         }
-        if(major != null){
+        if (major != null) {
             query += " major = " + major;
         }
-        if(level != null){
+        if (level != null) {
             query += " s_level = " + level;
         }
-        if(age != -1){
+        if (age != -1) {
             query += " age = " + age;
         }
         int length = getCount(query);
         Object[][] output = new Object[length][5];
         Statement statement = conn.createStatement();
         ResultSet rs = statement.executeQuery(query);
-        for(int i = 0; rs.next(); i++){
+        for (int i = 0; rs.next(); i++) {
             output[i][0] = rs.getInt("sid");
             output[i][1] = rs.getString("sname");
             output[i][2] = rs.getString("major");
@@ -147,6 +154,7 @@ public class Database {
 
     /**
      * This method returns entire Student table
+     *
      * @return Two dimensional array of results
      * @throws SQLException
      */
@@ -157,7 +165,7 @@ public class Database {
         Statement statement = conn.createStatement();
         ResultSet rs = statement.executeQuery(query);
         int i = 0;
-        while(rs.next()){
+        while (rs.next()) {
             output[i][0] = rs.getInt("sid");
             output[i][1] = rs.getString("sname");
             output[i][2] = rs.getString("major");
@@ -172,6 +180,7 @@ public class Database {
 
     /**
      * Method to get the count for a specific query
+     *
      * @param startingQuery PreparedStatement to be used for the count
      * @return int count for results
      * @throws SQLException
@@ -185,9 +194,9 @@ public class Database {
         System.out.println(countQuery);
         Statement statement = conn.createStatement();
         ResultSet rs = statement.executeQuery(countQuery);
-        if(rs.next()){
+        if (rs.next()) {
             out = rs.getInt(1);
-        } else{
+        } else {
             return -1;
         }
         rs.close();
@@ -197,46 +206,49 @@ public class Database {
 
     /**
      * Method to replace String objects in a PreparedStatement
+     *
      * @param preparedStatement PreparedStatement to be used
-     * @param index int index for the position to be replaced
-     * @param input String input to use in replacement
+     * @param index             int index for the position to be replaced
+     * @param input             String input to use in replacement
      * @throws SQLException
      */
     public void replaceString(PreparedStatement preparedStatement, int index, String input) throws SQLException {
 
-        if(input != null){
+        if (input != null) {
             preparedStatement.setString(index, input);
-        } else{
+        } else {
             preparedStatement.setString(index, "%");
         }
     }
 
     /**
      * Method to replace integers in PreparedStatement
+     *
      * @param preparedStatement PreparedStatement to be used
-     * @param index int index for the position to be replaced
-     * @param input int input to be used in completed statement
+     * @param index             int index for the position to be replaced
+     * @param input             int input to be used in completed statement
      * @throws SQLException
      */
     public void replaceInt(PreparedStatement preparedStatement, int index, int input) throws SQLException {
-        if(input != -1){
+        if (input != -1) {
             preparedStatement.setInt(index, input);
-        } else{
+        } else {
             preparedStatement.setString(index, "%");
         }
     }
 
     /**
      * Method to replace floats in PreparedStatement
+     *
      * @param preparedStatement PreparedStatement to be used
-     * @param index int index for the position to be replaced
-     * @param input float input to be used in completed statement
+     * @param index             int index for the position to be replaced
+     * @param input             float input to be used in completed statement
      * @throws SQLException
      */
     public void replaceFloat(PreparedStatement preparedStatement, int index, float input) throws SQLException {
-        if(input != -1){
+        if (input != -1) {
             preparedStatement.setFloat(index, input);
-        } else{
+        } else {
             preparedStatement.setString(index, "%");
         }
     }

@@ -3,25 +3,31 @@ package cs430.finalProject.setup;
 /**
  * 430FinalProject
  * Created by kreuter on 10/18/15.
+ *
  * @author Kevin Reuter
  */
+
 import cs430.finalProject.backEnd.Database;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 
 public class NewInstall {
 
-    private Database database;
     private final String PATH = "/SQL_Scripts/";
     private final String CREATENAME = "CreateDatabase.sql";
     private final String FILLNAME = "CreateEntries.sql";
+    private Database database;
 
     /**
      * Default constructor that creates a NewInstall object
+     *
      * @param database Database object to be used for connection
      */
-    public NewInstall(Database database){
+    public NewInstall(Database database) {
         this.database = database;
         try {
             createTables();
@@ -39,8 +45,8 @@ public class NewInstall {
     private void createTables() throws IOException {
         BufferedReader bufferedReader = getBufferedReader(PATH + CREATENAME);
         String line;
-        while((line = bufferedReader.readLine()) != null){
-            if(!line.equals("") && !line.contains("/*")) {
+        while ((line = bufferedReader.readLine()) != null) {
+            if (!line.equals("") && !line.contains("/*")) {
                 System.out.println(line);
                 database.executeInsertUpdate(line);
             }
@@ -50,8 +56,8 @@ public class NewInstall {
     private void createEntries() throws IOException {
         BufferedReader bufferedReader = getBufferedReader(PATH + FILLNAME);
         String line;
-        while((line = bufferedReader.readLine()) != null){
-            if(!line.equals("") && !line.contains("/*")) {
+        while ((line = bufferedReader.readLine()) != null) {
+            if (!line.equals("") && !line.contains("/*")) {
                 line = line.replace(';', ' ');
                 System.out.println(line);
                 database.executeInsertUpdate(line);
@@ -59,7 +65,7 @@ public class NewInstall {
         }
     }
 
-    private BufferedReader getBufferedReader(String path){
+    private BufferedReader getBufferedReader(String path) {
         InputStream inputStream = getClass().getResourceAsStream(path);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         return new BufferedReader(inputStreamReader);

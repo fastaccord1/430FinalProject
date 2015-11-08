@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 /**
  * 430FinalProject
  * Created by kreuter on 10/20/15.
+ *
  * @author Kevin Reuter
  */
 public class MainClassHolder {
@@ -25,7 +26,7 @@ public class MainClassHolder {
     /**
      * Default constructor to initialize variables
      */
-    public MainClassHolder(){
+    public MainClassHolder() {
         String[] userPass = null;
         try {
 
@@ -33,12 +34,11 @@ public class MainClassHolder {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if(userPass != null){
+        if (userPass != null) {
             String username = userPass[0];
             String password = userPass[1];
             database = new Database(username, password);
-        }
-        else{
+        } else {
             System.err.println("Something went wrong!");
             System.exit(1);
         }
@@ -46,6 +46,7 @@ public class MainClassHolder {
 
     /**
      * Getter for the Database object used for the main connection
+     *
      * @return Database object for the database connection
      */
     public static Database getDatabase() {
@@ -69,12 +70,13 @@ public class MainClassHolder {
     /**
      * Closes the connection on the database
      */
-    public void close(){
+    public void close() {
         database.closeConnection();
     }
 
     /**
      * This method gets the username and password from the config file
+     *
      * @param path String for the path to the config file
      * @return Array of strings for the username and password
      * @throws IOException
@@ -84,18 +86,18 @@ public class MainClassHolder {
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         String line, username = null, password = null;
-        while((line = bufferedReader.readLine()) != null){
-            if(line.contains("username:")){
+        while ((line = bufferedReader.readLine()) != null) {
+            if (line.contains("username:")) {
                 username = line.substring(10);
                 System.out.println(line);
                 System.out.println(username);
             }
-            if(line.contains("password:")){
+            if (line.contains("password:")) {
                 password = line.substring(10);
                 System.out.println("We found the password");
             }
         }
-        if(username == null || password == null){
+        if (username == null || password == null) {
             System.err.println((username == null) ? "Username" : "Password" + " not initialized");
             System.exit(1);
         }

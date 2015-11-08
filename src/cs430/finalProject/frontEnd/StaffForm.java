@@ -45,7 +45,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentTab = new javax.swing.JTabbedPane();
         studentSearchTab = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        studentSearchTable = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -116,34 +116,8 @@ public class StaffForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
+        studentSearchTable.setModel(new javax.swing.table.DefaultTableModel(
+            database.searchStudent(),
             new String [] {
                 "ID", "Name", "Major", "Level", "Age"
             }
@@ -163,13 +137,13 @@ public class StaffForm extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
+        jScrollPane1.setViewportView(studentSearchTable);
+        if (studentSearchTable.getColumnModel().getColumnCount() > 0) {
+            studentSearchTable.getColumnModel().getColumn(0).setResizable(false);
+            studentSearchTable.getColumnModel().getColumn(1).setResizable(false);
+            studentSearchTable.getColumnModel().getColumn(2).setResizable(false);
+            studentSearchTable.getColumnModel().getColumn(3).setResizable(false);
+            studentSearchTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -929,7 +903,6 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JPanel staffSearchTab;
     private javax.swing.JTextField studentAddAgeField;
@@ -963,6 +936,7 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JButton studentSearchSubmitButton;
     private javax.swing.JButton studentSearchSubmitButton1;
     private javax.swing.JPanel studentSearchTab;
+    private javax.swing.JTable studentSearchTable;
     private javax.swing.JTabbedPane studentTab;
     private javax.swing.JTextField studentUpdateAgeField;
     private javax.swing.JLabel studentUpdateAgeLabel;

@@ -99,17 +99,16 @@ public class Database {
             statement = conn.createStatement();
             ResultSet rs = statement.executeQuery(query);
             //System.out.println(rs.getStatement().toString());
-            while(rs.next()){
-                int id = rs.getInt(1);
-                System.out.println(id);
-                if(id != 0){
-                    return true;
-                }
+            if(rs.next()){
+                rs.close();
+                statement.close();
+                return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
+                assert statement != null;
                 statement.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -145,7 +144,7 @@ public class Database {
             e.printStackTrace();
         }
 
-        return output;
+        return null;
     }
 
     /**

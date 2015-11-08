@@ -133,6 +133,7 @@ public class SelectRole extends javax.swing.JFrame {
                 break;
             case 2:
                 System.out.println("Staff");
+                StaffForm.main(null);
                 break;
             case 3:
                 System.out.println("Faculty");

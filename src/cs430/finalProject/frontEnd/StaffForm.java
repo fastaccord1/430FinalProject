@@ -7,9 +7,8 @@ package cs430.finalProject.frontEnd;
 
 import cs430.finalProject.backEnd.Database;
 import cs430.finalProject.backEnd.MainClassHolder;
-
-import javax.swing.*;
 import java.sql.SQLException;
+import javax.swing.JTable;
 
 
 /**
@@ -116,32 +115,29 @@ public class StaffForm extends javax.swing.JFrame {
         jTabbedPane4 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("staffAccessForm"); // NOI18N
 
-        try {
-            studentSearchTable.setModel(new javax.swing.table.DefaultTableModel(
-                    database.searchStudent(),
-                    new String[]{
-                            "ID", "Name", "Major", "Level", "Age"
-                    }
-            ) {
-                Class[] types = new Class[]{
-                        Integer.class, String.class, String.class, String.class, Integer.class
-                };
-                boolean[] canEdit = new boolean[]{
-                        false, false, false, false, false
-                };
+        studentSearchTable.setModel(new javax.swing.table.DefaultTableModel(
+            database.searchStudent(),
+            new String [] {
+                "ID", "Name", "Major", "Level", "Age"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
-                public Class getColumnClass(int columnIndex) {
-                    return types[columnIndex];
-                }
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-                public boolean isCellEditable(int rowIndex, int columnIndex) {
-                    return canEdit[columnIndex];
-                }
-            });
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(studentSearchTable);
         if (studentSearchTable.getColumnModel().getColumnCount() > 0) {
             studentSearchTable.getColumnModel().getColumn(0).setResizable(false);

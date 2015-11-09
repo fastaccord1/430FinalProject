@@ -70,22 +70,7 @@ public class StaffForm extends javax.swing.JFrame {
                     new String[]{
                             "ID", "Name", "Major", "Level", "Age"
                     }
-            ) {
-                Class[] types = new Class[]{
-                        Integer.class, String.class, String.class, String.class, Integer.class
-                };
-                boolean[] canEdit = new boolean[]{
-                        false, false, false, false, false
-                };
-
-                public Class getColumnClass(int columnIndex) {
-                    return types[columnIndex];
-                }
-
-                public boolean isCellEditable(int rowIndex, int columnIndex) {
-                    return canEdit[columnIndex];
-                }
-            });
+            ));
         } catch (SQLException e) {
             e.printStackTrace();
         }

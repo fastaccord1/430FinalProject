@@ -29,6 +29,13 @@ public class StaffForm extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Draws table with new data.
+     *
+     * @param table   The table to be updated/redrawn.
+     * @param columns The column headers to be used.
+     * @param values  The values to populate the table with.
+     */
     public void refresh(JTable table, String[] columns, Object[][] values) {
 
         table.setModel(new javax.swing.table.DefaultTableModel(

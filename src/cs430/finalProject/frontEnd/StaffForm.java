@@ -29,52 +29,30 @@ public class StaffForm extends javax.swing.JFrame {
 
     }
 
-    public void redrawStudentTable(JTable table, Object[] values) {
-        int sid = (Integer) values[0];
-        String sname = (String) values[1];
-        String major = (String) values[2];
-        String s_level = (String) values[3];
-        int age = (Integer) values[4];
-        try {
-            table.setModel(new javax.swing.table.DefaultTableModel(
-                    database.searchStudent(sid, sname, major, s_level, age),
-                    new String[]{
-                            "ID", "Name", "Major", "Level", "Age"
-                    }
-            ) {
-                Class[] types = new Class[]{
-                        Integer.class, String.class, String.class, String.class, Integer.class
-                };
-                boolean[] canEdit = new boolean[]{
-                        false, false, false, false, false
-                };
+    public void refresh(JTable table, String[] columns, Object[][] values) {
 
-                public Class getColumnClass(int columnIndex) {
-                    return types[columnIndex];
-                }
+        table.setModel(new javax.swing.table.DefaultTableModel(
+                values,
+                columns
+        ) {
+            Class[] types = new Class[]{
+                    Integer.class, String.class, String.class, String.class, Integer.class
+            };
+            boolean[] canEdit = new boolean[]{
+                    false, false, false, false, false
+            };
 
-                public boolean isCellEditable(int rowIndex, int columnIndex) {
-                    return canEdit[columnIndex];
-                }
-            });
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        });
 
     }
 
-    public void drawStudentTable(JTable table) {
-        try {
-            table.setModel(new javax.swing.table.DefaultTableModel(
-                    database.searchStudent(),
-                    new String[]{
-                            "ID", "Name", "Major", "Level", "Age"
-                    }
-            ));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
 
 
@@ -161,8 +139,14 @@ public class StaffForm extends javax.swing.JFrame {
         jTabbedPane4 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        drawStudentTable(studentSearchTable);
+        String[] columns = {"ID", "Name", "Major", "Level", "Age"};
+        Object[][] values = new Object[0][];
+        try {
+            values = database.searchStudent();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        refresh(studentSearchTable, columns, values);
         jScrollPane1.setViewportView(studentSearchTable);
         if (studentSearchTable.getColumnModel().getColumnCount() > 0) {
             studentSearchTable.getColumnModel().getColumn(0).setResizable(false);

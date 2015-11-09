@@ -147,7 +147,7 @@ public class StaffForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         String[] columns = {"ID", "Name", "Major", "Level", "Age"};
-        Object[][] values = new Object[0][];
+        Object[][] values = null;
         try {
             values = database.searchStudent();
         } catch (SQLException e) {
@@ -786,10 +786,33 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void studentSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchSubmitButtonActionPerformed
         // TODO add your handling code here:
+
         String sid = studentSearchIDField.getText();
-        int id = Integer.parseInt(sid);
+        int id = -1;
+        if (!sid.equals("")) {
+            id = Integer.parseInt(sid);
+        }
+        String name = studentSearchNameField.getText();
+        if (name.equals("")) {
+            name = null;
+        }
+        String major = (String) studentSearchMajorField.getSelectedItem();
+        if (studentSearchMajorField.getSelectedIndex() == 0) {
+            major = null;
+        }
+        String level = (String) studentSearchLevelField.getSelectedItem();
+        if (studentSearchLevelField.getSelectedIndex() == 0) {
+            level = null;
+        }
+        String sage = studentSearchAgeField.getText();
+        int age = -1;
+        if (!sage.equals("")) {
+            age = Integer.parseInt(sage);
+        }
+        String[] columns = {"ID", "Name", "Major", "Level", "Age"};
         try {
-            Object[][] newData = database.searchStudent(id, null, null, null, -1);
+            Object[][] newData = database.searchStudent(id, name, major, level, age);
+            refresh(studentSearchTable, columns, newData);
         } catch (SQLException e) {
             e.printStackTrace();
         }

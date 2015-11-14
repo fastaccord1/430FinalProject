@@ -50,15 +50,6 @@ public class MainClassHolder {
         }
     }
 
-    /**
-     * Getter for the Database object used for the main connection
-     *
-     * @return Database object for the database connection
-     */
-    public static Database getDatabase() {
-        return studentDatabase;
-    }
-
     public static StudentDatabase getStudentDatabase() {
         return studentDatabase;
     }

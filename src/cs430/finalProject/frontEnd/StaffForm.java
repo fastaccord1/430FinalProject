@@ -122,8 +122,8 @@ public class StaffForm extends javax.swing.JFrame {
         studentUpdateIDField = new javax.swing.JTextField();
         studentUpdateNameField = new javax.swing.JTextField();
         studentUpdateMajorField = new javax.swing.JTextField();
-        studentUpdateLevelField = new javax.swing.JTextField();
         studentUpdateAgeField = new javax.swing.JTextField();
+        studentUpdateLevelSelect = new javax.swing.JComboBox();
         studentUpdateSubmitButton = new javax.swing.JButton();
         studentUpdateClearButton = new javax.swing.JButton();
         jTabbedPane3 = new javax.swing.JTabbedPane();
@@ -149,39 +149,28 @@ public class StaffForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("staffAccessForm"); // NOI18N
 
-        try {
-            studentSearchTable.setModel(new DefaultTableModel(
-                studentDatabase.searchStudent(),
-                new String [] {
-                    "ID", "Name", "Major", "Level", "Age"
-                }
-            ) {
-                Class[] types = new Class [] {
-                    Integer.class, String.class, String.class, String.class, Integer.class
-                };
-                boolean[] canEdit = new boolean [] {
-                    false, false, false, false, false
-                };
+        studentSearchTable.setModel(new javax.swing.table.DefaultTableModel(
+            studentDatabase.searchStudent(),
+            new String [] {
+                "ID", "Name", "Major", "Level", "Age"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
-                public Class getColumnClass(int columnIndex) {
-                    return types [columnIndex];
-                }
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-                public boolean isCellEditable(int rowIndex, int columnIndex) {
-                    return canEdit [columnIndex];
-                }
-            });
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(studentSearchTable);
-        if (studentSearchTable.getColumnModel().getColumnCount() > 0) {
-            studentSearchTable.getColumnModel().getColumn(0).setResizable(false);
-            studentSearchTable.getColumnModel().getColumn(1).setResizable(false);
-            studentSearchTable.getColumnModel().getColumn(2).setResizable(false);
-            studentSearchTable.getColumnModel().getColumn(3).setResizable(false);
-            studentSearchTable.getColumnModel().getColumn(4).setResizable(false);
-        }
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ID");
@@ -431,12 +420,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentTab.addTab("Add", studentAddTab);
 
         studentUpdateTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
+            studentDatabase.searchStudent(),
             new String [] {
                 "ID", "Name", "Major", "Level", "Age"
             }
@@ -510,7 +494,7 @@ public class StaffForm extends javax.swing.JFrame {
                 .addComponent(studentUpdateLevelLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(studentUpdateAgeLabel)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         studentUpdateIDField.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
@@ -519,9 +503,9 @@ public class StaffForm extends javax.swing.JFrame {
 
         studentUpdateMajorField.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
 
-        studentUpdateLevelField.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-
         studentUpdateAgeField.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+
+        studentUpdateLevelSelect.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Freshman", "Sophomore", "Junior", "Senior", "Masters", "PhD" }));
 
         javax.swing.GroupLayout studentUpdateFieldPanelLayout = new javax.swing.GroupLayout(studentUpdateFieldPanel);
         studentUpdateFieldPanel.setLayout(studentUpdateFieldPanelLayout);
@@ -532,8 +516,8 @@ public class StaffForm extends javax.swing.JFrame {
                     .addComponent(studentUpdateIDField)
                     .addComponent(studentUpdateNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
                     .addComponent(studentUpdateMajorField)
-                    .addComponent(studentUpdateLevelField)
-                    .addComponent(studentUpdateAgeField))
+                    .addComponent(studentUpdateAgeField)
+                    .addComponent(studentUpdateLevelSelect, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         studentUpdateFieldPanelLayout.setVerticalGroup(
@@ -546,10 +530,10 @@ public class StaffForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(studentUpdateMajorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(studentUpdateLevelField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(studentUpdateLevelSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(studentUpdateAgeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         studentUpdateSubmitButton.setText("Submit");
@@ -590,7 +574,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentUpdateTabLayout.setVerticalGroup(
             studentUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentUpdateTabLayout.createSequentialGroup()
-                .addComponent(studentUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                .addComponent(studentUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -875,7 +859,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentUpdateIDField.setText("");
         studentUpdateNameField.setText("");
         studentUpdateMajorField.setText("");
-        studentUpdateLevelField.setText("");
+        studentUpdateLevelSelect.setSelectedIndex(0);
         studentUpdateAgeField.setText("");
     }//GEN-LAST:event_studentUpdateClearButtonActionPerformed
 
@@ -896,11 +880,17 @@ public class StaffForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         JTable target = (JTable)evt.getSource();
         int row = target.getSelectedRow();
-        int column = 0;
 
-        int id = (Integer)target.getValueAt(row, column);
+        int id = (Integer)target.getValueAt(row, 0);
+        String name = (String)target.getValueAt(row, 1);
+        String major = (String)target.getValueAt(row, 2);
+        String level = (String)target.getValueAt(row, 3);
+        int age = (Integer)target.getValueAt(row, 4);
 
-        studentUpdateIDField.setText(row + "," + column);
+        studentUpdateIDField.setText(id + "");
+        studentUpdateNameField.setText(name);
+        studentUpdateMajorField.setText(major);
+        
     }//GEN-LAST:event_studentUpdateTableMousePressed
 
 
@@ -1010,8 +1000,8 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTextField studentUpdateIDField;
     private javax.swing.JLabel studentUpdateIDLabel;
     private javax.swing.JPanel studentUpdateLabelPanel;
-    private javax.swing.JTextField studentUpdateLevelField;
     private javax.swing.JLabel studentUpdateLevelLabel;
+    private javax.swing.JComboBox studentUpdateLevelSelect;
     private javax.swing.JLabel studentUpdateMainLabel;
     private javax.swing.JTextField studentUpdateMajorField;
     private javax.swing.JLabel studentUpdateMajorLabel;

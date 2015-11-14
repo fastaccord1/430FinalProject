@@ -98,36 +98,10 @@
                     <Component class="javax.swing.JTable" name="studentSearchTable">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    database.searchStudent(),&#xa;    new String [] {&#xa;        &quot;ID&quot;, &quot;Name&quot;, &quot;Major&quot;, &quot;Level&quot;, &quot;Age&quot;&#xa;    }&#xa;) {&#xa;    Class[] types = new Class [] {&#xa;        java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class&#xa;    };&#xa;    boolean[] canEdit = new boolean [] {&#xa;        false, false, false, false, false&#xa;    };&#xa;&#xa;    public Class getColumnClass(int columnIndex) {&#xa;        return types [columnIndex];&#xa;    }&#xa;&#xa;    public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;        return canEdit [columnIndex];&#xa;    }&#xa;}" type="code"/>
+                          <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    studentDatabase.searchStudent(),&#xa;    new String [] {&#xa;        &quot;ID&quot;, &quot;Name&quot;, &quot;Major&quot;, &quot;Level&quot;, &quot;Age&quot;&#xa;    }&#xa;) {&#xa;    Class[] types = new Class [] {&#xa;        java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class&#xa;    };&#xa;    boolean[] canEdit = new boolean [] {&#xa;        false, false, false, false, false&#xa;    };&#xa;&#xa;    public Class getColumnClass(int columnIndex) {&#xa;        return types [columnIndex];&#xa;    }&#xa;&#xa;    public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;        return canEdit [columnIndex];&#xa;    }&#xa;}" type="code"/>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                          <TableColumnModel selectionModel="0">
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                          </TableColumnModel>
+                          <TableColumnModel selectionModel="0"/>
                         </Property>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -526,7 +500,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="studentUpdateMainLabel" pref="49" max="32767" attributes="0"/>
+                          <Component id="studentUpdateMainLabel" pref="43" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="216" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -554,14 +528,8 @@
                   <SubComponents>
                     <Component class="javax.swing.JTable" name="studentUpdateTable">
                       <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="5" rowCount="4">
-                            <Column editable="true" title="ID" type="java.lang.Integer"/>
-                            <Column editable="true" title="Name" type="java.lang.String"/>
-                            <Column editable="true" title="Major" type="java.lang.String"/>
-                            <Column editable="true" title="Level" type="java.lang.String"/>
-                            <Column editable="true" title="Age" type="java.lang.Integer"/>
-                          </Table>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    studentDatabase.searchStudent(),&#xa;    new String [] {&#xa;        &quot;ID&quot;, &quot;Name&quot;, &quot;Major&quot;, &quot;Level&quot;, &quot;Age&quot;&#xa;    }&#xa;) {&#xa;    Class[] types = new Class [] {&#xa;        java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class&#xa;    };&#xa;&#xa;    public Class getColumnClass(int columnIndex) {&#xa;        return types [columnIndex];&#xa;    }&#xa;}" type="code"/>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
@@ -636,7 +604,7 @@
                               <Component id="studentUpdateLevelLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="studentUpdateAgeLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="44" max="32767" attributes="0"/>
+                              <EmptySpace pref="50" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -699,8 +667,8 @@
                                   <Component id="studentUpdateIDField" alignment="0" max="32767" attributes="0"/>
                                   <Component id="studentUpdateNameField" pref="480" max="32767" attributes="0"/>
                                   <Component id="studentUpdateMajorField" max="32767" attributes="0"/>
-                                  <Component id="studentUpdateLevelField" max="32767" attributes="0"/>
                                   <Component id="studentUpdateAgeField" max="32767" attributes="0"/>
+                                  <Component id="studentUpdateLevelSelect" alignment="1" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -716,10 +684,10 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="studentUpdateMajorField" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="studentUpdateLevelField" min="-2" max="-2" attributes="0"/>
+                              <Component id="studentUpdateLevelSelect" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="studentUpdateAgeField" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="44" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -746,17 +714,17 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="studentUpdateLevelField">
+                    <Component class="javax.swing.JTextField" name="studentUpdateAgeField">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Dialog" size="10" style="0"/>
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="studentUpdateAgeField">
+                    <Component class="javax.swing.JComboBox" name="studentUpdateLevelSelect">
                       <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Dialog" size="10" style="0"/>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { &quot;Freshman&quot;, &quot;Sophomore&quot;, &quot;Junior&quot;, &quot;Senior&quot;, &quot;Masters&quot;, &quot;PhD&quot; })" type="code"/>
                         </Property>
                       </Properties>
                     </Component>

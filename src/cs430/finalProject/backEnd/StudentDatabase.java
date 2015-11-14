@@ -8,10 +8,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
+ * Child class of Database to handle student-related database actions
  * Created by kreuter on 11/13/15.
+ *
+ * @author Kevin Reuter
  */
 public class StudentDatabase extends Database {
 
+    /**
+     * Contructor for StudentDatabase
+     *
+     * @param username Username for the database
+     * @param password Password for the database
+     */
     public StudentDatabase(String username, String password) {
         super();
         try {
@@ -92,10 +101,19 @@ public class StudentDatabase extends Database {
         return output;
     }
 
-    public void insertStudent(int sid, String sname, String major, String s_level, int age) {
+    /**
+     * Method to insert new student into the database
+     *
+     * @param sid     SID for the new student
+     * @param sName   Name for the new student
+     * @param major   Major for the new student
+     * @param s_level Level for the new student
+     * @param age     Age for the new student
+     */
+    public void insertStudent(int sid, String sName, String major, String s_level, int age) {
         String statement = "INSERT INTO Student VALUES(";
         statement += sid + ", ";
-        statement += "'" + sname + "', ";
+        statement += "'" + sName + "', ";
         statement += "'" + major + "', ";
         statement += "'" + s_level + "', ";
         statement += age + ")";
@@ -107,6 +125,16 @@ public class StudentDatabase extends Database {
         }
     }
 
+    /**
+     * Method to udpate an existing student entry in the database.
+     *
+     * @param oldSid Old SID of the student before the change
+     * @param newSid New SID of the student after the change
+     * @param sname New name for the student
+     * @param major New major for the student
+     * @param s_level New level for the student
+     * @param age New age for the student
+     */
     public void updateStudent(int oldSid, int newSid, String sname, String major, String s_level, int age) {
         String statement = "UPDATE Student SET ";
         statement += "sid = " + newSid + ", ";
@@ -122,6 +150,11 @@ public class StudentDatabase extends Database {
         }
     }
 
+    /**
+     * Checks to see if the ID belongs to a student
+     * @param id The ID to be checked in the database
+     * @return True if the ID belongs to a student. False if it doesn't.
+     */
     public boolean isStudent(int id) {
         String query = "SELECT * FROM Student WHERE sid = " + id;
         try {

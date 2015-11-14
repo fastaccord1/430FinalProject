@@ -143,15 +143,7 @@ public class Database {
             conditions.add(" age = " + age);
         }
 
-        if (conditions.size() == 1) {
-            query += conditions.get(0);
-        } else {
-            for (int i = 0; i < conditions.size() - 1; i++) {
-                query += conditions.get(i);
-                query += " AND";
-            }
-            query += conditions.get(conditions.size() - 1);
-        }
+        query = finishQuery(query, conditions);
 
         int length = getCount(query);
         Object[][] output = new Object[length][5];
@@ -216,16 +208,7 @@ public class Database {
             conditions.add(" deptid = " + deptId);
         }
 
-        if (conditions.size() == 1) {
-            query += conditions.get(0);
-            conditions.remove(0);
-        } else {
-            for (int i = 0; i < conditions.size() - 1; i++) {
-                query += conditions.get(i);
-                query += " AND";
-            }
-            query += conditions.get(conditions.size() - 1);
-        }
+        query = finishQuery(query, conditions);
         int count = getCount(query);
         Statement statement = conn.createStatement();
         ResultSet rs = statement.executeQuery(query);
@@ -241,6 +224,7 @@ public class Database {
 
     /**
      * Gathers all items from Faculty table
+     *
      * @return Two-dimensional array of results from faculty table
      * @throws SQLException
      */
@@ -259,6 +243,88 @@ public class Database {
         }
 
         return output;
+    }
+
+    /**
+     * Gets all data from Staff table
+     *
+     * @return Two-dimensional array of all staff entries
+     * @throws SQLException
+     */
+    public Object[][] staffSearch() throws SQLException {
+        String query = "SELECT * FROM Staff";
+        int count = getCount(query);
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery(query);
+        Object[][] output = new Object[count][3];
+
+        for (int i = 0; rs.next(); i++) {
+            output[i][0] = rs.getInt("sid");
+            output[i][1] = rs.getString("sname");
+            output[i][2] = rs.getInt("deptid");
+        }
+
+        return output;
+    }
+
+    /**
+     * Searches Staff table for a specific staff member
+     *
+     * @param sid    ID for the staff member to be found. -1 if not searched
+     * @param sname  Name for the staff member to be found. null if not searched
+     * @param deptid Department ID for the staff member to be found. -1 if not searched
+     * @return Two-dimensional array of the results.
+     * @throws SQLException
+     */
+    public Object[][] staffSearch(int sid, String sname, int deptid) throws SQLException {
+        String query = "SELECT * FROM Staff WHERE";
+        ArrayList<String> conditions = new ArrayList<>();
+        if (sid != -1) {
+            conditions.add(" sid = " + sid);
+        }
+        if (sname != null) {
+            conditions.add(" sname = " + sname);
+        }
+        if (deptid != -1) {
+            conditions.add(" deptid = " + deptid);
+        }
+
+        query = finishQuery(query, conditions);
+
+        int count = getCount(query);
+        Object[][] output = new Object[count][3];
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery(query);
+        for (int i = 0; rs.next(); i++) {
+            output[i][0] = rs.getInt("sid");
+            output[i][1] = rs.getString("sname");
+            output[i][2] = rs.getInt("deptid");
+        }
+
+        return output;
+
+
+    }
+
+    /**
+     * Finishes the query from the conditions in the ArrayList
+     *
+     * @param query      The query to be completed
+     * @param conditions An ArrayList of the conditions to be added.
+     * @return
+     */
+    private String finishQuery(String query, ArrayList<String> conditions) {
+        if (conditions.size() == 1) {
+            query += conditions.get(0);
+        } else {
+            for (int i = 0; i < conditions.size() - 1; i++) {
+                query += conditions.get(i);
+                query += " AND";
+            }
+            query += conditions.get(conditions.size() - 1);
+        }
+
+        return query;
     }
 
     /**

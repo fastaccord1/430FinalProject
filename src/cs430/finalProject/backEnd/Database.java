@@ -19,21 +19,8 @@ public class Database {
     protected Connection conn;
 
     /**
-     * Constructor that initiates database connection
-     *
-     * @param username String username for database connection
-     * @param password String password for database connection
+     * Default constructor that initializes variable
      */
-    public Database(String username, String password) {
-        conn = null;
-        try {
-            DriverManager.registerDriver(new OracleDriver());
-            conn = DriverManager.getConnection(URL, username, password);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     public Database() {
         conn = null;
     }

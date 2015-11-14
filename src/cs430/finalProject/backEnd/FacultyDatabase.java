@@ -32,6 +32,7 @@ public class FacultyDatabase extends Database {
 
     /**
      * Checks database to see if ID belongs to Faculty
+     *
      * @param id The ID to be checked
      * @return True if the ID belongs to a faculty. False if it doesn't.
      */

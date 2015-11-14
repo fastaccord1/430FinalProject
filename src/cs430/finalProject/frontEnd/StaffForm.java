@@ -5,8 +5,7 @@
  */
 package cs430.finalProject.frontEnd;
 
-import cs430.finalProject.backEnd.Database;
-import cs430.finalProject.backEnd.MainClassHolder;
+import cs430.finalProject.backEnd.*;
 
 import javax.swing.*;
 import java.sql.SQLException;
@@ -22,7 +21,10 @@ public class StaffForm extends javax.swing.JFrame {
      * Creates new form MainForm
      */
     public StaffForm() {
-        database = MainClassHolder.getDatabase();
+        studentDatabase = MainClassHolder.getStudentDatabase();
+        staffDatabase = MainClassHolder.getStaffDatabase();
+        facultyDatabase = MainClassHolder.getFacultyDatabase();
+        generalDatabase = MainClassHolder.getGeneralDatabase();
         initComponents();
         tableValues = null;
 
@@ -149,7 +151,7 @@ public class StaffForm extends javax.swing.JFrame {
         String[] columns = {"ID", "Name", "Major", "Level", "Age"};
         Object[][] values = null;
         try {
-            values = database.searchStudent();
+            values = studentDatabase.searchStudent();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -811,7 +813,7 @@ public class StaffForm extends javax.swing.JFrame {
         }
         String[] columns = {"ID", "Name", "Major", "Level", "Age"};
         try {
-            Object[][] newData = database.searchStudent(id, name, major, level, age);
+            Object[][] newData = studentDatabase.searchStudent(id, name, major, level, age);
             refresh(studentSearchTable, columns, newData);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -997,5 +999,8 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTable studentUpdateTable;
     // End of variables declaration//GEN-END:variables
     private Object[][] tableValues;
-    private Database database;
+    private StudentDatabase studentDatabase;
+    private FacultyDatabase facultyDatabase;
+    private StaffDatabase staffDatabase;
+    private GeneralDatabase generalDatabase;
 }

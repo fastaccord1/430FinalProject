@@ -15,7 +15,8 @@ Run ant inside the base directory(where the build.xml file is). The jar will be 
 Once you have compiled the program you run it with `java -jar 430FinalProject.jar`
 
 ## Setting up Database
-On the first run, or if you would like to re-install the database, please run `java -jar 430FinalProject.jar --fresh`
+Run the CreateDatabase.sql and CreateEntries.sql files to create the tables and add
+initial data.
 
 # Database config
 The database.conf file must be in the following format:

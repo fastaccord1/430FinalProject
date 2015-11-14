@@ -5,7 +5,6 @@ import oracle.jdbc.driver.OracleDriver;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -42,8 +41,7 @@ public class StaffDatabase extends Database {
     public Object[][] staffSearch() throws SQLException {
         String query = "SELECT * FROM Staff";
         int count = getCount(query);
-        Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery(query);
+        ResultSet rs = executeQuery(query);
         Object[][] output = new Object[count][3];
 
         for (int i = 0; rs.next(); i++) {
@@ -81,8 +79,7 @@ public class StaffDatabase extends Database {
 
         int count = getCount(query);
         Object[][] output = new Object[count][3];
-        Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery(query);
+        ResultSet rs = executeQuery(query);
         for (int i = 0; rs.next(); i++) {
             output[i][0] = rs.getInt("sid");
             output[i][1] = rs.getString("sname");

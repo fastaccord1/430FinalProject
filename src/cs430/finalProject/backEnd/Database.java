@@ -39,22 +39,6 @@ public class Database {
     }
 
     /**
-     * This method executes insert or update operations
-     *
-     * @param preparedStatementString String query to be run
-     */
-    public void executeInsertUpdate(String preparedStatementString) {
-        try {
-            PreparedStatement prep = conn.prepareStatement(preparedStatementString);
-            System.out.println("Created prepared statement");
-            prep.execute();
-            prep.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
      * This method closes the connection to the database
      */
     public void closeConnection() {
@@ -167,6 +151,13 @@ public class Database {
         return out;
     }
 
+    /**
+     * Checks to see if query returns results
+     *
+     * @param query The query to be checked
+     * @return True if query returned results. False if it didn't.
+     * @throws SQLException
+     */
     protected boolean isFound(String query) throws SQLException {
         Statement statement = conn.createStatement();
         ResultSet rs = statement.executeQuery(query);
@@ -176,6 +167,29 @@ public class Database {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Executes a query and gives the ResultSet
+     *
+     * @param query Query to be run against the database
+     * @return The ResultSet from the query being run.
+     * @throws SQLException
+     */
+    protected ResultSet executeQuery(String query) throws SQLException {
+        Statement statement = conn.createStatement();
+        return statement.executeQuery(query);
+    }
+
+    /**
+     * Executes Insert or Update against the database.
+     *
+     * @param query The SQL statement to be run against the database.
+     * @throws SQLException
+     */
+    protected void executeInsertUpdate(String query) throws SQLException {
+        Statement statement = conn.createStatement();
+        statement.execute(query);
     }
 
 }

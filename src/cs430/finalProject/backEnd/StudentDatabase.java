@@ -5,7 +5,6 @@ import oracle.jdbc.driver.OracleDriver;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -58,8 +57,7 @@ public class StudentDatabase extends Database {
 
         int length = getCount(query);
         Object[][] output = new Object[length][5];
-        Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery(query);
+        ResultSet rs = executeQuery(query);
         for (int i = 0; rs.next(); i++) {
             output[i][0] = rs.getInt("sid");
             output[i][1] = rs.getString("sname");
@@ -80,8 +78,7 @@ public class StudentDatabase extends Database {
         String query = "SELECT * FROM Student";
         int length = getCount(query);
         Object[][] output = new Object[length][5];
-        Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery(query);
+        ResultSet rs = executeQuery(query);
         int i = 0;
         while (rs.next()) {
             output[i][0] = rs.getInt("sid");
@@ -92,7 +89,6 @@ public class StudentDatabase extends Database {
             i++;
         }
         rs.close();
-        statement.close();
         return output;
     }
 

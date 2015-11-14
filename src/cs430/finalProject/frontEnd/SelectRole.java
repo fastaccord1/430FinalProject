@@ -123,7 +123,15 @@ public class SelectRole extends javax.swing.JFrame {
         StaffDatabase staffDatabase = MainClassHolder.getStaffDatabase();
         String idString = userName.getText();
         int id = Integer.parseInt(idString);
-        int type = 0;
+        if (staffDatabase.isStaff(id)) {
+            StaffForm.main(null);
+        } else if (studentDatabase.isStudent(id)) {
+            System.out.println("Student");
+        } else if (facultyDatabase.isFaculty(id)) {
+            System.out.println("Faculty");
+        } else {
+            System.out.println("Not found");
+        }
 
 
     }//GEN-LAST:event_submitButtonActionPerformed

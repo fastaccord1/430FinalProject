@@ -5,7 +5,6 @@ import oracle.jdbc.driver.OracleDriver;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -57,8 +56,7 @@ public class FacultyDatabase extends Database {
 
         query = finishQuery(query, conditions);
         int count = getCount(query);
-        Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery(query);
+        ResultSet rs = executeQuery(query);
         output = new Object[count][3];
         for (int i = 0; rs.next(); i++) {
             output[i][0] = rs.getInt("fid");
@@ -79,8 +77,7 @@ public class FacultyDatabase extends Database {
         Object[][] output = null;
         String query = "SELECT * FROM Faculty";
         int count = getCount(query);
-        Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery(query);
+        ResultSet rs = executeQuery(query);
         output = new Object[count][3];
 
         for (int i = 0; rs.next(); i++) {

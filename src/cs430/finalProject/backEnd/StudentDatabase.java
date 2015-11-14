@@ -164,4 +164,20 @@ public class StudentDatabase extends Database {
         }
         return false;
     }
+
+    public String[] getMajors () {
+        String query = "SELECT major FROM Student";
+        try {
+            int count = getCount(query);
+            ResultSet rs = executeQuery(query);
+            String[] output = new String[count];
+            for(int i = 0; rs.next(); i++){
+                output[i] = rs.getString("major");
+            }
+            return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

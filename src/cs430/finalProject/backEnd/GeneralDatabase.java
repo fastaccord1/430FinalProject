@@ -31,6 +31,11 @@ public class GeneralDatabase extends Database {
         }
     }
 
+    /**
+     * Gets all entries from Department table
+     *
+     * @return Two-dimensional array with all results from Department table
+     */
     public Object[][] searchDepartment() {
         String query = "SELECT * FROM Department";
         Object[][] output;
@@ -49,6 +54,13 @@ public class GeneralDatabase extends Database {
         return null;
     }
 
+    /**
+     * Searches Department table for specific department
+     *
+     * @param did   ID for the department to be found
+     * @param dName Name for the department to be found
+     * @return Two-dimensional array of departments found
+     */
     public Object[][] searchDepartment(int did, String dName) {
         String query = "SELECT * FROM Department WHERE";
         ArrayList<String> conditions = new ArrayList<>();

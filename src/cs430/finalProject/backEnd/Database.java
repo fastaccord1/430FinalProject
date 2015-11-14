@@ -311,7 +311,7 @@ public class Database {
      *
      * @param query      The query to be completed
      * @param conditions An ArrayList of the conditions to be added.
-     * @return
+     * @return The completed query to be run.
      */
     private String finishQuery(String query, ArrayList<String> conditions) {
         if (conditions.size() == 1) {

@@ -8,9 +8,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
+ * Child class of Database for staff-related actions
  * Created by kreuter on 11/13/15.
+ *
+ * @author Kevin Reuter
  */
 public class StaffDatabase extends Database {
+
+    /**
+     * Constructor for the StaffDatabase Class
+     *
+     * @param username Username for the database
+     * @param password Password for the database
+     */
     public StaffDatabase(String username, String password) {
         super();
         try {
@@ -21,6 +31,12 @@ public class StaffDatabase extends Database {
         }
     }
 
+    /**
+     * Checks to see if ID belongs to a staff member
+     *
+     * @param id The ID to be checked
+     * @return True if the ID belongs to a staff member. False if it doesn't.
+     */
     public boolean isStaff(int id) {
         String query = "SELECT * FROM Staff WHERE sid = " + id;
         try {

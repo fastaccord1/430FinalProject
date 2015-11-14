@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * Child class of Database for staff-related actions
- * Created by kreuter on 11/13/15.
+ * Created by Kevin Reuter on 11/13/15.
  *
  * @author Kevin Reuter
  */
@@ -77,21 +77,21 @@ public class StaffDatabase extends Database {
      * Searches Staff table for a specific staff member
      *
      * @param sid    ID for the staff member to be found. -1 if not searched
-     * @param sname  Name for the staff member to be found. null if not searched
-     * @param deptid Department ID for the staff member to be found. -1 if not searched
+     * @param sName  Name for the staff member to be found. null if not searched
+     * @param deptId Department ID for the staff member to be found. -1 if not searched
      * @return Two-dimensional array of the results.
      */
-    public Object[][] staffSearch(int sid, String sname, int deptid) {
+    public Object[][] staffSearch(int sid, String sName, int deptId) {
         String query = "SELECT * FROM Staff WHERE";
         ArrayList<String> conditions = new ArrayList<>();
         if (sid != -1) {
             conditions.add(" sid = " + sid);
         }
-        if (sname != null) {
-            conditions.add(" sname = " + sname);
+        if (sName != null) {
+            conditions.add(" sname = " + sName);
         }
-        if (deptid != -1) {
-            conditions.add(" deptid = " + deptid);
+        if (deptId != -1) {
+            conditions.add(" deptid = " + deptId);
         }
 
         query = finishQuery(query, conditions);

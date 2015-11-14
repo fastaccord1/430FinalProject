@@ -92,6 +92,36 @@ public class StudentDatabase extends Database {
         return output;
     }
 
+    public void insertStudent(int sid, String sname, String major, String s_level, int age) {
+        String statement = "INSERT INTO Student VALUES(";
+        statement += sid + ", ";
+        statement += "'" + sname + "', ";
+        statement += "'" + major + "', ";
+        statement += "'" + s_level + "', ";
+        statement += age + ")";
+
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateStudent(int oldSid, int newSid, String sname, String major, String s_level, int age) {
+        String statement = "UPDATE Student SET ";
+        statement += "sid = " + newSid + ", ";
+        statement += "sname = '" + sname + "', ";
+        statement += "major = '" + major + "', ";
+        statement += "s_level = '" + s_level + "', ";
+        statement += "age = " + age;
+        statement += " WHERE sid = " + oldSid;
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public boolean isStudent(int id) {
         String query = "SELECT * FROM Student WHERE sid = " + id;
         try {

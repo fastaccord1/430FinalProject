@@ -193,6 +193,15 @@ public class Database {
         return output;
     }
 
+    /**
+     * Searches Faculty table for specific entries
+     *
+     * @param fid    Faculty ID to be found -1 if not searched
+     * @param fname  Name of faculty member to be found null if not searched
+     * @param deptId Department ID of faculty -1 if not searched
+     * @return Two-dimensional array of items found from database
+     * @throws SQLException
+     */
     public Object[][] facultySearch(int fid, String fname, int deptId) throws SQLException {
         Object[][] output = null;
         String query = "SELECT * FROM FACULTY WHERE";
@@ -230,6 +239,11 @@ public class Database {
         return output;
     }
 
+    /**
+     * Gathers all items from Faculty table
+     * @return Two-dimensional array of results from faculty table
+     * @throws SQLException
+     */
     public Object[][] facultySearch() throws SQLException {
         Object[][] output = null;
         String query = "SELECT * FROM Faculty";

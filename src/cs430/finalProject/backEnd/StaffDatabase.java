@@ -52,21 +52,25 @@ public class StaffDatabase extends Database {
      * Gets all data from Staff table
      *
      * @return Two-dimensional array of all staff entries
-     * @throws SQLException
      */
-    public Object[][] staffSearch() throws SQLException {
+    public Object[][] staffSearch() {
         String query = "SELECT * FROM Staff";
-        int count = getCount(query);
-        ResultSet rs = executeQuery(query);
-        Object[][] output = new Object[count][3];
+        try {
+            int count = getCount(query);
+            ResultSet rs = executeQuery(query);
+            Object[][] output = new Object[count][3];
 
-        for (int i = 0; rs.next(); i++) {
-            output[i][0] = rs.getInt("sid");
-            output[i][1] = rs.getString("sname");
-            output[i][2] = rs.getInt("deptid");
+            for (int i = 0; rs.next(); i++) {
+                output[i][0] = rs.getInt("sid");
+                output[i][1] = rs.getString("sname");
+                output[i][2] = rs.getInt("deptid");
+            }
+
+            return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
-        return output;
+        return null;
     }
 
     /**
@@ -76,9 +80,8 @@ public class StaffDatabase extends Database {
      * @param sname  Name for the staff member to be found. null if not searched
      * @param deptid Department ID for the staff member to be found. -1 if not searched
      * @return Two-dimensional array of the results.
-     * @throws SQLException
      */
-    public Object[][] staffSearch(int sid, String sname, int deptid) throws SQLException {
+    public Object[][] staffSearch(int sid, String sname, int deptid) {
         String query = "SELECT * FROM Staff WHERE";
         ArrayList<String> conditions = new ArrayList<>();
         if (sid != -1) {
@@ -92,18 +95,63 @@ public class StaffDatabase extends Database {
         }
 
         query = finishQuery(query, conditions);
+        try {
+            int count = getCount(query);
+            Object[][] output = new Object[count][3];
+            ResultSet rs = executeQuery(query);
+            for (int i = 0; rs.next(); i++) {
+                output[i][0] = rs.getInt("sid");
+                output[i][1] = rs.getString("sname");
+                output[i][2] = rs.getInt("deptid");
+            }
 
-        int count = getCount(query);
-        Object[][] output = new Object[count][3];
-        ResultSet rs = executeQuery(query);
-        for (int i = 0; rs.next(); i++) {
-            output[i][0] = rs.getInt("sid");
-            output[i][1] = rs.getString("sname");
-            output[i][2] = rs.getInt("deptid");
+            return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-        return output;
+        return null;
+    }
 
+    /**
+     * Inserts new staff member into the database
+     *
+     * @param sid    SID for the new staff member
+     * @param sName  Name for the new staff member
+     * @param deptId Department ID for the new staff member
+     */
+    public void insertStaff(int sid, String sName, int deptId) {
+        String statement = "INSERT INTO Student VALUES(";
+        statement += sid + ", ";
+        statement += "'" + sName + "', ";
+        statement += deptId + ")";
 
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Updates a staff member's entry to new data
+     *
+     * @param oldSid Old SID for the staff member to be updated
+     * @param newSid New SID for the staff member
+     * @param sName  New name for the staff member
+     * @param deptId New Department ID for the staff member
+     */
+    public void updateStaff(int oldSid, int newSid, String sName, int deptId) {
+        String statement = "UPDATE Student SET ";
+        statement += "sid = " + newSid + ", ";
+        statement += "sname = '" + sName + "', ";
+        statement += "deptid = " + deptId;
+        statement += " WHERE sid = " + oldSid;
+
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

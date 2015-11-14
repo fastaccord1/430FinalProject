@@ -8,9 +8,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
+ * Child class of Database to handle faculty-related actions.
  * Created by kreuter on 11/13/15.
+ *
+ * @author Kevin Reuter
  */
 public class FacultyDatabase extends Database {
+    /**
+     * Constructor for the FacultyDatabase Class
+     *
+     * @param username Username for the database
+     * @param password Password for the database
+     */
     public FacultyDatabase(String username, String password) {
         super();
         try {
@@ -21,6 +30,11 @@ public class FacultyDatabase extends Database {
         }
     }
 
+    /**
+     * Checks database to see if ID belongs to Faculty
+     * @param id The ID to be checked
+     * @return True if the ID belongs to a faculty. False if it doesn't.
+     */
     public boolean isFaculty(int id) {
         String query = "SELECT * FROM Faculty WHERE fid = " + id;
         try {

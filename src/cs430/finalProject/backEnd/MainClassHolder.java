@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import static java.lang.System.err;
+
 
 /**
  * 430FinalProject
@@ -43,7 +45,7 @@ public class MainClassHolder {
             staffDatabase = new StaffDatabase(username, password);
             generalDatabase = new GeneralDatabase(username, password);
         } else {
-            System.err.println("Something went wrong!");
+            err.println("Something went wrong!");
             System.exit(1);
         }
     }
@@ -110,7 +112,7 @@ public class MainClassHolder {
             }
         }
         if (username == null || password == null) {
-            System.err.println((username == null) ? "Username" : "Password" + " not found. Exiting program.");
+            err.println((username == null) ? "Username" : "Password" + " not found. Exiting program.");
             System.exit(1);
         }
         return new String[]{username, password};

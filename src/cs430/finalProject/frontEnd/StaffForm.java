@@ -8,6 +8,7 @@ package cs430.finalProject.frontEnd;
 import cs430.finalProject.backEnd.*;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.sql.SQLException;
 
 
@@ -31,6 +32,16 @@ public class StaffForm extends javax.swing.JFrame {
 
     }
 
+    public void initialSetupTable(JTable table, String[] columns, Object[][] values) {
+        DefaultTableModel tableModel = new DefaultTableModel(values, columns) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        table.setModel(tableModel);
+    }
+
     /**
      * Draws table with new data.
      *
@@ -40,26 +51,14 @@ public class StaffForm extends javax.swing.JFrame {
      */
     public void refresh(JTable table, String[] columns, Object[][] values) {
 
-        table.setModel(new javax.swing.table.DefaultTableModel(
-                values,
-                columns
-        ) {
-            Class[] types = new Class[]{
-                    Integer.class, String.class, String.class, String.class, Integer.class
-            };
-            boolean[] canEdit = new boolean[]{
-                    false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types[columnIndex];
+        DefaultTableModel tableModel = new DefaultTableModel(values, columns) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
-            }
-        });
-
+        };
+        table.setModel(tableModel);
+        tableModel.fireTableDataChanged();
     }
 
 
@@ -155,7 +154,7 @@ public class StaffForm extends javax.swing.JFrame {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        refresh(studentSearchTable, columns, values);
+        initialSetupTable(studentSearchTable, columns, values);
         jScrollPane1.setViewportView(studentSearchTable);
         if (studentSearchTable.getColumnModel().getColumnCount() > 0) {
             studentSearchTable.getColumnModel().getColumn(0).setResizable(false);

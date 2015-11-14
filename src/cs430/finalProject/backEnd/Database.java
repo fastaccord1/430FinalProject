@@ -137,8 +137,6 @@ public class Database {
         String countQuery = "SELECT COUNT(*) FROM (";
         countQuery += startingQuery;
         countQuery += ")";
-
-        System.out.println(countQuery);
         Statement statement = conn.createStatement();
         ResultSet rs = statement.executeQuery(countQuery);
         if (rs.next()) {

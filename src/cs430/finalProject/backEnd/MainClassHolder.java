@@ -15,8 +15,13 @@ import java.io.InputStreamReader;
  * @author Kevin Reuter
  */
 public class MainClassHolder {
+
+
     // Database object to be used for connection
-    private static Database database;
+    private static StudentDatabase studentDatabase;
+    private static FacultyDatabase facultyDatabase;
+    private static StaffDatabase staffDatabase;
+    private static GeneralDatabase generalDatabase;
     // String constant for the path to the config file
     private final String PATH = "/cs430/finalProject/config/database.conf";
 
@@ -33,7 +38,10 @@ public class MainClassHolder {
         if (userPass != null) {
             String username = userPass[0];
             String password = userPass[1];
-            database = new Database(username, password);
+            studentDatabase = new StudentDatabase(username, password);
+            facultyDatabase = new FacultyDatabase(username, password);
+            staffDatabase = new StaffDatabase(username, password);
+            generalDatabase = new GeneralDatabase(username, password);
         } else {
             System.err.println("Something went wrong!");
             System.exit(1);
@@ -46,7 +54,23 @@ public class MainClassHolder {
      * @return Database object for the database connection
      */
     public static Database getDatabase() {
-        return database;
+        return studentDatabase;
+    }
+
+    public static StudentDatabase getStudentDatabase() {
+        return studentDatabase;
+    }
+
+    public static FacultyDatabase getFacultyDatabase() {
+        return facultyDatabase;
+    }
+
+    public static StaffDatabase getStaffDatabase() {
+        return staffDatabase;
+    }
+
+    public static GeneralDatabase getGeneralDatabase() {
+        return generalDatabase;
     }
 
     /**
@@ -60,7 +84,10 @@ public class MainClassHolder {
      * Closes the connection on the database
      */
     public void close() {
-        database.closeConnection();
+        studentDatabase.closeConnection();
+        facultyDatabase.closeConnection();
+        staffDatabase.closeConnection();
+        generalDatabase.closeConnection();
     }
 
     /**

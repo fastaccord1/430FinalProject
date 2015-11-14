@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 public class Database {
     // Stores the url to the database
-    private final String URL = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
+    protected final String URL = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
     // Connection object for the database
-    private Connection conn;
+    protected Connection conn;
 
     /**
      * Constructor that initiates database connection
@@ -32,6 +32,10 @@ public class Database {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public Database() {
+        conn = null;
     }
 
     /**
@@ -313,7 +317,7 @@ public class Database {
      * @param conditions An ArrayList of the conditions to be added.
      * @return The completed query to be run.
      */
-    private String finishQuery(String query, ArrayList<String> conditions) {
+    protected String finishQuery(String query, ArrayList<String> conditions) {
         if (conditions.size() == 1) {
             query += conditions.get(0);
         } else {
@@ -334,7 +338,7 @@ public class Database {
      * @return int count for results
      * @throws SQLException
      */
-    public int getCount(String startingQuery) throws SQLException {
+    protected int getCount(String startingQuery) throws SQLException {
         int out;
         String countQuery = "SELECT COUNT(*) FROM (";
         countQuery += startingQuery;
@@ -351,6 +355,17 @@ public class Database {
         rs.close();
         statement.close();
         return out;
+    }
+
+    protected boolean isFound(String query) throws SQLException {
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery(query);
+        if (rs.next()) {
+            rs.close();
+            statement.close();
+            return true;
+        }
+        return false;
     }
 
 }

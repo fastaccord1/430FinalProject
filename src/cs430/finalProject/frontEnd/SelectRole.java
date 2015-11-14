@@ -5,10 +5,10 @@
  */
 package cs430.finalProject.frontEnd;
 
-import cs430.finalProject.backEnd.Database;
+import cs430.finalProject.backEnd.FacultyDatabase;
 import cs430.finalProject.backEnd.MainClassHolder;
-
-import java.sql.SQLException;
+import cs430.finalProject.backEnd.StaffDatabase;
+import cs430.finalProject.backEnd.StudentDatabase;
 
 /**
  *
@@ -118,32 +118,14 @@ public class SelectRole extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-        Database database = MainClassHolder.getDatabase();
+        StudentDatabase studentDatabase = MainClassHolder.getStudentDatabase();
+        FacultyDatabase facultyDatabase = MainClassHolder.getFacultyDatabase();
+        StaffDatabase staffDatabase = MainClassHolder.getStaffDatabase();
         String idString = userName.getText();
         int id = Integer.parseInt(idString);
         int type = 0;
-        try {
-            type = database.findType(id);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        switch(type){
-            case 1:
-                System.out.println("Student");
-                break;
-            case 2:
-                System.out.println("Staff");
-                StaffForm.main(null);
-                break;
-            case 3:
-                System.out.println("Faculty");
-                break;
-            default:
-                System.out.println("Not Found");
-                userName.setText("");
-                break;
-        }
-        
+
+
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed

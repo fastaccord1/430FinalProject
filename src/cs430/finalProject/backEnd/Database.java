@@ -6,8 +6,6 @@ package cs430.finalProject.backEnd;
  * @author Kevin Reuter
  */
 
-import oracle.jdbc.driver.OracleDriver;
-
 import java.sql.*;
 import java.util.ArrayList;
 

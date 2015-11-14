@@ -9,6 +9,7 @@ package cs430.finalProject.backEnd;
 import oracle.jdbc.driver.OracleDriver;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 
 public class Database {
@@ -123,21 +124,35 @@ public class Database {
      */
     public Object[][] searchStudent(int id, String name, String major, String level, int age) throws SQLException {
         String query = "SELECT * FROM Student WHERE";
+
+        ArrayList<String> conditions = new ArrayList<>();
+
         if (id != -1) {
-            query += " sid = " + id;
+            conditions.add(" sid = " + id);
         }
         if (name != null) {
-            query += " sname = " + name;
+            conditions.add(" sname = " + name);
         }
         if (major != null) {
-            query += " major = " + major;
+            conditions.add(" major = " + major);
         }
         if (level != null) {
-            query += " s_level = " + level;
+            conditions.add(" s_level = " + level);
         }
         if (age != -1) {
-            query += " age = " + age;
+            conditions.add(" age = " + age);
         }
+
+        if (conditions.size() == 1) {
+            query += conditions.get(0);
+        } else {
+            for (int i = 0; i < conditions.size() - 1; i++) {
+                query += conditions.get(i);
+                query += " AND";
+            }
+            query += conditions.get(conditions.size() - 1);
+        }
+
         int length = getCount(query);
         Object[][] output = new Object[length][5];
         Statement statement = conn.createStatement();
@@ -175,6 +190,60 @@ public class Database {
         }
         rs.close();
         statement.close();
+        return output;
+    }
+
+    public Object[][] facultySearch(int fid, String fname, int deptId) throws SQLException {
+        Object[][] output = null;
+        String query = "SELECT * FROM FACULTY WHERE";
+        ArrayList<String> conditions = new ArrayList<>();
+        if (fid != -1) {
+            conditions.add(" fid = " + fid);
+        }
+        if (fname != null) {
+            conditions.add(" fname = " + fname);
+        }
+        if (deptId != -1) {
+            conditions.add(" deptid = " + deptId);
+        }
+
+        if (conditions.size() == 1) {
+            query += conditions.get(0);
+            conditions.remove(0);
+        } else {
+            for (int i = 0; i < conditions.size() - 1; i++) {
+                query += conditions.get(i);
+                query += " AND";
+            }
+            query += conditions.get(conditions.size() - 1);
+        }
+        int count = getCount(query);
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery(query);
+        output = new Object[count][3];
+        for (int i = 0; rs.next(); i++) {
+            output[i][0] = rs.getInt("fid");
+            output[i][1] = rs.getString("fname");
+            output[i][2] = rs.getInt("deptid");
+        }
+
+        return output;
+    }
+
+    public Object[][] facultySearch() throws SQLException {
+        Object[][] output = null;
+        String query = "SELECT * FROM Faculty";
+        int count = getCount(query);
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery(query);
+        output = new Object[count][3];
+
+        for (int i = 0; rs.next(); i++) {
+            output[i][0] = rs.getInt("fid");
+            output[i][1] = rs.getString("fname");
+            output[i][2] = rs.getInt("deptid");
+        }
+
         return output;
     }
 

@@ -149,27 +149,31 @@ public class StaffForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("staffAccessForm"); // NOI18N
 
-        studentSearchTable.setModel(new javax.swing.table.DefaultTableModel(
-            database.searchStudent(),
-            new String [] {
-                "ID", "Name", "Major", "Level", "Age"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
+        try {
+            studentSearchTable.setModel(new DefaultTableModel(
+                studentDatabase.searchStudent(),
+                new String [] {
+                    "ID", "Name", "Major", "Level", "Age"
+                }
+            ) {
+                Class[] types = new Class [] {
+                    Integer.class, String.class, String.class, String.class, Integer.class
+                };
+                boolean[] canEdit = new boolean [] {
+                    false, false, false, false, false
+                };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
+                public Class getColumnClass(int columnIndex) {
+                    return types [columnIndex];
+                }
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit [columnIndex];
+                }
+            });
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         jScrollPane1.setViewportView(studentSearchTable);
         if (studentSearchTable.getColumnModel().getColumnCount() > 0) {
             studentSearchTable.getColumnModel().getColumn(0).setResizable(false);
@@ -820,14 +824,19 @@ public class StaffForm extends javax.swing.JFrame {
         if (studentSearchLevelField.getSelectedIndex() == 0) {
             level = null;
         }
-        String sage = studentSearchAgeField.getText();
+        String sAge = studentSearchAgeField.getText();
         int age = -1;
-        if (!sage.equals("")) {
-            age = Integer.parseInt(sage);
+        if (!sAge.equals("")) {
+            age = Integer.parseInt(sAge);
         }
         String[] columns = {"ID", "Name", "Major", "Level", "Age"};
         try {
-            Object[][] newData = studentDatabase.searchStudent(id, name, major, level, age);
+            Object[][] newData;
+            if(id == -1 && name == null && major == null && level == null && age == -1){
+                newData = studentDatabase.searchStudent();
+            } else {
+                newData = studentDatabase.searchStudent(id, name, major, level, age);
+            }
             refresh(studentSearchTable, columns, newData);
         } catch (SQLException e) {
             e.printStackTrace();

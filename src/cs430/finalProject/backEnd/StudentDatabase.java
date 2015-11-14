@@ -50,13 +50,13 @@ public class StudentDatabase extends Database {
             conditions.add(" sid = " + id);
         }
         if (name != null) {
-            conditions.add(" sname = " + name);
+            conditions.add(" sname = '" + name + "'");
         }
         if (major != null) {
-            conditions.add(" major = " + major);
+            conditions.add(" major = '" + major + "'");
         }
         if (level != null) {
-            conditions.add(" s_level = " + level);
+            conditions.add(" s_level = '" + level + "'");
         }
         if (age != -1) {
             conditions.add(" age = " + age);
@@ -170,8 +170,9 @@ public class StudentDatabase extends Database {
         try {
             int count = getCount(query);
             ResultSet rs = executeQuery(query);
-            String[] output = new String[count];
-            for(int i = 0; rs.next(); i++){
+            String[] output = new String[count + 1];
+            output[0] = "Any";
+            for(int i = 1; rs.next(); i++){
                 output[i] = rs.getString("major");
             }
             return output;

@@ -814,17 +814,15 @@ public class StaffForm extends javax.swing.JFrame {
             age = Integer.parseInt(sAge);
         }
         String[] columns = {"ID", "Name", "Major", "Level", "Age"};
-        try {
-            Object[][] newData;
-            if(id == -1 && name == null && major == null && level == null && age == -1){
-                newData = studentDatabase.searchStudent();
-            } else {
-                newData = studentDatabase.searchStudent(id, name, major, level, age);
-            }
-            refresh(studentSearchTable, columns, newData);
-        } catch (SQLException e) {
-            e.printStackTrace();
+
+        Object[][] newData;
+        if(id == -1 && name == null && major == null && level == null && age == -1){
+            newData = studentDatabase.searchStudent();
+        } else {
+            newData = studentDatabase.searchStudent(id, name, major, level, age);
         }
+        refresh(studentSearchTable, columns, newData);
+
     }//GEN-LAST:event_studentSearchSubmitButtonActionPerformed
 
     private void studentSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchClearButtonActionPerformed

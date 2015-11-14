@@ -41,7 +41,7 @@ public class StudentDatabase extends Database {
      * @param age   String for the wanted student's age
      * @return Object[][] Two-dimensional array of results.
      */
-    public Object[][] searchStudent(int id, String name, String major, String level, int age) throws SQLException {
+    public Object[][] searchStudent(int id, String name, String major, String level, int age) {
         String query = "SELECT * FROM Student WHERE";
 
         ArrayList<String> conditions = new ArrayList<>();
@@ -63,18 +63,22 @@ public class StudentDatabase extends Database {
         }
 
         query = finishQuery(query, conditions);
-
-        int length = getCount(query);
-        Object[][] output = new Object[length][5];
-        ResultSet rs = executeQuery(query);
-        for (int i = 0; rs.next(); i++) {
-            output[i][0] = rs.getInt("sid");
-            output[i][1] = rs.getString("sname");
-            output[i][2] = rs.getString("major");
-            output[i][3] = rs.getString("s_level");
-            output[i][4] = rs.getInt("age");
+        try {
+            int length = getCount(query);
+            Object[][] output = new Object[length][5];
+            ResultSet rs = executeQuery(query);
+            for (int i = 0; rs.next(); i++) {
+                output[i][0] = rs.getInt("sid");
+                output[i][1] = rs.getString("sname");
+                output[i][2] = rs.getString("major");
+                output[i][3] = rs.getString("s_level");
+                output[i][4] = rs.getInt("age");
+            }
+            return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return output;
+        return null;
     }
 
     /**
@@ -83,22 +87,27 @@ public class StudentDatabase extends Database {
      * @return Two dimensional array of results
      * @throws SQLException
      */
-    public Object[][] searchStudent() throws SQLException {
+    public Object[][] searchStudent() {
         String query = "SELECT * FROM Student";
-        int length = getCount(query);
-        Object[][] output = new Object[length][5];
-        ResultSet rs = executeQuery(query);
-        int i = 0;
-        while (rs.next()) {
-            output[i][0] = rs.getInt("sid");
-            output[i][1] = rs.getString("sname");
-            output[i][2] = rs.getString("major");
-            output[i][3] = rs.getString("s_level");
-            output[i][4] = rs.getInt("age");
-            i++;
+        try {
+            int length = getCount(query);
+            Object[][] output = new Object[length][5];
+            ResultSet rs = executeQuery(query);
+            int i = 0;
+            while (rs.next()) {
+                output[i][0] = rs.getInt("sid");
+                output[i][1] = rs.getString("sname");
+                output[i][2] = rs.getString("major");
+                output[i][3] = rs.getString("s_level");
+                output[i][4] = rs.getInt("age");
+                i++;
+            }
+            rs.close();
+            return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        rs.close();
-        return output;
+        return null;
     }
 
     /**

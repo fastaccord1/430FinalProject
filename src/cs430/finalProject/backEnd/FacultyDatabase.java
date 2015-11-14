@@ -53,9 +53,8 @@ public class FacultyDatabase extends Database {
      * @param fname  Name of faculty member to be found null if not searched
      * @param deptId Department ID of faculty -1 if not searched
      * @return Two-dimensional array of items found from database
-     * @throws SQLException
      */
-    public Object[][] facultySearch(int fid, String fname, int deptId) throws SQLException {
+    public Object[][] facultySearch(int fid, String fname, int deptId) {
         Object[][] output;
         String query = "SELECT * FROM FACULTY WHERE";
         ArrayList<String> conditions = new ArrayList<>();
@@ -70,16 +69,13 @@ public class FacultyDatabase extends Database {
         }
 
         query = finishQuery(query, conditions);
-        int count = getCount(query);
-        ResultSet rs = executeQuery(query);
-        output = new Object[count][3];
-        for (int i = 0; rs.next(); i++) {
-            output[i][0] = rs.getInt("fid");
-            output[i][1] = rs.getString("fname");
-            output[i][2] = rs.getInt("deptid");
+        try {
+            return getStaffFacultyResults(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-        return output;
+        return null;
     }
 
     /**
@@ -88,21 +84,18 @@ public class FacultyDatabase extends Database {
      * @return Two-dimensional array of results from faculty table
      * @throws SQLException
      */
-    public Object[][] facultySearch() throws SQLException {
+    public Object[][] facultySearch() {
         Object[][] output;
         String query = "SELECT * FROM Faculty";
-        int count = getCount(query);
-        ResultSet rs = executeQuery(query);
-        output = new Object[count][3];
-
-        for (int i = 0; rs.next(); i++) {
-            output[i][0] = rs.getInt("fid");
-            output[i][1] = rs.getString("fname");
-            output[i][2] = rs.getInt("deptid");
+        try {
+            return getStaffFacultyResults(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-        return output;
+        return null;
     }
+
 
     public void insertFaculty(int fid, String fName, int deptId) {
         try {

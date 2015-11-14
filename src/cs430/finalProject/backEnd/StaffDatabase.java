@@ -56,17 +56,7 @@ public class StaffDatabase extends Database {
     public Object[][] staffSearch() {
         String query = "SELECT * FROM Staff";
         try {
-            int count = getCount(query);
-            ResultSet rs = executeQuery(query);
-            Object[][] output = new Object[count][3];
-
-            for (int i = 0; rs.next(); i++) {
-                output[i][0] = rs.getInt("sid");
-                output[i][1] = rs.getString("sname");
-                output[i][2] = rs.getInt("deptid");
-            }
-
-            return output;
+            return getStaffFacultyResults(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -96,22 +86,14 @@ public class StaffDatabase extends Database {
 
         query = finishQuery(query, conditions);
         try {
-            int count = getCount(query);
-            Object[][] output = new Object[count][3];
-            ResultSet rs = executeQuery(query);
-            for (int i = 0; rs.next(); i++) {
-                output[i][0] = rs.getInt("sid");
-                output[i][1] = rs.getString("sname");
-                output[i][2] = rs.getInt("deptid");
-            }
-
-            return output;
+            return getStaffFacultyResults(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return null;
     }
+
+
 
     /**
      * Inserts new staff member into the database

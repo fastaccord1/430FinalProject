@@ -121,13 +121,8 @@ public class StaffDatabase extends Database {
      * @param deptId Department ID for the new staff member
      */
     public void insertStaff(int sid, String sName, int deptId) {
-        String statement = "INSERT INTO Student VALUES(";
-        statement += sid + ", ";
-        statement += "'" + sName + "', ";
-        statement += deptId + ")";
-
         try {
-            executeInsertUpdate(statement);
+            executeFacultyStaffInsert("Staff", sid, sName, deptId);
         } catch (SQLException e) {
             e.printStackTrace();
         }

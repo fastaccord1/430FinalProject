@@ -56,7 +56,7 @@ public class FacultyDatabase extends Database {
      * @throws SQLException
      */
     public Object[][] facultySearch(int fid, String fname, int deptId) throws SQLException {
-        Object[][] output = null;
+        Object[][] output;
         String query = "SELECT * FROM FACULTY WHERE";
         ArrayList<String> conditions = new ArrayList<>();
         if (fid != -1) {
@@ -89,7 +89,7 @@ public class FacultyDatabase extends Database {
      * @throws SQLException
      */
     public Object[][] facultySearch() throws SQLException {
-        Object[][] output = null;
+        Object[][] output;
         String query = "SELECT * FROM Faculty";
         int count = getCount(query);
         ResultSet rs = executeQuery(query);
@@ -102,5 +102,13 @@ public class FacultyDatabase extends Database {
         }
 
         return output;
+    }
+
+    public void insertFaculty(int fid, String fName, int deptId) {
+        try {
+            executeFacultyStaffInsert("Faculty", fid, fName, deptId);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

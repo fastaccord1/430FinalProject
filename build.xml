@@ -87,7 +87,7 @@
             <manifest>
                 <attribute name="Main-Class" value="cs430.finalProject.Runner"/>
             </manifest>
-            <fileset dir="out/temp" includes="**/*.conf,**/*.class,**/*.sql" />
+            <fileset dir="out/temp" includes="**/*.conf,**/*.class"/>
             <zipfileset dir="out/tempLib" includes="**/*.class" />
         </jar>
     </target>

@@ -1,8 +1,6 @@
 package cs430.finalProject.backEnd;
 
-import oracle.jdbc.driver.OracleDriver;
-
-import java.sql.DriverManager;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -18,17 +16,11 @@ public class GeneralDatabase extends Database {
     /**
      * Constructor for GeneralDatabase class
      *
-     * @param username Username for the database
-     * @param password Password for the database
+     * @param connection
      */
-    public GeneralDatabase(String username, String password) {
+    public GeneralDatabase(Connection connection) {
         super();
-        try {
-            DriverManager.registerDriver(new OracleDriver());
-            super.conn = DriverManager.getConnection(super.URL, username, password);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        super.conn = connection;
     }
 
     /**

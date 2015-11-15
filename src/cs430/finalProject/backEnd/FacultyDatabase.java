@@ -1,8 +1,6 @@
 package cs430.finalProject.backEnd;
 
-import oracle.jdbc.driver.OracleDriver;
-
-import java.sql.DriverManager;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -16,17 +14,11 @@ public class FacultyDatabase extends Database {
     /**
      * Constructor for the FacultyDatabase Class
      *
-     * @param username Username for the database
-     * @param password Password for the database
+     * @param connection
      */
-    public FacultyDatabase(String username, String password) {
+    public FacultyDatabase(Connection connection) {
         super();
-        try {
-            DriverManager.registerDriver(new OracleDriver());
-            super.conn = DriverManager.getConnection(super.URL, username, password);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        super.conn = connection;
     }
 
     /**
@@ -55,7 +47,7 @@ public class FacultyDatabase extends Database {
      */
     public Object[][] facultySearch(int fid, String fname, int deptId) {
         Object[][] output;
-        String query = "SELECT * FROM FACULTY WHERE";
+        String query = "SELECT * FROM facultyView WHERE";
         ArrayList<String> conditions = new ArrayList<>();
         if (fid != -1) {
             conditions.add(" fid = " + fid);
@@ -69,7 +61,7 @@ public class FacultyDatabase extends Database {
 
         query = finishQuery(query, conditions);
         try {
-            return getStaffFacultyResults(query, new String[]{"fid", "fname", "deptid"});
+            return getStaffFacultyResults(query, new String[]{"fid", "fname", "dname"});
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -85,9 +77,9 @@ public class FacultyDatabase extends Database {
      */
     public Object[][] facultySearch() {
         Object[][] output;
-        String query = "SELECT * FROM Faculty";
+        String query = "SELECT * FROM facultyView";
         try {
-            return getStaffFacultyResults(query, new String[]{"fid", "fname", "deptid"});
+            return getStaffFacultyResults(query, new String[]{"fid", "fname", "dname"});
         } catch (SQLException e) {
             e.printStackTrace();
         }

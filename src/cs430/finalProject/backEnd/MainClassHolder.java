@@ -1,11 +1,15 @@
 package cs430.finalProject.backEnd;
 
 import cs430.finalProject.frontEnd.SelectRole;
+import oracle.jdbc.driver.OracleDriver;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 import static java.lang.System.err;
 
@@ -26,6 +30,8 @@ public class MainClassHolder {
     private static GeneralDatabase generalDatabase;
     // String constant for the path to the config file
     private final String PATH = "/cs430/finalProject/config/database.conf";
+    private Connection conn;
+    protected final String URL = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
 
     /**
      * Default constructor to initialize variables
@@ -40,10 +46,16 @@ public class MainClassHolder {
         if (userPass != null) {
             String username = userPass[0];
             String password = userPass[1];
-            studentDatabase = new StudentDatabase(username, password);
-            facultyDatabase = new FacultyDatabase(username, password);
-            staffDatabase = new StaffDatabase(username, password);
-            generalDatabase = new GeneralDatabase(username, password);
+            try {
+                DriverManager.registerDriver(new OracleDriver());
+                this.conn = DriverManager.getConnection(URL, username, password);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            studentDatabase = new StudentDatabase(conn);
+            facultyDatabase = new FacultyDatabase(conn);
+            staffDatabase = new StaffDatabase(conn);
+            generalDatabase = new GeneralDatabase(conn);
         } else {
             err.println("Something went wrong!");
             System.exit(1);

@@ -1,8 +1,6 @@
 package cs430.finalProject.backEnd;
 
-import oracle.jdbc.driver.OracleDriver;
-
-import java.sql.DriverManager;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -17,17 +15,11 @@ public class StaffDatabase extends Database {
     /**
      * Constructor for the StaffDatabase Class
      *
-     * @param username Username for the database
-     * @param password Password for the database
+     * @param connection
      */
-    public StaffDatabase(String username, String password) {
+    public StaffDatabase(Connection connection) {
         super();
-        try {
-            DriverManager.registerDriver(new OracleDriver());
-            super.conn = DriverManager.getConnection(super.URL, username, password);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        super.conn = connection;
     }
 
     /**
@@ -53,7 +45,7 @@ public class StaffDatabase extends Database {
      * @return Two-dimensional array of all staff entries
      */
     public Object[][] staffSearch() {
-        String query = "SELECT sid, sname, dname FROM Staff, Department WHERE deptid = did";
+        String query = "SELECT * FROM staffView";
         try {
             return getStaffFacultyResults(query, new String[]{"sid", "sname", "dname"});
         } catch (SQLException e) {
@@ -71,7 +63,7 @@ public class StaffDatabase extends Database {
      * @return Two-dimensional array of the results.
      */
     public Object[][] staffSearch(int sid, String sName, int deptId) {
-        String query = "SELECT * FROM Staff WHERE";
+        String query = "SELECT * FROM staffView WHERE";
         ArrayList<String> conditions = new ArrayList<>();
         if (sid != -1) {
             conditions.add(" sid = " + sid);
@@ -80,12 +72,12 @@ public class StaffDatabase extends Database {
             conditions.add(" sname = " + sName);
         }
         if (deptId != -1) {
-            conditions.add(" deptid = " + deptId);
+            conditions.add(" Staff.deptid = " + deptId);
         }
 
         query = finishQuery(query, conditions);
         try {
-            return getStaffFacultyResults(query, new String[]{"sid", "sname", "deptid"});
+            return getStaffFacultyResults(query, new String[]{"sid", "sname", "dname"});
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -118,7 +110,7 @@ public class StaffDatabase extends Database {
      * @param deptId New Department ID for the staff member
      */
     public void updateStaff(int oldSid, int newSid, String sName, int deptId) {
-        String statement = "UPDATE Student SET ";
+        String statement = "UPDATE Staff SET ";
         statement += "sid = " + newSid + ", ";
         statement += "sname = '" + sName + "', ";
         statement += "deptid = " + deptId;

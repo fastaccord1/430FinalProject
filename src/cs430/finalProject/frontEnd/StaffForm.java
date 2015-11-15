@@ -1166,15 +1166,47 @@ public class StaffForm extends javax.swing.JFrame {
         if (name.equals("")) {
             name = null;
         }
+        String deptName = null;
+        if (staffSearchDeptCombo.getSelectedIndex() != 0) {
+            deptName = (String) staffSearchDeptCombo.getSelectedItem();
+        }
+
+        String[] columns = {"ID", "Name", "Department"};
+        if (id == -1 && name == null && deptName == null) {
+            refresh(staffSearchTable, columns, staffDatabase.staffSearch());
+        } else {
+            refresh(staffSearchTable, columns, staffDatabase.staffSearch(id, name, deptName));
+        }
+        staffSearchClearButtonActionPerformed(null);
 
     }//GEN-LAST:event_staffSearchSubmitButtonActionPerformed
 
     private void staffSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffSearchClearButtonActionPerformed
         // TODO add your handling code here:
+        staffSearchIDField.setText("");
+        staffSearchNameField.setText("");
+        staffSearchDeptCombo.setSelectedIndex(0);
     }//GEN-LAST:event_staffSearchClearButtonActionPerformed
 
     private void studentAddSubmitButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddSubmitButton1ActionPerformed
         // TODO add your handling code here:
+        int id;
+        try {
+            id = Integer.parseInt(staffAddIdField.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "You must input a valid number for the ID");
+            return;
+        }
+        String name = staffAddNameField.getText();
+        if (name.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a name");
+            return;
+        }
+        int deptId = generalDatabase.getDepartmentId((String) staffAddDeptCombo.getSelectedItem());
+
+        staffDatabase.insertStaff(id, name, deptId);
+
+
     }//GEN-LAST:event_studentAddSubmitButton1ActionPerformed
 
     private void studentAddClearButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddClearButton1ActionPerformed

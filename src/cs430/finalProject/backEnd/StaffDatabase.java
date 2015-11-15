@@ -62,17 +62,17 @@ public class StaffDatabase extends Database {
      * @param deptId Department ID for the staff member to be found. -1 if not searched
      * @return Two-dimensional array of the results.
      */
-    public Object[][] staffSearch(int sid, String sName, int deptId) {
+    public Object[][] staffSearch(int sid, String sName, String dName) {
         String query = "SELECT * FROM staffView WHERE";
         ArrayList<String> conditions = new ArrayList<>();
         if (sid != -1) {
             conditions.add(" sid = " + sid);
         }
         if (sName != null) {
-            conditions.add(" sname = " + sName);
+            conditions.add(" sname LIKE '%" + sName + "%'");
         }
-        if (deptId != -1) {
-            conditions.add(" Staff.deptid = " + deptId);
+        if (dName != null) {
+            conditions.add(" dname LIKE '" + dName + "'");
         }
 
         query = finishQuery(query, conditions);

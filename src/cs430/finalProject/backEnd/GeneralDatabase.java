@@ -82,9 +82,10 @@ public class GeneralDatabase extends Database {
     public String[] getDepartmentNames() {
         String query = "SELECT dname FROM Department";
         try {
-            String[] output = new String[getCount(query)];
+            String[] output = new String[getCount(query) + 1];
             ResultSet rs = executeQuery(query);
-            for (int i = 0; rs.next(); i++) {
+            output[0] = "Any";
+            for (int i = 1; rs.next(); i++) {
                 output[i] = rs.getString("dname");
             }
             return output;
@@ -92,5 +93,20 @@ public class GeneralDatabase extends Database {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public int getDepartmentId(String deptName) {
+        String query = "SELECT did FROM Department WHERE dname = '" + deptName + "'";
+        ResultSet rs = null;
+        int output = -1;
+        try {
+            rs = executeQuery(query);
+            if (rs.next()) {
+                output = rs.getInt("did");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return output;
     }
 }

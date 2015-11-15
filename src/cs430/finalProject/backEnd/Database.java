@@ -180,7 +180,6 @@ public class Database {
 
     protected Object[][] getStaffFacultyResults(String query, String[] columnNames) throws SQLException {
         Object[][] output;
-        System.out.println(query);
         int count = getCount(query);
         output = new Object[count][3];
         ResultSet rs = executeQuery(query);

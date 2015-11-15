@@ -841,7 +841,6 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_studentSearchClearButtonActionPerformed
 
     private void studentAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddSubmitButtonActionPerformed
-        // TODO add your handling code here:
         int id, age;
         try {
             id = Integer.parseInt(studentAddIDField.getText());
@@ -872,7 +871,6 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_studentAddSubmitButtonActionPerformed
 
     private void studentAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddClearButtonActionPerformed
-        // TODO add your handling code here:
         studentAddIDField.setText("");
         studentAddNameField.setText("");
         studentAddMajorField.setText("");
@@ -882,6 +880,8 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void studentUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateSubmitButtonActionPerformed
         // TODO add your handling code here:
+        int id = Integer.parseInt(studentUpdateIDField.getText());
+
     }//GEN-LAST:event_studentUpdateSubmitButtonActionPerformed
 
     private void studentUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateClearButtonActionPerformed

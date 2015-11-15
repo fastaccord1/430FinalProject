@@ -3,7 +3,6 @@ package cs430.finalProject.backEnd;
 import oracle.jdbc.driver.OracleDriver;
 
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -54,7 +53,7 @@ public class StaffDatabase extends Database {
      * @return Two-dimensional array of all staff entries
      */
     public Object[][] staffSearch() {
-        String query = "SELECT * FROM Staff";
+        String query = "SELECT sid, sname, dname FROM Staff, Department WHERE deptid = did";
         try {
             return getStaffFacultyResults(query);
         } catch (SQLException e) {

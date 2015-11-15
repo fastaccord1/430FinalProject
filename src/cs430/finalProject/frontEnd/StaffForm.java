@@ -9,7 +9,6 @@ import cs430.finalProject.backEnd.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.sql.SQLException;
 
 
 /**
@@ -931,6 +930,9 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void studentUpdateTabFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_studentUpdateTabFocusGained
         // TODO add your handling code here:
+        studentUpdateOldSid.setVisible(false);
+        String[] columns = {"ID", "Name", "Major", "Level", "Age"};
+        refresh(studentUpdateTable, columns, studentDatabase.searchStudent());
     }//GEN-LAST:event_studentUpdateTabFocusGained
 
 

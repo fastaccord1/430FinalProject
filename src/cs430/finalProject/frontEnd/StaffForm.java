@@ -87,6 +87,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentSearchMajorField = new javax.swing.JComboBox();
         studentSearchLevelField = new javax.swing.JComboBox();
         studentSearchAgeField = new javax.swing.JTextField();
+        jSplitPane2 = new javax.swing.JSplitPane();
         studentSearchSubmitButton = new javax.swing.JButton();
         studentSearchClearButton = new javax.swing.JButton();
         studentAddTab = new javax.swing.JPanel();
@@ -103,6 +104,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentAddLevelCombo = new javax.swing.JComboBox();
         studentAddAgeField = new javax.swing.JTextField();
         studentAddMainLabel = new javax.swing.JLabel();
+        jSplitPane1 = new javax.swing.JSplitPane();
         studentAddSubmitButton = new javax.swing.JButton();
         studentAddClearButton = new javax.swing.JButton();
         studentUpdateTab = new javax.swing.JPanel();
@@ -125,9 +127,52 @@ public class StaffForm extends javax.swing.JFrame {
         studentUpdateSubmitButton = new javax.swing.JButton();
         studentUpdateClearButton = new javax.swing.JButton();
         staffTab = new javax.swing.JTabbedPane();
-        staffSearchTab = new javax.swing.JTabbedPane();
-        staffInsertTab = new javax.swing.JTabbedPane();
-        staffUpdateTab = new javax.swing.JTabbedPane();
+        staffSearchTab = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        staffSearchTable = new javax.swing.JTable();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        staffSearchIDField = new javax.swing.JTextField();
+        staffSearchNameField = new javax.swing.JTextField();
+        staffSearchDeptIdField = new javax.swing.JTextField();
+        jSplitPane3 = new javax.swing.JSplitPane();
+        staffSearchSubmitButton = new javax.swing.JButton();
+        staffSearchClearButton = new javax.swing.JButton();
+        studentAddTab1 = new javax.swing.JPanel();
+        studentAddLabelPanel1 = new javax.swing.JPanel();
+        staffAddIdLabel = new javax.swing.JLabel();
+        staffAddNameLabel = new javax.swing.JLabel();
+        staffAddDeptIdLabel = new javax.swing.JLabel();
+        studentAddFieldPanel1 = new javax.swing.JPanel();
+        staffAddIdField = new javax.swing.JTextField();
+        staffAddNameField = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox();
+        studentAddMainLabel1 = new javax.swing.JLabel();
+        jSplitPane4 = new javax.swing.JSplitPane();
+        studentAddSubmitButton1 = new javax.swing.JButton();
+        studentAddClearButton1 = new javax.swing.JButton();
+        studentUpdateTab1 = new javax.swing.JPanel();
+        studentUpdateScrollPanel1 = new javax.swing.JScrollPane();
+        studentUpdateTable1 = new javax.swing.JTable();
+        studentUpdateMainLabel1 = new javax.swing.JLabel();
+        studentUpdateLabelPanel1 = new javax.swing.JPanel();
+        studentUpdateIDLabel1 = new javax.swing.JLabel();
+        studentUpdateNameLabel1 = new javax.swing.JLabel();
+        studentUpdateMajorLabel1 = new javax.swing.JLabel();
+        studentUpdateLevelLabel1 = new javax.swing.JLabel();
+        studentUpdateAgeLabel1 = new javax.swing.JLabel();
+        studentUpdateFieldPanel1 = new javax.swing.JPanel();
+        studentUpdateIDField1 = new javax.swing.JTextField();
+        studentUpdateNameField1 = new javax.swing.JTextField();
+        studentUpdateMajorField1 = new javax.swing.JTextField();
+        studentUpdateAgeField1 = new javax.swing.JTextField();
+        studentUpdateLevelSelect1 = new javax.swing.JComboBox();
+        studentUpdateSplitPane1 = new javax.swing.JSplitPane();
+        studentUpdateSubmitButton1 = new javax.swing.JButton();
+        studentUpdateClearButton1 = new javax.swing.JButton();
         facultyTab = new javax.swing.JTabbedPane();
         facultySearchTab = new javax.swing.JTabbedPane();
         facultyAddTab = new javax.swing.JTabbedPane();
@@ -198,26 +243,12 @@ public class StaffForm extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         studentSearchMajorField.setModel(new javax.swing.DefaultComboBoxModel(studentDatabase.getMajors()));
 
         studentSearchLevelField.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Any", "Freshman", "Sophomore", "Junior", "Senior", "Masters", "PhD" }));
-
-        studentSearchSubmitButton.setText("Search");
-        studentSearchSubmitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                studentSearchSubmitButtonActionPerformed(evt);
-            }
-        });
-
-        studentSearchClearButton.setText("Clear");
-        studentSearchClearButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                studentSearchClearButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -227,14 +258,10 @@ public class StaffForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(studentSearchAgeField, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(studentSearchLevelField, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(studentSearchLevelField, javax.swing.GroupLayout.Alignment.TRAILING, 0, 161, Short.MAX_VALUE)
                     .addComponent(studentSearchMajorField, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(studentSearchNameField, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(studentSearchIDField, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(studentSearchSubmitButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(studentSearchClearButton)))
+                    .addComponent(studentSearchIDField, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -250,35 +277,54 @@ public class StaffForm extends javax.swing.JFrame {
                 .addComponent(studentSearchLevelField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(studentSearchAgeField, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(studentSearchSubmitButton)
-                    .addComponent(studentSearchClearButton))
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
+
+        studentSearchSubmitButton.setText("Search");
+        studentSearchSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentSearchSubmitButtonActionPerformed(evt);
+            }
+        });
+        jSplitPane2.setLeftComponent(studentSearchSubmitButton);
+
+        studentSearchClearButton.setText("Clear");
+        studentSearchClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentSearchClearButtonActionPerformed(evt);
+            }
+        });
+        jSplitPane2.setRightComponent(studentSearchClearButton);
 
         javax.swing.GroupLayout studentSearchTabLayout = new javax.swing.GroupLayout(studentSearchTab);
         studentSearchTab.setLayout(studentSearchTabLayout);
         studentSearchTabLayout.setHorizontalGroup(
             studentSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentSearchTabLayout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(studentSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(studentSearchTabLayout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(studentSearchTabLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(jSplitPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE))
         );
         studentSearchTabLayout.setVerticalGroup(
             studentSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(studentSearchTabLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(studentSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(studentSearchTabLayout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 45, Short.MAX_VALUE))
+            .addGroup(studentSearchTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(studentSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSplitPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         studentTab.addTab("Search", studentSearchTab);
@@ -307,11 +353,14 @@ public class StaffForm extends javax.swing.JFrame {
         studentAddLabelPanel.setLayout(studentAddLabelPanelLayout);
         studentAddLabelPanelLayout.setHorizontalGroup(
             studentAddLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(studentAddAgeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(studentAddNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
-            .addComponent(studentAddIDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(studentAddMajorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(studentAddLevelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(studentAddLabelPanelLayout.createSequentialGroup()
+                .addGroup(studentAddLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(studentAddAgeLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(studentAddLevelLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(studentAddMajorLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(studentAddNameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                    .addComponent(studentAddIDLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 100, Short.MAX_VALUE))
         );
         studentAddLabelPanelLayout.setVerticalGroup(
             studentAddLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,6 +414,7 @@ public class StaffForm extends javax.swing.JFrame {
                 studentAddSubmitButtonActionPerformed(evt);
             }
         });
+        jSplitPane1.setLeftComponent(studentAddSubmitButton);
 
         studentAddClearButton.setText("Clear");
         studentAddClearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -372,6 +422,7 @@ public class StaffForm extends javax.swing.JFrame {
                 studentAddClearButtonActionPerformed(evt);
             }
         });
+        jSplitPane1.setRightComponent(studentAddClearButton);
 
         javax.swing.GroupLayout studentAddTabLayout = new javax.swing.GroupLayout(studentAddTab);
         studentAddTab.setLayout(studentAddTabLayout);
@@ -383,12 +434,10 @@ public class StaffForm extends javax.swing.JFrame {
                 .addComponent(studentAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addComponent(studentAddMainLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentAddTabLayout.createSequentialGroup()
-                .addGap(199, 199, 199)
-                .addComponent(studentAddSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(studentAddClearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(213, 213, 213))
+            .addGroup(studentAddTabLayout.createSequentialGroup()
+                .addGap(341, 341, 341)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         studentAddTabLayout.setVerticalGroup(
             studentAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -398,11 +447,9 @@ public class StaffForm extends javax.swing.JFrame {
                 .addGroup(studentAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(studentAddLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(studentAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(studentAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(studentAddClearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(studentAddSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         studentTab.addTab("Add", studentAddTab);
@@ -577,9 +624,403 @@ public class StaffForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Student", studentTab);
 
+        staffSearchTable.setModel(new javax.swing.table.DefaultTableModel(
+            staffDatabase.staffSearch(),
+            new String [] {
+                "ID", "Name", "Major", "Level", "Age"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(staffSearchTable);
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("ID");
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Name");
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Department ID");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(146, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(staffSearchDeptIdField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                    .addComponent(staffSearchNameField, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(staffSearchIDField, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(staffSearchIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(staffSearchNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(staffSearchDeptIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(199, Short.MAX_VALUE))
+        );
+
+        staffSearchSubmitButton.setText("Search");
+        staffSearchSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staffSearchSubmitButtonActionPerformed(evt);
+            }
+        });
+        jSplitPane3.setLeftComponent(staffSearchSubmitButton);
+
+        staffSearchClearButton.setText("Clear");
+        staffSearchClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staffSearchClearButtonActionPerformed(evt);
+            }
+        });
+        jSplitPane3.setRightComponent(staffSearchClearButton);
+
+        javax.swing.GroupLayout staffSearchTabLayout = new javax.swing.GroupLayout(staffSearchTab);
+        staffSearchTab.setLayout(staffSearchTabLayout);
+        staffSearchTabLayout.setHorizontalGroup(
+            staffSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffSearchTabLayout.createSequentialGroup()
+                .addGroup(staffSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(staffSearchTabLayout.createSequentialGroup()
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(staffSearchTabLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(jSplitPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE))
+        );
+        staffSearchTabLayout.setVerticalGroup(
+            staffSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staffSearchTabLayout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 45, Short.MAX_VALUE))
+            .addGroup(staffSearchTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(staffSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSplitPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         staffTab.addTab("Search", staffSearchTab);
-        staffTab.addTab("Add", staffInsertTab);
-        staffTab.addTab("Update", staffUpdateTab);
+
+        staffAddIdLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        staffAddIdLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        staffAddIdLabel.setText("ID:");
+
+        staffAddNameLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        staffAddNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        staffAddNameLabel.setText("Name:");
+
+        staffAddDeptIdLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        staffAddDeptIdLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        staffAddDeptIdLabel.setText("Department ID:");
+
+        javax.swing.GroupLayout studentAddLabelPanel1Layout = new javax.swing.GroupLayout(studentAddLabelPanel1);
+        studentAddLabelPanel1.setLayout(studentAddLabelPanel1Layout);
+        studentAddLabelPanel1Layout.setHorizontalGroup(
+            studentAddLabelPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentAddLabelPanel1Layout.createSequentialGroup()
+                .addGroup(studentAddLabelPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(staffAddDeptIdLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffAddNameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                    .addComponent(staffAddIdLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 100, Short.MAX_VALUE))
+        );
+        studentAddLabelPanel1Layout.setVerticalGroup(
+            studentAddLabelPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentAddLabelPanel1Layout.createSequentialGroup()
+                .addComponent(staffAddIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(staffAddNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(staffAddDeptIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(177, Short.MAX_VALUE))
+        );
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout studentAddFieldPanel1Layout = new javax.swing.GroupLayout(studentAddFieldPanel1);
+        studentAddFieldPanel1.setLayout(studentAddFieldPanel1Layout);
+        studentAddFieldPanel1Layout.setHorizontalGroup(
+            studentAddFieldPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(staffAddIdField, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(staffAddNameField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        studentAddFieldPanel1Layout.setVerticalGroup(
+            studentAddFieldPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentAddFieldPanel1Layout.createSequentialGroup()
+                .addComponent(staffAddIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(staffAddNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        studentAddMainLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        studentAddMainLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        studentAddMainLabel1.setText("Add a new student");
+
+        studentAddSubmitButton1.setText("Submit");
+        studentAddSubmitButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentAddSubmitButton1ActionPerformed(evt);
+            }
+        });
+        jSplitPane4.setLeftComponent(studentAddSubmitButton1);
+
+        studentAddClearButton1.setText("Clear");
+        studentAddClearButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentAddClearButton1ActionPerformed(evt);
+            }
+        });
+        jSplitPane4.setRightComponent(studentAddClearButton1);
+
+        javax.swing.GroupLayout studentAddTab1Layout = new javax.swing.GroupLayout(studentAddTab1);
+        studentAddTab1.setLayout(studentAddTab1Layout);
+        studentAddTab1Layout.setHorizontalGroup(
+            studentAddTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentAddTab1Layout.createSequentialGroup()
+                .addComponent(studentAddLabelPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentAddFieldPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(studentAddMainLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(studentAddTab1Layout.createSequentialGroup()
+                .addGap(341, 341, 341)
+                .addComponent(jSplitPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        studentAddTab1Layout.setVerticalGroup(
+            studentAddTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentAddTab1Layout.createSequentialGroup()
+                .addComponent(studentAddMainLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(studentAddTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(studentAddLabelPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(studentAddFieldPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(jSplitPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(98, Short.MAX_VALUE))
+        );
+
+        staffTab.addTab("Add", studentAddTab1);
+
+        studentUpdateTab1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                studentUpdateTab1MousePressed(evt);
+            }
+        });
+
+        studentUpdateTable1.setModel(new javax.swing.table.DefaultTableModel(
+            studentDatabase.searchStudent(),
+            new String [] {
+                "ID", "Name", "Major", "Level", "Age"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        studentUpdateTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                studentUpdateTable1MousePressed(evt);
+            }
+        });
+        studentUpdateScrollPanel1.setViewportView(studentUpdateTable1);
+
+        studentUpdateMainLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        studentUpdateMainLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        studentUpdateMainLabel1.setText("Update a student entry");
+
+        studentUpdateIDLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        studentUpdateIDLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        studentUpdateIDLabel1.setText("ID:");
+
+        studentUpdateNameLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        studentUpdateNameLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        studentUpdateNameLabel1.setText("Name:");
+
+        studentUpdateMajorLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        studentUpdateMajorLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        studentUpdateMajorLabel1.setText("Major:");
+
+        studentUpdateLevelLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        studentUpdateLevelLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        studentUpdateLevelLabel1.setText("Level");
+
+        studentUpdateAgeLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        studentUpdateAgeLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        studentUpdateAgeLabel1.setText("Age");
+
+        javax.swing.GroupLayout studentUpdateLabelPanel1Layout = new javax.swing.GroupLayout(studentUpdateLabelPanel1);
+        studentUpdateLabelPanel1.setLayout(studentUpdateLabelPanel1Layout);
+        studentUpdateLabelPanel1Layout.setHorizontalGroup(
+            studentUpdateLabelPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(studentUpdateIDLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(studentUpdateNameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+            .addComponent(studentUpdateMajorLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(studentUpdateLevelLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(studentUpdateAgeLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        studentUpdateLabelPanel1Layout.setVerticalGroup(
+            studentUpdateLabelPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentUpdateLabelPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(studentUpdateIDLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentUpdateNameLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentUpdateMajorLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentUpdateLevelLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentUpdateAgeLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        studentUpdateIDField1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+
+        studentUpdateNameField1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+
+        studentUpdateMajorField1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+
+        studentUpdateAgeField1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+
+        studentUpdateLevelSelect1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Freshman", "Sophomore", "Junior", "Senior", "Masters", "PhD" }));
+
+        javax.swing.GroupLayout studentUpdateFieldPanel1Layout = new javax.swing.GroupLayout(studentUpdateFieldPanel1);
+        studentUpdateFieldPanel1.setLayout(studentUpdateFieldPanel1Layout);
+        studentUpdateFieldPanel1Layout.setHorizontalGroup(
+            studentUpdateFieldPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentUpdateFieldPanel1Layout.createSequentialGroup()
+                .addGroup(studentUpdateFieldPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(studentUpdateIDField1)
+                    .addComponent(studentUpdateNameField1, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                    .addComponent(studentUpdateMajorField1)
+                    .addComponent(studentUpdateAgeField1)
+                    .addComponent(studentUpdateLevelSelect1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        studentUpdateFieldPanel1Layout.setVerticalGroup(
+            studentUpdateFieldPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentUpdateFieldPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(studentUpdateIDField1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentUpdateNameField1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentUpdateMajorField1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentUpdateLevelSelect1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentUpdateAgeField1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+
+        studentUpdateSubmitButton1.setText("Submit");
+        studentUpdateSubmitButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentUpdateSubmitButton1ActionPerformed(evt);
+            }
+        });
+        studentUpdateSplitPane1.setLeftComponent(studentUpdateSubmitButton1);
+
+        studentUpdateClearButton1.setText("Clear");
+        studentUpdateClearButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentUpdateClearButton1ActionPerformed(evt);
+            }
+        });
+        studentUpdateSplitPane1.setRightComponent(studentUpdateClearButton1);
+
+        javax.swing.GroupLayout studentUpdateTab1Layout = new javax.swing.GroupLayout(studentUpdateTab1);
+        studentUpdateTab1.setLayout(studentUpdateTab1Layout);
+        studentUpdateTab1Layout.setHorizontalGroup(
+            studentUpdateTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(studentUpdateScrollPanel1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentUpdateTab1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(studentUpdateMainLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentUpdateTab1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(studentUpdateLabelPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentUpdateFieldPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(studentUpdateTab1Layout.createSequentialGroup()
+                .addGap(336, 336, 336)
+                .addComponent(studentUpdateSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        studentUpdateTab1Layout.setVerticalGroup(
+            studentUpdateTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentUpdateTab1Layout.createSequentialGroup()
+                .addComponent(studentUpdateMainLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentUpdateScrollPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(studentUpdateTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(studentUpdateLabelPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(studentUpdateFieldPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentUpdateSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
+        );
+
+        staffTab.addTab("Update", studentUpdateTab1);
 
         jTabbedPane1.addTab("Staff", staffTab);
 
@@ -602,6 +1043,106 @@ public class StaffForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void studentUpdateTabMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTabMousePressed
+        // TODO add your handling code here:
+        String[] columns = {"ID", "Name", "Major", "Level", "Age"};
+        refresh(studentUpdateTable, columns, studentDatabase.searchStudent());
+    }//GEN-LAST:event_studentUpdateTabMousePressed
+
+    private void studentUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateClearButtonActionPerformed
+        // TODO add your handling code here:
+        studentUpdateIDField.setText("");
+        studentUpdateNameField.setText("");
+        studentUpdateMajorField.setText("");
+        studentUpdateLevelSelect.setSelectedIndex(0);
+        studentUpdateAgeField.setText("");
+        oldSid = -1;
+    }//GEN-LAST:event_studentUpdateClearButtonActionPerformed
+
+    private void studentUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateSubmitButtonActionPerformed
+        // TODO add your handling code here:
+        int id = Integer.parseInt(studentUpdateIDField.getText());
+        String name = studentUpdateNameField.getText();
+        String major = studentUpdateMajorField.getText();
+        String level = (String) studentUpdateLevelSelect.getSelectedItem();
+        int age = Integer.parseInt(studentUpdateAgeField.getText());
+
+        studentDatabase.updateStudent(oldSid, id, name, major, level, age);
+        String[] columns = {"ID", "Name", "Major", "Level", "Age"};
+        refresh(studentUpdateTable, columns, studentDatabase.searchStudent());
+        studentUpdateClearButtonActionPerformed(null);
+
+    }//GEN-LAST:event_studentUpdateSubmitButtonActionPerformed
+
+    private void studentUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTableMousePressed
+        // TODO add your handling code here:
+        JTable target = (JTable) evt.getSource();
+        int row = target.getSelectedRow();
+
+        int id = (Integer) target.getValueAt(row, 0);
+        String name = (String) target.getValueAt(row, 1);
+        String major = (String) target.getValueAt(row, 2);
+        String level = (String) target.getValueAt(row, 3);
+        int age = (Integer) target.getValueAt(row, 4);
+
+        studentUpdateIDField.setText(id + "");
+        oldSid = id;
+        studentUpdateNameField.setText(name);
+        studentUpdateMajorField.setText(major);
+        studentUpdateLevelSelect.setSelectedItem(level);
+        studentUpdateAgeField.setText(age + "");
+    }//GEN-LAST:event_studentUpdateTableMousePressed
+
+    private void studentAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddClearButtonActionPerformed
+        studentAddIDField.setText("");
+        studentAddNameField.setText("");
+        studentAddMajorField.setText("");
+        studentAddLevelCombo.setSelectedIndex(0);
+        studentAddAgeField.setText("");
+    }//GEN-LAST:event_studentAddClearButtonActionPerformed
+
+    private void studentAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddSubmitButtonActionPerformed
+        int id, age;
+        try {
+            id = Integer.parseInt(studentAddIDField.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "You must put in a valid number for ID");
+            return;
+        }
+        String name = studentAddNameField.getText();
+        if (name.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid name");
+            return;
+        }
+        String major = studentAddMajorField.getText();
+        if (major.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid major");
+            return;
+        }
+        String level = (String) studentAddLevelCombo.getSelectedItem();
+        try {
+            age = Integer.parseInt(studentAddAgeField.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "You must put in a valid number for age");
+            return;
+        }
+        String[] columns = {"ID", "Name", "Major", "Level", "Age"};
+        studentDatabase.insertStudent(id, name, major, level, age);
+        refresh(studentUpdateTable, columns, studentDatabase.searchStudent());
+        refresh(studentSearchTable, columns, studentDatabase.searchStudent());
+        studentAddClearButtonActionPerformed(null);
+    }//GEN-LAST:event_studentAddSubmitButtonActionPerformed
+
+    private void studentSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchClearButtonActionPerformed
+        // TODO add your handling code here:
+        studentSearchIDField.setText("");
+        studentSearchNameField.setText("");
+        studentSearchMajorField.setSelectedIndex(0);
+        studentSearchLevelField.setSelectedIndex(0);
+        studentSearchAgeField.setText("");
+        // TODO add search with no items
+    }//GEN-LAST:event_studentSearchClearButtonActionPerformed
 
     private void studentSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchSubmitButtonActionPerformed
         // TODO add your handling code here:
@@ -637,110 +1178,39 @@ public class StaffForm extends javax.swing.JFrame {
             newData = studentDatabase.searchStudent(id, name, major, level, age);
         }
         refresh(studentSearchTable, columns, newData);
-
     }//GEN-LAST:event_studentSearchSubmitButtonActionPerformed
 
-    private void studentSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchClearButtonActionPerformed
+    private void staffSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffSearchSubmitButtonActionPerformed
         // TODO add your handling code here:
-        studentSearchIDField.setText("");
-        studentSearchNameField.setText("");
-        studentSearchMajorField.setSelectedIndex(0);
-        studentSearchLevelField.setSelectedIndex(0);
-        studentSearchAgeField.setText("");
-        // TODO add search with no items
-    }//GEN-LAST:event_studentSearchClearButtonActionPerformed
+    }//GEN-LAST:event_staffSearchSubmitButtonActionPerformed
 
-    private void studentAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddSubmitButtonActionPerformed
-        int id, age;
-        try {
-            id = Integer.parseInt(studentAddIDField.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "You must put in a valid number for ID");
-            return;
-        }
-        String name = studentAddNameField.getText();
-        if (name.equals("")) {
-            JOptionPane.showMessageDialog(null, "You must enter a valid name");
-            return;
-        }
-        String major = studentAddMajorField.getText();
-        if (major.equals("")) {
-            JOptionPane.showMessageDialog(null, "You must enter a valid major");
-            return;
-        }
-        String level = (String) studentAddLevelCombo.getSelectedItem();
-        try {
-            age = Integer.parseInt(studentAddAgeField.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "You must put in a valid number for age");
-            return;
-        }
-        String[] columns = {"ID", "Name", "Major", "Level", "Age"};
-        studentDatabase.insertStudent(id, name, major, level, age);
-        refresh(studentUpdateTable, columns, studentDatabase.searchStudent());
-        refresh(studentSearchTable, columns, studentDatabase.searchStudent());
-        studentAddClearButtonActionPerformed(null);
-    }//GEN-LAST:event_studentAddSubmitButtonActionPerformed
-
-    private void studentAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddClearButtonActionPerformed
-        studentAddIDField.setText("");
-        studentAddNameField.setText("");
-        studentAddMajorField.setText("");
-        studentAddLevelCombo.setSelectedIndex(0);
-        studentAddAgeField.setText("");
-    }//GEN-LAST:event_studentAddClearButtonActionPerformed
-
-    private void studentUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateSubmitButtonActionPerformed
+    private void staffSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffSearchClearButtonActionPerformed
         // TODO add your handling code here:
-        int id = Integer.parseInt(studentUpdateIDField.getText());
-        String name = studentUpdateNameField.getText();
-        String major = studentUpdateMajorField.getText();
-        String level = (String) studentUpdateLevelSelect.getSelectedItem();
-        int age = Integer.parseInt(studentUpdateAgeField.getText());
+    }//GEN-LAST:event_staffSearchClearButtonActionPerformed
 
-        studentDatabase.updateStudent(oldSid, id, name, major, level, age);
-        String[] columns = {"ID", "Name", "Major", "Level", "Age"};
-        refresh(studentUpdateTable, columns, studentDatabase.searchStudent());
-        studentUpdateClearButtonActionPerformed(null);
-
-
-    }//GEN-LAST:event_studentUpdateSubmitButtonActionPerformed
-
-    private void studentUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateClearButtonActionPerformed
+    private void studentAddSubmitButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddSubmitButton1ActionPerformed
         // TODO add your handling code here:
-        studentUpdateIDField.setText("");
-        studentUpdateNameField.setText("");
-        studentUpdateMajorField.setText("");
-        studentUpdateLevelSelect.setSelectedIndex(0);
-        studentUpdateAgeField.setText("");
-        oldSid = -1;
-    }//GEN-LAST:event_studentUpdateClearButtonActionPerformed
+    }//GEN-LAST:event_studentAddSubmitButton1ActionPerformed
 
-    private void studentUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTableMousePressed
+    private void studentAddClearButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddClearButton1ActionPerformed
         // TODO add your handling code here:
-        JTable target = (JTable) evt.getSource();
-        int row = target.getSelectedRow();
+    }//GEN-LAST:event_studentAddClearButton1ActionPerformed
 
-        int id = (Integer) target.getValueAt(row, 0);
-        String name = (String) target.getValueAt(row, 1);
-        String major = (String) target.getValueAt(row, 2);
-        String level = (String) target.getValueAt(row, 3);
-        int age = (Integer) target.getValueAt(row, 4);
-
-        studentUpdateIDField.setText(id + "");
-        oldSid = id;
-        studentUpdateNameField.setText(name);
-        studentUpdateMajorField.setText(major);
-        studentUpdateLevelSelect.setSelectedItem(level);
-        studentUpdateAgeField.setText(age + "");
-
-    }//GEN-LAST:event_studentUpdateTableMousePressed
-
-    private void studentUpdateTabMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTabMousePressed
+    private void studentUpdateTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTable1MousePressed
         // TODO add your handling code here:
-        String[] columns = {"ID", "Name", "Major", "Level", "Age"};
-        refresh(studentUpdateTable, columns, studentDatabase.searchStudent());
-    }//GEN-LAST:event_studentUpdateTabMousePressed
+    }//GEN-LAST:event_studentUpdateTable1MousePressed
+
+    private void studentUpdateSubmitButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateSubmitButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentUpdateSubmitButton1ActionPerformed
+
+    private void studentUpdateClearButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateClearButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentUpdateClearButton1ActionPerformed
+
+    private void studentUpdateTab1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTab1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentUpdateTab1MousePressed
 
 
     /**
@@ -791,35 +1261,61 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTabbedPane facultySearchTab;
     private javax.swing.JTabbedPane facultyTab;
     private javax.swing.JTabbedPane facultyUpdateTab;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JSplitPane jSplitPane2;
+    private javax.swing.JSplitPane jSplitPane3;
+    private javax.swing.JSplitPane jSplitPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane staffInsertTab;
-    private javax.swing.JTabbedPane staffSearchTab;
+    private javax.swing.JLabel staffAddDeptIdLabel;
+    private javax.swing.JTextField staffAddIdField;
+    private javax.swing.JLabel staffAddIdLabel;
+    private javax.swing.JTextField staffAddNameField;
+    private javax.swing.JLabel staffAddNameLabel;
+    private javax.swing.JButton staffSearchClearButton;
+    private javax.swing.JTextField staffSearchDeptIdField;
+    private javax.swing.JTextField staffSearchIDField;
+    private javax.swing.JTextField staffSearchNameField;
+    private javax.swing.JButton staffSearchSubmitButton;
+    private javax.swing.JPanel staffSearchTab;
+    private javax.swing.JTable staffSearchTable;
     private javax.swing.JTabbedPane staffTab;
-    private javax.swing.JTabbedPane staffUpdateTab;
     private javax.swing.JTextField studentAddAgeField;
     private javax.swing.JLabel studentAddAgeLabel;
     private javax.swing.JButton studentAddClearButton;
+    private javax.swing.JButton studentAddClearButton1;
     private javax.swing.JPanel studentAddFieldPanel;
+    private javax.swing.JPanel studentAddFieldPanel1;
     private javax.swing.JTextField studentAddIDField;
     private javax.swing.JLabel studentAddIDLabel;
     private javax.swing.JPanel studentAddLabelPanel;
+    private javax.swing.JPanel studentAddLabelPanel1;
     private javax.swing.JComboBox studentAddLevelCombo;
     private javax.swing.JLabel studentAddLevelLabel;
     private javax.swing.JLabel studentAddMainLabel;
+    private javax.swing.JLabel studentAddMainLabel1;
     private javax.swing.JTextField studentAddMajorField;
     private javax.swing.JLabel studentAddMajorLabel;
     private javax.swing.JTextField studentAddNameField;
     private javax.swing.JLabel studentAddNameLabel;
     private javax.swing.JButton studentAddSubmitButton;
+    private javax.swing.JButton studentAddSubmitButton1;
     private javax.swing.JPanel studentAddTab;
+    private javax.swing.JPanel studentAddTab1;
     private javax.swing.JTextField studentSearchAgeField;
     private javax.swing.JButton studentSearchClearButton;
     private javax.swing.JTextField studentSearchIDField;
@@ -831,24 +1327,43 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTable studentSearchTable;
     private javax.swing.JTabbedPane studentTab;
     private javax.swing.JTextField studentUpdateAgeField;
+    private javax.swing.JTextField studentUpdateAgeField1;
     private javax.swing.JLabel studentUpdateAgeLabel;
+    private javax.swing.JLabel studentUpdateAgeLabel1;
     private javax.swing.JButton studentUpdateClearButton;
+    private javax.swing.JButton studentUpdateClearButton1;
     private javax.swing.JPanel studentUpdateFieldPanel;
+    private javax.swing.JPanel studentUpdateFieldPanel1;
     private javax.swing.JTextField studentUpdateIDField;
+    private javax.swing.JTextField studentUpdateIDField1;
     private javax.swing.JLabel studentUpdateIDLabel;
+    private javax.swing.JLabel studentUpdateIDLabel1;
     private javax.swing.JPanel studentUpdateLabelPanel;
+    private javax.swing.JPanel studentUpdateLabelPanel1;
     private javax.swing.JLabel studentUpdateLevelLabel;
+    private javax.swing.JLabel studentUpdateLevelLabel1;
     private javax.swing.JComboBox studentUpdateLevelSelect;
+    private javax.swing.JComboBox studentUpdateLevelSelect1;
     private javax.swing.JLabel studentUpdateMainLabel;
+    private javax.swing.JLabel studentUpdateMainLabel1;
     private javax.swing.JTextField studentUpdateMajorField;
+    private javax.swing.JTextField studentUpdateMajorField1;
     private javax.swing.JLabel studentUpdateMajorLabel;
+    private javax.swing.JLabel studentUpdateMajorLabel1;
     private javax.swing.JTextField studentUpdateNameField;
+    private javax.swing.JTextField studentUpdateNameField1;
     private javax.swing.JLabel studentUpdateNameLabel;
+    private javax.swing.JLabel studentUpdateNameLabel1;
     private javax.swing.JScrollPane studentUpdateScrollPanel;
+    private javax.swing.JScrollPane studentUpdateScrollPanel1;
     private javax.swing.JSplitPane studentUpdateSplitPane;
+    private javax.swing.JSplitPane studentUpdateSplitPane1;
     private javax.swing.JButton studentUpdateSubmitButton;
+    private javax.swing.JButton studentUpdateSubmitButton1;
     private javax.swing.JPanel studentUpdateTab;
+    private javax.swing.JPanel studentUpdateTab1;
     private javax.swing.JTable studentUpdateTable;
+    private javax.swing.JTable studentUpdateTable1;
     // End of variables declaration//GEN-END:variables
     private Object[][] tableValues;
     private StudentDatabase studentDatabase;

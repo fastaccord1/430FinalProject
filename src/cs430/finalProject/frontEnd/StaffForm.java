@@ -1156,6 +1156,17 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void staffSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffSearchSubmitButtonActionPerformed
         // TODO add your handling code here:
+        int id;
+        try {
+            id = Integer.parseInt(staffSearchIDField.getText());
+        } catch (NumberFormatException e) {
+            id = -1;
+        }
+        String name = staffSearchNameField.getText();
+        if (name.equals("")) {
+            name = null;
+        }
+
     }//GEN-LAST:event_staffSearchSubmitButtonActionPerformed
 
     private void staffSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffSearchClearButtonActionPerformed

@@ -72,7 +72,7 @@ public class StaffForm extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         studentTab = new javax.swing.JTabbedPane();
-        studentSearchTab = new javax.swing.JPanel();
+        studentSearchTab = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         studentSearchTable = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
@@ -89,7 +89,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentSearchAgeField = new javax.swing.JTextField();
         studentSearchSubmitButton = new javax.swing.JButton();
         studentSearchClearButton = new javax.swing.JButton();
-        studentAddTab = new javax.swing.JPanel();
+        studentAddTab = new javax.swing.JTabbedPane();
         studentAddLabelPanel = new javax.swing.JPanel();
         studentAddIDLabel = new javax.swing.JLabel();
         studentAddNameLabel = new javax.swing.JLabel();
@@ -125,7 +125,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentUpdateSubmitButton = new javax.swing.JButton();
         studentUpdateClearButton = new javax.swing.JButton();
         jTabbedPane3 = new javax.swing.JTabbedPane();
-        staffSearchTab = new javax.swing.JPanel();
+        staffSearchTab = new javax.swing.JTabbedPane();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
@@ -987,7 +987,7 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTable jTable2;
-    private javax.swing.JPanel staffSearchTab;
+    private javax.swing.JTabbedPane staffSearchTab;
     private javax.swing.JTextField studentAddAgeField;
     private javax.swing.JLabel studentAddAgeLabel;
     private javax.swing.JButton studentAddClearButton;
@@ -1003,7 +1003,7 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTextField studentAddNameField;
     private javax.swing.JLabel studentAddNameLabel;
     private javax.swing.JButton studentAddSubmitButton;
-    private javax.swing.JPanel studentAddTab;
+    private javax.swing.JTabbedPane studentAddTab;
     private javax.swing.JTextField studentSearchAgeField;
     private javax.swing.JTextField studentSearchAgeField1;
     private javax.swing.JButton studentSearchClearButton;
@@ -1018,7 +1018,7 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTextField studentSearchNameField1;
     private javax.swing.JButton studentSearchSubmitButton;
     private javax.swing.JButton studentSearchSubmitButton1;
-    private javax.swing.JPanel studentSearchTab;
+    private javax.swing.JTabbedPane studentSearchTab;
     private javax.swing.JTable studentSearchTable;
     private javax.swing.JTabbedPane studentTab;
     private javax.swing.JTextField studentUpdateAgeField;

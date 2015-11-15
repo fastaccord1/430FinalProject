@@ -86,4 +86,19 @@ public class GeneralDatabase extends Database {
         }
         return null;
     }
+
+    public String[] getDepartmentNames() {
+        String query = "SELECT dname FROM Department";
+        try {
+            String[] output = new String[getCount(query)];
+            ResultSet rs = executeQuery(query);
+            for (int i = 0; rs.next(); i++) {
+                output[i] = rs.getString("dname");
+            }
+            return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

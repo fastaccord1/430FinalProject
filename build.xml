@@ -82,22 +82,14 @@
         </copy>
     </target>
 
-    <target name="jar.program" depends="unzip-lib">
-        <jar destfile="out/jar/430FinalProject.jar" >
+    <target name="jar.program">
+        <jar destfile="out/jar/430FinalProject.jar" basedir="out/temp">
+            <zipgroupfileset dir="jar" includes="ojdbc7.jar"/>
             <manifest>
+                <attribute name="430FinalProject" value="main"/>
                 <attribute name="Main-Class" value="cs430.finalProject.Runner"/>
             </manifest>
-            <fileset dir="out/temp" includes="**/*.conf,**/*.class"/>
-            <zipfileset dir="out/tempLib" includes="**/*.class" />
         </jar>
-    </target>
-
-    <target name="unzip-lib">
-        <unzip dest="out/tempLib" >
-            <zipfileset dir="jar">
-                <include name="**/*.jar" />
-            </zipfileset>
-        </unzip>
     </target>
 
     <target name="cleanup">

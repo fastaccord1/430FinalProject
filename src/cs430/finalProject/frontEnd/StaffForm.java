@@ -674,9 +674,11 @@ public class StaffForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "You must put in a valid number for age");
             return;
         }
-
-
+        String[] columns = {"ID", "Name", "Major", "Level", "Age"};
         studentDatabase.insertStudent(id, name, major, level, age);
+        refresh(studentUpdateTable, columns, studentDatabase.searchStudent());
+        refresh(studentSearchTable, columns, studentDatabase.searchStudent());
+        studentAddClearButtonActionPerformed(null);
     }//GEN-LAST:event_studentAddSubmitButtonActionPerformed
 
     private void studentAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddClearButtonActionPerformed

@@ -927,7 +927,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jComboBox2" max="32767" attributes="0"/>
+                                  <Component id="staffSearchDeptCombo" max="32767" attributes="0"/>
                                   <Component id="staffSearchNameField" alignment="1" pref="161" max="32767" attributes="0"/>
                                   <Component id="staffSearchIDField" alignment="1" max="32767" attributes="0"/>
                               </Group>
@@ -943,7 +943,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="staffSearchNameField" min="-2" pref="28" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jComboBox2" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="staffSearchDeptCombo" min="-2" pref="28" max="-2" attributes="0"/>
                               <EmptySpace pref="205" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -954,7 +954,7 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="staffSearchNameField">
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox2">
+                    <Component class="javax.swing.JComboBox" name="staffSearchDeptCombo">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="new javax.swing.DefaultComboBoxModel(generalDatabase.getDepartmentNames())" type="code"/>
@@ -1105,7 +1105,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="staffAddIdField" alignment="1" max="32767" attributes="0"/>
                           <Component id="staffAddNameField" alignment="1" pref="422" max="32767" attributes="0"/>
-                          <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="staffAddDeptCombo" alignment="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -1115,7 +1115,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="staffAddNameField" min="-2" pref="44" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jComboBox1" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="staffAddDeptCombo" min="-2" pref="44" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -1126,7 +1126,7 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="staffAddNameField">
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox1">
+                    <Component class="javax.swing.JComboBox" name="staffAddDeptCombo">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="new javax.swing.DefaultComboBoxModel(generalDatabase.getDepartmentNames())" type="code"/>

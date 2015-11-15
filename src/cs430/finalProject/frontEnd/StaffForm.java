@@ -137,7 +137,7 @@ public class StaffForm extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         staffSearchIDField = new javax.swing.JTextField();
         staffSearchNameField = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox();
+        staffSearchDeptCombo = new javax.swing.JComboBox();
         jSplitPane3 = new javax.swing.JSplitPane();
         staffSearchSubmitButton = new javax.swing.JButton();
         staffSearchClearButton = new javax.swing.JButton();
@@ -149,7 +149,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentAddFieldPanel1 = new javax.swing.JPanel();
         staffAddIdField = new javax.swing.JTextField();
         staffAddNameField = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox();
+        staffAddDeptCombo = new javax.swing.JComboBox();
         staffAddMainLabel = new javax.swing.JLabel();
         jSplitPane4 = new javax.swing.JSplitPane();
         studentAddSubmitButton1 = new javax.swing.JButton();
@@ -672,7 +672,7 @@ public class StaffForm extends javax.swing.JFrame {
                 .addContainerGap(146, Short.MAX_VALUE))
         );
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(generalDatabase.getDepartmentNames()));
+        staffSearchDeptCombo.setModel(new javax.swing.DefaultComboBoxModel(generalDatabase.getDepartmentNames()));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -681,7 +681,7 @@ public class StaffForm extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffSearchDeptCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(staffSearchNameField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
                     .addComponent(staffSearchIDField, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -694,7 +694,7 @@ public class StaffForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(staffSearchNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(staffSearchDeptCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(205, Short.MAX_VALUE))
         );
 
@@ -781,7 +781,7 @@ public class StaffForm extends javax.swing.JFrame {
                 .addContainerGap(177, Short.MAX_VALUE))
         );
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(generalDatabase.getDepartmentNames()));
+        staffAddDeptCombo.setModel(new javax.swing.DefaultComboBoxModel(generalDatabase.getDepartmentNames()));
 
         javax.swing.GroupLayout studentAddFieldPanel1Layout = new javax.swing.GroupLayout(studentAddFieldPanel1);
         studentAddFieldPanel1.setLayout(studentAddFieldPanel1Layout);
@@ -789,7 +789,7 @@ public class StaffForm extends javax.swing.JFrame {
             studentAddFieldPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(staffAddIdField, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(staffAddNameField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
-            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(staffAddDeptCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         studentAddFieldPanel1Layout.setVerticalGroup(
             studentAddFieldPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -798,7 +798,7 @@ public class StaffForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(staffAddNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(staffAddDeptCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -1246,8 +1246,6 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTabbedPane facultySearchTab;
     private javax.swing.JTabbedPane facultyTab;
     private javax.swing.JTabbedPane facultyUpdateTab;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1267,6 +1265,7 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JSplitPane jSplitPane3;
     private javax.swing.JSplitPane jSplitPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JComboBox staffAddDeptCombo;
     private javax.swing.JLabel staffAddDeptIdLabel;
     private javax.swing.JTextField staffAddIdField;
     private javax.swing.JLabel staffAddIdLabel;
@@ -1274,6 +1273,7 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTextField staffAddNameField;
     private javax.swing.JLabel staffAddNameLabel;
     private javax.swing.JButton staffSearchClearButton;
+    private javax.swing.JComboBox staffSearchDeptCombo;
     private javax.swing.JTextField staffSearchIDField;
     private javax.swing.JTextField staffSearchNameField;
     private javax.swing.JButton staffSearchSubmitButton;

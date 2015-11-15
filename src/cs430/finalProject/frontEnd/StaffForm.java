@@ -72,7 +72,7 @@ public class StaffForm extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         studentTab = new javax.swing.JTabbedPane();
-        studentSearchTab = new javax.swing.JTabbedPane();
+        studentSearchTab = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         studentSearchTable = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
@@ -89,7 +89,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentSearchAgeField = new javax.swing.JTextField();
         studentSearchSubmitButton = new javax.swing.JButton();
         studentSearchClearButton = new javax.swing.JButton();
-        studentAddTab = new javax.swing.JTabbedPane();
+        studentAddTab = new javax.swing.JPanel();
         studentAddLabelPanel = new javax.swing.JPanel();
         studentAddIDLabel = new javax.swing.JLabel();
         studentAddNameLabel = new javax.swing.JLabel();
@@ -124,25 +124,14 @@ public class StaffForm extends javax.swing.JFrame {
         studentUpdateSplitPane = new javax.swing.JSplitPane();
         studentUpdateSubmitButton = new javax.swing.JButton();
         studentUpdateClearButton = new javax.swing.JButton();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
+        staffTab = new javax.swing.JTabbedPane();
         staffSearchTab = new javax.swing.JTabbedPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        studentSearchIDField1 = new javax.swing.JTextField();
-        studentSearchNameField1 = new javax.swing.JTextField();
-        studentSearchMajorField1 = new javax.swing.JComboBox();
-        studentSearchLevelField1 = new javax.swing.JComboBox();
-        studentSearchAgeField1 = new javax.swing.JTextField();
-        studentSearchSubmitButton1 = new javax.swing.JButton();
-        studentSearchClearButton1 = new javax.swing.JButton();
-        jTabbedPane4 = new javax.swing.JTabbedPane();
+        staffInsertTab = new javax.swing.JTabbedPane();
+        staffUpdateTab = new javax.swing.JTabbedPane();
+        facultyTab = new javax.swing.JTabbedPane();
+        facultySearchTab = new javax.swing.JTabbedPane();
+        facultyAddTab = new javax.swing.JTabbedPane();
+        facultyUpdateTab = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("staffAccessForm"); // NOI18N
@@ -587,187 +576,17 @@ public class StaffForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Student", studentTab);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Name", "Major", "Level", "Age"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
+        staffTab.addTab("Search", staffSearchTab);
+        staffTab.addTab("Add", staffInsertTab);
+        staffTab.addTab("Update", staffUpdateTab);
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
+        jTabbedPane1.addTab("Staff", staffTab);
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(jTable2);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(0).setResizable(false);
-            jTable2.getColumnModel().getColumn(1).setResizable(false);
-            jTable2.getColumnModel().getColumn(2).setResizable(false);
-            jTable2.getColumnModel().getColumn(3).setResizable(false);
-            jTable2.getColumnModel().getColumn(4).setResizable(false);
-        }
+        facultyTab.addTab("Search", facultySearchTab);
+        facultyTab.addTab("Add", facultyAddTab);
+        facultyTab.addTab("Update", facultyUpdateTab);
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("ID");
-
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Name");
-
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Major");
-
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Level");
-
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Age");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        studentSearchMajorField1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        studentSearchLevelField1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        studentSearchSubmitButton1.setText("Search");
-        studentSearchSubmitButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                studentSearchSubmitButton1ActionPerformed(evt);
-            }
-        });
-
-        studentSearchClearButton1.setText("Clear");
-        studentSearchClearButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                studentSearchClearButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(studentSearchAgeField1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(studentSearchLevelField1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(studentSearchMajorField1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(studentSearchNameField1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(studentSearchIDField1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(studentSearchSubmitButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(studentSearchClearButton1)))
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(studentSearchIDField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(studentSearchNameField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(studentSearchMajorField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(studentSearchLevelField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(studentSearchAgeField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(studentSearchSubmitButton1)
-                    .addComponent(studentSearchClearButton1))
-                .addContainerGap(179, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout staffSearchTabLayout = new javax.swing.GroupLayout(staffSearchTab);
-        staffSearchTab.setLayout(staffSearchTabLayout);
-        staffSearchTabLayout.setHorizontalGroup(
-            staffSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffSearchTabLayout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE))
-        );
-        staffSearchTabLayout.setVerticalGroup(
-            staffSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(staffSearchTabLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(staffSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(staffSearchTabLayout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 30, Short.MAX_VALUE))
-        );
-
-        jTabbedPane3.addTab("Search", staffSearchTab);
-
-        jTabbedPane1.addTab("Staff", jTabbedPane3);
-        jTabbedPane1.addTab("Faculty", jTabbedPane4);
+        jTabbedPane1.addTab("Faculty", facultyTab);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -883,19 +702,6 @@ public class StaffForm extends javax.swing.JFrame {
         studentUpdateAgeField.setText("");
     }//GEN-LAST:event_studentUpdateClearButtonActionPerformed
 
-    private void studentSearchSubmitButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchSubmitButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_studentSearchSubmitButton1ActionPerformed
-
-    private void studentSearchClearButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchClearButton1ActionPerformed
-        // TODO add your handling code here:
-        studentSearchIDField.setText("");
-        studentSearchNameField.setText("");
-        studentSearchMajorField.setSelectedIndex(0);
-        studentSearchLevelField.setSelectedIndex(0);
-        studentSearchAgeField.setText("");
-    }//GEN-LAST:event_studentSearchClearButton1ActionPerformed
-
     private void studentUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTableMousePressed
         // TODO add your handling code here:
         JTable target = (JTable) evt.getSource();
@@ -967,27 +773,23 @@ public class StaffForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane facultyAddTab;
+    private javax.swing.JTabbedPane facultySearchTab;
+    private javax.swing.JTabbedPane facultyTab;
+    private javax.swing.JTabbedPane facultyUpdateTab;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTabbedPane staffInsertTab;
     private javax.swing.JTabbedPane staffSearchTab;
+    private javax.swing.JTabbedPane staffTab;
+    private javax.swing.JTabbedPane staffUpdateTab;
     private javax.swing.JTextField studentAddAgeField;
     private javax.swing.JLabel studentAddAgeLabel;
     private javax.swing.JButton studentAddClearButton;
@@ -1003,22 +805,15 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTextField studentAddNameField;
     private javax.swing.JLabel studentAddNameLabel;
     private javax.swing.JButton studentAddSubmitButton;
-    private javax.swing.JTabbedPane studentAddTab;
+    private javax.swing.JPanel studentAddTab;
     private javax.swing.JTextField studentSearchAgeField;
-    private javax.swing.JTextField studentSearchAgeField1;
     private javax.swing.JButton studentSearchClearButton;
-    private javax.swing.JButton studentSearchClearButton1;
     private javax.swing.JTextField studentSearchIDField;
-    private javax.swing.JTextField studentSearchIDField1;
     private javax.swing.JComboBox studentSearchLevelField;
-    private javax.swing.JComboBox studentSearchLevelField1;
     private javax.swing.JComboBox studentSearchMajorField;
-    private javax.swing.JComboBox studentSearchMajorField1;
     private javax.swing.JTextField studentSearchNameField;
-    private javax.swing.JTextField studentSearchNameField1;
     private javax.swing.JButton studentSearchSubmitButton;
-    private javax.swing.JButton studentSearchSubmitButton1;
-    private javax.swing.JTabbedPane studentSearchTab;
+    private javax.swing.JPanel studentSearchTab;
     private javax.swing.JTable studentSearchTable;
     private javax.swing.JTabbedPane studentTab;
     private javax.swing.JTextField studentUpdateAgeField;

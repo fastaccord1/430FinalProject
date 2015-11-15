@@ -422,18 +422,28 @@ public class StaffForm extends javax.swing.JFrame {
 
         studentTab.addTab("Add", studentAddTab);
 
+        studentUpdateTab.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                studentUpdateTabFocusGained(evt);
+            }
+        });
+
         studentUpdateTable.setModel(new javax.swing.table.DefaultTableModel(
-            studentDatabase.searchStudent(),
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
             new String [] {
                 "ID", "Name", "Major", "Level", "Age"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false, false
             };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         studentUpdateTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -442,13 +452,6 @@ public class StaffForm extends javax.swing.JFrame {
             }
         });
         studentUpdateScrollPanel.setViewportView(studentUpdateTable);
-        if (studentUpdateTable.getColumnModel().getColumnCount() > 0) {
-            studentUpdateTable.getColumnModel().getColumn(0).setResizable(false);
-            studentUpdateTable.getColumnModel().getColumn(1).setResizable(false);
-            studentUpdateTable.getColumnModel().getColumn(2).setResizable(false);
-            studentUpdateTable.getColumnModel().getColumn(3).setResizable(false);
-            studentUpdateTable.getColumnModel().getColumn(4).setResizable(false);
-        }
 
         studentUpdateMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         studentUpdateMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -899,6 +902,10 @@ public class StaffForm extends javax.swing.JFrame {
         studentUpdateMajorField.setText(major);
         
     }//GEN-LAST:event_studentUpdateTableMousePressed
+
+    private void studentUpdateTabFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_studentUpdateTabFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentUpdateTabFocusGained
 
 
     /**

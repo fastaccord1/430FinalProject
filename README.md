@@ -9,6 +9,7 @@ __Requirements:__
 
 
 __Compiling__
+
 Run ant inside the base directory(where the build.xml file is). The jar will be output to out/jar/430FinalProject.jar
 
 # Running the program

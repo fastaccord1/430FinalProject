@@ -921,6 +921,7 @@ public class StaffForm extends javax.swing.JFrame {
         int age = (Integer) target.getValueAt(row, 4);
 
         studentUpdateIDField.setText(id + "");
+        oldSid = id;
         studentUpdateNameField.setText(name);
         studentUpdateMajorField.setText(major);
         studentUpdateLevelSelect.setSelectedItem(level);
@@ -1060,4 +1061,5 @@ public class StaffForm extends javax.swing.JFrame {
     private FacultyDatabase facultyDatabase;
     private StaffDatabase staffDatabase;
     private GeneralDatabase generalDatabase;
+    private int oldSid;
 }

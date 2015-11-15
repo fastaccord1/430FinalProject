@@ -89,8 +89,9 @@ public class FacultyDatabase extends Database {
 
 
     public void insertFaculty(int fid, String fName, int deptId) {
+        String statement = "INSERT INTO Faculty VALUES (" + fid + ", '" + fName + "', " + deptId + ")";
         try {
-            executeFacultyStaffInsert("Faculty", fid, fName, deptId);
+            executeInsertUpdate(statement);
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -1031,7 +1031,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentUpdateMajorField.setText("");
         studentUpdateLevelSelect.setSelectedIndex(0);
         studentUpdateAgeField.setText("");
-        oldSid = -1;
+        oldId = -1;
     }//GEN-LAST:event_studentUpdateClearButtonActionPerformed
 
     private void studentUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateSubmitButtonActionPerformed
@@ -1042,7 +1042,7 @@ public class StaffForm extends javax.swing.JFrame {
         String level = (String) studentUpdateLevelSelect.getSelectedItem();
         int age = Integer.parseInt(studentUpdateAgeField.getText());
 
-        studentDatabase.updateStudent(oldSid, id, name, major, level, age);
+        studentDatabase.updateStudent(oldId, id, name, major, level, age);
         String[] columns = {"ID", "Name", "Major", "Level", "Age"};
         refresh(studentUpdateTable, columns, studentDatabase.searchStudent());
         studentUpdateClearButtonActionPerformed(null);
@@ -1061,7 +1061,7 @@ public class StaffForm extends javax.swing.JFrame {
         int age = (Integer) target.getValueAt(row, 4);
 
         studentUpdateIDField.setText(id + "");
-        oldSid = id;
+        oldId = id;
         studentUpdateNameField.setText(name);
         studentUpdateMajorField.setText(major);
         studentUpdateLevelSelect.setSelectedItem(level);
@@ -1202,27 +1202,76 @@ public class StaffForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "You must enter a name");
             return;
         }
+        if (staffAddDeptCombo.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "You must select a Department");
+            return;
+        }
         int deptId = generalDatabase.getDepartmentId((String) staffAddDeptCombo.getSelectedItem());
 
         staffDatabase.insertStaff(id, name, deptId);
+        String[] columns = {"ID", "Name", "Department"};
+        refresh(staffSearchTable, columns, staffDatabase.staffSearch());
+        refresh(staffUpdateTable, columns, staffDatabase.staffSearch());
+        staffAddClearButtonActionPerformed(null);
 
 
     }//GEN-LAST:event_staffAddSubmitButtonActionPerformed
 
     private void staffAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffAddClearButtonActionPerformed
         // TODO add your handling code here:
+        staffAddIdField.setText("");
+        staffAddNameField.setText("");
+        staffAddDeptCombo.setSelectedIndex(0);
     }//GEN-LAST:event_staffAddClearButtonActionPerformed
 
     private void staffUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffUpdateTableMousePressed
         // TODO add your handling code here:
+        JTable target = (JTable) evt.getSource();
+        int row = target.getSelectedRow();
+
+        oldId = (Integer) target.getValueAt(row, 0);
+        String name = (String) target.getValueAt(row, 1);
+        String dept = (String) target.getValueAt(row, 2);
+
+        staffUpdateIdField.setText(oldId + "");
+        staffUpdateNameField.setText(name);
+        staffUpdateDeptCombo.setSelectedItem(dept);
     }//GEN-LAST:event_staffUpdateTableMousePressed
 
     private void staffUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffUpdateSubmitButtonActionPerformed
         // TODO add your handling code here:
+        int id;
+        try {
+            id = Integer.parseInt(staffUpdateIdField.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid number for ID");
+            return;
+        }
+        String name = staffUpdateNameField.getText();
+        if (name.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a name");
+            return;
+        }
+        if (staffUpdateDeptCombo.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "You must select a valid department");
+            return;
+        }
+        int deptId = generalDatabase.getDepartmentId((String) staffUpdateDeptCombo.getSelectedItem());
+
+        staffDatabase.updateStaff(oldId, id, name, deptId);
+        String[] columns = {"ID", "Name", "Department"};
+        refresh(staffUpdateTable, columns, staffDatabase.staffSearch());
+        refresh(staffSearchTable, columns, staffDatabase.staffSearch());
+        staffUpdateClearButtonActionPerformed(null);
+
     }//GEN-LAST:event_staffUpdateSubmitButtonActionPerformed
 
     private void staffUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffUpdateClearButtonActionPerformed
         // TODO add your handling code here:
+        oldId = 0;
+        staffUpdateIdField.setText("");
+        staffUpdateNameField.setText("");
+        staffUpdateDeptCombo.setSelectedIndex(0);
     }//GEN-LAST:event_staffUpdateClearButtonActionPerformed
 
     private void staffUpdateTabMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffUpdateTabMousePressed
@@ -1383,5 +1432,5 @@ public class StaffForm extends javax.swing.JFrame {
     private FacultyDatabase facultyDatabase;
     private StaffDatabase staffDatabase;
     private GeneralDatabase generalDatabase;
-    private int oldSid;
+    private int oldId;
 }

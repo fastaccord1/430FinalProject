@@ -6,7 +6,10 @@ package cs430.finalProject.backEnd;
  * @author Kevin Reuter
  */
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 
@@ -173,26 +176,6 @@ public class Database {
     protected void executeInsertUpdate(String query) throws SQLException {
         Statement statement = conn.createStatement();
         statement.execute(query);
-    }
-
-    /**
-     * Executes insert against either Faculty or Staff
-     *
-     * @param table  Table to run the insert against
-     * @param id     ID for the member to be inserted
-     * @param name   Name for the member to be inserted
-     * @param deptId Department ID for the member to be inserted
-     * @throws SQLException
-     */
-    protected void executeFacultyStaffInsert(String table, int id, String name, int deptId) throws SQLException {
-        String query = "INSERT INTO ? VALUES(?, ?, ?)";
-        PreparedStatement preparedStatement = conn.prepareStatement(query);
-        preparedStatement.setString(1, table);
-        preparedStatement.setInt(2, id);
-        preparedStatement.setString(3, name);
-        preparedStatement.setInt(4, deptId);
-
-        preparedStatement.execute();
     }
 
     protected Object[][] getStaffFacultyResults(String query, String[] columnNames) throws SQLException {

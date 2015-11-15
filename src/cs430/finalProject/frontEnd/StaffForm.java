@@ -698,6 +698,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentDatabase.updateStudent(oldSid, id, name, major, level, age);
         String[] columns = {"ID", "Name", "Major", "Level", "Age"};
         refresh(studentUpdateTable, columns, studentDatabase.searchStudent());
+        studentUpdateClearButtonActionPerformed(null);
 
 
     }//GEN-LAST:event_studentUpdateSubmitButtonActionPerformed
@@ -709,6 +710,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentUpdateMajorField.setText("");
         studentUpdateLevelSelect.setSelectedIndex(0);
         studentUpdateAgeField.setText("");
+        oldSid = -1;
     }//GEN-LAST:event_studentUpdateClearButtonActionPerformed
 
     private void studentUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTableMousePressed

@@ -13,7 +13,7 @@ CREATE TABLE Department(did INTEGER, dname VARCHAR(50), PRIMARY KEY(did));
 /* Create Student table */
 CREATE TABLE Student(sid INTEGER, sname VARCHAR(100), major VARCHAR(50), s_level VARCHAR(30), age INTEGER,
 PRIMARY KEY(sid), CHECK (s_level = 'Freshman' OR s_level = 'Sophomore' OR s_level = 'Junior' OR
-                         s_level = 'Senior' OR s_level = 'Masters' OR s_level = 'PHD'));
+                         s_level = 'Senior' OR s_level = 'Masters' OR s_level = 'PhD'));
 
 /* Create Faculty table */
 CREATE TABLE Faculty(fid INTEGER, fname VARCHAR(100), deptid INTEGER REFERENCES Department(did), PRIMARY KEY(fid));

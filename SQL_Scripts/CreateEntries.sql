@@ -42,9 +42,9 @@ INSERT INTO Student VALUES(139386, 'Fern Aukes', 'Electrical Engineering', 'Soph
 INSERT INTO Student VALUES(159995, 'Gerlinde Ravenna', 'English', 'Freshman', 18);
 INSERT INTO Student VALUES(117335, 'Lois P. Huff', 'Philosophy', 'Masters', 24);
 INSERT INTO Student VALUES(123932, 'Lorraine J. Bailey', 'Computer Science', 'Senior', 22);
-INSERT INTO Student VALUES(192090, 'Anthony B. Lucero', 'English', 'PHD', 26);
+INSERT INTO Student VALUES(192090, 'Anthony B. Lucero', 'English', 'PhD', 26);
 INSERT INTO Student VALUES(115982, 'Donna A. Wegman', 'Information Systems Technology', 'Freshman', 18);
 INSERT INTO Student VALUES(173541, 'Margaret J. Bishop', 'Business Administration', 'Masters', 24);
-INSERT INTO Student VALUES(169810, 'Vivian D. Shive', 'Computer Science', 'PHD', 25);
+INSERT INTO Student VALUES(169810, 'Vivian D. Shive', 'Computer Science', 'PhD', 25);
 INSERT INTO Student VALUES(130412, 'Joann O. Cormack', 'Electrical Engineering', 'Junior', 30);
 

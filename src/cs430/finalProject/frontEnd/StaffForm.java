@@ -690,6 +690,15 @@ public class StaffForm extends javax.swing.JFrame {
     private void studentUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateSubmitButtonActionPerformed
         // TODO add your handling code here:
         int id = Integer.parseInt(studentUpdateIDField.getText());
+        String name = studentUpdateNameField.getText();
+        String major = studentUpdateMajorField.getText();
+        String level = (String) studentUpdateLevelSelect.getSelectedItem();
+        int age = Integer.parseInt(studentUpdateAgeField.getText());
+
+        studentDatabase.updateStudent(oldSid, id, name, major, level, age);
+        String[] columns = {"ID", "Name", "Major", "Level", "Age"};
+        refresh(studentUpdateTable, columns, studentDatabase.searchStudent());
+
 
     }//GEN-LAST:event_studentUpdateSubmitButtonActionPerformed
 

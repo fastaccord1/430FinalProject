@@ -5,6 +5,9 @@ DROP TABLE Student;
 DROP TABLE Faculty;
 DROP TABLE Staff;
 DROP TABLE Department;
+DROP VIEW staffView;
+DROP VIEW facultyView;
+DROP VIEW enrolledStudent;
 
 
 /* Create new tables with constraints */

@@ -134,6 +134,7 @@ public class StaffForm extends javax.swing.JFrame {
         facultyUpdateTab = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Staff Form");
         setName("staffAccessForm"); // NOI18N
 
         studentSearchTable.setModel(new javax.swing.table.DefaultTableModel(

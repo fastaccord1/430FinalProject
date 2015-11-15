@@ -27,7 +27,7 @@ public class StaffForm extends javax.swing.JFrame {
         generalDatabase = MainClassHolder.getGeneralDatabase();
         initComponents();
         tableValues = null;
-        studentUpdateOldSid.setVisible(false);
+        
 
 
     }
@@ -105,7 +105,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentAddMainLabel = new javax.swing.JLabel();
         studentAddSubmitButton = new javax.swing.JButton();
         studentAddClearButton = new javax.swing.JButton();
-        studentUpdateTab = new javax.swing.JTabbedPane();
+        studentUpdateTab = new javax.swing.JPanel();
         studentUpdateScrollPanel = new javax.swing.JScrollPane();
         studentUpdateTable = new javax.swing.JTable();
         studentUpdateMainLabel = new javax.swing.JLabel();
@@ -918,7 +918,6 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void studentUpdateTabMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTabMousePressed
         // TODO add your handling code here:
-        studentUpdateOldSid.setVisible(false);
         String[] columns = {"ID", "Name", "Major", "Level", "Age"};
         refresh(studentUpdateTable, columns, studentDatabase.searchStudent());
     }//GEN-LAST:event_studentUpdateTabMousePressed
@@ -1039,7 +1038,7 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JScrollPane studentUpdateScrollPanel;
     private javax.swing.JSplitPane studentUpdateSplitPane;
     private javax.swing.JButton studentUpdateSubmitButton;
-    private javax.swing.JTabbedPane studentUpdateTab;
+    private javax.swing.JPanel studentUpdateTab;
     private javax.swing.JTable studentUpdateTable;
     // End of variables declaration//GEN-END:variables
     private Object[][] tableValues;

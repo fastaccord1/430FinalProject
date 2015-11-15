@@ -997,7 +997,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="studentAddTab1">
+            <Container class="javax.swing.JPanel" name="staffAddTab">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Add">
@@ -1010,15 +1010,15 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="studentAddLabelPanel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="staffAddLabelPanel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="studentAddFieldPanel1" max="32767" attributes="0"/>
+                          <Component id="staffAddFieldPanel" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Component id="staffAddMainLabel" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="341" max="-2" attributes="0"/>
-                          <Component id="jSplitPane4" min="-2" max="-2" attributes="0"/>
+                          <Component id="staffAddSplitPane" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1029,18 +1029,18 @@
                           <Component id="staffAddMainLabel" min="-2" pref="44" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="studentAddLabelPanel1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="studentAddFieldPanel1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="staffAddLabelPanel" alignment="0" max="32767" attributes="0"/>
+                              <Component id="staffAddFieldPanel" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jSplitPane4" min="-2" max="-2" attributes="0"/>
+                          <Component id="staffAddSplitPane" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="98" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="studentAddLabelPanel1">
+                <Container class="javax.swing.JPanel" name="staffAddLabelPanel">
 
                   <Layout>
                     <DimensionLayout dim="0">
@@ -1098,7 +1098,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="studentAddFieldPanel1">
+                <Container class="javax.swing.JPanel" name="staffAddFieldPanel">
 
                   <Layout>
                     <DimensionLayout dim="0">
@@ -1144,16 +1144,16 @@
                     <Property name="text" type="java.lang.String" value="Add a new staff member"/>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JSplitPane" name="jSplitPane4">
+                <Container class="javax.swing.JSplitPane" name="staffAddSplitPane">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JButton" name="studentAddSubmitButton1">
+                    <Component class="javax.swing.JButton" name="staffAddSubmitButton">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Submit"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentAddSubmitButton1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="staffAddSubmitButtonActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
@@ -1161,12 +1161,12 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JButton" name="studentAddClearButton1">
+                    <Component class="javax.swing.JButton" name="staffAddClearButton">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Clear"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentAddClearButton1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="staffAddClearButtonActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">

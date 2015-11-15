@@ -141,19 +141,19 @@ public class StaffForm extends javax.swing.JFrame {
         jSplitPane3 = new javax.swing.JSplitPane();
         staffSearchSubmitButton = new javax.swing.JButton();
         staffSearchClearButton = new javax.swing.JButton();
-        studentAddTab1 = new javax.swing.JPanel();
-        studentAddLabelPanel1 = new javax.swing.JPanel();
+        staffAddTab = new javax.swing.JPanel();
+        staffAddLabelPanel = new javax.swing.JPanel();
         staffAddIdLabel = new javax.swing.JLabel();
         staffAddNameLabel = new javax.swing.JLabel();
         staffAddDeptIdLabel = new javax.swing.JLabel();
-        studentAddFieldPanel1 = new javax.swing.JPanel();
+        staffAddFieldPanel = new javax.swing.JPanel();
         staffAddIdField = new javax.swing.JTextField();
         staffAddNameField = new javax.swing.JTextField();
         staffAddDeptCombo = new javax.swing.JComboBox();
         staffAddMainLabel = new javax.swing.JLabel();
-        jSplitPane4 = new javax.swing.JSplitPane();
-        studentAddSubmitButton1 = new javax.swing.JButton();
-        studentAddClearButton1 = new javax.swing.JButton();
+        staffAddSplitPane = new javax.swing.JSplitPane();
+        staffAddSubmitButton = new javax.swing.JButton();
+        staffAddClearButton = new javax.swing.JButton();
         staffUpdateTab = new javax.swing.JPanel();
         staffUpdateScrollPanel = new javax.swing.JScrollPane();
         staffUpdateTable = new javax.swing.JTable();
@@ -759,20 +759,20 @@ public class StaffForm extends javax.swing.JFrame {
         staffAddDeptIdLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         staffAddDeptIdLabel.setText("Department:");
 
-        javax.swing.GroupLayout studentAddLabelPanel1Layout = new javax.swing.GroupLayout(studentAddLabelPanel1);
-        studentAddLabelPanel1.setLayout(studentAddLabelPanel1Layout);
-        studentAddLabelPanel1Layout.setHorizontalGroup(
-            studentAddLabelPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(studentAddLabelPanel1Layout.createSequentialGroup()
-                .addGroup(studentAddLabelPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+        javax.swing.GroupLayout staffAddLabelPanelLayout = new javax.swing.GroupLayout(staffAddLabelPanel);
+        staffAddLabelPanel.setLayout(staffAddLabelPanelLayout);
+        staffAddLabelPanelLayout.setHorizontalGroup(
+            staffAddLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staffAddLabelPanelLayout.createSequentialGroup()
+                .addGroup(staffAddLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(staffAddDeptIdLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(staffAddNameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
                     .addComponent(staffAddIdLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 100, Short.MAX_VALUE))
         );
-        studentAddLabelPanel1Layout.setVerticalGroup(
-            studentAddLabelPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(studentAddLabelPanel1Layout.createSequentialGroup()
+        staffAddLabelPanelLayout.setVerticalGroup(
+            staffAddLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staffAddLabelPanelLayout.createSequentialGroup()
                 .addComponent(staffAddIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(staffAddNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -783,17 +783,17 @@ public class StaffForm extends javax.swing.JFrame {
 
         staffAddDeptCombo.setModel(new javax.swing.DefaultComboBoxModel(generalDatabase.getDepartmentNames()));
 
-        javax.swing.GroupLayout studentAddFieldPanel1Layout = new javax.swing.GroupLayout(studentAddFieldPanel1);
-        studentAddFieldPanel1.setLayout(studentAddFieldPanel1Layout);
-        studentAddFieldPanel1Layout.setHorizontalGroup(
-            studentAddFieldPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout staffAddFieldPanelLayout = new javax.swing.GroupLayout(staffAddFieldPanel);
+        staffAddFieldPanel.setLayout(staffAddFieldPanelLayout);
+        staffAddFieldPanelLayout.setHorizontalGroup(
+            staffAddFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(staffAddIdField, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(staffAddNameField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
             .addComponent(staffAddDeptCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        studentAddFieldPanel1Layout.setVerticalGroup(
-            studentAddFieldPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(studentAddFieldPanel1Layout.createSequentialGroup()
+        staffAddFieldPanelLayout.setVerticalGroup(
+            staffAddFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staffAddFieldPanelLayout.createSequentialGroup()
                 .addComponent(staffAddIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(staffAddNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -806,51 +806,51 @@ public class StaffForm extends javax.swing.JFrame {
         staffAddMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         staffAddMainLabel.setText("Add a new staff member");
 
-        studentAddSubmitButton1.setText("Submit");
-        studentAddSubmitButton1.addActionListener(new java.awt.event.ActionListener() {
+        staffAddSubmitButton.setText("Submit");
+        staffAddSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                studentAddSubmitButton1ActionPerformed(evt);
+                staffAddSubmitButtonActionPerformed(evt);
             }
         });
-        jSplitPane4.setLeftComponent(studentAddSubmitButton1);
+        staffAddSplitPane.setLeftComponent(staffAddSubmitButton);
 
-        studentAddClearButton1.setText("Clear");
-        studentAddClearButton1.addActionListener(new java.awt.event.ActionListener() {
+        staffAddClearButton.setText("Clear");
+        staffAddClearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                studentAddClearButton1ActionPerformed(evt);
+                staffAddClearButtonActionPerformed(evt);
             }
         });
-        jSplitPane4.setRightComponent(studentAddClearButton1);
+        staffAddSplitPane.setRightComponent(staffAddClearButton);
 
-        javax.swing.GroupLayout studentAddTab1Layout = new javax.swing.GroupLayout(studentAddTab1);
-        studentAddTab1.setLayout(studentAddTab1Layout);
-        studentAddTab1Layout.setHorizontalGroup(
-            studentAddTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(studentAddTab1Layout.createSequentialGroup()
-                .addComponent(studentAddLabelPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout staffAddTabLayout = new javax.swing.GroupLayout(staffAddTab);
+        staffAddTab.setLayout(staffAddTabLayout);
+        staffAddTabLayout.setHorizontalGroup(
+            staffAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staffAddTabLayout.createSequentialGroup()
+                .addComponent(staffAddLabelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(studentAddFieldPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(staffAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addComponent(staffAddMainLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(studentAddTab1Layout.createSequentialGroup()
+            .addGroup(staffAddTabLayout.createSequentialGroup()
                 .addGap(341, 341, 341)
-                .addComponent(jSplitPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(staffAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        studentAddTab1Layout.setVerticalGroup(
-            studentAddTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(studentAddTab1Layout.createSequentialGroup()
+        staffAddTabLayout.setVerticalGroup(
+            staffAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staffAddTabLayout.createSequentialGroup()
                 .addComponent(staffAddMainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(studentAddTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(studentAddLabelPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(studentAddFieldPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(staffAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(staffAddLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26)
-                .addComponent(jSplitPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(staffAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(98, Short.MAX_VALUE))
         );
 
-        staffTab.addTab("Add", studentAddTab1);
+        staffTab.addTab("Add", staffAddTab);
 
         staffUpdateTab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -1188,7 +1188,7 @@ public class StaffForm extends javax.swing.JFrame {
         staffSearchDeptCombo.setSelectedIndex(0);
     }//GEN-LAST:event_staffSearchClearButtonActionPerformed
 
-    private void studentAddSubmitButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddSubmitButton1ActionPerformed
+    private void staffAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffAddSubmitButtonActionPerformed
         // TODO add your handling code here:
         int id;
         try {
@@ -1207,11 +1207,11 @@ public class StaffForm extends javax.swing.JFrame {
         staffDatabase.insertStaff(id, name, deptId);
 
 
-    }//GEN-LAST:event_studentAddSubmitButton1ActionPerformed
+    }//GEN-LAST:event_staffAddSubmitButtonActionPerformed
 
-    private void studentAddClearButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentAddClearButton1ActionPerformed
+    private void staffAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffAddClearButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_studentAddClearButton1ActionPerformed
+    }//GEN-LAST:event_staffAddClearButtonActionPerformed
 
     private void staffUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffUpdateTableMousePressed
         // TODO add your handling code here:
@@ -1295,15 +1295,20 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JSplitPane jSplitPane3;
-    private javax.swing.JSplitPane jSplitPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton staffAddClearButton;
     private javax.swing.JComboBox staffAddDeptCombo;
     private javax.swing.JLabel staffAddDeptIdLabel;
+    private javax.swing.JPanel staffAddFieldPanel;
     private javax.swing.JTextField staffAddIdField;
     private javax.swing.JLabel staffAddIdLabel;
+    private javax.swing.JPanel staffAddLabelPanel;
     private javax.swing.JLabel staffAddMainLabel;
     private javax.swing.JTextField staffAddNameField;
     private javax.swing.JLabel staffAddNameLabel;
+    private javax.swing.JSplitPane staffAddSplitPane;
+    private javax.swing.JButton staffAddSubmitButton;
+    private javax.swing.JPanel staffAddTab;
     private javax.swing.JButton staffSearchClearButton;
     private javax.swing.JComboBox staffSearchDeptCombo;
     private javax.swing.JTextField staffSearchIDField;
@@ -1330,13 +1335,10 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTextField studentAddAgeField;
     private javax.swing.JLabel studentAddAgeLabel;
     private javax.swing.JButton studentAddClearButton;
-    private javax.swing.JButton studentAddClearButton1;
     private javax.swing.JPanel studentAddFieldPanel;
-    private javax.swing.JPanel studentAddFieldPanel1;
     private javax.swing.JTextField studentAddIDField;
     private javax.swing.JLabel studentAddIDLabel;
     private javax.swing.JPanel studentAddLabelPanel;
-    private javax.swing.JPanel studentAddLabelPanel1;
     private javax.swing.JComboBox studentAddLevelCombo;
     private javax.swing.JLabel studentAddLevelLabel;
     private javax.swing.JLabel studentAddMainLabel;
@@ -1345,9 +1347,7 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JTextField studentAddNameField;
     private javax.swing.JLabel studentAddNameLabel;
     private javax.swing.JButton studentAddSubmitButton;
-    private javax.swing.JButton studentAddSubmitButton1;
     private javax.swing.JPanel studentAddTab;
-    private javax.swing.JPanel studentAddTab1;
     private javax.swing.JTextField studentSearchAgeField;
     private javax.swing.JButton studentSearchClearButton;
     private javax.swing.JTextField studentSearchIDField;

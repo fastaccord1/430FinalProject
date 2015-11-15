@@ -920,6 +920,8 @@ public class StaffForm extends javax.swing.JFrame {
         studentUpdateIDField.setText(id + "");
         studentUpdateNameField.setText(name);
         studentUpdateMajorField.setText(major);
+        studentUpdateLevelSelect.setSelectedItem(level);
+        studentUpdateAgeField.setText(age + "");
 
     }//GEN-LAST:event_studentUpdateTableMousePressed
 

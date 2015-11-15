@@ -105,7 +105,7 @@ public class StaffForm extends javax.swing.JFrame {
         studentAddMainLabel = new javax.swing.JLabel();
         studentAddSubmitButton = new javax.swing.JButton();
         studentAddClearButton = new javax.swing.JButton();
-        studentUpdateTab = new javax.swing.JPanel();
+        studentUpdateTab = new javax.swing.JTabbedPane();
         studentUpdateScrollPanel = new javax.swing.JScrollPane();
         studentUpdateTable = new javax.swing.JTable();
         studentUpdateMainLabel = new javax.swing.JLabel();
@@ -1053,7 +1053,7 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JScrollPane studentUpdateScrollPanel;
     private javax.swing.JSplitPane studentUpdateSplitPane;
     private javax.swing.JButton studentUpdateSubmitButton;
-    private javax.swing.JPanel studentUpdateTab;
+    private javax.swing.JTabbedPane studentUpdateTab;
     private javax.swing.JTable studentUpdateTable;
     // End of variables declaration//GEN-END:variables
     private Object[][] tableValues;

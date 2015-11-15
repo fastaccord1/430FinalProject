@@ -28,3 +28,25 @@ Faculty(fid), limit INTEGER CHECK(limit < 200), PRIMARY KEY(cid));
 /* Create Enrolled table */
 CREATE TABLE Enrolled(sid INTEGER, cid VARCHAR(10), exam1 INTEGER, exam2 INTEGER, final INTEGER, FOREIGN KEY(sid) REFERENCES
 Student(sid), FOREIGN KEY(cid) REFERENCES Courses(cid));
+
+CREATE VIEW staffView AS
+  SELECT
+    sid,
+    sname,
+    dname
+  FROM Staff, Department
+  WHERE did = Staff.deptid;
+
+CREATE VIEW facultyView AS
+  SELECT
+    fid,
+    fname,
+    dname
+  FROM Faculty, Department
+  WHERE did = Faculty.deptid;
+
+CREATE VIEW enrolledStudent AS
+  SELECT *
+  FROM Student
+    NATURAL JOIN Enrolled
+    NATURAL JOIN Courses;

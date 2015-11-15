@@ -55,7 +55,7 @@ public class StaffDatabase extends Database {
     public Object[][] staffSearch() {
         String query = "SELECT sid, sname, dname FROM Staff, Department WHERE deptid = did";
         try {
-            return getStaffFacultyResults(query);
+            return getStaffFacultyResults(query, new String[]{"sid", "sname", "dname"});
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -85,7 +85,7 @@ public class StaffDatabase extends Database {
 
         query = finishQuery(query, conditions);
         try {
-            return getStaffFacultyResults(query);
+            return getStaffFacultyResults(query, new String[]{"sid", "sname", "deptid"});
         } catch (SQLException e) {
             e.printStackTrace();
         }

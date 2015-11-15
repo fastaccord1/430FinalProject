@@ -3,7 +3,6 @@ package cs430.finalProject.backEnd;
 import oracle.jdbc.driver.OracleDriver;
 
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -70,7 +69,7 @@ public class FacultyDatabase extends Database {
 
         query = finishQuery(query, conditions);
         try {
-            return getStaffFacultyResults(query);
+            return getStaffFacultyResults(query, new String[]{"fid", "fname", "deptid"});
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -88,7 +87,7 @@ public class FacultyDatabase extends Database {
         Object[][] output;
         String query = "SELECT * FROM Faculty";
         try {
-            return getStaffFacultyResults(query);
+            return getStaffFacultyResults(query, new String[]{"fid", "fname", "deptid"});
         } catch (SQLException e) {
             e.printStackTrace();
         }

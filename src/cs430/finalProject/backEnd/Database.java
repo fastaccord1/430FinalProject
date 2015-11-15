@@ -195,15 +195,16 @@ public class Database {
         preparedStatement.execute();
     }
 
-    protected Object[][] getStaffFacultyResults(String query) throws SQLException {
+    protected Object[][] getStaffFacultyResults(String query, String[] columnNames) throws SQLException {
         Object[][] output;
+        System.out.println(query);
         int count = getCount(query);
         output = new Object[count][3];
         ResultSet rs = executeQuery(query);
         for(int i = 0; rs.next(); i++) {
-            output[i][0] = rs.getInt(0);
-            output[i][1] = rs.getString(1);
-            output[i][2] = rs.getInt(2);
+            output[i][0] = rs.getInt(columnNames[0]);
+            output[i][1] = rs.getString(columnNames[1]);
+            output[i][2] = rs.getString(columnNames[2]);
         }
         return output;
     }

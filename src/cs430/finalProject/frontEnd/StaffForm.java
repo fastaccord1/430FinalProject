@@ -340,7 +340,7 @@ public class StaffForm extends javax.swing.JFrame {
                 .addContainerGap(77, Short.MAX_VALUE))
         );
 
-        studentAddLevelCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        studentAddLevelCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Freshman", "Sophomore", "Junior", "Senior", "Masters", "PhD" }));
 
         javax.swing.GroupLayout studentAddFieldPanelLayout = new javax.swing.GroupLayout(studentAddFieldPanel);
         studentAddFieldPanel.setLayout(studentAddFieldPanelLayout);

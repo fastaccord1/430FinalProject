@@ -849,12 +849,6 @@ public class StaffForm extends javax.swing.JFrame {
 
         studentTab.addTab("Update", studentUpdateTab);
 
-        studentDeleteScroll.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                studentDeleteScrollMousePressed(evt);
-            }
-        });
-
         studentDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
             studentDatabase.searchStudent(),
             new String [] {
@@ -867,6 +861,11 @@ public class StaffForm extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        studentDeleteTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                studentDeleteTableMousePressed(evt);
             }
         });
         studentDeleteScroll.setViewportView(studentDeleteTable);
@@ -1287,12 +1286,6 @@ public class StaffForm extends javax.swing.JFrame {
 
         staffTab.addTab("Update", staffUpdateTab);
 
-        staffDeleteScroll.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                staffDeleteScrollMousePressed(evt);
-            }
-        });
-
         staffDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
             staffDatabase.staffSearch(),
             new String [] {
@@ -1305,6 +1298,11 @@ public class StaffForm extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        staffDeleteTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                staffDeleteTableMousePressed(evt);
             }
         });
         staffDeleteScroll.setViewportView(staffDeleteTable);
@@ -1725,12 +1723,6 @@ public class StaffForm extends javax.swing.JFrame {
 
         facultyTab.addTab("Update", facultyUpdateTab);
 
-        facultyDeleteScroll.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                facultyDeleteScrollMousePressed(evt);
-            }
-        });
-
         facultyDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
             facultyDatabase.facultySearch(),
             new String [] {
@@ -1743,6 +1735,11 @@ public class StaffForm extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        facultyDeleteTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                facultyDeleteTableMousePressed(evt);
             }
         });
         facultyDeleteScroll.setViewportView(facultyDeleteTable);
@@ -2128,12 +2125,6 @@ public class StaffForm extends javax.swing.JFrame {
 
         departmentTab.addTab("Update", deptUpdateTab);
 
-        deptDeleteScroll.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                deptDeleteScrollMousePressed(evt);
-            }
-        });
-
         deptDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
             staffDatabase.staffSearch(),
             new String [] {
@@ -2146,6 +2137,11 @@ public class StaffForm extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        deptDeleteTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                deptDeleteTableMousePressed(evt);
             }
         });
         deptDeleteScroll.setViewportView(deptDeleteTable);
@@ -2652,12 +2648,6 @@ public class StaffForm extends javax.swing.JFrame {
 
         courseTab.addTab("Update", courseUpdateTab);
 
-        courseDeleteScroll.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                courseDeleteScrollMousePressed(evt);
-            }
-        });
-
         courseDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
             staffDatabase.staffSearch(),
             new String [] {
@@ -2670,6 +2660,11 @@ public class StaffForm extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        courseDeleteTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                courseDeleteTableMousePressed(evt);
             }
         });
         courseDeleteScroll.setViewportView(courseDeleteTable);
@@ -3155,12 +3150,6 @@ public class StaffForm extends javax.swing.JFrame {
 
         enrolledTab.addTab("Update", enrolledUpdateTab);
 
-        enrolledDeleteScroll.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                enrolledDeleteScrollMousePressed(evt);
-            }
-        });
-
         enrolledDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
             staffDatabase.staffSearch(),
             new String [] {
@@ -3173,6 +3162,11 @@ public class StaffForm extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        enrolledDeleteTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                enrolledDeleteTableMousePressed(evt);
             }
         });
         enrolledDeleteScroll.setViewportView(enrolledDeleteTable);
@@ -3493,14 +3487,6 @@ public class StaffForm extends javax.swing.JFrame {
         staffUpdateDeptCombo.setSelectedIndex(0);
     }//GEN-LAST:event_staffUpdateClearButtonActionPerformed
 
-    private void studentDeleteScrollMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentDeleteScrollMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_studentDeleteScrollMousePressed
-
-    private void staffDeleteScrollMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffDeleteScrollMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_staffDeleteScrollMousePressed
-
     private void facultySearchSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultySearchSubmitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_facultySearchSubmitActionPerformed
@@ -3528,10 +3514,6 @@ public class StaffForm extends javax.swing.JFrame {
     private void facultyUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyUpdateClearButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_facultyUpdateClearButtonActionPerformed
-
-    private void facultyDeleteScrollMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facultyDeleteScrollMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_facultyDeleteScrollMousePressed
 
     private void deptSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptSearchSubmitButtonActionPerformed
         // TODO add your handling code here:
@@ -3561,10 +3543,6 @@ public class StaffForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_deptUpdateClearButtonActionPerformed
 
-    private void deptDeleteScrollMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deptDeleteScrollMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deptDeleteScrollMousePressed
-
     private void courseSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseSearchSubmitButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_courseSearchSubmitButtonActionPerformed
@@ -3592,10 +3570,6 @@ public class StaffForm extends javax.swing.JFrame {
     private void courseUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseUpdateClearButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_courseUpdateClearButtonActionPerformed
-
-    private void courseDeleteScrollMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_courseDeleteScrollMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_courseDeleteScrollMousePressed
 
     private void enrolledSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrolledSearchSubmitButtonActionPerformed
         // TODO add your handling code here:
@@ -3625,9 +3599,29 @@ public class StaffForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_enrolledUpdateClearButtonActionPerformed
 
-    private void enrolledDeleteScrollMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enrolledDeleteScrollMousePressed
+    private void staffDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffDeleteTableMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_enrolledDeleteScrollMousePressed
+    }//GEN-LAST:event_staffDeleteTableMousePressed
+
+    private void studentDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentDeleteTableMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentDeleteTableMousePressed
+
+    private void facultyDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facultyDeleteTableMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultyDeleteTableMousePressed
+
+    private void deptDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deptDeleteTableMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptDeleteTableMousePressed
+
+    private void courseDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_courseDeleteTableMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_courseDeleteTableMousePressed
+
+    private void enrolledDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enrolledDeleteTableMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enrolledDeleteTableMousePressed
 
 
     /**

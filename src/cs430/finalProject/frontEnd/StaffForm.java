@@ -27,9 +27,10 @@ public class StaffForm extends javax.swing.JFrame {
         generalDatabase = MainClassHolder.getGeneralDatabase();
         initComponents();
         tableValues = null;
-        
-
-
+        studentDelIdField.setVisible(false);
+        staffDelIdField.setVisible(false);
+        facultyDelIdField.setVisible(false);
+        deptDelIdField.setVisible(false);
     }
 
     public void initialSetupTable(JTable table, String[] columns, Object[][] values) {
@@ -126,6 +127,12 @@ public class StaffForm extends javax.swing.JFrame {
         studentUpdateSplitPane = new javax.swing.JSplitPane();
         studentUpdateSubmitButton = new javax.swing.JButton();
         studentUpdateClearButton = new javax.swing.JButton();
+        studentDeleteTab = new javax.swing.JPanel();
+        studentDeleteScroll = new javax.swing.JScrollPane();
+        studentDeleteTable = new javax.swing.JTable();
+        studentDeleteButtonPane = new javax.swing.JPanel();
+        studentDelIdField = new javax.swing.JTextField();
+        studentDelButton = new javax.swing.JButton();
         staffTab = new javax.swing.JTabbedPane();
         staffSearchTab = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -169,10 +176,106 @@ public class StaffForm extends javax.swing.JFrame {
         staffUpdateSplitPane = new javax.swing.JSplitPane();
         staffUpdateSubmitButton = new javax.swing.JButton();
         staffUpdateClearButton = new javax.swing.JButton();
+        staffDeleteTab = new javax.swing.JPanel();
+        staffDeleteScroll = new javax.swing.JScrollPane();
+        staffDeleteTable = new javax.swing.JTable();
+        staffDeleteButtonPane = new javax.swing.JPanel();
+        staffDelIdField = new javax.swing.JTextField();
+        staffDelButton = new javax.swing.JButton();
         facultyTab = new javax.swing.JTabbedPane();
-        facultySearchTab = new javax.swing.JTabbedPane();
-        facultyAddTab = new javax.swing.JTabbedPane();
-        facultyUpdateTab = new javax.swing.JTabbedPane();
+        facultySearchTab = new javax.swing.JPanel();
+        facultySearchScroll = new javax.swing.JScrollPane();
+        facultySearchTable = new javax.swing.JTable();
+        facultySearchLabelPane = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        facultySearchFieldPane = new javax.swing.JPanel();
+        facultySearchIdField = new javax.swing.JTextField();
+        facultySearchNameField = new javax.swing.JTextField();
+        facultySearchDeptCombo = new javax.swing.JComboBox();
+        facultySearchSplit = new javax.swing.JSplitPane();
+        facultySearchSubmit = new javax.swing.JButton();
+        facultySearchClear = new javax.swing.JButton();
+        facultyAddTab = new javax.swing.JPanel();
+        facultyAddLabelPane = new javax.swing.JPanel();
+        facultyAddIdLabel = new javax.swing.JLabel();
+        facultyAddNameLabel = new javax.swing.JLabel();
+        facultyAddDeptIdLabel = new javax.swing.JLabel();
+        facultyAddFieldPane = new javax.swing.JPanel();
+        facultyAddIdField = new javax.swing.JTextField();
+        facultyAddNameField = new javax.swing.JTextField();
+        facultyAddDeptCombo = new javax.swing.JComboBox();
+        facultyAddMainLabel = new javax.swing.JLabel();
+        facultyAddSplit = new javax.swing.JSplitPane();
+        facultyAddSubmitButton = new javax.swing.JButton();
+        facultyAddClearButton = new javax.swing.JButton();
+        facultyUpdateTab = new javax.swing.JPanel();
+        facultyUpdateScrollPanel = new javax.swing.JScrollPane();
+        facultyUpdateTable = new javax.swing.JTable();
+        facultyUpdateMainLabel = new javax.swing.JLabel();
+        facultyUpdateLabelPanel = new javax.swing.JPanel();
+        facultyUpdateIdLabel = new javax.swing.JLabel();
+        facultyUpdateNameLabel = new javax.swing.JLabel();
+        facultyUpdateDeptLabel = new javax.swing.JLabel();
+        facultyUpdateFieldPanel = new javax.swing.JPanel();
+        facultyUpdateIdField = new javax.swing.JTextField();
+        facultyUpdateNameField = new javax.swing.JTextField();
+        facultyUpdateDeptCombo = new javax.swing.JComboBox();
+        facultyUpdateSplitPane = new javax.swing.JSplitPane();
+        facultyUpdateSubmitButton = new javax.swing.JButton();
+        facultyUpdateClearButton = new javax.swing.JButton();
+        facultyDelTab = new javax.swing.JPanel();
+        facultyDeleteScroll = new javax.swing.JScrollPane();
+        facultyDeleteTable = new javax.swing.JTable();
+        facultyDeleteButtonPane = new javax.swing.JPanel();
+        facultyDelIdField = new javax.swing.JTextField();
+        facultyDelButton = new javax.swing.JButton();
+        departmentTab = new javax.swing.JTabbedPane();
+        deptSearchTab = new javax.swing.JPanel();
+        deptSearchScroll = new javax.swing.JScrollPane();
+        deptSearchTable = new javax.swing.JTable();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        deptSearchIDField = new javax.swing.JTextField();
+        deptSearchNameField = new javax.swing.JTextField();
+        jSplitPane4 = new javax.swing.JSplitPane();
+        deptSearchSubmitButton = new javax.swing.JButton();
+        deptSearchClearButton = new javax.swing.JButton();
+        deptAddTab = new javax.swing.JPanel();
+        deptAddLabelPanel = new javax.swing.JPanel();
+        deptAddIdLabel = new javax.swing.JLabel();
+        deptAddNameLabel = new javax.swing.JLabel();
+        deptAddFieldPanel = new javax.swing.JPanel();
+        deptAddIdField = new javax.swing.JTextField();
+        deptAddNameField = new javax.swing.JTextField();
+        deptAddMainLabel = new javax.swing.JLabel();
+        deptAddSplitPane = new javax.swing.JSplitPane();
+        deptAddSubmitButton = new javax.swing.JButton();
+        deptAddClearButton = new javax.swing.JButton();
+        deptUpdateTab = new javax.swing.JPanel();
+        deptUpdateScrollPanel = new javax.swing.JScrollPane();
+        deptUpdateTable = new javax.swing.JTable();
+        deptUpdateMainLabel = new javax.swing.JLabel();
+        deptUpdateLabelPanel = new javax.swing.JPanel();
+        deptUpdateIdLabel = new javax.swing.JLabel();
+        deptUpdateNameLabel = new javax.swing.JLabel();
+        deptUpdateFieldPanel = new javax.swing.JPanel();
+        deptUpdateIdField = new javax.swing.JTextField();
+        deptUpdateNameField = new javax.swing.JTextField();
+        deptUpdateSplitPane = new javax.swing.JSplitPane();
+        deptUpdateSubmitButton = new javax.swing.JButton();
+        deptUpdateClearButton = new javax.swing.JButton();
+        deptDeleteTab = new javax.swing.JPanel();
+        deptDeleteScroll = new javax.swing.JScrollPane();
+        deptDeleteTable = new javax.swing.JTable();
+        deptDeleteButtonPane = new javax.swing.JPanel();
+        deptDelIdField = new javax.swing.JTextField();
+        deptDelButton = new javax.swing.JButton();
+        courseTab = new javax.swing.JTabbedPane();
+        enrolledTab = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Staff Form");
@@ -312,7 +415,7 @@ public class StaffForm extends javax.swing.JFrame {
             studentSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(studentSearchTabLayout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 45, Short.MAX_VALUE))
+                .addGap(0, 72, Short.MAX_VALUE))
             .addGroup(studentSearchTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(studentSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,7 +548,7 @@ public class StaffForm extends javax.swing.JFrame {
                     .addComponent(studentAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26)
                 .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         studentTab.addTab("Add", studentAddTab);
@@ -618,12 +721,78 @@ public class StaffForm extends javax.swing.JFrame {
 
         studentTab.addTab("Update", studentUpdateTab);
 
+        studentDeleteScroll.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                studentDeleteScrollMousePressed(evt);
+            }
+        });
+
+        studentDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
+            studentDatabase.searchStudent(),
+            new String [] {
+                "ID", "Name", "Major", "Level", "Age"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        studentDeleteScroll.setViewportView(studentDeleteTable);
+
+        studentDelButton.setText("Delete");
+
+        javax.swing.GroupLayout studentDeleteButtonPaneLayout = new javax.swing.GroupLayout(studentDeleteButtonPane);
+        studentDeleteButtonPane.setLayout(studentDeleteButtonPaneLayout);
+        studentDeleteButtonPaneLayout.setHorizontalGroup(
+            studentDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentDeleteButtonPaneLayout.createSequentialGroup()
+                .addContainerGap(753, Short.MAX_VALUE)
+                .addComponent(studentDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+            .addGroup(studentDeleteButtonPaneLayout.createSequentialGroup()
+                .addGap(322, 322, 322)
+                .addComponent(studentDelButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        studentDeleteButtonPaneLayout.setVerticalGroup(
+            studentDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentDeleteButtonPaneLayout.createSequentialGroup()
+                .addComponent(studentDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentDelButton)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout studentDeleteTabLayout = new javax.swing.GroupLayout(studentDeleteTab);
+        studentDeleteTab.setLayout(studentDeleteTabLayout);
+        studentDeleteTabLayout.setHorizontalGroup(
+            studentDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(studentDeleteScroll, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentDeleteTabLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(studentDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        studentDeleteTabLayout.setVerticalGroup(
+            studentDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentDeleteTabLayout.createSequentialGroup()
+                .addComponent(studentDeleteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        studentTab.addTab("Delete", studentDeleteTab);
+
         jTabbedPane1.addTab("Student", studentTab);
 
         staffSearchTable.setModel(new javax.swing.table.DefaultTableModel(
             staffDatabase.staffSearch(),
             new String [] {
-                "ID", "Name", "Department"
+                "ID", "Name", "departmentTab"
             }
         ) {
             Class[] types = new Class [] {
@@ -734,7 +903,7 @@ public class StaffForm extends javax.swing.JFrame {
             staffSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(staffSearchTabLayout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 45, Short.MAX_VALUE))
+                .addGap(0, 72, Short.MAX_VALUE))
             .addGroup(staffSearchTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(staffSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -847,7 +1016,7 @@ public class StaffForm extends javax.swing.JFrame {
                     .addComponent(staffAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26)
                 .addComponent(staffAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         staffTab.addTab("Add", staffAddTab);
@@ -861,7 +1030,7 @@ public class StaffForm extends javax.swing.JFrame {
         staffUpdateTable.setModel(new javax.swing.table.DefaultTableModel(
             staffDatabase.staffSearch(),
             new String [] {
-                "ID", "Name", "Department"
+                "ID", "Name", "departmentTab"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -893,7 +1062,7 @@ public class StaffForm extends javax.swing.JFrame {
 
         staffUpdateDeptLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         staffUpdateDeptLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        staffUpdateDeptLabel.setText("Major:");
+        staffUpdateDeptLabel.setText("Department:");
 
         javax.swing.GroupLayout staffUpdateLabelPanelLayout = new javax.swing.GroupLayout(staffUpdateLabelPanel);
         staffUpdateLabelPanel.setLayout(staffUpdateLabelPanelLayout);
@@ -996,13 +1165,928 @@ public class StaffForm extends javax.swing.JFrame {
 
         staffTab.addTab("Update", staffUpdateTab);
 
+        staffDeleteScroll.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                staffDeleteScrollMousePressed(evt);
+            }
+        });
+
+        staffDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
+            staffDatabase.staffSearch(),
+            new String [] {
+                "ID", "Name", "Major", "Level", "Age"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        staffDeleteScroll.setViewportView(staffDeleteTable);
+
+        staffDelButton.setText("Delete");
+
+        javax.swing.GroupLayout staffDeleteButtonPaneLayout = new javax.swing.GroupLayout(staffDeleteButtonPane);
+        staffDeleteButtonPane.setLayout(staffDeleteButtonPaneLayout);
+        staffDeleteButtonPaneLayout.setHorizontalGroup(
+            staffDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffDeleteButtonPaneLayout.createSequentialGroup()
+                .addContainerGap(753, Short.MAX_VALUE)
+                .addComponent(staffDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+            .addGroup(staffDeleteButtonPaneLayout.createSequentialGroup()
+                .addGap(322, 322, 322)
+                .addComponent(staffDelButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        staffDeleteButtonPaneLayout.setVerticalGroup(
+            staffDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staffDeleteButtonPaneLayout.createSequentialGroup()
+                .addComponent(staffDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(staffDelButton)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout staffDeleteTabLayout = new javax.swing.GroupLayout(staffDeleteTab);
+        staffDeleteTab.setLayout(staffDeleteTabLayout);
+        staffDeleteTabLayout.setHorizontalGroup(
+            staffDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(staffDeleteScroll, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffDeleteTabLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(staffDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        staffDeleteTabLayout.setVerticalGroup(
+            staffDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staffDeleteTabLayout.createSequentialGroup()
+                .addComponent(staffDeleteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(staffDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        staffTab.addTab("Delete", staffDeleteTab);
+
         jTabbedPane1.addTab("Staff", staffTab);
 
+        facultySearchTable.setModel(new javax.swing.table.DefaultTableModel(
+            facultyDatabase.facultySearch(),
+            new String [] {
+                "ID", "Name", "departmentTab"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        facultySearchScroll.setViewportView(facultySearchTable);
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("ID");
+
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Name");
+
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Department ID");
+
+        javax.swing.GroupLayout facultySearchLabelPaneLayout = new javax.swing.GroupLayout(facultySearchLabelPane);
+        facultySearchLabelPane.setLayout(facultySearchLabelPaneLayout);
+        facultySearchLabelPaneLayout.setHorizontalGroup(
+            facultySearchLabelPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        facultySearchLabelPaneLayout.setVerticalGroup(
+            facultySearchLabelPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultySearchLabelPaneLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(146, Short.MAX_VALUE))
+        );
+
+        facultySearchDeptCombo.setModel(new javax.swing.DefaultComboBoxModel(generalDatabase.getDepartmentNames()));
+
+        javax.swing.GroupLayout facultySearchFieldPaneLayout = new javax.swing.GroupLayout(facultySearchFieldPane);
+        facultySearchFieldPane.setLayout(facultySearchFieldPaneLayout);
+        facultySearchFieldPaneLayout.setHorizontalGroup(
+            facultySearchFieldPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultySearchFieldPaneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(facultySearchFieldPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(facultySearchDeptCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(facultySearchNameField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                    .addComponent(facultySearchIdField, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        facultySearchFieldPaneLayout.setVerticalGroup(
+            facultySearchFieldPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultySearchFieldPaneLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(facultySearchIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultySearchNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultySearchDeptCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(205, Short.MAX_VALUE))
+        );
+
+        facultySearchSubmit.setText("Search");
+        facultySearchSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facultySearchSubmitActionPerformed(evt);
+            }
+        });
+        facultySearchSplit.setLeftComponent(facultySearchSubmit);
+
+        facultySearchClear.setText("Clear");
+        facultySearchClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facultySearchClearActionPerformed(evt);
+            }
+        });
+        facultySearchSplit.setRightComponent(facultySearchClear);
+
+        javax.swing.GroupLayout facultySearchTabLayout = new javax.swing.GroupLayout(facultySearchTab);
+        facultySearchTab.setLayout(facultySearchTabLayout);
+        facultySearchTabLayout.setHorizontalGroup(
+            facultySearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, facultySearchTabLayout.createSequentialGroup()
+                .addGroup(facultySearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(facultySearchTabLayout.createSequentialGroup()
+                        .addComponent(facultySearchLabelPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(facultySearchFieldPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(facultySearchTabLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(facultySearchSplit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultySearchScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE))
+        );
+        facultySearchTabLayout.setVerticalGroup(
+            facultySearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultySearchTabLayout.createSequentialGroup()
+                .addComponent(facultySearchScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 72, Short.MAX_VALUE))
+            .addGroup(facultySearchTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(facultySearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(facultySearchFieldPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(facultySearchLabelPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultySearchSplit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         facultyTab.addTab("Search", facultySearchTab);
+
+        facultyAddIdLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        facultyAddIdLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        facultyAddIdLabel.setText("ID:");
+
+        facultyAddNameLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        facultyAddNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        facultyAddNameLabel.setText("Name:");
+
+        facultyAddDeptIdLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        facultyAddDeptIdLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        facultyAddDeptIdLabel.setText("Department:");
+
+        javax.swing.GroupLayout facultyAddLabelPaneLayout = new javax.swing.GroupLayout(facultyAddLabelPane);
+        facultyAddLabelPane.setLayout(facultyAddLabelPaneLayout);
+        facultyAddLabelPaneLayout.setHorizontalGroup(
+            facultyAddLabelPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyAddLabelPaneLayout.createSequentialGroup()
+                .addGroup(facultyAddLabelPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(facultyAddDeptIdLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(facultyAddNameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                    .addComponent(facultyAddIdLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 100, Short.MAX_VALUE))
+        );
+        facultyAddLabelPaneLayout.setVerticalGroup(
+            facultyAddLabelPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyAddLabelPaneLayout.createSequentialGroup()
+                .addComponent(facultyAddIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyAddNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyAddDeptIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(177, Short.MAX_VALUE))
+        );
+
+        facultyAddDeptCombo.setModel(new javax.swing.DefaultComboBoxModel(generalDatabase.getDepartmentNames()));
+
+        javax.swing.GroupLayout facultyAddFieldPaneLayout = new javax.swing.GroupLayout(facultyAddFieldPane);
+        facultyAddFieldPane.setLayout(facultyAddFieldPaneLayout);
+        facultyAddFieldPaneLayout.setHorizontalGroup(
+            facultyAddFieldPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(facultyAddIdField, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(facultyAddNameField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+            .addComponent(facultyAddDeptCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        facultyAddFieldPaneLayout.setVerticalGroup(
+            facultyAddFieldPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyAddFieldPaneLayout.createSequentialGroup()
+                .addComponent(facultyAddIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyAddNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyAddDeptCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        facultyAddMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        facultyAddMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        facultyAddMainLabel.setText("Add a new faculty member");
+
+        facultyAddSubmitButton.setText("Submit");
+        facultyAddSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facultyAddSubmitButtonActionPerformed(evt);
+            }
+        });
+        facultyAddSplit.setLeftComponent(facultyAddSubmitButton);
+
+        facultyAddClearButton.setText("Clear");
+        facultyAddClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facultyAddClearButtonActionPerformed(evt);
+            }
+        });
+        facultyAddSplit.setRightComponent(facultyAddClearButton);
+
+        javax.swing.GroupLayout facultyAddTabLayout = new javax.swing.GroupLayout(facultyAddTab);
+        facultyAddTab.setLayout(facultyAddTabLayout);
+        facultyAddTabLayout.setHorizontalGroup(
+            facultyAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyAddTabLayout.createSequentialGroup()
+                .addComponent(facultyAddLabelPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyAddFieldPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(facultyAddMainLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(facultyAddTabLayout.createSequentialGroup()
+                .addGap(341, 341, 341)
+                .addComponent(facultyAddSplit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        facultyAddTabLayout.setVerticalGroup(
+            facultyAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyAddTabLayout.createSequentialGroup()
+                .addComponent(facultyAddMainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(facultyAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(facultyAddLabelPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(facultyAddFieldPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(facultyAddSplit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+
         facultyTab.addTab("Add", facultyAddTab);
+
+        facultyUpdateTab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                facultyUpdateTabMousePressed(evt);
+            }
+        });
+
+        facultyUpdateTable.setModel(new javax.swing.table.DefaultTableModel(
+            facultyDatabase.facultySearch(),
+            new String [] {
+                "ID", "Name", "departmentTab"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        facultyUpdateTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                facultyUpdateTableMousePressed(evt);
+            }
+        });
+        facultyUpdateScrollPanel.setViewportView(facultyUpdateTable);
+
+        facultyUpdateMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        facultyUpdateMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        facultyUpdateMainLabel.setText("Update a faculty entry");
+
+        facultyUpdateIdLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        facultyUpdateIdLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        facultyUpdateIdLabel.setText("ID:");
+
+        facultyUpdateNameLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        facultyUpdateNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        facultyUpdateNameLabel.setText("Name:");
+
+        facultyUpdateDeptLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        facultyUpdateDeptLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        facultyUpdateDeptLabel.setText("Department:");
+
+        javax.swing.GroupLayout facultyUpdateLabelPanelLayout = new javax.swing.GroupLayout(facultyUpdateLabelPanel);
+        facultyUpdateLabelPanel.setLayout(facultyUpdateLabelPanelLayout);
+        facultyUpdateLabelPanelLayout.setHorizontalGroup(
+            facultyUpdateLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(facultyUpdateIdLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(facultyUpdateNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+            .addComponent(facultyUpdateDeptLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        facultyUpdateLabelPanelLayout.setVerticalGroup(
+            facultyUpdateLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyUpdateLabelPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(facultyUpdateIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyUpdateNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyUpdateDeptLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(102, Short.MAX_VALUE))
+        );
+
+        facultyUpdateIdField.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+
+        facultyUpdateNameField.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+
+        facultyUpdateDeptCombo.setModel(new javax.swing.DefaultComboBoxModel(generalDatabase.getDepartmentNames()));
+
+        javax.swing.GroupLayout facultyUpdateFieldPanelLayout = new javax.swing.GroupLayout(facultyUpdateFieldPanel);
+        facultyUpdateFieldPanel.setLayout(facultyUpdateFieldPanelLayout);
+        facultyUpdateFieldPanelLayout.setHorizontalGroup(
+            facultyUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyUpdateFieldPanelLayout.createSequentialGroup()
+                .addGroup(facultyUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(facultyUpdateIdField)
+                    .addComponent(facultyUpdateNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                    .addComponent(facultyUpdateDeptCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        facultyUpdateFieldPanelLayout.setVerticalGroup(
+            facultyUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyUpdateFieldPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(facultyUpdateIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyUpdateNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyUpdateDeptCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        facultyUpdateSubmitButton.setText("Submit");
+        facultyUpdateSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facultyUpdateSubmitButtonActionPerformed(evt);
+            }
+        });
+        facultyUpdateSplitPane.setLeftComponent(facultyUpdateSubmitButton);
+
+        facultyUpdateClearButton.setText("Clear");
+        facultyUpdateClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facultyUpdateClearButtonActionPerformed(evt);
+            }
+        });
+        facultyUpdateSplitPane.setRightComponent(facultyUpdateClearButton);
+
+        javax.swing.GroupLayout facultyUpdateTabLayout = new javax.swing.GroupLayout(facultyUpdateTab);
+        facultyUpdateTab.setLayout(facultyUpdateTabLayout);
+        facultyUpdateTabLayout.setHorizontalGroup(
+            facultyUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(facultyUpdateScrollPanel)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, facultyUpdateTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(facultyUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, facultyUpdateTabLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(facultyUpdateLabelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyUpdateFieldPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(facultyUpdateTabLayout.createSequentialGroup()
+                .addGap(336, 336, 336)
+                .addComponent(facultyUpdateSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        facultyUpdateTabLayout.setVerticalGroup(
+            facultyUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, facultyUpdateTabLayout.createSequentialGroup()
+                .addComponent(facultyUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyUpdateScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(facultyUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(facultyUpdateLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(facultyUpdateFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyUpdateSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
+        );
+
         facultyTab.addTab("Update", facultyUpdateTab);
 
+        facultyDeleteScroll.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                facultyDeleteScrollMousePressed(evt);
+            }
+        });
+
+        facultyDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
+            facultyDatabase.facultySearch(),
+            new String [] {
+                "ID", "Name", "Major", "Level", "Age"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        facultyDeleteScroll.setViewportView(facultyDeleteTable);
+
+        facultyDelButton.setText("Delete");
+
+        javax.swing.GroupLayout facultyDeleteButtonPaneLayout = new javax.swing.GroupLayout(facultyDeleteButtonPane);
+        facultyDeleteButtonPane.setLayout(facultyDeleteButtonPaneLayout);
+        facultyDeleteButtonPaneLayout.setHorizontalGroup(
+            facultyDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, facultyDeleteButtonPaneLayout.createSequentialGroup()
+                .addContainerGap(753, Short.MAX_VALUE)
+                .addComponent(facultyDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+            .addGroup(facultyDeleteButtonPaneLayout.createSequentialGroup()
+                .addGap(322, 322, 322)
+                .addComponent(facultyDelButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        facultyDeleteButtonPaneLayout.setVerticalGroup(
+            facultyDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyDeleteButtonPaneLayout.createSequentialGroup()
+                .addComponent(facultyDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyDelButton)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout facultyDelTabLayout = new javax.swing.GroupLayout(facultyDelTab);
+        facultyDelTab.setLayout(facultyDelTabLayout);
+        facultyDelTabLayout.setHorizontalGroup(
+            facultyDelTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(facultyDeleteScroll, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, facultyDelTabLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(facultyDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        facultyDelTabLayout.setVerticalGroup(
+            facultyDelTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyDelTabLayout.createSequentialGroup()
+                .addComponent(facultyDeleteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        facultyTab.addTab("Delete", facultyDelTab);
+
         jTabbedPane1.addTab("Faculty", facultyTab);
+
+        deptSearchTable.setModel(new javax.swing.table.DefaultTableModel(
+            staffDatabase.staffSearch(),
+            new String [] {
+                "ID", "Name"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        deptSearchScroll.setViewportView(deptSearchTable);
+
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("ID");
+
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Name");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(183, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(deptSearchNameField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                    .addComponent(deptSearchIDField, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(deptSearchIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deptSearchNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(239, Short.MAX_VALUE))
+        );
+
+        deptSearchSubmitButton.setText("Search");
+        deptSearchSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deptSearchSubmitButtonActionPerformed(evt);
+            }
+        });
+        jSplitPane4.setLeftComponent(deptSearchSubmitButton);
+
+        deptSearchClearButton.setText("Clear");
+        deptSearchClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deptSearchClearButtonActionPerformed(evt);
+            }
+        });
+        jSplitPane4.setRightComponent(deptSearchClearButton);
+
+        javax.swing.GroupLayout deptSearchTabLayout = new javax.swing.GroupLayout(deptSearchTab);
+        deptSearchTab.setLayout(deptSearchTabLayout);
+        deptSearchTabLayout.setHorizontalGroup(
+            deptSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deptSearchTabLayout.createSequentialGroup()
+                .addGroup(deptSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(deptSearchTabLayout.createSequentialGroup()
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(deptSearchTabLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(jSplitPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deptSearchScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE))
+        );
+        deptSearchTabLayout.setVerticalGroup(
+            deptSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deptSearchTabLayout.createSequentialGroup()
+                .addComponent(deptSearchScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 72, Short.MAX_VALUE))
+            .addGroup(deptSearchTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(deptSearchTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSplitPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        departmentTab.addTab("Search", deptSearchTab);
+
+        deptAddIdLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        deptAddIdLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        deptAddIdLabel.setText("ID:");
+
+        deptAddNameLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        deptAddNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        deptAddNameLabel.setText("Name:");
+
+        javax.swing.GroupLayout deptAddLabelPanelLayout = new javax.swing.GroupLayout(deptAddLabelPanel);
+        deptAddLabelPanel.setLayout(deptAddLabelPanelLayout);
+        deptAddLabelPanelLayout.setHorizontalGroup(
+            deptAddLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deptAddLabelPanelLayout.createSequentialGroup()
+                .addGroup(deptAddLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(deptAddNameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                    .addComponent(deptAddIdLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 100, Short.MAX_VALUE))
+        );
+        deptAddLabelPanelLayout.setVerticalGroup(
+            deptAddLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deptAddLabelPanelLayout.createSequentialGroup()
+                .addComponent(deptAddIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deptAddNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(227, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout deptAddFieldPanelLayout = new javax.swing.GroupLayout(deptAddFieldPanel);
+        deptAddFieldPanel.setLayout(deptAddFieldPanelLayout);
+        deptAddFieldPanelLayout.setHorizontalGroup(
+            deptAddFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(deptAddIdField, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(deptAddNameField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+        );
+        deptAddFieldPanelLayout.setVerticalGroup(
+            deptAddFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deptAddFieldPanelLayout.createSequentialGroup()
+                .addComponent(deptAddIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deptAddNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        deptAddMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        deptAddMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        deptAddMainLabel.setText("Add a new department");
+
+        deptAddSubmitButton.setText("Submit");
+        deptAddSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deptAddSubmitButtonActionPerformed(evt);
+            }
+        });
+        deptAddSplitPane.setLeftComponent(deptAddSubmitButton);
+
+        deptAddClearButton.setText("Clear");
+        deptAddClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deptAddClearButtonActionPerformed(evt);
+            }
+        });
+        deptAddSplitPane.setRightComponent(deptAddClearButton);
+
+        javax.swing.GroupLayout deptAddTabLayout = new javax.swing.GroupLayout(deptAddTab);
+        deptAddTab.setLayout(deptAddTabLayout);
+        deptAddTabLayout.setHorizontalGroup(
+            deptAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deptAddTabLayout.createSequentialGroup()
+                .addComponent(deptAddLabelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deptAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(deptAddMainLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(deptAddTabLayout.createSequentialGroup()
+                .addGap(341, 341, 341)
+                .addComponent(deptAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        deptAddTabLayout.setVerticalGroup(
+            deptAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deptAddTabLayout.createSequentialGroup()
+                .addComponent(deptAddMainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(deptAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(deptAddLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deptAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(deptAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+
+        departmentTab.addTab("Add", deptAddTab);
+
+        deptUpdateTab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                deptUpdateTabMousePressed(evt);
+            }
+        });
+
+        deptUpdateTable.setModel(new javax.swing.table.DefaultTableModel(
+            staffDatabase.staffSearch(),
+            new String [] {
+                "ID", "Name", "departmentTab"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        deptUpdateTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                deptUpdateTableMousePressed(evt);
+            }
+        });
+        deptUpdateScrollPanel.setViewportView(deptUpdateTable);
+
+        deptUpdateMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        deptUpdateMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        deptUpdateMainLabel.setText("Update a department");
+
+        deptUpdateIdLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        deptUpdateIdLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        deptUpdateIdLabel.setText("ID:");
+
+        deptUpdateNameLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        deptUpdateNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        deptUpdateNameLabel.setText("Name:");
+
+        javax.swing.GroupLayout deptUpdateLabelPanelLayout = new javax.swing.GroupLayout(deptUpdateLabelPanel);
+        deptUpdateLabelPanel.setLayout(deptUpdateLabelPanelLayout);
+        deptUpdateLabelPanelLayout.setHorizontalGroup(
+            deptUpdateLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(deptUpdateIdLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(deptUpdateNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+        );
+        deptUpdateLabelPanelLayout.setVerticalGroup(
+            deptUpdateLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deptUpdateLabelPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(deptUpdateIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deptUpdateNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(128, Short.MAX_VALUE))
+        );
+
+        deptUpdateIdField.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+
+        deptUpdateNameField.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+
+        javax.swing.GroupLayout deptUpdateFieldPanelLayout = new javax.swing.GroupLayout(deptUpdateFieldPanel);
+        deptUpdateFieldPanel.setLayout(deptUpdateFieldPanelLayout);
+        deptUpdateFieldPanelLayout.setHorizontalGroup(
+            deptUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deptUpdateFieldPanelLayout.createSequentialGroup()
+                .addGroup(deptUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(deptUpdateIdField)
+                    .addComponent(deptUpdateNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        deptUpdateFieldPanelLayout.setVerticalGroup(
+            deptUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deptUpdateFieldPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(deptUpdateIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deptUpdateNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        deptUpdateSubmitButton.setText("Submit");
+        deptUpdateSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deptUpdateSubmitButtonActionPerformed(evt);
+            }
+        });
+        deptUpdateSplitPane.setLeftComponent(deptUpdateSubmitButton);
+
+        deptUpdateClearButton.setText("Clear");
+        deptUpdateClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deptUpdateClearButtonActionPerformed(evt);
+            }
+        });
+        deptUpdateSplitPane.setRightComponent(deptUpdateClearButton);
+
+        javax.swing.GroupLayout deptUpdateTabLayout = new javax.swing.GroupLayout(deptUpdateTab);
+        deptUpdateTab.setLayout(deptUpdateTabLayout);
+        deptUpdateTabLayout.setHorizontalGroup(
+            deptUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(deptUpdateScrollPanel)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deptUpdateTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(deptUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deptUpdateTabLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(deptUpdateLabelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deptUpdateFieldPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(deptUpdateTabLayout.createSequentialGroup()
+                .addGap(336, 336, 336)
+                .addComponent(deptUpdateSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        deptUpdateTabLayout.setVerticalGroup(
+            deptUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deptUpdateTabLayout.createSequentialGroup()
+                .addComponent(deptUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deptUpdateScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(deptUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(deptUpdateLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deptUpdateFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deptUpdateSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
+        );
+
+        departmentTab.addTab("Update", deptUpdateTab);
+
+        deptDeleteScroll.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                deptDeleteScrollMousePressed(evt);
+            }
+        });
+
+        deptDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
+            staffDatabase.staffSearch(),
+            new String [] {
+                "ID", "Name", "Major", "Level", "Age"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        deptDeleteScroll.setViewportView(deptDeleteTable);
+
+        deptDelButton.setText("Delete");
+
+        javax.swing.GroupLayout deptDeleteButtonPaneLayout = new javax.swing.GroupLayout(deptDeleteButtonPane);
+        deptDeleteButtonPane.setLayout(deptDeleteButtonPaneLayout);
+        deptDeleteButtonPaneLayout.setHorizontalGroup(
+            deptDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deptDeleteButtonPaneLayout.createSequentialGroup()
+                .addContainerGap(753, Short.MAX_VALUE)
+                .addComponent(deptDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+            .addGroup(deptDeleteButtonPaneLayout.createSequentialGroup()
+                .addGap(322, 322, 322)
+                .addComponent(deptDelButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        deptDeleteButtonPaneLayout.setVerticalGroup(
+            deptDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deptDeleteButtonPaneLayout.createSequentialGroup()
+                .addComponent(deptDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deptDelButton)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout deptDeleteTabLayout = new javax.swing.GroupLayout(deptDeleteTab);
+        deptDeleteTab.setLayout(deptDeleteTabLayout);
+        deptDeleteTabLayout.setHorizontalGroup(
+            deptDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(deptDeleteScroll, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deptDeleteTabLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(deptDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        deptDeleteTabLayout.setVerticalGroup(
+            deptDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deptDeleteTabLayout.createSequentialGroup()
+                .addComponent(deptDeleteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deptDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        departmentTab.addTab("Delete", deptDeleteTab);
+
+        jTabbedPane1.addTab("Department", departmentTab);
+        jTabbedPane1.addTab("Courses", courseTab);
+        jTabbedPane1.addTab("Enrolled", enrolledTab);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1278,6 +2362,86 @@ public class StaffForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_staffUpdateTabMousePressed
 
+    private void studentDeleteScrollMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentDeleteScrollMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentDeleteScrollMousePressed
+
+    private void staffDeleteScrollMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffDeleteScrollMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_staffDeleteScrollMousePressed
+
+    private void facultySearchSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultySearchSubmitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultySearchSubmitActionPerformed
+
+    private void facultySearchClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultySearchClearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultySearchClearActionPerformed
+
+    private void facultyAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyAddSubmitButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultyAddSubmitButtonActionPerformed
+
+    private void facultyAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyAddClearButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultyAddClearButtonActionPerformed
+
+    private void facultyUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facultyUpdateTableMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultyUpdateTableMousePressed
+
+    private void facultyUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyUpdateSubmitButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultyUpdateSubmitButtonActionPerformed
+
+    private void facultyUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyUpdateClearButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultyUpdateClearButtonActionPerformed
+
+    private void facultyUpdateTabMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facultyUpdateTabMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultyUpdateTabMousePressed
+
+    private void facultyDeleteScrollMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facultyDeleteScrollMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultyDeleteScrollMousePressed
+
+    private void deptSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptSearchSubmitButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptSearchSubmitButtonActionPerformed
+
+    private void deptSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptSearchClearButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptSearchClearButtonActionPerformed
+
+    private void deptAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptAddSubmitButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptAddSubmitButtonActionPerformed
+
+    private void deptAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptAddClearButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptAddClearButtonActionPerformed
+
+    private void deptUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deptUpdateTableMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptUpdateTableMousePressed
+
+    private void deptUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptUpdateSubmitButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptUpdateSubmitButtonActionPerformed
+
+    private void deptUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptUpdateClearButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptUpdateClearButtonActionPerformed
+
+    private void deptUpdateTabMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deptUpdateTabMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptUpdateTabMousePressed
+
+    private void deptDeleteScrollMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deptDeleteScrollMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptDeleteScrollMousePressed
+
 
     /**
      * @param args the command line arguments
@@ -1323,11 +2487,97 @@ public class StaffForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane facultyAddTab;
-    private javax.swing.JTabbedPane facultySearchTab;
+    private javax.swing.JTabbedPane courseTab;
+    private javax.swing.JTabbedPane departmentTab;
+    private javax.swing.JButton deptAddClearButton;
+    private javax.swing.JPanel deptAddFieldPanel;
+    private javax.swing.JTextField deptAddIdField;
+    private javax.swing.JLabel deptAddIdLabel;
+    private javax.swing.JPanel deptAddLabelPanel;
+    private javax.swing.JLabel deptAddMainLabel;
+    private javax.swing.JTextField deptAddNameField;
+    private javax.swing.JLabel deptAddNameLabel;
+    private javax.swing.JSplitPane deptAddSplitPane;
+    private javax.swing.JButton deptAddSubmitButton;
+    private javax.swing.JPanel deptAddTab;
+    private javax.swing.JButton deptDelButton;
+    private javax.swing.JTextField deptDelIdField;
+    private javax.swing.JPanel deptDeleteButtonPane;
+    private javax.swing.JScrollPane deptDeleteScroll;
+    private javax.swing.JPanel deptDeleteTab;
+    private javax.swing.JTable deptDeleteTable;
+    private javax.swing.JButton deptSearchClearButton;
+    private javax.swing.JTextField deptSearchIDField;
+    private javax.swing.JTextField deptSearchNameField;
+    private javax.swing.JScrollPane deptSearchScroll;
+    private javax.swing.JButton deptSearchSubmitButton;
+    private javax.swing.JPanel deptSearchTab;
+    private javax.swing.JTable deptSearchTable;
+    private javax.swing.JButton deptUpdateClearButton;
+    private javax.swing.JPanel deptUpdateFieldPanel;
+    private javax.swing.JTextField deptUpdateIdField;
+    private javax.swing.JLabel deptUpdateIdLabel;
+    private javax.swing.JPanel deptUpdateLabelPanel;
+    private javax.swing.JLabel deptUpdateMainLabel;
+    private javax.swing.JTextField deptUpdateNameField;
+    private javax.swing.JLabel deptUpdateNameLabel;
+    private javax.swing.JScrollPane deptUpdateScrollPanel;
+    private javax.swing.JSplitPane deptUpdateSplitPane;
+    private javax.swing.JButton deptUpdateSubmitButton;
+    private javax.swing.JPanel deptUpdateTab;
+    private javax.swing.JTable deptUpdateTable;
+    private javax.swing.JTabbedPane enrolledTab;
+    private javax.swing.JButton facultyAddClearButton;
+    private javax.swing.JComboBox facultyAddDeptCombo;
+    private javax.swing.JLabel facultyAddDeptIdLabel;
+    private javax.swing.JPanel facultyAddFieldPane;
+    private javax.swing.JTextField facultyAddIdField;
+    private javax.swing.JLabel facultyAddIdLabel;
+    private javax.swing.JPanel facultyAddLabelPane;
+    private javax.swing.JLabel facultyAddMainLabel;
+    private javax.swing.JTextField facultyAddNameField;
+    private javax.swing.JLabel facultyAddNameLabel;
+    private javax.swing.JSplitPane facultyAddSplit;
+    private javax.swing.JButton facultyAddSubmitButton;
+    private javax.swing.JPanel facultyAddTab;
+    private javax.swing.JButton facultyDelButton;
+    private javax.swing.JTextField facultyDelIdField;
+    private javax.swing.JPanel facultyDelTab;
+    private javax.swing.JPanel facultyDeleteButtonPane;
+    private javax.swing.JScrollPane facultyDeleteScroll;
+    private javax.swing.JTable facultyDeleteTable;
+    private javax.swing.JButton facultySearchClear;
+    private javax.swing.JComboBox facultySearchDeptCombo;
+    private javax.swing.JPanel facultySearchFieldPane;
+    private javax.swing.JTextField facultySearchIdField;
+    private javax.swing.JPanel facultySearchLabelPane;
+    private javax.swing.JTextField facultySearchNameField;
+    private javax.swing.JScrollPane facultySearchScroll;
+    private javax.swing.JSplitPane facultySearchSplit;
+    private javax.swing.JButton facultySearchSubmit;
+    private javax.swing.JPanel facultySearchTab;
+    private javax.swing.JTable facultySearchTable;
     private javax.swing.JTabbedPane facultyTab;
-    private javax.swing.JTabbedPane facultyUpdateTab;
+    private javax.swing.JButton facultyUpdateClearButton;
+    private javax.swing.JComboBox facultyUpdateDeptCombo;
+    private javax.swing.JLabel facultyUpdateDeptLabel;
+    private javax.swing.JPanel facultyUpdateFieldPanel;
+    private javax.swing.JTextField facultyUpdateIdField;
+    private javax.swing.JLabel facultyUpdateIdLabel;
+    private javax.swing.JPanel facultyUpdateLabelPanel;
+    private javax.swing.JLabel facultyUpdateMainLabel;
+    private javax.swing.JTextField facultyUpdateNameField;
+    private javax.swing.JLabel facultyUpdateNameLabel;
+    private javax.swing.JScrollPane facultyUpdateScrollPanel;
+    private javax.swing.JSplitPane facultyUpdateSplitPane;
+    private javax.swing.JButton facultyUpdateSubmitButton;
+    private javax.swing.JPanel facultyUpdateTab;
+    private javax.swing.JTable facultyUpdateTable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1335,15 +2585,19 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JSplitPane jSplitPane3;
+    private javax.swing.JSplitPane jSplitPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton staffAddClearButton;
     private javax.swing.JComboBox staffAddDeptCombo;
@@ -1358,6 +2612,12 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JSplitPane staffAddSplitPane;
     private javax.swing.JButton staffAddSubmitButton;
     private javax.swing.JPanel staffAddTab;
+    private javax.swing.JButton staffDelButton;
+    private javax.swing.JTextField staffDelIdField;
+    private javax.swing.JPanel staffDeleteButtonPane;
+    private javax.swing.JScrollPane staffDeleteScroll;
+    private javax.swing.JPanel staffDeleteTab;
+    private javax.swing.JTable staffDeleteTable;
     private javax.swing.JButton staffSearchClearButton;
     private javax.swing.JComboBox staffSearchDeptCombo;
     private javax.swing.JTextField staffSearchIDField;
@@ -1397,6 +2657,12 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JLabel studentAddNameLabel;
     private javax.swing.JButton studentAddSubmitButton;
     private javax.swing.JPanel studentAddTab;
+    private javax.swing.JButton studentDelButton;
+    private javax.swing.JTextField studentDelIdField;
+    private javax.swing.JPanel studentDeleteButtonPane;
+    private javax.swing.JScrollPane studentDeleteScroll;
+    private javax.swing.JPanel studentDeleteTab;
+    private javax.swing.JTable studentDeleteTable;
     private javax.swing.JTextField studentSearchAgeField;
     private javax.swing.JButton studentSearchClearButton;
     private javax.swing.JTextField studentSearchIDField;

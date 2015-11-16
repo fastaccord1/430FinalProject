@@ -84,7 +84,7 @@ public class GeneralDatabase extends Database {
         try {
             String[] output = new String[getCount(query) + 1];
             ResultSet rs = executeQuery(query);
-            output[0] = "Any";
+            output[0] = "<Select>";
             for (int i = 1; rs.next(); i++) {
                 output[i] = rs.getString("dname");
             }
@@ -97,7 +97,7 @@ public class GeneralDatabase extends Database {
 
     public int getDepartmentId(String deptName) {
         String query = "SELECT did FROM Department WHERE dname = '" + deptName + "'";
-        ResultSet rs = null;
+        ResultSet rs;
         int output = -1;
         try {
             rs = executeQuery(query);

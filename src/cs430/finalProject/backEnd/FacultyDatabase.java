@@ -45,7 +45,7 @@ public class FacultyDatabase extends Database {
      * @param deptId Department ID of faculty -1 if not searched
      * @return Two-dimensional array of items found from database
      */
-    public Object[][] facultySearch(int fid, String fname, int deptId) {
+    public Object[][] facultySearch(int fid, String fname, String dName) {
         Object[][] output;
         String query = "SELECT * FROM facultyView WHERE";
         ArrayList<String> conditions = new ArrayList<>();
@@ -53,10 +53,10 @@ public class FacultyDatabase extends Database {
             conditions.add(" fid = " + fid);
         }
         if (fname != null) {
-            conditions.add(" fname = " + fname);
+            conditions.add(" fname LIKE '%" + fname + "%'");
         }
-        if (deptId != -1) {
-            conditions.add(" deptid = " + deptId);
+        if (dName != null) {
+            conditions.add(" dname LIKE '" + dName + "'");
         }
 
         query = finishQuery(query, conditions);

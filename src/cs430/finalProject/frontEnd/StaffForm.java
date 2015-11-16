@@ -3473,8 +3473,9 @@ public class StaffForm extends javax.swing.JFrame {
 
         staffDatabase.updateStaff(oldId, id, name, deptId);
         String[] columns = {"ID", "Name", "Department"};
-        refresh(staffUpdateTable, columns, staffDatabase.staffSearch());
-        refresh(staffSearchTable, columns, staffDatabase.staffSearch());
+        Object[][] data = staffDatabase.staffSearch();
+        refresh(staffUpdateTable, columns, data);
+        refresh(staffSearchTable, columns, data);
         staffUpdateClearButtonActionPerformed(null);
 
     }//GEN-LAST:event_staffUpdateSubmitButtonActionPerformed
@@ -3489,18 +3490,77 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void facultySearchSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultySearchSubmitActionPerformed
         // TODO add your handling code here:
+        int id = -1;
+        if (!facultySearchIdField.getText().equals("")) {
+            try {
+                id = Integer.parseInt(facultySearchIdField.getText());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "You must enter a valid number");
+                return;
+            }
+        }
+        String name = null;
+        if (!facultySearchNameField.getText().equals("")) {
+            name = facultySearchNameField.getText();
+        }
+        String dName = null;
+        if (facultySearchDeptCombo.getSelectedIndex() != 0) {
+            dName = (String) facultySearchDeptCombo.getSelectedItem();
+        }
+        String[] columns = {"ID", "Name", "Department"};
+        Object[][] data;
+        if (id == -1 && name == null && dName == null) {
+            data = facultyDatabase.facultySearch();
+        } else {
+            data = facultyDatabase.facultySearch(id, name, dName);
+        }
+        refresh(facultySearchTable, columns, data);
+
+        facultySearchClearActionPerformed(null);
     }//GEN-LAST:event_facultySearchSubmitActionPerformed
 
     private void facultySearchClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultySearchClearActionPerformed
         // TODO add your handling code here:
+        facultySearchIdField.setText("");
+        facultySearchNameField.setText("");
+        facultySearchDeptCombo.setSelectedIndex(0);
     }//GEN-LAST:event_facultySearchClearActionPerformed
 
     private void facultyAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyAddSubmitButtonActionPerformed
         // TODO add your handling code here:
+        int id;
+        try {
+            id = Integer.parseInt(facultyAddIdField.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "You must use a valid number");
+            return;
+        }
+        String name = facultyAddNameField.getText();
+        if (name.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a name");
+            return;
+        }
+        int did;
+        if (facultyAddDeptCombo.getSelectedIndex() != 0) {
+            did = generalDatabase.getDepartmentId((String) facultyAddDeptCombo.getSelectedItem());
+        } else {
+            JOptionPane.showMessageDialog(null, "You must select a department");
+            return;
+        }
+        facultyDatabase.insertFaculty(id, name, did);
+
+        Object[][] data = facultyDatabase.facultySearch();
+        String[] columns = {"ID", "Name", "Department"};
+        refresh(facultySearchTable, columns, data);
+        refresh(facultyUpdateTable, columns, data);
+        facultyAddClearButtonActionPerformed(null);
     }//GEN-LAST:event_facultyAddSubmitButtonActionPerformed
 
     private void facultyAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyAddClearButtonActionPerformed
         // TODO add your handling code here:
+        facultyAddNameField.setText("");
+        facultyAddIdField.setText("");
+        facultyAddDeptCombo.setSelectedIndex(0);
     }//GEN-LAST:event_facultyAddClearButtonActionPerformed
 
     private void facultyUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facultyUpdateTableMousePressed

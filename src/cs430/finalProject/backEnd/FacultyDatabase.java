@@ -42,7 +42,7 @@ public class FacultyDatabase extends Database {
      *
      * @param fid    Faculty ID to be found -1 if not searched
      * @param fname  Name of faculty member to be found null if not searched
-     * @param deptId Department ID of faculty -1 if not searched
+     * @param dName Department ID of faculty -1 if not searched
      * @return Two-dimensional array of items found from database
      */
     public Object[][] facultySearch(int fid, String fname, String dName) {
@@ -90,6 +90,19 @@ public class FacultyDatabase extends Database {
 
     public void insertFaculty(int fid, String fName, int deptId) {
         String statement = "INSERT INTO Faculty VALUES (" + fid + ", '" + fName + "', " + deptId + ")";
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateFaculty(int oldFid, int fid, String name, int deptId) {
+        String statement = "UPDATE Faculty SET";
+        statement += " fid = " + fid + ", ";
+        statement += "name = '" + name + "', ";
+        statement += "deptid = " + deptId;
+        statement += " WHERE fid = " + oldFid;
         try {
             executeInsertUpdate(statement);
         } catch (SQLException e) {

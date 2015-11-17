@@ -111,9 +111,10 @@ public class GeneralDatabase extends Database {
     }
 
     public void insertDepartment(int id, String name) {
-        String statement = "INSERT INTO Department VALUE(";
+        String statement = "INSERT INTO Department VALUES(";
         statement += id + ", ";
         statement += "'" + name + "')";
+        System.out.println(statement);
 
         try {
             executeInsertUpdate(statement);

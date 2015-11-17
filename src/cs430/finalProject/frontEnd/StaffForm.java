@@ -3495,6 +3495,7 @@ public class StaffForm extends javax.swing.JFrame {
         refresh(facultySearchTable, facStaColumns, data);
         refresh(facultyUpdateTable, facStaColumns, data);
         facultyAddClearButtonActionPerformed(null);
+        refreshFacultyCombo();
     }//GEN-LAST:event_facultyAddSubmitButtonActionPerformed
 
     private void facultyAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyAddClearButtonActionPerformed
@@ -3542,7 +3543,7 @@ public class StaffForm extends javax.swing.JFrame {
         refresh(facultyUpdateTable, facStaColumns, data);
         refresh(facultySearchTable, facStaColumns, data);
         facultyUpdateClearButtonActionPerformed(null);
-
+        refreshFacultyCombo();
     }//GEN-LAST:event_facultyUpdateSubmitButtonActionPerformed
 
     private void facultyUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyUpdateClearButtonActionPerformed
@@ -3599,6 +3600,7 @@ public class StaffForm extends javax.swing.JFrame {
         refresh(deptSearchTable, deptColumns, data);
         refresh(deptUpdateTable, deptColumns, data);
         deptAddClearButtonActionPerformed(null);
+        refreshDeptCombo();
     }//GEN-LAST:event_deptAddSubmitButtonActionPerformed
 
     private void deptAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptAddClearButtonActionPerformed
@@ -3639,6 +3641,7 @@ public class StaffForm extends javax.swing.JFrame {
         refresh(deptSearchTable, deptColumns, data);
         refresh(deptUpdateTable, deptColumns, data);
         deptUpdateClearButtonActionPerformed(null);
+        refreshDeptCombo();
     }//GEN-LAST:event_deptUpdateSubmitButtonActionPerformed
 
     private void deptUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptUpdateClearButtonActionPerformed
@@ -3650,10 +3653,48 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void courseSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseSearchSubmitButtonActionPerformed
         // TODO add your handling code here:
+        String cId = courseSearchIDField.getText();
+        if (cId.equals("")) {
+            cId = null;
+        }
+        String cName = courseSearchNameField.getText();
+        if (cName.equals("")) {
+            cName = null;
+        }
+        String meets = courseSearchMeetsField.getText();
+        if (meets.equals("")) {
+            meets = null;
+        }
+        String room = courseSearchRoomField.getText();
+        if (room.equals("")) {
+            room = null;
+        }
+        String fName = null;
+        if (courseSearchFacCombo.getSelectedIndex() != 0) {
+            fName = (String) courseSearchFacCombo.getSelectedItem();
+        }
+        int limit = -1;
+        if (!courseSearchLimField.getText().equals("")) {
+            limit = Integer.parseInt(courseSearchLimField.getText());
+        }
+        Object[][] data;
+        if (cId == null && cName == null && meets == null && room == null && fName == null && limit == -1) {
+            data = generalDatabase.searchCourse();
+        } else {
+            data = generalDatabase.searchCourse(cId, cName, meets, room, fName, limit);
+        }
+        refresh(courseSearchTable, deptColumns, data);
+        courseSearchClearButtonActionPerformed(null);
     }//GEN-LAST:event_courseSearchSubmitButtonActionPerformed
 
     private void courseSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseSearchClearButtonActionPerformed
         // TODO add your handling code here:
+        courseSearchIDField.setText("");
+        courseSearchNameField.setText("");
+        courseSearchMeetsField.setText("");
+        courseSearchRoomField.setText("");
+        courseSearchLimField.setText("");
+        courseSearchFacCombo.setSelectedIndex(0);
     }//GEN-LAST:event_courseSearchClearButtonActionPerformed
 
     private void courseAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseAddSubmitButtonActionPerformed

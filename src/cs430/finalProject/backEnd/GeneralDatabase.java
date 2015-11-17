@@ -60,7 +60,7 @@ public class GeneralDatabase extends Database {
             conditions.add(" did = " + did);
         }
         if (dName != null) {
-            conditions.add(" dname = " + dName);
+            conditions.add(" dname LIKE '%" + dName + "%'");
         }
 
         try {
@@ -109,4 +109,5 @@ public class GeneralDatabase extends Database {
         }
         return output;
     }
+
 }

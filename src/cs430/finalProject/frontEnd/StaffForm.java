@@ -2193,10 +2193,8 @@ public class StaffForm extends javax.swing.JFrame {
         jTabbedPane1.addTab("Department", departmentTab);
 
         courseSearchTable.setModel(new javax.swing.table.DefaultTableModel(
-            staffDatabase.staffSearch(),
-            new String [] {
-                "ID", "Name"
-            }
+            generalDatabase.searchCourse(),
+            courseColumns
         ) {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
@@ -2262,7 +2260,7 @@ public class StaffForm extends javax.swing.JFrame {
                 .addContainerGap(103, Short.MAX_VALUE))
         );
 
-        courseSearchFacCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        courseSearchFacCombo.setModel(new javax.swing.DefaultComboBoxModel(facultyDatabase.getFacNames()));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -2400,7 +2398,7 @@ public class StaffForm extends javax.swing.JFrame {
                 .addContainerGap(147, Short.MAX_VALUE))
         );
 
-        courseAddFacCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        courseAddFacCombo.setModel(new javax.swing.DefaultComboBoxModel(facultyDatabase.getFacNames()));
 
         javax.swing.GroupLayout courseAddFieldPanelLayout = new javax.swing.GroupLayout(courseAddFieldPanel);
         courseAddFieldPanel.setLayout(courseAddFieldPanelLayout);
@@ -2481,10 +2479,8 @@ public class StaffForm extends javax.swing.JFrame {
         courseTab.addTab("Add", courseAddTab);
 
         courseUpdateTable.setModel(new javax.swing.table.DefaultTableModel(
-            staffDatabase.staffSearch(),
-            new String [] {
-                "ID", "Name", "departmentTab"
-            }
+            generalDatabase.searchCourse(),
+            courseColumns
         ) {
             boolean[] canEdit = new boolean [] {
                 true, false, false, false, false
@@ -2562,7 +2558,7 @@ public class StaffForm extends javax.swing.JFrame {
 
         courseUpdateNameField.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
 
-        courseUpdateFacCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        courseUpdateFacCombo.setModel(new javax.swing.DefaultComboBoxModel(facultyDatabase.getFacNames()));
 
         javax.swing.GroupLayout courseUpdateFieldPanelLayout = new javax.swing.GroupLayout(courseUpdateFieldPanel);
         courseUpdateFieldPanel.setLayout(courseUpdateFieldPanelLayout);
@@ -2649,10 +2645,8 @@ public class StaffForm extends javax.swing.JFrame {
         courseTab.addTab("Update", courseUpdateTab);
 
         courseDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
-            staffDatabase.staffSearch(),
-            new String [] {
-                "ID", "Name", "Major", "Level", "Age"
-            }
+            generalDatabase.searchCourse(),
+            courseColumns
         ) {
             boolean[] canEdit = new boolean [] {
                 false, false, false, true, true

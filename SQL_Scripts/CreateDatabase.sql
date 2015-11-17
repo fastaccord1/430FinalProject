@@ -8,6 +8,7 @@ DROP TABLE Department;
 DROP VIEW staffView;
 DROP VIEW facultyView;
 DROP VIEW enrolledStudent;
+DROP VIEW courseView;
 
 
 /* Create new tables with constraints */

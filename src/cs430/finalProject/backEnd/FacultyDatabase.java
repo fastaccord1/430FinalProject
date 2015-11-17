@@ -114,7 +114,7 @@ public class FacultyDatabase extends Database {
         String query = "SELECT fname FROM Faculty";
         try {
             ResultSet rs = executeQuery(query);
-            String[] output = new String[getCount(query)];
+            String[] output = new String[getCount(query) + 1];
             output[0] = "<Select>";
             for (int i = 1; rs.next(); i++) {
                 output[i] = rs.getString("fname");

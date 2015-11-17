@@ -1,6 +1,7 @@
 package cs430.finalProject.backEnd;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ public class FacultyDatabase extends Database {
     /**
      * Constructor for the FacultyDatabase Class
      *
-     * @param connection
+     * @param connection Connection object from MainClassHolder
      */
     public FacultyDatabase(Connection connection) {
         super();
@@ -73,7 +74,6 @@ public class FacultyDatabase extends Database {
      * Gathers all items from Faculty table
      *
      * @return Two-dimensional array of results from faculty table
-     * @throws SQLException
      */
     public Object[][] facultySearch() {
         Object[][] output;
@@ -108,5 +108,21 @@ public class FacultyDatabase extends Database {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public String[] getFacNames() {
+        String query = "SELECT fname FROM Faculty";
+        try {
+            ResultSet rs = executeQuery(query);
+            String[] output = new String[getCount(query)];
+            output[0] = "<Select>";
+            for (int i = 1; rs.next(); i++) {
+                output[i] = rs.getString("fname");
+            }
+            return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

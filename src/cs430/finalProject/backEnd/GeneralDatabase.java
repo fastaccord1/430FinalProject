@@ -110,4 +110,16 @@ public class GeneralDatabase extends Database {
         return output;
     }
 
+    public void insertDepartment(int id, String name) {
+        String statement = "INSERT INTO Department VALUE(";
+        statement += id + ", ";
+        statement += "'" + name + "')";
+
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

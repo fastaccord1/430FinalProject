@@ -3633,10 +3633,29 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void deptAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptAddSubmitButtonActionPerformed
         // TODO add your handling code here:
+        int id;
+        try {
+            id = Integer.parseInt(deptAddIdField.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid ID");
+            return;
+        }
+        String name = deptAddNameField.getText();
+        if (name.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a name");
+            return;
+        }
+        generalDatabase.insertDepartment(id, name);
+        Object[][] data = generalDatabase.searchDepartment();
+        refresh(deptSearchTable, deptColumns, data);
+        refresh(deptUpdateTable, deptColumns, data);
+        deptAddClearButtonActionPerformed(null);
     }//GEN-LAST:event_deptAddSubmitButtonActionPerformed
 
     private void deptAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptAddClearButtonActionPerformed
         // TODO add your handling code here:
+        deptAddIdField.setText("");
+        deptAddNameField.setText("");
     }//GEN-LAST:event_deptAddClearButtonActionPerformed
 
     private void deptUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deptUpdateTableMousePressed

@@ -25,6 +25,10 @@ public class StaffForm extends javax.swing.JFrame {
         staffDatabase = MainClassHolder.getStaffDatabase();
         facultyDatabase = MainClassHolder.getFacultyDatabase();
         generalDatabase = MainClassHolder.getGeneralDatabase();
+        deptNames = generalDatabase.getDepartmentNames();
+        facNames = facultyDatabase.getFacNames();
+        initializeTables();
+
         initComponents();
         tableValues = null;
         studentDelIdField.setVisible(false);
@@ -33,16 +37,15 @@ public class StaffForm extends javax.swing.JFrame {
         deptDelIdField.setVisible(false);
         enrolledDelIdField.setVisible(false);
         courseDelIdField.setVisible(false);
+
     }
 
-    public void initialSetupTable(JTable table, String[] columns, Object[][] values) {
-        DefaultTableModel tableModel = new DefaultTableModel(values, columns) {
-            @Override
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
-        };
-        table.setModel(tableModel);
+    public void initializeTables() {
+        stuData = studentDatabase.searchStudent();
+        staData = staffDatabase.staffSearch();
+        facData = facultyDatabase.facultySearch();
+        depData = generalDatabase.searchDepartment();
+        courseData = generalDatabase.searchCourse();
     }
 
     /**
@@ -62,6 +65,25 @@ public class StaffForm extends javax.swing.JFrame {
         };
         table.setModel(tableModel);
         tableModel.fireTableDataChanged();
+    }
+
+    public void refreshFacultyCombo() {
+        facNames = facultyDatabase.getFacNames();
+        courseUpdateFacCombo.setModel(new DefaultComboBoxModel<>(facNames));
+        courseAddFacCombo.setModel(new DefaultComboBoxModel<>(facNames));
+        courseSearchFacCombo.setModel(new DefaultComboBoxModel<>(facNames));
+    }
+
+    public void refreshDeptCombo() {
+        deptNames = generalDatabase.getDepartmentNames();
+        DefaultComboBoxModel<String> comboBoxModel = new DefaultComboBoxModel<>(deptNames);
+        staffSearchDeptCombo.setModel(comboBoxModel);
+        staffAddDeptCombo.setModel(comboBoxModel);
+        staffUpdateDeptCombo.setModel(comboBoxModel);
+
+        facultySearchDeptCombo.setModel(comboBoxModel);
+        facultyAddDeptCombo.setModel(comboBoxModel);
+        facultyUpdateDeptCombo.setModel(comboBoxModel);
     }
 
     /**
@@ -4156,6 +4178,8 @@ public class StaffForm extends javax.swing.JFrame {
     private StaffDatabase staffDatabase;
     private GeneralDatabase generalDatabase;
     private int oldStuId, oldStaId, oldFacId, oldDepId, oldCourId, oldEnrId;
+    private String[] deptNames, facNames;
+    private Object[][] stuData, staData, facData, depData, courseData, enrData;
     private final String[] stuComlumns = {"ID", "Name", "Major", "Level", "Age"};
     private final String[] facStaColumns = {"ID", "Name", "Department"};
     private final String[] deptColumns = {"ID", "Name"};

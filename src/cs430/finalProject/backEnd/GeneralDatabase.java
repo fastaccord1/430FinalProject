@@ -122,4 +122,17 @@ public class GeneralDatabase extends Database {
         }
     }
 
+    public void updateDepartment(int oldId, int id, String name) {
+        String statement = "UPDATE Department SET ";
+        statement += "did = " + id + ", ";
+        statement += "dname = '" + name + "' ";
+        statement += "WHERE did = " + oldId;
+
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

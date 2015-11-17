@@ -3660,14 +3660,43 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void deptUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deptUpdateTableMousePressed
         // TODO add your handling code here:
+        JTable target = (JTable) evt.getSource();
+        int row = target.getSelectedRow();
+
+        oldDepId = (Integer) target.getValueAt(row, 0);
+        String name = (String) target.getValueAt(row, 1);
+
+        deptUpdateIdField.setText(oldDepId + "");
+        deptUpdateNameField.setText(name);
     }//GEN-LAST:event_deptUpdateTableMousePressed
 
     private void deptUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptUpdateSubmitButtonActionPerformed
         // TODO add your handling code here:
+        int id;
+        try {
+            id = Integer.parseInt(deptUpdateIdField.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid ID");
+            return;
+        }
+        String name = deptUpdateNameField.getText();
+        if (name.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid name");
+            return;
+        }
+
+        generalDatabase.updateDepartment(oldDepId, id, name);
+        Object[][] data = generalDatabase.searchDepartment();
+        refresh(deptSearchTable, deptColumns, data);
+        refresh(deptUpdateTable, deptColumns, data);
+        deptUpdateClearButtonActionPerformed(null);
     }//GEN-LAST:event_deptUpdateSubmitButtonActionPerformed
 
     private void deptUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptUpdateClearButtonActionPerformed
         // TODO add your handling code here:
+        deptUpdateIdField.setText("");
+        deptUpdateNameField.setText("");
+        oldDepId = -1;
     }//GEN-LAST:event_deptUpdateClearButtonActionPerformed
 
     private void courseSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseSearchSubmitButtonActionPerformed

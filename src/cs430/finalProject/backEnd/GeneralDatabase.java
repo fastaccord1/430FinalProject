@@ -192,4 +192,20 @@ public class GeneralDatabase extends Database {
         return output;
     }
 
+    public void insertCourse(String id, String name, String meets, String room, int fId, int limit) {
+        String statement = "INSERT INTO Courses VALUES(";
+        statement += "'" + id + "', ";
+        statement += "'" + name + "', ";
+        statement += "'" + meets + "', ";
+        statement += "'" + room + "', ";
+        statement += fId + ", ";
+        statement += limit + ")";
+
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

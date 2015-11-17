@@ -125,4 +125,17 @@ public class FacultyDatabase extends Database {
         }
         return null;
     }
+
+    public int getFacId(String fName) {
+        String query = "SELECT fid FROM Faculty WHERE fname = '" + fName + "'";
+        try {
+            ResultSet rs = executeQuery(query);
+            if (rs.next()) {
+                return rs.getInt("fid");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
 }

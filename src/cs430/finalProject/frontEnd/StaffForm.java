@@ -3683,7 +3683,7 @@ public class StaffForm extends javax.swing.JFrame {
         } else {
             data = generalDatabase.searchCourse(cId, cName, meets, room, fName, limit);
         }
-        refresh(courseSearchTable, deptColumns, data);
+        refresh(courseSearchTable, courseColumns, data);
         courseSearchClearButtonActionPerformed(null);
     }//GEN-LAST:event_courseSearchSubmitButtonActionPerformed
 

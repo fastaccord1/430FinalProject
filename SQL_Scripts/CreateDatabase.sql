@@ -53,3 +53,8 @@ CREATE VIEW enrolledStudent AS
   FROM Student
     NATURAL JOIN Enrolled
     NATURAL JOIN Courses;
+
+CREATE VIEW courseView AS
+  SELECT *
+  FROM Courses
+    NATURAL JOIN Faculty;

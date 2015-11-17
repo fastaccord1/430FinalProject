@@ -38,10 +38,10 @@ public class StudentDatabase extends Database {
             conditions.add(" sid = " + id);
         }
         if (name != null) {
-            conditions.add(" sname = '" + name + "'");
+            conditions.add(" sname LIKE '%" + name + "%'");
         }
         if (major != null) {
-            conditions.add(" major = '" + major + "'");
+            conditions.add(" major LIKE '%" + major + "%'");
         }
         if (level != null) {
             conditions.add(" s_level = '" + level + "'");
@@ -73,7 +73,6 @@ public class StudentDatabase extends Database {
      * This method returns entire Student table
      *
      * @return Two dimensional array of results
-     * @throws SQLException
      */
     public Object[][] searchStudent() {
         String query = "SELECT * FROM Student";

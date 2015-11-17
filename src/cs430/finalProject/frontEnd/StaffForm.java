@@ -3181,12 +3181,10 @@ public class StaffForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void studentUpdateTabMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTabMousePressed
-        // TODO add your handling code here:
         refresh(studentUpdateTable, stuColumns, studentDatabase.searchStudent());
     }//GEN-LAST:event_studentUpdateTabMousePressed
 
     private void studentUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateClearButtonActionPerformed
-        // TODO add your handling code here:
         studentUpdateIDField.setText("");
         studentUpdateNameField.setText("");
         studentUpdateMajorField.setText("");
@@ -3196,7 +3194,6 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_studentUpdateClearButtonActionPerformed
 
     private void studentUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentUpdateSubmitButtonActionPerformed
-        // TODO add your handling code here:
         int id = Integer.parseInt(studentUpdateIDField.getText());
         String name = studentUpdateNameField.getText();
         String major = studentUpdateMajorField.getText();
@@ -3204,13 +3201,15 @@ public class StaffForm extends javax.swing.JFrame {
         int age = Integer.parseInt(studentUpdateAgeField.getText());
 
         studentDatabase.updateStudent(oldStuId, id, name, major, level, age);
-        refresh(studentUpdateTable, stuColumns, studentDatabase.searchStudent());
+        Object[][] data = studentDatabase.searchStudent();
+        refresh(studentUpdateTable, stuColumns, data);
+        refresh(studentSearchTable, stuColumns, data);
+        refresh(studentDeleteTable, stuColumns, data);
         studentUpdateClearButtonActionPerformed(null);
 
     }//GEN-LAST:event_studentUpdateSubmitButtonActionPerformed
 
     private void studentUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTableMousePressed
-        // TODO add your handling code here:
         JTable target = (JTable) evt.getSource();
         int row = target.getSelectedRow();
 
@@ -3262,13 +3261,14 @@ public class StaffForm extends javax.swing.JFrame {
             return;
         }
         studentDatabase.insertStudent(id, name, major, level, age);
-        refresh(studentUpdateTable, stuColumns, studentDatabase.searchStudent());
-        refresh(studentSearchTable, stuColumns, studentDatabase.searchStudent());
+        Object[][] data = studentDatabase.searchStudent();
+        refresh(studentUpdateTable, stuColumns, data);
+        refresh(studentSearchTable, stuColumns, data);
+        refresh(studentDeleteTable, stuColumns, data);
         studentAddClearButtonActionPerformed(null);
     }//GEN-LAST:event_studentAddSubmitButtonActionPerformed
 
     private void studentSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchClearButtonActionPerformed
-        // TODO add your handling code here:
         studentSearchIDField.setText("");
         studentSearchNameField.setText("");
         studentSearchMajorField.setSelectedIndex(0);
@@ -3278,7 +3278,6 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_studentSearchClearButtonActionPerformed
 
     private void studentSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSearchSubmitButtonActionPerformed
-        // TODO add your handling code here:
 
         String sid = studentSearchIDField.getText();
         int id = -1;
@@ -3313,7 +3312,6 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_studentSearchSubmitButtonActionPerformed
 
     private void staffSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffSearchSubmitButtonActionPerformed
-        // TODO add your handling code here:
         int id;
         try {
             id = Integer.parseInt(staffSearchIDField.getText());
@@ -3339,14 +3337,12 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_staffSearchSubmitButtonActionPerformed
 
     private void staffSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffSearchClearButtonActionPerformed
-        // TODO add your handling code here:
         staffSearchIDField.setText("");
         staffSearchNameField.setText("");
         staffSearchDeptCombo.setSelectedIndex(0);
     }//GEN-LAST:event_staffSearchClearButtonActionPerformed
 
     private void staffAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffAddSubmitButtonActionPerformed
-        // TODO add your handling code here:
         int id;
         try {
             id = Integer.parseInt(staffAddIdField.getText());
@@ -3366,22 +3362,22 @@ public class StaffForm extends javax.swing.JFrame {
         int deptId = generalDatabase.getDepartmentId((String) staffAddDeptCombo.getSelectedItem());
 
         staffDatabase.insertStaff(id, name, deptId);
-        refresh(staffSearchTable, facStaColumns, staffDatabase.staffSearch());
-        refresh(staffUpdateTable, facStaColumns, staffDatabase.staffSearch());
+        Object[][] data = staffDatabase.staffSearch();
+        refresh(staffSearchTable, facStaColumns, data);
+        refresh(staffUpdateTable, facStaColumns, data);
+        refresh(staffDeleteTable, facStaColumns, data);
         staffAddClearButtonActionPerformed(null);
 
 
     }//GEN-LAST:event_staffAddSubmitButtonActionPerformed
 
     private void staffAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffAddClearButtonActionPerformed
-        // TODO add your handling code here:
         staffAddIdField.setText("");
         staffAddNameField.setText("");
         staffAddDeptCombo.setSelectedIndex(0);
     }//GEN-LAST:event_staffAddClearButtonActionPerformed
 
     private void staffUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffUpdateTableMousePressed
-        // TODO add your handling code here:
         JTable target = (JTable) evt.getSource();
         int row = target.getSelectedRow();
 
@@ -3395,7 +3391,6 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_staffUpdateTableMousePressed
 
     private void staffUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffUpdateSubmitButtonActionPerformed
-        // TODO add your handling code here:
         int id;
         try {
             id = Integer.parseInt(staffUpdateIdField.getText());
@@ -3418,12 +3413,12 @@ public class StaffForm extends javax.swing.JFrame {
         Object[][] data = staffDatabase.staffSearch();
         refresh(staffUpdateTable, facStaColumns, data);
         refresh(staffSearchTable, facStaColumns, data);
+        refresh(staffDeleteTable, facStaColumns, data);
         staffUpdateClearButtonActionPerformed(null);
 
     }//GEN-LAST:event_staffUpdateSubmitButtonActionPerformed
 
     private void staffUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffUpdateClearButtonActionPerformed
-        // TODO add your handling code here:
         oldStaId = -1;
         staffUpdateIdField.setText("");
         staffUpdateNameField.setText("");
@@ -3431,7 +3426,6 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_staffUpdateClearButtonActionPerformed
 
     private void facultySearchSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultySearchSubmitActionPerformed
-        // TODO add your handling code here:
         int id = -1;
         if (!facultySearchIdField.getText().equals("")) {
             try {
@@ -3461,14 +3455,12 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_facultySearchSubmitActionPerformed
 
     private void facultySearchClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultySearchClearActionPerformed
-        // TODO add your handling code here:
         facultySearchIdField.setText("");
         facultySearchNameField.setText("");
         facultySearchDeptCombo.setSelectedIndex(0);
     }//GEN-LAST:event_facultySearchClearActionPerformed
 
     private void facultyAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyAddSubmitButtonActionPerformed
-        // TODO add your handling code here:
         int id;
         try {
             id = Integer.parseInt(facultyAddIdField.getText());
@@ -3494,19 +3486,18 @@ public class StaffForm extends javax.swing.JFrame {
 
         refresh(facultySearchTable, facStaColumns, data);
         refresh(facultyUpdateTable, facStaColumns, data);
+        refresh(facultyDeleteTable, facStaColumns, data);
         facultyAddClearButtonActionPerformed(null);
         refreshFacultyCombo();
     }//GEN-LAST:event_facultyAddSubmitButtonActionPerformed
 
     private void facultyAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyAddClearButtonActionPerformed
-        // TODO add your handling code here:
         facultyAddNameField.setText("");
         facultyAddIdField.setText("");
         facultyAddDeptCombo.setSelectedIndex(0);
     }//GEN-LAST:event_facultyAddClearButtonActionPerformed
 
     private void facultyUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facultyUpdateTableMousePressed
-        // TODO add your handling code here:
         JTable target = (JTable) evt.getSource();
         int row = target.getSelectedRow();
 
@@ -3517,7 +3508,6 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_facultyUpdateTableMousePressed
 
     private void facultyUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyUpdateSubmitButtonActionPerformed
-        // TODO add your handling code here:
         int id;
         try {
             id = Integer.parseInt(facultyUpdateIdField.getText());
@@ -3542,12 +3532,12 @@ public class StaffForm extends javax.swing.JFrame {
         Object[][] data = facultyDatabase.facultySearch();
         refresh(facultyUpdateTable, facStaColumns, data);
         refresh(facultySearchTable, facStaColumns, data);
+        refresh(facultyDeleteTable, facStaColumns, data);
         facultyUpdateClearButtonActionPerformed(null);
         refreshFacultyCombo();
     }//GEN-LAST:event_facultyUpdateSubmitButtonActionPerformed
 
     private void facultyUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyUpdateClearButtonActionPerformed
-        // TODO add your handling code here:
         facultyUpdateIdField.setText("");
         facultyUpdateNameField.setText("");
         facultyUpdateDeptCombo.setSelectedIndex(0);
@@ -3555,7 +3545,6 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_facultyUpdateClearButtonActionPerformed
 
     private void deptSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptSearchSubmitButtonActionPerformed
-        // TODO add your handling code here:
         int id = -1;
         if (!deptSearchIDField.getText().equals("")) {
             id = Integer.parseInt(deptAddIdField.getText());
@@ -3576,13 +3565,11 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_deptSearchSubmitButtonActionPerformed
 
     private void deptSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptSearchClearButtonActionPerformed
-        // TODO add your handling code here:
         deptSearchIDField.setText("");
         deptSearchNameField.setText("");
     }//GEN-LAST:event_deptSearchClearButtonActionPerformed
 
     private void deptAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptAddSubmitButtonActionPerformed
-        // TODO add your handling code here:
         int id;
         try {
             id = Integer.parseInt(deptAddIdField.getText());
@@ -3599,18 +3586,17 @@ public class StaffForm extends javax.swing.JFrame {
         Object[][] data = generalDatabase.searchDepartment();
         refresh(deptSearchTable, deptColumns, data);
         refresh(deptUpdateTable, deptColumns, data);
+        refresh(deptDeleteTable, deptColumns, data);
         deptAddClearButtonActionPerformed(null);
         refreshDeptCombo();
     }//GEN-LAST:event_deptAddSubmitButtonActionPerformed
 
     private void deptAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptAddClearButtonActionPerformed
-        // TODO add your handling code here:
         deptAddIdField.setText("");
         deptAddNameField.setText("");
     }//GEN-LAST:event_deptAddClearButtonActionPerformed
 
     private void deptUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deptUpdateTableMousePressed
-        // TODO add your handling code here:
         JTable target = (JTable) evt.getSource();
         int row = target.getSelectedRow();
 
@@ -3622,7 +3608,6 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_deptUpdateTableMousePressed
 
     private void deptUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptUpdateSubmitButtonActionPerformed
-        // TODO add your handling code here:
         int id;
         try {
             id = Integer.parseInt(deptUpdateIdField.getText());
@@ -3640,19 +3625,18 @@ public class StaffForm extends javax.swing.JFrame {
         Object[][] data = generalDatabase.searchDepartment();
         refresh(deptSearchTable, deptColumns, data);
         refresh(deptUpdateTable, deptColumns, data);
+        refresh(deptDeleteTable, deptColumns, data);
         deptUpdateClearButtonActionPerformed(null);
         refreshDeptCombo();
     }//GEN-LAST:event_deptUpdateSubmitButtonActionPerformed
 
     private void deptUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptUpdateClearButtonActionPerformed
-        // TODO add your handling code here:
         deptUpdateIdField.setText("");
         deptUpdateNameField.setText("");
         oldDepId = -1;
     }//GEN-LAST:event_deptUpdateClearButtonActionPerformed
 
     private void courseSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseSearchSubmitButtonActionPerformed
-        // TODO add your handling code here:
         String cId = courseSearchIDField.getText();
         if (cId.equals("")) {
             cId = null;
@@ -3688,7 +3672,6 @@ public class StaffForm extends javax.swing.JFrame {
     }//GEN-LAST:event_courseSearchSubmitButtonActionPerformed
 
     private void courseSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseSearchClearButtonActionPerformed
-        // TODO add your handling code here:
         courseSearchIDField.setText("");
         courseSearchNameField.setText("");
         courseSearchMeetsField.setText("");
@@ -3699,14 +3682,74 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void courseAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseAddSubmitButtonActionPerformed
         // TODO add your handling code here:
+        String cId = courseAddIdField.getText();
+        if (cId.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid course ID");
+            return;
+        }
+        String cName = courseAddNameField.getText();
+        if (cName.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid course name");
+            return;
+        }
+        String meets = courseAddMeetsField.getText();
+        if (meets.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid value for when the course meets");
+            return;
+        }
+        String room = courseAddRoomField.getText();
+        if (room.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid room");
+            return;
+        }
+        int fId;
+        if (courseAddFacCombo.getSelectedIndex() != 0) {
+            fId = facultyDatabase.getFacId((String) courseAddFacCombo.getSelectedItem());
+        } else {
+            JOptionPane.showMessageDialog(null, "You must select a faculty member");
+            return;
+        }
+        int limit;
+        try {
+            limit = Integer.parseInt(courseAddLimField.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid limit");
+            return;
+        }
+
+        generalDatabase.insertCourse(cId, cName, meets, room, fId, limit);
+        Object[][] data = generalDatabase.searchCourse();
+        refresh(courseSearchTable, courseColumns, data);
+        refresh(courseUpdateTable, courseColumns, data);
+        refresh(courseDeleteTable, courseColumns, data);
+
+        courseAddClearButtonActionPerformed(null);
+
+
     }//GEN-LAST:event_courseAddSubmitButtonActionPerformed
 
     private void courseAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseAddClearButtonActionPerformed
-        // TODO add your handling code here:
+        courseAddIdField.setText("");
+        courseAddNameField.setText("");
+        courseAddMeetLabel.setText("");
+        courseAddRoomField.setText("");
+        courseAddLimField.setText("");
+        courseAddFacCombo.setSelectedIndex(0);
     }//GEN-LAST:event_courseAddClearButtonActionPerformed
 
     private void courseUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_courseUpdateTableMousePressed
         // TODO add your handling code here:
+        JTable target = (JTable) evt.getSource();
+        int row = target.getSelectedRow();
+
+        oldCourId = (String) target.getValueAt(row, 0);
+        courseUpdateIdField.setText(oldCourId);
+        courseUpdateNameField.setText((String) target.getValueAt(row, 1));
+        courseUpdateMeetField.setText((String) target.getValueAt(row, 2));
+        courseUpdateRoomField.setText((String) target.getValueAt(row, 3));
+        courseUpdateFacCombo.setSelectedItem(target.getValueAt(row, 4));
+        courseUpdateLimField.setText(target.getValueAt(row, 5) + "");
+
     }//GEN-LAST:event_courseUpdateTableMousePressed
 
     private void courseUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseUpdateSubmitButtonActionPerformed
@@ -3715,6 +3758,12 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void courseUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseUpdateClearButtonActionPerformed
         // TODO add your handling code here:
+        courseUpdateIdField.setText("");
+        courseUpdateNameField.setText("");
+        courseUpdateMeetField.setText("");
+        courseUpdateRoomField.setText("");
+        courseUpdateFacCombo.setSelectedIndex(0);
+        courseUpdateLimField.setText("");
     }//GEN-LAST:event_courseUpdateClearButtonActionPerformed
 
     private void enrolledSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrolledSearchSubmitButtonActionPerformed
@@ -4151,7 +4200,8 @@ public class StaffForm extends javax.swing.JFrame {
     private FacultyDatabase facultyDatabase;
     private StaffDatabase staffDatabase;
     private GeneralDatabase generalDatabase;
-    private int oldStuId, oldStaId, oldFacId, oldDepId, oldCourId, oldEnrId;
+    private int oldStuId, oldStaId, oldFacId, oldDepId;
+    String oldCourId;
     private String[] deptNames, facNames;
     private Object[][] stuData, staData, facData, deptData, courseData, enrData;
     private final String[] stuColumns = {"ID", "Name", "Major", "Level", "Age"};

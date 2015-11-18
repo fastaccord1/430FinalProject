@@ -27,17 +27,112 @@ public class FacultyForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        facultyTab = new javax.swing.JTabbedPane();
+        facultyInfoTab = new javax.swing.JPanel();
+        facultyInfoLabelPane = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        facultyInfoFieldPane = new javax.swing.JPanel();
+        facultyInfoIdField = new javax.swing.JTextField();
+        facultyInfoNameField = new javax.swing.JTextField();
+        facultyInfoDepField = new javax.swing.JTextField();
+        studentTab = new javax.swing.JTabbedPane();
+        courseTab = new javax.swing.JTabbedPane();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setText("My ID:");
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("My Name:");
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("My Department:");
+
+        javax.swing.GroupLayout facultyInfoLabelPaneLayout = new javax.swing.GroupLayout(facultyInfoLabelPane);
+        facultyInfoLabelPane.setLayout(facultyInfoLabelPaneLayout);
+        facultyInfoLabelPaneLayout.setHorizontalGroup(
+            facultyInfoLabelPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+        );
+        facultyInfoLabelPaneLayout.setVerticalGroup(
+            facultyInfoLabelPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyInfoLabelPaneLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addContainerGap(251, Short.MAX_VALUE))
+        );
+
+        facultyInfoIdField.setEditable(false);
+
+        facultyInfoNameField.setEditable(false);
+
+        facultyInfoDepField.setEditable(false);
+
+        javax.swing.GroupLayout facultyInfoFieldPaneLayout = new javax.swing.GroupLayout(facultyInfoFieldPane);
+        facultyInfoFieldPane.setLayout(facultyInfoFieldPaneLayout);
+        facultyInfoFieldPaneLayout.setHorizontalGroup(
+            facultyInfoFieldPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(facultyInfoIdField)
+            .addComponent(facultyInfoNameField)
+            .addComponent(facultyInfoDepField, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+        );
+        facultyInfoFieldPaneLayout.setVerticalGroup(
+            facultyInfoFieldPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyInfoFieldPaneLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(facultyInfoIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyInfoNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyInfoDepField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout facultyInfoTabLayout = new javax.swing.GroupLayout(facultyInfoTab);
+        facultyInfoTab.setLayout(facultyInfoTabLayout);
+        facultyInfoTabLayout.setHorizontalGroup(
+            facultyInfoTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyInfoTabLayout.createSequentialGroup()
+                .addComponent(facultyInfoLabelPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(facultyInfoFieldPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        facultyInfoTabLayout.setVerticalGroup(
+            facultyInfoTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(facultyInfoLabelPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(facultyInfoTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(facultyInfoFieldPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        facultyTab.addTab("Personal Info", facultyInfoTab);
+
+        jTabbedPane1.addTab("My Info", facultyTab);
+        jTabbedPane1.addTab("Students", studentTab);
+        jTabbedPane1.addTab("Courses", courseTab);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
@@ -79,5 +174,18 @@ public class FacultyForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane courseTab;
+    private javax.swing.JTextField facultyInfoDepField;
+    private javax.swing.JPanel facultyInfoFieldPane;
+    private javax.swing.JTextField facultyInfoIdField;
+    private javax.swing.JPanel facultyInfoLabelPane;
+    private javax.swing.JTextField facultyInfoNameField;
+    private javax.swing.JPanel facultyInfoTab;
+    private javax.swing.JTabbedPane facultyTab;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane studentTab;
     // End of variables declaration//GEN-END:variables
 }

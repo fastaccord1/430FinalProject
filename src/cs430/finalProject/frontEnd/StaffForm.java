@@ -429,6 +429,7 @@ public class StaffForm extends javax.swing.JFrame {
         enrolledDeleteButtonPane = new javax.swing.JPanel();
         enrolledDelIdField = new javax.swing.JTextField();
         enrolledDelButton = new javax.swing.JButton();
+        enrolledDelStuField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Staff Form");
@@ -884,6 +885,11 @@ public class StaffForm extends javax.swing.JFrame {
         studentDeleteScroll.setViewportView(studentDeleteTable);
 
         studentDelButton.setText("Delete");
+        studentDelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentDelButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout studentDeleteButtonPaneLayout = new javax.swing.GroupLayout(studentDeleteButtonPane);
         studentDeleteButtonPane.setLayout(studentDeleteButtonPaneLayout);
@@ -1309,6 +1315,11 @@ public class StaffForm extends javax.swing.JFrame {
         staffDeleteScroll.setViewportView(staffDeleteTable);
 
         staffDelButton.setText("Delete");
+        staffDelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staffDelButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout staffDeleteButtonPaneLayout = new javax.swing.GroupLayout(staffDeleteButtonPane);
         staffDeleteButtonPane.setLayout(staffDeleteButtonPaneLayout);
@@ -1733,6 +1744,11 @@ public class StaffForm extends javax.swing.JFrame {
         facultyDeleteScroll.setViewportView(facultyDeleteTable);
 
         facultyDelButton.setText("Delete");
+        facultyDelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facultyDelButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout facultyDeleteButtonPaneLayout = new javax.swing.GroupLayout(facultyDeleteButtonPane);
         facultyDeleteButtonPane.setLayout(facultyDeleteButtonPaneLayout);
@@ -2123,6 +2139,11 @@ public class StaffForm extends javax.swing.JFrame {
         deptDeleteScroll.setViewportView(deptDeleteTable);
 
         deptDelButton.setText("Delete");
+        deptDelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deptDelButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout deptDeleteButtonPaneLayout = new javax.swing.GroupLayout(deptDeleteButtonPane);
         deptDeleteButtonPane.setLayout(deptDeleteButtonPaneLayout);
@@ -2634,6 +2655,11 @@ public class StaffForm extends javax.swing.JFrame {
         courseDeleteScroll.setViewportView(courseDeleteTable);
 
         courseDelButton.setText("Delete");
+        courseDelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                courseDelButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout courseDeleteButtonPaneLayout = new javax.swing.GroupLayout(courseDeleteButtonPane);
         courseDeleteButtonPane.setLayout(courseDeleteButtonPaneLayout);
@@ -2735,9 +2761,9 @@ public class StaffForm extends javax.swing.JFrame {
                 .addContainerGap(123, Short.MAX_VALUE))
         );
 
-        enrolledSearchCidCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        enrolledSearchCidCombo.setModel(new javax.swing.DefaultComboBoxModel(courseNames));
 
-        enrolledSearchStuCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        enrolledSearchStuCombo.setModel(new javax.swing.DefaultComboBoxModel(studentNames));
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -2865,322 +2891,330 @@ public class StaffForm extends javax.swing.JFrame {
                 .addContainerGap(129, Short.MAX_VALUE))
         );
 
-        enrolledAddCourseCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        enrolledAddCourseCombo.setModel(new javax.swing.DefaultComboBoxModel(courseNames));
 
-        enrolledAddStuCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        enrolledAddStuCombo.setModel(new javax.swing.DefaultComboBoxModel(studentNames)));
 
-        enrolledAddE1Field.setText("jTextField1");
+    javax.swing.GroupLayout enrolledAddFieldPanelLayout = new javax.swing.GroupLayout(enrolledAddFieldPanel);
+    enrolledAddFieldPanel.setLayout(enrolledAddFieldPanelLayout);
+    enrolledAddFieldPanelLayout.setHorizontalGroup(
+        enrolledAddFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(enrolledAddCourseCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, 422, Short.MAX_VALUE)
+        .addComponent(enrolledAddStuCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(enrolledAddE1Field)
+        .addComponent(enrolledAddE2Field, javax.swing.GroupLayout.Alignment.TRAILING)
+        .addComponent(enrolledAddE3Field, javax.swing.GroupLayout.Alignment.TRAILING)
+    );
+    enrolledAddFieldPanelLayout.setVerticalGroup(
+        enrolledAddFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(enrolledAddFieldPanelLayout.createSequentialGroup()
+            .addComponent(enrolledAddCourseCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledAddStuCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledAddE1Field, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledAddE2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledAddE3Field, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, Short.MAX_VALUE))
+    );
 
-        enrolledAddE2Field.setText("jTextField2");
+    enrolledAddMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+    enrolledAddMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    enrolledAddMainLabel.setText("Enroll a new student");
 
-        enrolledAddE3Field.setText("jTextField3");
+    enrolledAddSubmitButton.setText("Submit");
+    enrolledAddSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            enrolledAddSubmitButtonActionPerformed(evt);
+        }
+    });
+    enrolledAddSplitPane.setLeftComponent(enrolledAddSubmitButton);
 
-        javax.swing.GroupLayout enrolledAddFieldPanelLayout = new javax.swing.GroupLayout(enrolledAddFieldPanel);
-        enrolledAddFieldPanel.setLayout(enrolledAddFieldPanelLayout);
-        enrolledAddFieldPanelLayout.setHorizontalGroup(
-            enrolledAddFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(enrolledAddCourseCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, 422, Short.MAX_VALUE)
-            .addComponent(enrolledAddStuCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(enrolledAddE1Field)
-            .addComponent(enrolledAddE2Field, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(enrolledAddE3Field, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
-        enrolledAddFieldPanelLayout.setVerticalGroup(
-            enrolledAddFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(enrolledAddFieldPanelLayout.createSequentialGroup()
-                .addComponent(enrolledAddCourseCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledAddStuCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledAddE1Field, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledAddE2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledAddE3Field, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+    enrolledAddClearButton.setText("Clear");
+    enrolledAddClearButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            enrolledAddClearButtonActionPerformed(evt);
+        }
+    });
+    enrolledAddSplitPane.setRightComponent(enrolledAddClearButton);
 
-        enrolledAddMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        enrolledAddMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        enrolledAddMainLabel.setText("Enroll a new student");
+    javax.swing.GroupLayout enrolledAddTabLayout = new javax.swing.GroupLayout(enrolledAddTab);
+    enrolledAddTab.setLayout(enrolledAddTabLayout);
+    enrolledAddTabLayout.setHorizontalGroup(
+        enrolledAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(enrolledAddTabLayout.createSequentialGroup()
+            .addComponent(enrolledAddLabelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addContainerGap())
+        .addComponent(enrolledAddMainLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addGroup(enrolledAddTabLayout.createSequentialGroup()
+            .addGap(341, 341, 341)
+            .addComponent(enrolledAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    enrolledAddTabLayout.setVerticalGroup(
+        enrolledAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(enrolledAddTabLayout.createSequentialGroup()
+            .addComponent(enrolledAddMainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(enrolledAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(enrolledAddLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(enrolledAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(26, 26, 26)
+            .addComponent(enrolledAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(86, Short.MAX_VALUE))
+    );
 
-        enrolledAddSubmitButton.setText("Submit");
-        enrolledAddSubmitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enrolledAddSubmitButtonActionPerformed(evt);
-            }
-        });
-        enrolledAddSplitPane.setLeftComponent(enrolledAddSubmitButton);
+    enrolledTab.addTab("Add", enrolledAddTab);
 
-        enrolledAddClearButton.setText("Clear");
-        enrolledAddClearButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enrolledAddClearButtonActionPerformed(evt);
-            }
-        });
-        enrolledAddSplitPane.setRightComponent(enrolledAddClearButton);
+    enrolledUpdateTable.setModel(new javax.swing.table.DefaultTableModel(
+        enrData,
+        enrolledColumns
+    ) {
+        boolean[] canEdit = new boolean [] {
+            true, false, false, false, false
+        };
 
-        javax.swing.GroupLayout enrolledAddTabLayout = new javax.swing.GroupLayout(enrolledAddTab);
-        enrolledAddTab.setLayout(enrolledAddTabLayout);
-        enrolledAddTabLayout.setHorizontalGroup(
-            enrolledAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(enrolledAddTabLayout.createSequentialGroup()
-                .addComponent(enrolledAddLabelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addComponent(enrolledAddMainLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(enrolledAddTabLayout.createSequentialGroup()
-                .addGap(341, 341, 341)
-                .addComponent(enrolledAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        enrolledAddTabLayout.setVerticalGroup(
-            enrolledAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(enrolledAddTabLayout.createSequentialGroup()
-                .addComponent(enrolledAddMainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(enrolledAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(enrolledAddLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(enrolledAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
-                .addComponent(enrolledAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
-        );
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    enrolledUpdateTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mousePressed(java.awt.event.MouseEvent evt) {
+            enrolledUpdateTableMousePressed(evt);
+        }
+    });
+    enrolledUpdateScrollPanel.setViewportView(enrolledUpdateTable);
 
-        enrolledTab.addTab("Add", enrolledAddTab);
+    enrolledUpdateMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+    enrolledUpdateMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    enrolledUpdateMainLabel.setText("Update a student's enrollment");
 
-        enrolledUpdateTable.setModel(new javax.swing.table.DefaultTableModel(
-            enrData,
-            enrolledColumns
-        ) {
-            boolean[] canEdit = new boolean [] {
-                true, false, false, false, false
-            };
+    enrolledUpdateCourseLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    enrolledUpdateCourseLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+    enrolledUpdateCourseLabel.setText("Course:");
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        enrolledUpdateTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                enrolledUpdateTableMousePressed(evt);
-            }
-        });
-        enrolledUpdateScrollPanel.setViewportView(enrolledUpdateTable);
+    enrolledUpdateStuLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    enrolledUpdateStuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+    enrolledUpdateStuLabel.setText("Student:");
 
-        enrolledUpdateMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        enrolledUpdateMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        enrolledUpdateMainLabel.setText("Update a student's enrollment");
+    enrolledUpdateE1Label.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    enrolledUpdateE1Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+    enrolledUpdateE1Label.setText("Exam 1:");
 
-        enrolledUpdateCourseLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        enrolledUpdateCourseLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        enrolledUpdateCourseLabel.setText("Course:");
+    enrolledUpdateE2Label.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    enrolledUpdateE2Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+    enrolledUpdateE2Label.setText("Exam 2:");
 
-        enrolledUpdateStuLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        enrolledUpdateStuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        enrolledUpdateStuLabel.setText("Student:");
+    enrolledUpdateE3Label.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    enrolledUpdateE3Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+    enrolledUpdateE3Label.setText("Exam 3:");
 
-        enrolledUpdateE1Label.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        enrolledUpdateE1Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        enrolledUpdateE1Label.setText("Exam 1:");
+    javax.swing.GroupLayout enrolledUpdateLabelPanelLayout = new javax.swing.GroupLayout(enrolledUpdateLabelPanel);
+    enrolledUpdateLabelPanel.setLayout(enrolledUpdateLabelPanelLayout);
+    enrolledUpdateLabelPanelLayout.setHorizontalGroup(
+        enrolledUpdateLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(enrolledUpdateCourseLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(enrolledUpdateStuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+        .addComponent(enrolledUpdateE1Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(enrolledUpdateE2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(enrolledUpdateE3Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    enrolledUpdateLabelPanelLayout.setVerticalGroup(
+        enrolledUpdateLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(enrolledUpdateLabelPanelLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(enrolledUpdateCourseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledUpdateStuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledUpdateE1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledUpdateE2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledUpdateE3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(54, Short.MAX_VALUE))
+    );
 
-        enrolledUpdateE2Label.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        enrolledUpdateE2Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        enrolledUpdateE2Label.setText("Exam 2:");
+    enrolledUpdateCourseCombo.setModel(new javax.swing.DefaultComboBoxModel(courseNames));
 
-        enrolledUpdateE3Label.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        enrolledUpdateE3Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        enrolledUpdateE3Label.setText("Exam 3:");
+    enrolledUpdateStuCombo.setModel(new javax.swing.DefaultComboBoxModel(studentNames));
 
-        javax.swing.GroupLayout enrolledUpdateLabelPanelLayout = new javax.swing.GroupLayout(enrolledUpdateLabelPanel);
-        enrolledUpdateLabelPanel.setLayout(enrolledUpdateLabelPanelLayout);
-        enrolledUpdateLabelPanelLayout.setHorizontalGroup(
-            enrolledUpdateLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(enrolledUpdateCourseLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(enrolledUpdateStuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
-            .addComponent(enrolledUpdateE1Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(enrolledUpdateE2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(enrolledUpdateE3Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        enrolledUpdateLabelPanelLayout.setVerticalGroup(
-            enrolledUpdateLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(enrolledUpdateLabelPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(enrolledUpdateCourseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledUpdateStuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledUpdateE1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledUpdateE2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledUpdateE3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
-        );
+    javax.swing.GroupLayout enrolledUpdateFieldPanelLayout = new javax.swing.GroupLayout(enrolledUpdateFieldPanel);
+    enrolledUpdateFieldPanel.setLayout(enrolledUpdateFieldPanelLayout);
+    enrolledUpdateFieldPanelLayout.setHorizontalGroup(
+        enrolledUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(enrolledUpdateFieldPanelLayout.createSequentialGroup()
+            .addGroup(enrolledUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(enrolledUpdateCourseCombo, 0, 480, Short.MAX_VALUE)
+                .addComponent(enrolledUpdateStuCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(enrolledUpdateE1Field)
+                .addComponent(enrolledUpdateE2Field)
+                .addComponent(enrolledUpdateE3Field))
+            .addContainerGap())
+    );
+    enrolledUpdateFieldPanelLayout.setVerticalGroup(
+        enrolledUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(enrolledUpdateFieldPanelLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(enrolledUpdateCourseCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledUpdateStuCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledUpdateE1Field, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledUpdateE2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledUpdateE3Field, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
 
-        enrolledUpdateCourseCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    enrolledUpdateSubmitButton.setText("Submit");
+    enrolledUpdateSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            enrolledUpdateSubmitButtonActionPerformed(evt);
+        }
+    });
+    enrolledUpdateSplitPane.setLeftComponent(enrolledUpdateSubmitButton);
 
-        enrolledUpdateStuCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+    enrolledUpdateClearButton.setText("Clear");
+    enrolledUpdateClearButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            enrolledUpdateClearButtonActionPerformed(evt);
+        }
+    });
+    enrolledUpdateSplitPane.setRightComponent(enrolledUpdateClearButton);
 
-        javax.swing.GroupLayout enrolledUpdateFieldPanelLayout = new javax.swing.GroupLayout(enrolledUpdateFieldPanel);
-        enrolledUpdateFieldPanel.setLayout(enrolledUpdateFieldPanelLayout);
-        enrolledUpdateFieldPanelLayout.setHorizontalGroup(
-            enrolledUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(enrolledUpdateFieldPanelLayout.createSequentialGroup()
-                .addGroup(enrolledUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(enrolledUpdateCourseCombo, 0, 480, Short.MAX_VALUE)
-                    .addComponent(enrolledUpdateStuCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(enrolledUpdateE1Field)
-                    .addComponent(enrolledUpdateE2Field)
-                    .addComponent(enrolledUpdateE3Field))
-                .addContainerGap())
-        );
-        enrolledUpdateFieldPanelLayout.setVerticalGroup(
-            enrolledUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(enrolledUpdateFieldPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(enrolledUpdateCourseCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledUpdateStuCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledUpdateE1Field, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledUpdateE2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledUpdateE3Field, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+    javax.swing.GroupLayout enrolledUpdateTabLayout = new javax.swing.GroupLayout(enrolledUpdateTab);
+    enrolledUpdateTab.setLayout(enrolledUpdateTabLayout);
+    enrolledUpdateTabLayout.setHorizontalGroup(
+        enrolledUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(enrolledUpdateScrollPanel)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledUpdateTabLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(enrolledUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addContainerGap())
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledUpdateTabLayout.createSequentialGroup()
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(enrolledUpdateLabelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledUpdateFieldPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGroup(enrolledUpdateTabLayout.createSequentialGroup()
+            .addGap(336, 336, 336)
+            .addComponent(enrolledUpdateSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    enrolledUpdateTabLayout.setVerticalGroup(
+        enrolledUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledUpdateTabLayout.createSequentialGroup()
+            .addComponent(enrolledUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledUpdateScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(enrolledUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(enrolledUpdateLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(enrolledUpdateFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledUpdateSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(46, 46, 46))
+    );
 
-        enrolledUpdateSubmitButton.setText("Submit");
-        enrolledUpdateSubmitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enrolledUpdateSubmitButtonActionPerformed(evt);
-            }
-        });
-        enrolledUpdateSplitPane.setLeftComponent(enrolledUpdateSubmitButton);
+    enrolledTab.addTab("Update", enrolledUpdateTab);
 
-        enrolledUpdateClearButton.setText("Clear");
-        enrolledUpdateClearButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enrolledUpdateClearButtonActionPerformed(evt);
-            }
-        });
-        enrolledUpdateSplitPane.setRightComponent(enrolledUpdateClearButton);
+    enrolledDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
+        enrData,
+        enrolledColumns
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false, false, true, true
+        };
 
-        javax.swing.GroupLayout enrolledUpdateTabLayout = new javax.swing.GroupLayout(enrolledUpdateTab);
-        enrolledUpdateTab.setLayout(enrolledUpdateTabLayout);
-        enrolledUpdateTabLayout.setHorizontalGroup(
-            enrolledUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(enrolledUpdateScrollPanel)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledUpdateTabLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(enrolledUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledUpdateTabLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(enrolledUpdateLabelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledUpdateFieldPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(enrolledUpdateTabLayout.createSequentialGroup()
-                .addGap(336, 336, 336)
-                .addComponent(enrolledUpdateSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        enrolledUpdateTabLayout.setVerticalGroup(
-            enrolledUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledUpdateTabLayout.createSequentialGroup()
-                .addComponent(enrolledUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledUpdateScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(enrolledUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(enrolledUpdateLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(enrolledUpdateFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledUpdateSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
-        );
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    enrolledDeleteTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mousePressed(java.awt.event.MouseEvent evt) {
+            enrolledDeleteTableMousePressed(evt);
+        }
+    });
+    enrolledDeleteScroll.setViewportView(enrolledDeleteTable);
 
-        enrolledTab.addTab("Update", enrolledUpdateTab);
+    enrolledDelButton.setText("Delete");
+    enrolledDelButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            enrolledDelButtonActionPerformed(evt);
+        }
+    });
 
-        enrolledDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
-            enrData,
-            enrolledColumns
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, true, true
-            };
+    javax.swing.GroupLayout enrolledDeleteButtonPaneLayout = new javax.swing.GroupLayout(enrolledDeleteButtonPane);
+    enrolledDeleteButtonPane.setLayout(enrolledDeleteButtonPaneLayout);
+    enrolledDeleteButtonPaneLayout.setHorizontalGroup(
+        enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
+            .addGroup(enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
+                    .addContainerGap(749, Short.MAX_VALUE)
+                    .addComponent(enrolledDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
+                    .addGap(322, 322, 322)
+                    .addComponent(enrolledDelButton)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledDelStuField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(42, 42, 42))
+    );
+    enrolledDeleteButtonPaneLayout.setVerticalGroup(
+        enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
+            .addGroup(enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
+                    .addComponent(enrolledDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(enrolledDelButton))
+                .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(enrolledDelStuField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addContainerGap(43, Short.MAX_VALUE))
+    );
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        enrolledDeleteTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                enrolledDeleteTableMousePressed(evt);
-            }
-        });
-        enrolledDeleteScroll.setViewportView(enrolledDeleteTable);
+    javax.swing.GroupLayout enrolledDeleteTabLayout = new javax.swing.GroupLayout(enrolledDeleteTab);
+    enrolledDeleteTab.setLayout(enrolledDeleteTabLayout);
+    enrolledDeleteTabLayout.setHorizontalGroup(
+        enrolledDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(enrolledDeleteScroll, javax.swing.GroupLayout.Alignment.TRAILING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledDeleteTabLayout.createSequentialGroup()
+            .addGap(70, 70, 70)
+            .addComponent(enrolledDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    enrolledDeleteTabLayout.setVerticalGroup(
+        enrolledDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(enrolledDeleteTabLayout.createSequentialGroup()
+            .addComponent(enrolledDeleteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(enrolledDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addContainerGap())
+    );
 
-        enrolledDelButton.setText("Delete");
+    enrolledTab.addTab("Delete", enrolledDeleteTab);
 
-        javax.swing.GroupLayout enrolledDeleteButtonPaneLayout = new javax.swing.GroupLayout(enrolledDeleteButtonPane);
-        enrolledDeleteButtonPane.setLayout(enrolledDeleteButtonPaneLayout);
-        enrolledDeleteButtonPaneLayout.setHorizontalGroup(
-            enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledDeleteButtonPaneLayout.createSequentialGroup()
-                .addContainerGap(753, Short.MAX_VALUE)
-                .addComponent(enrolledDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
-            .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
-                .addGap(322, 322, 322)
-                .addComponent(enrolledDelButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        enrolledDeleteButtonPaneLayout.setVerticalGroup(
-            enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
-                .addComponent(enrolledDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledDelButton)
-                .addContainerGap(43, Short.MAX_VALUE))
-        );
+    jTabbedPane1.addTab("Enrolled", enrolledTab);
 
-        javax.swing.GroupLayout enrolledDeleteTabLayout = new javax.swing.GroupLayout(enrolledDeleteTab);
-        enrolledDeleteTab.setLayout(enrolledDeleteTabLayout);
-        enrolledDeleteTabLayout.setHorizontalGroup(
-            enrolledDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(enrolledDeleteScroll, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledDeleteTabLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(enrolledDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        enrolledDeleteTabLayout.setVerticalGroup(
-            enrolledDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(enrolledDeleteTabLayout.createSequentialGroup()
-                .addComponent(enrolledDeleteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enrolledDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+    getContentPane().setLayout(layout);
+    layout.setHorizontalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jTabbedPane1)
+    );
+    layout.setVerticalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jTabbedPane1)
+    );
 
-        enrolledTab.addTab("Delete", enrolledDeleteTab);
-
-        jTabbedPane1.addTab("Enrolled", enrolledTab);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
-        );
-
-        pack();
+    pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void studentUpdateTabMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTabMousePressed
@@ -3871,6 +3905,30 @@ public class StaffForm extends javax.swing.JFrame {
         enrolledDelIdField.setText(table.getValueAt(row, 0) + "");
     }//GEN-LAST:event_enrolledDeleteTableMousePressed
 
+    private void enrolledDelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrolledDelButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enrolledDelButtonActionPerformed
+
+    private void courseDelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseDelButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_courseDelButtonActionPerformed
+
+    private void deptDelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptDelButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deptDelButtonActionPerformed
+
+    private void facultyDelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyDelButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultyDelButtonActionPerformed
+
+    private void staffDelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffDelButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_staffDelButtonActionPerformed
+
+    private void studentDelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentDelButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentDelButtonActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -4031,6 +4089,7 @@ public class StaffForm extends javax.swing.JFrame {
     private javax.swing.JPanel enrolledAddTab;
     private javax.swing.JButton enrolledDelButton;
     private javax.swing.JTextField enrolledDelIdField;
+    private javax.swing.JTextField enrolledDelStuField;
     private javax.swing.JPanel enrolledDeleteButtonPane;
     private javax.swing.JScrollPane enrolledDeleteScroll;
     private javax.swing.JPanel enrolledDeleteTab;

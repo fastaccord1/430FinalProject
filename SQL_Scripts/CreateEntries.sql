@@ -20,12 +20,6 @@ INSERT INTO Faculty VALUES (271928, 'Denise Patterson', 477363);
 INSERT INTO Faculty VALUES (292016, 'Janice Cunningham', 498654);
 INSERT INTO Faculty VALUES (215748, 'Emily Ward', 435339);
 
-INSERT INTO Courses VALUES ('CS 430', 'Introduction to Databases', 'MWF 10-11', 'A320', 214074, 35);
-INSERT INTO Courses VALUES ('ENGL 101', 'English Literature and Comp', 'MWF 1-2', 'B1024', 283132, 100);
-INSERT INTO Courses VALUES ('EL 102', 'Introduction to Electrical Eng', 'TR 10-12', 'B1020', 268862, 40);
-INSERT INTO Courses VALUES ('PHIL 304', 'Philosophy Through the Years', 'MWF 8-9', 'A200', 292016, 30);
-INSERT INTO Courses VALUES ('LAW 400', 'Contract Law', 'TR 6-8', 'B2048', 217222, 150);
-
 INSERT INTO Staff VALUES (350089, 'Rose Peterson', 479680);
 INSERT INTO Staff VALUES (330543, 'Dennis Lawson', 423231);
 INSERT INTO Staff VALUES (355611, 'Timothy Austin', 435339);
@@ -48,3 +42,13 @@ INSERT INTO Student VALUES(173541, 'Margaret J. Bishop', 'Business Administratio
 INSERT INTO Student VALUES(169810, 'Vivian D. Shive', 'Computer Science', 'PhD', 25);
 INSERT INTO Student VALUES(130412, 'Joann O. Cormack', 'Electrical Engineering', 'Junior', 30);
 
+INSERT INTO Courses VALUES ('CS 430', 'Introduction to Databases', 'MWF 10-11', 'A320', 214074, 35);
+INSERT INTO Courses VALUES ('ENGL 101', 'English Literature and Comp', 'MWF 1-2', 'B1024', 283132, 100);
+INSERT INTO Courses VALUES ('EL 102', 'Introduction to Electrical Eng', 'TR 10-12', 'B1020', 268862, 40);
+INSERT INTO Courses VALUES ('PHIL 304', 'Philosophy Through the Years', 'MWF 8-9', 'A200', 292016, 30);
+INSERT INTO Courses VALUES ('LAW 400', 'Contract Law', 'TR 6-8', 'B2048', 217222, 150);
+INSERT INTO Courses VALUES ('CS 201', 'Introduction to CS', 'TR 1-3', 'A304', 215748, 150);
+INSERT INTO Courses VALUES ('MED 101', 'Introduction to Med', 'MWF 12-1', 'C5113', 221320, 30);
+
+INSERT INTO Enrolled VALUES (119731, 'CS 430', 70, 80, 75);
+INSERT INTO Enrolled VALUES (192090, 'PHIL 304', 85, 90, 87);

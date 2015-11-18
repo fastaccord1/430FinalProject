@@ -100,7 +100,7 @@ public class FacultyDatabase extends Database {
     public void updateFaculty(int oldFid, int fid, String name, int deptId) {
         String statement = "UPDATE Faculty SET";
         statement += " fid = " + fid + ", ";
-        statement += "name = '" + name + "', ";
+        statement += "fname = '" + name + "', ";
         statement += "deptid = " + deptId;
         statement += " WHERE fid = " + oldFid;
         try {

@@ -28,6 +28,7 @@ public class StaffForm extends javax.swing.JFrame {
         deptNames = generalDatabase.getDepartmentNames();
         facNames = facultyDatabase.getFacNames();
         courseNames = generalDatabase.getCourses();
+        studentNames = studentDatabase.getStudents();
         initializeTables();
 
         initComponents();
@@ -47,6 +48,7 @@ public class StaffForm extends javax.swing.JFrame {
         facData = facultyDatabase.facultySearch();
         deptData = generalDatabase.searchDepartment();
         courseData = generalDatabase.searchCourse();
+        enrData = generalDatabase.searchEnrolled();
     }
 
     /**
@@ -3769,10 +3771,42 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void enrolledSearchSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrolledSearchSubmitButtonActionPerformed
         // TODO add your handling code here:
+        String cid = (String) enrolledSearchCidCombo.getSelectedItem();
+        if (enrolledSearchCidCombo.getSelectedIndex() == 0) {
+            cid = null;
+        }
+        String sname = (String) enrolledSearchStuCombo.getSelectedItem();
+        if (enrolledSearchStuCombo.getSelectedIndex() == 0) {
+            sname = null;
+        }
+        int exam1 = -1;
+        if (!enrolledSearchE1FIeld.getText().equals("")) {
+            exam1 = Integer.parseInt(enrolledSearchE1FIeld.getText());
+        }
+        int exam2 = -1;
+        if (!enrolledSearchE2Field.getText().equals("")) {
+            exam2 = Integer.parseInt(enrolledSearchE2Field.getText());
+        }
+        int finalExam = -1;
+        if (!enrolledSearchFField.getText().equals("")) {
+            finalExam = Integer.parseInt(enrolledSearchFField.getText());
+        }
+        Object[][] data;
+        if (cid == null && sname == null && exam1 == -1 && exam2 == -1 && finalExam == -1) {
+            data = generalDatabase.searchEnrolled();
+        } else {
+            data = generalDatabase.searchEnrolled(cid, sname, exam1, exam2, finalExam);
+        }
+        refresh(enrolledSearchTable, enrolledColumns, data);
     }//GEN-LAST:event_enrolledSearchSubmitButtonActionPerformed
 
     private void enrolledSearchClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrolledSearchClearButtonActionPerformed
         // TODO add your handling code here:
+        enrolledSearchCidCombo.setSelectedIndex(0);
+        enrolledSearchStuCombo.setSelectedIndex(0);
+        enrolledSearchE1FIeld.setText("");
+        enrolledSearchE2Field.setText("");
+        enrolledSearchFField.setText("");
     }//GEN-LAST:event_enrolledSearchClearButtonActionPerformed
 
     private void enrolledAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrolledAddSubmitButtonActionPerformed
@@ -4221,7 +4255,7 @@ public class StaffForm extends javax.swing.JFrame {
     private GeneralDatabase generalDatabase;
     private int oldStuId, oldStaId, oldFacId, oldDepId;
     String oldCourId;
-    private String[] deptNames, facNames, courseNames;
+    private String[] deptNames, facNames, courseNames, studentNames;
     private Object[][] stuData, staData, facData, deptData, courseData, enrData;
     private final String[] stuColumns = {"ID", "Name", "Major", "Level", "Age"};
     private final String[] facStaColumns = {"ID", "Name", "Department"};

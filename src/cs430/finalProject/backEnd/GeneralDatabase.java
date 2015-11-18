@@ -243,15 +243,15 @@ public class GeneralDatabase extends Database {
         return null;
     }
 
-    public Object[][] searchEnrolled(String cid, int sid, int exam1, int exam2, int finalExam) {
+    public Object[][] searchEnrolled(String cid, String sName, int exam1, int exam2, int finalExam) {
         String query = "SELECT * FROM enrolledStudent WHERE";
         ArrayList<String> conditions = new ArrayList<>();
 
         if (cid != null) {
             conditions.add(" cid = '" + cid + "'");
         }
-        if (sid != -1) {
-            conditions.add(" sid = " + sid);
+        if (sName != null) {
+            conditions.add(" sname = " + sName);
         }
         if (exam1 != -1) {
             conditions.add(" exam1 = " + exam1);

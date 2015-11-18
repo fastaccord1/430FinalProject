@@ -39,6 +39,14 @@ public class StaffForm extends javax.swing.JFrame {
         deptDelIdField.setVisible(false);
         enrolledDelIdField.setVisible(false);
         courseDelIdField.setVisible(false);
+        enrolledDelStuField.setVisible(false);
+
+        studentDelButton.setVisible(false);
+        staffDelButton.setVisible(false);
+        facultyDelButton.setVisible(false);
+        deptDelButton.setVisible(false);
+        courseDelButton.setVisible(false);
+        enrolledDelButton.setVisible(false);
 
     }
 
@@ -87,6 +95,22 @@ public class StaffForm extends javax.swing.JFrame {
         facultySearchDeptCombo.setModel(comboBoxModel);
         facultyAddDeptCombo.setModel(comboBoxModel);
         facultyUpdateDeptCombo.setModel(comboBoxModel);
+    }
+
+    public void refresheCourseCombo() {
+        courseNames = generalDatabase.getCourses();
+        DefaultComboBoxModel<String> comboBoxModel = new DefaultComboBoxModel<>(courseNames);
+        enrolledAddCourseCombo.setModel(comboBoxModel);
+        enrolledSearchCidCombo.setModel(comboBoxModel);
+        enrolledUpdateCourseCombo.setModel(comboBoxModel);
+    }
+
+    public void refreshStudentCombo() {
+        studentNames = studentDatabase.getStudents();
+        DefaultComboBoxModel<String> comboBoxModel = new DefaultComboBoxModel<>(studentNames);
+        enrolledAddStuCombo.setModel(comboBoxModel);
+        enrolledSearchStuCombo.setModel(comboBoxModel);
+        enrolledUpdateStuCombo.setModel(comboBoxModel);
     }
 
     /**
@@ -2893,7 +2917,7 @@ public class StaffForm extends javax.swing.JFrame {
 
         enrolledAddCourseCombo.setModel(new javax.swing.DefaultComboBoxModel(courseNames));
 
-        enrolledAddStuCombo.setModel(new javax.swing.DefaultComboBoxModel(studentNames)));
+        enrolledAddStuCombo.setModel(new javax.swing.DefaultComboBoxModel(studentNames));
 
     javax.swing.GroupLayout enrolledAddFieldPanelLayout = new javax.swing.GroupLayout(enrolledAddFieldPanel);
     enrolledAddFieldPanel.setLayout(enrolledAddFieldPanelLayout);
@@ -3242,6 +3266,7 @@ public class StaffForm extends javax.swing.JFrame {
         refresh(studentUpdateTable, stuColumns, data);
         refresh(studentSearchTable, stuColumns, data);
         refresh(studentDeleteTable, stuColumns, data);
+        refreshStudentCombo();
         studentUpdateClearButtonActionPerformed(null);
 
     }//GEN-LAST:event_studentUpdateSubmitButtonActionPerformed
@@ -3302,6 +3327,7 @@ public class StaffForm extends javax.swing.JFrame {
         refresh(studentUpdateTable, stuColumns, data);
         refresh(studentSearchTable, stuColumns, data);
         refresh(studentDeleteTable, stuColumns, data);
+        refreshStudentCombo();
         studentAddClearButtonActionPerformed(null);
     }//GEN-LAST:event_studentAddSubmitButtonActionPerformed
 
@@ -3759,7 +3785,7 @@ public class StaffForm extends javax.swing.JFrame {
         refresh(courseSearchTable, courseColumns, data);
         refresh(courseUpdateTable, courseColumns, data);
         refresh(courseDeleteTable, courseColumns, data);
-
+        refresheCourseCombo();
         courseAddClearButtonActionPerformed(null);
 
 
@@ -3791,6 +3817,48 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void courseUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseUpdateSubmitButtonActionPerformed
         // TODO add your handling code here:
+        String cid = courseUpdateIdField.getText();
+        if (cid.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid course ID");
+            return;
+        }
+        String name = courseUpdateNameField.getText();
+        if (name.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid course name");
+            return;
+        }
+        String meets = courseUpdateMeetField.getText();
+        if (meets.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a time the course meets");
+            return;
+        }
+        String room = courseUpdateRoomField.getText();
+        if (room.equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter a room for the course");
+            return;
+        }
+        int facId;
+        if (courseUpdateFacCombo.getSelectedIndex() != 0) {
+            facId = facultyDatabase.getFacId((String) courseUpdateFacCombo.getSelectedItem());
+        } else {
+            JOptionPane.showMessageDialog(null, "You must select a faculty member");
+            return;
+        }
+        int limit;
+        try {
+            limit = Integer.parseInt(courseUpdateLimField.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid limit");
+            return;
+        }
+
+        generalDatabase.updateCourse(oldCourId, cid, name, meets, room, facId, limit);
+        Object[][] data = generalDatabase.searchCourse();
+        refresh(courseUpdateTable, courseColumns, data);
+        refresh(courseSearchTable, courseColumns, data);
+        refresh(courseDeleteTable, courseColumns, data);
+        refresheCourseCombo();
+        courseUpdateClearButtonActionPerformed(null);
     }//GEN-LAST:event_courseUpdateSubmitButtonActionPerformed
 
     private void courseUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseUpdateClearButtonActionPerformed
@@ -3809,9 +3877,9 @@ public class StaffForm extends javax.swing.JFrame {
         if (enrolledSearchCidCombo.getSelectedIndex() == 0) {
             cid = null;
         }
-        String sname = (String) enrolledSearchStuCombo.getSelectedItem();
+        String sName = (String) enrolledSearchStuCombo.getSelectedItem();
         if (enrolledSearchStuCombo.getSelectedIndex() == 0) {
-            sname = null;
+            sName = null;
         }
         int exam1 = -1;
         if (!enrolledSearchE1FIeld.getText().equals("")) {
@@ -3826,10 +3894,10 @@ public class StaffForm extends javax.swing.JFrame {
             finalExam = Integer.parseInt(enrolledSearchFField.getText());
         }
         Object[][] data;
-        if (cid == null && sname == null && exam1 == -1 && exam2 == -1 && finalExam == -1) {
+        if (cid == null && sName == null && exam1 == -1 && exam2 == -1 && finalExam == -1) {
             data = generalDatabase.searchEnrolled();
         } else {
-            data = generalDatabase.searchEnrolled(cid, sname, exam1, exam2, finalExam);
+            data = generalDatabase.searchEnrolled(cid, sName, exam1, exam2, finalExam);
         }
         refresh(enrolledSearchTable, enrolledColumns, data);
     }//GEN-LAST:event_enrolledSearchSubmitButtonActionPerformed
@@ -3845,22 +3913,133 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void enrolledAddSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrolledAddSubmitButtonActionPerformed
         // TODO add your handling code here:
+        String cid;
+        if (enrolledAddCourseCombo.getSelectedIndex() != 0) {
+            cid = (String) enrolledAddCourseCombo.getSelectedItem();
+        } else {
+            JOptionPane.showMessageDialog(null, "You must select a course");
+            return;
+        }
+        int sid;
+        if (enrolledAddStuCombo.getSelectedIndex() != 0) {
+            sid = studentDatabase.getStudentId((String) enrolledAddStuCombo.getSelectedItem());
+        } else {
+            JOptionPane.showMessageDialog(null, "You must select a student");
+            return;
+        }
+        int exam1 = 0, exam2 = 0, finalExam = 0;
+        if (!enrolledAddE1Field.getText().equals("")) {
+            try {
+                exam1 = Integer.parseInt(enrolledAddE1Field.getText());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "You must enter a valid number");
+                return;
+            }
+        }
+        if (!enrolledAddE2Field.getText().equals("")) {
+            try {
+                exam2 = Integer.parseInt(enrolledAddE2Field.getText());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "You must enter a valid number");
+                return;
+            }
+        }
+        if (!enrolledAddE3Field.getText().equals("")) {
+            try {
+                finalExam = Integer.parseInt(enrolledAddE3Field.getText());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "You must enter a valid number");
+                return;
+            }
+        }
+
+        generalDatabase.insertEnrolled(cid, sid, exam1, exam2, finalExam);
+        Object[][] data = generalDatabase.searchEnrolled();
+        refresh(enrolledSearchTable, enrolledColumns, data);
+        refresh(enrolledUpdateTable, enrolledColumns, data);
+        refresh(enrolledDeleteTable, enrolledColumns, data);
+        enrolledAddClearButtonActionPerformed(null);
     }//GEN-LAST:event_enrolledAddSubmitButtonActionPerformed
 
     private void enrolledAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrolledAddClearButtonActionPerformed
         // TODO add your handling code here:
+        enrolledAddCourseCombo.setSelectedIndex(0);
+        enrolledAddStuCombo.setSelectedIndex(0);
+        enrolledAddE1Field.setText("");
+        enrolledAddE2Field.setText("");
+        enrolledAddE3Field.setText("");
     }//GEN-LAST:event_enrolledAddClearButtonActionPerformed
 
     private void enrolledUpdateTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enrolledUpdateTableMousePressed
         // TODO add your handling code here:
+        JTable table = (JTable) evt.getSource();
+        int row = table.getSelectedRow();
+
+        oldCourId = (String) table.getValueAt(row, 0);
+        oldStuId = (Integer) table.getValueAt(row, 1);
+        enrolledUpdateCourseCombo.setSelectedItem(table.getValueAt(row, 0));
+        enrolledUpdateStuCombo.setSelectedItem(table.getValueAt(row, 1));
+        enrolledUpdateE1Field.setText((String) table.getValueAt(row, 2));
+        enrolledUpdateE2Field.setText((String) table.getValueAt(row, 3));
+        enrolledUpdateE3Field.setText((String) table.getValueAt(row, 4));
     }//GEN-LAST:event_enrolledUpdateTableMousePressed
 
     private void enrolledUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrolledUpdateSubmitButtonActionPerformed
         // TODO add your handling code here:
+        String cid;
+        if (enrolledUpdateCourseCombo.getSelectedIndex() != 0) {
+            cid = (String) enrolledUpdateCourseCombo.getSelectedItem();
+        } else {
+            JOptionPane.showMessageDialog(null, "You must select a course");
+            return;
+        }
+        int sid;
+        if (enrolledUpdateStuCombo.getSelectedIndex() != 0) {
+            sid = studentDatabase.getStudentId((String) enrolledUpdateStuCombo.getSelectedItem());
+        } else {
+            JOptionPane.showMessageDialog(null, "You must select a student");
+            return;
+        }
+        int exam1 = 0, exam2 = 0, finalExam = 0;
+        if (!enrolledUpdateE1Field.getText().equals("")) {
+            try {
+                exam1 = Integer.parseInt(enrolledUpdateE1Field.getText());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "You must enter a valid number");
+                return;
+            }
+        }
+        if (!enrolledUpdateE2Field.getText().equals("")) {
+            try {
+                exam2 = Integer.parseInt(enrolledUpdateE2Field.getText());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "You must enter a valid number");
+                return;
+            }
+        }
+        if (!enrolledUpdateE3Field.getText().equals("")) {
+            try {
+                finalExam = Integer.parseInt(enrolledUpdateE3Field.getText());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "You must enter a valid number");
+                return;
+            }
+        }
+
+        generalDatabase.updateEnrolled(oldCourId, oldStuId, cid, sid, exam1, exam2, finalExam);
+        Object[][] data = generalDatabase.searchEnrolled();
+        refresh(enrolledSearchTable, enrolledColumns, data);
+        refresh(enrolledUpdateTable, enrolledColumns, data);
+        refresh(enrolledDeleteTable, enrolledColumns, data);
+        enrolledUpdateClearButtonActionPerformed(null);
     }//GEN-LAST:event_enrolledUpdateSubmitButtonActionPerformed
 
     private void enrolledUpdateClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrolledUpdateClearButtonActionPerformed
-        // TODO add your handling code here:
+        enrolledUpdateCourseCombo.setSelectedIndex(0);
+        enrolledUpdateStuCombo.setSelectedIndex(0);
+        enrolledUpdateE1Field.setText("");
+        enrolledUpdateE2Field.setText("");
+        enrolledUpdateE3Field.setText("");
     }//GEN-LAST:event_enrolledUpdateClearButtonActionPerformed
 
     private void staffDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffDeleteTableMousePressed
@@ -3868,6 +4047,7 @@ public class StaffForm extends javax.swing.JFrame {
         JTable target = (JTable) evt.getSource();
         int row = target.getSelectedRow();
         staffDelIdField.setText(target.getValueAt(row, 0) + "");
+        staffDelButton.setVisible(true);
     }//GEN-LAST:event_staffDeleteTableMousePressed
 
     private void studentDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentDeleteTableMousePressed
@@ -3875,6 +4055,7 @@ public class StaffForm extends javax.swing.JFrame {
         JTable target = (JTable) evt.getSource();
         int row = target.getSelectedRow();
         studentDelIdField.setText(target.getValueAt(row, 0) + "");
+        studentDelButton.setVisible(true);
     }//GEN-LAST:event_studentDeleteTableMousePressed
 
     private void facultyDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facultyDeleteTableMousePressed
@@ -3882,6 +4063,7 @@ public class StaffForm extends javax.swing.JFrame {
         JTable table = (JTable) evt.getSource();
         int row = table.getSelectedRow();
         facultyDelIdField.setText(table.getValueAt(row, 0) + "");
+        facultyDelButton.setVisible(true);
     }//GEN-LAST:event_facultyDeleteTableMousePressed
 
     private void deptDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deptDeleteTableMousePressed
@@ -3889,6 +4071,7 @@ public class StaffForm extends javax.swing.JFrame {
         JTable table = (JTable) evt.getSource();
         int row = table.getSelectedRow();
         deptDelIdField.setText(table.getValueAt(row, 0) + "");
+        deptDelButton.setVisible(true);
     }//GEN-LAST:event_deptDeleteTableMousePressed
 
     private void courseDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_courseDeleteTableMousePressed
@@ -3896,6 +4079,7 @@ public class StaffForm extends javax.swing.JFrame {
         JTable table = (JTable) evt.getSource();
         int row = table.getSelectedRow();
         courseDelIdField.setText(table.getValueAt(row, 0) + "");
+        courseDelButton.setVisible(true);
     }//GEN-LAST:event_courseDeleteTableMousePressed
 
     private void enrolledDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enrolledDeleteTableMousePressed
@@ -3903,30 +4087,85 @@ public class StaffForm extends javax.swing.JFrame {
         JTable table = (JTable) evt.getSource();
         int row = table.getSelectedRow();
         enrolledDelIdField.setText(table.getValueAt(row, 0) + "");
+        enrolledDelButton.setVisible(true);
     }//GEN-LAST:event_enrolledDeleteTableMousePressed
 
     private void enrolledDelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrolledDelButtonActionPerformed
         // TODO add your handling code here:
+        String cid = enrolledDelIdField.getText();
+        int sid = Integer.parseInt(enrolledDelStuField.getText());
+        generalDatabase.deleteEnrolled(cid, sid);
+        Object[][] data = generalDatabase.searchEnrolled();
+        refresh(enrolledDeleteTable, enrolledColumns, data);
+        refresh(enrolledSearchTable, enrolledColumns, data);
+        refresh(enrolledUpdateTable, enrolledColumns, data);
+        enrolledDelIdField.setText("");
+        enrolledDelStuField.setText("");
+        enrolledDelButton.setVisible(false);
     }//GEN-LAST:event_enrolledDelButtonActionPerformed
 
     private void courseDelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseDelButtonActionPerformed
         // TODO add your handling code here:
+        String cid = courseDelIdField.getText();
+        generalDatabase.deleteCourse(cid);
+        Object[][] data = generalDatabase.searchCourse();
+        refresh(courseDeleteTable, courseColumns, data);
+        refresh(courseSearchTable, courseColumns, data);
+        refresh(courseUpdateTable, courseColumns, data);
+        refresheCourseCombo();
+        courseDelIdField.setText("");
+        courseDelButton.setVisible(false);
     }//GEN-LAST:event_courseDelButtonActionPerformed
 
     private void deptDelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deptDelButtonActionPerformed
         // TODO add your handling code here:
+        int did = Integer.parseInt(deptDelIdField.getText());
+        generalDatabase.deleteDepartment(did);
+        Object[][] data = generalDatabase.searchDepartment();
+        refresh(deptSearchTable, deptColumns, data);
+        refresh(deptUpdateTable, deptColumns, data);
+        refresh(deptDeleteTable, deptColumns, data);
+        refreshDeptCombo();
+        deptDelIdField.setText("");
+        deptDelButton.setVisible(false);
     }//GEN-LAST:event_deptDelButtonActionPerformed
 
     private void facultyDelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyDelButtonActionPerformed
         // TODO add your handling code here:
+        int fid = Integer.parseInt(facultyDelIdField.getText());
+        facultyDatabase.deleteFaculty(fid);
+        Object[][] data = facultyDatabase.facultySearch();
+        refresh(facultyDeleteTable, facStaColumns, data);
+        refresh(facultySearchTable, facStaColumns, data);
+        refresh(facultyUpdateTable, facStaColumns, data);
+        refreshFacultyCombo();
+        facultyDelIdField.setText("");
+        facultyDelButton.setVisible(false);
     }//GEN-LAST:event_facultyDelButtonActionPerformed
 
     private void staffDelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffDelButtonActionPerformed
         // TODO add your handling code here:
+        int sid = Integer.parseInt(staffDelIdField.getText());
+        staffDatabase.deleteStaff(sid);
+        Object[][] data = staffDatabase.staffSearch();
+        refresh(staffDeleteTable, facStaColumns, data);
+        refresh(staffUpdateTable, facStaColumns, data);
+        refresh(staffSearchTable, facStaColumns, data);
+        staffDelIdField.setText("");
+        staffDelButton.setVisible(false);
     }//GEN-LAST:event_staffDelButtonActionPerformed
 
     private void studentDelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentDelButtonActionPerformed
         // TODO add your handling code here:
+        int sid = Integer.parseInt(studentDelIdField.getText());
+        studentDatabase.deleteStudent(sid);
+        Object[][] data = studentDatabase.searchStudent();
+        refresh(studentDeleteTable, stuColumns, data);
+        refresh(studentSearchTable, stuColumns, data);
+        refresh(studentUpdateTable, stuColumns, data);
+        refreshStudentCombo();
+        studentDelIdField.setText("");
+        studentDelButton.setVisible(false);
     }//GEN-LAST:event_studentDelButtonActionPerformed
 
 
@@ -4320,6 +4559,6 @@ public class StaffForm extends javax.swing.JFrame {
     private final String[] facStaColumns = {"ID", "Name", "Department"};
     private final String[] deptColumns = {"ID", "Name"};
     private final String[] courseColumns = {"Course ID", "Course Name", "Meets at", "Room", "Faculty", "Limit"};
-    private final String[] enrolledColumns = {"Student", "Course", "Exam 1", "Exam 2", "Final"};
+    private final String[] enrolledColumns = {"Course", "Student", "Exam 1", "Exam 2", "Final"};
 
 }

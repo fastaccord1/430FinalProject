@@ -208,6 +208,21 @@ public class GeneralDatabase extends Database {
         }
     }
 
+    public void updateCourse(String oldCid, String cid, String name, String meets, String room, int fid, int limit) {
+        String statement = "UPDATE Courses SET";
+        statement += " cid = '" + cid + "', ";
+        statement += "name = '" + name + "', ";
+        statement += "meets_at = '" + meets + "', ";
+        statement += "room = '" + room + "', ";
+        statement += "fid = " + fid + ", ";
+        statement += "limit = " + limit + " WHERE cid = '" + oldCid + "'";
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public String[] getCourses() {
         String query = "SELECT cid FROM Courses";
         try {
@@ -231,7 +246,7 @@ public class GeneralDatabase extends Database {
             ResultSet rs = executeQuery(query);
             for (int i = 0; rs.next(); i++) {
                 output[i][0] = rs.getString("cid");
-                output[i][1] = rs.getInt("sname");
+                output[i][1] = rs.getString("sname");
                 output[i][2] = rs.getInt("exam1");
                 output[i][3] = rs.getInt("exam2");
                 output[i][4] = rs.getInt("final");
@@ -251,7 +266,7 @@ public class GeneralDatabase extends Database {
             conditions.add(" cid = '" + cid + "'");
         }
         if (sName != null) {
-            conditions.add(" sname = " + sName);
+            conditions.add(" sname = '" + sName + "'");
         }
         if (exam1 != -1) {
             conditions.add(" exam1 = " + exam1);
@@ -269,7 +284,7 @@ public class GeneralDatabase extends Database {
             ResultSet rs = executeQuery(query);
             for (int i = 0; rs.next(); i++) {
                 output[i][0] = rs.getString("cid");
-                output[i][1] = rs.getInt("sname");
+                output[i][1] = rs.getString("sname");
                 output[i][2] = rs.getInt("exam1");
                 output[i][3] = rs.getInt("exam2");
                 output[i][4] = rs.getInt("final");
@@ -283,11 +298,12 @@ public class GeneralDatabase extends Database {
 
     public void insertEnrolled(String cid, int sid, int exam1, int exam2, int finalExam) {
         String statement = "INSERT INTO Enrolled VALUES(";
-        statement += "'" + cid + "', ";
         statement += sid + ", ";
+        statement += "'" + cid + "', ";
         statement += exam1 + ", ";
         statement += exam2 + ", ";
         statement += finalExam + ")";
+        System.out.println(statement);
         try {
             executeInsertUpdate(statement);
         } catch (SQLException e) {

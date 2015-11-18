@@ -211,7 +211,7 @@ public class GeneralDatabase extends Database {
     public void updateCourse(String oldCid, String cid, String name, String meets, String room, int fid, int limit) {
         String statement = "UPDATE Courses SET";
         statement += " cid = '" + cid + "', ";
-        statement += "name = '" + name + "', ";
+        statement += "cname = '" + name + "', ";
         statement += "meets_at = '" + meets + "', ";
         statement += "room = '" + room + "', ";
         statement += "fid = " + fid + ", ";
@@ -328,7 +328,7 @@ public class GeneralDatabase extends Database {
     }
 
     public void deleteCourse(String id) {
-        String statement = "DELETE FROM Course WHERE cid = '" + id + "'";
+        String statement = "DELETE FROM Courses WHERE cid = '" + id + "'";
         try {
             executeInsertUpdate(statement);
         } catch (SQLException e) {

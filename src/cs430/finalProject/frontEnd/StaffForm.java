@@ -3794,7 +3794,7 @@ public class StaffForm extends javax.swing.JFrame {
     private void courseAddClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseAddClearButtonActionPerformed
         courseAddIdField.setText("");
         courseAddNameField.setText("");
-        courseAddMeetLabel.setText("");
+        courseAddMeetsField.setText("");
         courseAddRoomField.setText("");
         courseAddLimField.setText("");
         courseAddFacCombo.setSelectedIndex(0);
@@ -3976,12 +3976,12 @@ public class StaffForm extends javax.swing.JFrame {
         int row = table.getSelectedRow();
 
         oldCourId = (String) table.getValueAt(row, 0);
-        oldStuId = (Integer) table.getValueAt(row, 1);
+        oldStuId = studentDatabase.getStudentId((String) table.getValueAt(row, 1));
         enrolledUpdateCourseCombo.setSelectedItem(table.getValueAt(row, 0));
         enrolledUpdateStuCombo.setSelectedItem(table.getValueAt(row, 1));
-        enrolledUpdateE1Field.setText((String) table.getValueAt(row, 2));
-        enrolledUpdateE2Field.setText((String) table.getValueAt(row, 3));
-        enrolledUpdateE3Field.setText((String) table.getValueAt(row, 4));
+        enrolledUpdateE1Field.setText(table.getValueAt(row, 2) + "");
+        enrolledUpdateE2Field.setText(table.getValueAt(row, 3) + "");
+        enrolledUpdateE3Field.setText(table.getValueAt(row, 4) + "");
     }//GEN-LAST:event_enrolledUpdateTableMousePressed
 
     private void enrolledUpdateSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrolledUpdateSubmitButtonActionPerformed
@@ -4087,6 +4087,8 @@ public class StaffForm extends javax.swing.JFrame {
         JTable table = (JTable) evt.getSource();
         int row = table.getSelectedRow();
         enrolledDelIdField.setText(table.getValueAt(row, 0) + "");
+        int sid = studentDatabase.getStudentId((String) table.getValueAt(row, 1));
+        enrolledDelStuField.setText(sid + "");
         enrolledDelButton.setVisible(true);
     }//GEN-LAST:event_enrolledDeleteTableMousePressed
 

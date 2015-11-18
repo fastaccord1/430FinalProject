@@ -208,6 +208,109 @@ public class GeneralDatabase extends Database {
         }
     }
 
+    public String[] getCourses() {
+        String query = "SELECT cid FROM Courses";
+        try {
+            String[] output = new String[getCount(query) + 1];
+            ResultSet rs = executeQuery(query);
+            output[0] = "<Select>";
+            for (int i = 1; rs.next(); i++) {
+                output[i] = rs.getString("cid");
+            }
+            return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Object[][] searchEnrolled() {
+        String query = "SELECT * FROM enrolledStudent";
+        try {
+            Object[][] output = new Object[getCount(query)][5];
+            ResultSet rs = executeQuery(query);
+            for (int i = 0; rs.next(); i++) {
+                output[i][0] = rs.getString("cid");
+                output[i][1] = rs.getInt("sname");
+                output[i][2] = rs.getInt("exam1");
+                output[i][3] = rs.getInt("exam2");
+                output[i][4] = rs.getInt("final");
+            }
+            return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Object[][] searchEnrolled(String cid, int sid, int exam1, int exam2, int finalExam) {
+        String query = "SELECT * FROM enrolledStudent WHERE";
+        ArrayList<String> conditions = new ArrayList<>();
+
+        if (cid != null) {
+            conditions.add(" cid = '" + cid + "'");
+        }
+        if (sid != -1) {
+            conditions.add(" sid = " + sid);
+        }
+        if (exam1 != -1) {
+            conditions.add(" exam1 = " + exam1);
+        }
+        if (exam2 != -1) {
+            conditions.add(" exam2 = " + exam2);
+        }
+        if (finalExam != -1) {
+            conditions.add(" final = " + finalExam);
+        }
+        query = finishQuery(query, conditions);
+
+        try {
+            Object[][] output = new Object[getCount(query)][5];
+            ResultSet rs = executeQuery(query);
+            for (int i = 0; rs.next(); i++) {
+                output[i][0] = rs.getString("cid");
+                output[i][1] = rs.getInt("sname");
+                output[i][2] = rs.getInt("exam1");
+                output[i][3] = rs.getInt("exam2");
+                output[i][4] = rs.getInt("final");
+            }
+            return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void insertEnrolled(String cid, int sid, int exam1, int exam2, int finalExam) {
+        String statement = "INSERT INTO Enrolled VALUES(";
+        statement += "'" + cid + "', ";
+        statement += sid + ", ";
+        statement += exam1 + ", ";
+        statement += exam2 + ", ";
+        statement += finalExam + ")";
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateEnrolled(String oldCid, int oldSid, String cid, int sid, int exam1, int exam2, int finalExam) {
+        String statement = "UPDATE Enrolled SET";
+        statement += " cid = '" + cid + "', ";
+        statement += "sid = " + sid + ", ";
+        statement += "exam1 = " + exam1 + ", ";
+        statement += "exam2 = " + exam2 + ", ";
+        statement += "final = " + finalExam;
+        statement += " WHERE cid = '" + oldCid + "' AND sid = " + oldSid;
+
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void deleteCourse(String id) {
         String statement = "DELETE FROM Course WHERE cid = '" + id + "'";
         try {

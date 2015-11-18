@@ -27,6 +27,7 @@ public class StaffForm extends javax.swing.JFrame {
         generalDatabase = MainClassHolder.getGeneralDatabase();
         deptNames = generalDatabase.getDepartmentNames();
         facNames = facultyDatabase.getFacNames();
+        courseNames = generalDatabase.getCourses();
         initializeTables();
 
         initComponents();
@@ -4220,7 +4221,7 @@ public class StaffForm extends javax.swing.JFrame {
     private GeneralDatabase generalDatabase;
     private int oldStuId, oldStaId, oldFacId, oldDepId;
     String oldCourId;
-    private String[] deptNames, facNames;
+    private String[] deptNames, facNames, courseNames;
     private Object[][] stuData, staData, facData, deptData, courseData, enrData;
     private final String[] stuColumns = {"ID", "Name", "Major", "Level", "Age"};
     private final String[] facStaColumns = {"ID", "Name", "Department"};

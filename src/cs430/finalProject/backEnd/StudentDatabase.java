@@ -186,4 +186,34 @@ public class StudentDatabase extends Database {
             e.printStackTrace();
         }
     }
+
+    public int getStudentId(String name) {
+        String query = "SELECT sid FROM Student WHERE sname = '" + name + "'";
+        try {
+            ResultSet rs = executeQuery(query);
+            if (rs.next()) {
+                return rs.getInt("sid");
+            }
+            return -1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public String[] getStudents() {
+        String query = "SELECT sname FROM Student";
+        try {
+            String[] output = new String[getCount(query) + 1];
+            ResultSet rs = executeQuery(query);
+            output[0] = "<Select>";
+            for (int i = 1; rs.next(); i++) {
+                output[i] = rs.getString("sname");
+            }
+            return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

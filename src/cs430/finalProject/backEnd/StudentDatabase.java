@@ -177,4 +177,13 @@ public class StudentDatabase extends Database {
         }
         return null;
     }
+
+    public void deleteStudent(int id) {
+        String statement = "DELETE FROM Student WHERE sid = " + id;
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

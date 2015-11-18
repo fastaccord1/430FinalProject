@@ -59,7 +59,7 @@ public class StaffDatabase extends Database {
      *
      * @param sid    ID for the staff member to be found. -1 if not searched
      * @param sName  Name for the staff member to be found. null if not searched
-     * @param deptId Department ID for the staff member to be found. -1 if not searched
+     * @param dName Department ID for the staff member to be found. -1 if not searched
      * @return Two-dimensional array of the results.
      */
     public Object[][] staffSearch(int sid, String sName, String dName) {
@@ -117,6 +117,15 @@ public class StaffDatabase extends Database {
         statement += "deptid = " + deptId;
         statement += " WHERE sid = " + oldSid;
 
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteStaff(int id) {
+        String statement = "DELETE FROM Staff WHERE sid = " + id;
         try {
             executeInsertUpdate(statement);
         } catch (SQLException e) {

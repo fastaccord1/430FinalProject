@@ -208,4 +208,31 @@ public class GeneralDatabase extends Database {
         }
     }
 
+    public void deleteCourse(String id) {
+        String statement = "DELETE FROM Course WHERE cid = '" + id + "'";
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteDepartment(int id) {
+        String statement = "DELETE FROM Department WHERE did = " + id;
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteEnrolled(String cid, int sid) {
+        String statement = "DELETE FROM Enrolled WHERE sid = " + sid + " AND cid = '" + cid + "'";
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

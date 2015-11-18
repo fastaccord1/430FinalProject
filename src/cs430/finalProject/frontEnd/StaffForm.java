@@ -3796,26 +3796,44 @@ public class StaffForm extends javax.swing.JFrame {
 
     private void staffDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffDeleteTableMousePressed
         // TODO add your handling code here:
+        JTable target = (JTable) evt.getSource();
+        int row = target.getSelectedRow();
+        staffDelIdField.setText(target.getValueAt(row, 0) + "");
     }//GEN-LAST:event_staffDeleteTableMousePressed
 
     private void studentDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentDeleteTableMousePressed
         // TODO add your handling code here:
+        JTable target = (JTable) evt.getSource();
+        int row = target.getSelectedRow();
+        studentDelIdField.setText(target.getValueAt(row, 0) + "");
     }//GEN-LAST:event_studentDeleteTableMousePressed
 
     private void facultyDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facultyDeleteTableMousePressed
         // TODO add your handling code here:
+        JTable table = (JTable) evt.getSource();
+        int row = table.getSelectedRow();
+        facultyDelIdField.setText(table.getValueAt(row, 0) + "");
     }//GEN-LAST:event_facultyDeleteTableMousePressed
 
     private void deptDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deptDeleteTableMousePressed
         // TODO add your handling code here:
+        JTable table = (JTable) evt.getSource();
+        int row = table.getSelectedRow();
+        deptDelIdField.setText(table.getValueAt(row, 0) + "");
     }//GEN-LAST:event_deptDeleteTableMousePressed
 
     private void courseDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_courseDeleteTableMousePressed
         // TODO add your handling code here:
+        JTable table = (JTable) evt.getSource();
+        int row = table.getSelectedRow();
+        courseDelIdField.setText(table.getValueAt(row, 0) + "");
     }//GEN-LAST:event_courseDeleteTableMousePressed
 
     private void enrolledDeleteTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enrolledDeleteTableMousePressed
         // TODO add your handling code here:
+        JTable table = (JTable) evt.getSource();
+        int row = table.getSelectedRow();
+        enrolledDelIdField.setText(table.getValueAt(row, 0) + "");
     }//GEN-LAST:event_enrolledDeleteTableMousePressed
 
 

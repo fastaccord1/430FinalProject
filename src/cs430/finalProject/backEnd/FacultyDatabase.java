@@ -138,4 +138,13 @@ public class FacultyDatabase extends Database {
         }
         return -1;
     }
+
+    public void deleteFaculty(int id) {
+        String statement = "DELETE FROM Faculty WHERE fid = " + id;
+        try {
+            executeInsertUpdate(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

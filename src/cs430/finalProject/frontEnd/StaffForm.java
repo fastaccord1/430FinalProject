@@ -2919,326 +2919,325 @@ public class StaffForm extends javax.swing.JFrame {
 
         enrolledAddStuCombo.setModel(new javax.swing.DefaultComboBoxModel(studentNames));
 
-    javax.swing.GroupLayout enrolledAddFieldPanelLayout = new javax.swing.GroupLayout(enrolledAddFieldPanel);
-    enrolledAddFieldPanel.setLayout(enrolledAddFieldPanelLayout);
-    enrolledAddFieldPanelLayout.setHorizontalGroup(
-        enrolledAddFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(enrolledAddCourseCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, 422, Short.MAX_VALUE)
-        .addComponent(enrolledAddStuCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(enrolledAddE1Field)
-        .addComponent(enrolledAddE2Field, javax.swing.GroupLayout.Alignment.TRAILING)
-        .addComponent(enrolledAddE3Field, javax.swing.GroupLayout.Alignment.TRAILING)
-    );
-    enrolledAddFieldPanelLayout.setVerticalGroup(
-        enrolledAddFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(enrolledAddFieldPanelLayout.createSequentialGroup()
-            .addComponent(enrolledAddCourseCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledAddStuCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledAddE1Field, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledAddE2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledAddE3Field, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, Short.MAX_VALUE))
-    );
+        javax.swing.GroupLayout enrolledAddFieldPanelLayout = new javax.swing.GroupLayout(enrolledAddFieldPanel);
+        enrolledAddFieldPanel.setLayout(enrolledAddFieldPanelLayout);
+        enrolledAddFieldPanelLayout.setHorizontalGroup(
+            enrolledAddFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(enrolledAddCourseCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, 422, Short.MAX_VALUE)
+            .addComponent(enrolledAddStuCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(enrolledAddE1Field)
+            .addComponent(enrolledAddE2Field, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(enrolledAddE3Field, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        enrolledAddFieldPanelLayout.setVerticalGroup(
+            enrolledAddFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(enrolledAddFieldPanelLayout.createSequentialGroup()
+                .addComponent(enrolledAddCourseCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledAddStuCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledAddE1Field, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledAddE2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledAddE3Field, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
-    enrolledAddMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-    enrolledAddMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    enrolledAddMainLabel.setText("Enroll a new student");
+        enrolledAddMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        enrolledAddMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        enrolledAddMainLabel.setText("Enroll a new student");
 
-    enrolledAddSubmitButton.setText("Submit");
-    enrolledAddSubmitButton.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            enrolledAddSubmitButtonActionPerformed(evt);
-        }
-    });
-    enrolledAddSplitPane.setLeftComponent(enrolledAddSubmitButton);
+        enrolledAddSubmitButton.setText("Submit");
+        enrolledAddSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enrolledAddSubmitButtonActionPerformed(evt);
+            }
+        });
+        enrolledAddSplitPane.setLeftComponent(enrolledAddSubmitButton);
 
-    enrolledAddClearButton.setText("Clear");
-    enrolledAddClearButton.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            enrolledAddClearButtonActionPerformed(evt);
-        }
-    });
-    enrolledAddSplitPane.setRightComponent(enrolledAddClearButton);
+        enrolledAddClearButton.setText("Clear");
+        enrolledAddClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enrolledAddClearButtonActionPerformed(evt);
+            }
+        });
+        enrolledAddSplitPane.setRightComponent(enrolledAddClearButton);
 
-    javax.swing.GroupLayout enrolledAddTabLayout = new javax.swing.GroupLayout(enrolledAddTab);
-    enrolledAddTab.setLayout(enrolledAddTabLayout);
-    enrolledAddTabLayout.setHorizontalGroup(
-        enrolledAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(enrolledAddTabLayout.createSequentialGroup()
-            .addComponent(enrolledAddLabelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addContainerGap())
-        .addComponent(enrolledAddMainLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addGroup(enrolledAddTabLayout.createSequentialGroup()
-            .addGap(341, 341, 341)
-            .addComponent(enrolledAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-    );
-    enrolledAddTabLayout.setVerticalGroup(
-        enrolledAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(enrolledAddTabLayout.createSequentialGroup()
-            .addComponent(enrolledAddMainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(enrolledAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                .addComponent(enrolledAddLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(enrolledAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGap(26, 26, 26)
-            .addComponent(enrolledAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(86, Short.MAX_VALUE))
-    );
+        javax.swing.GroupLayout enrolledAddTabLayout = new javax.swing.GroupLayout(enrolledAddTab);
+        enrolledAddTab.setLayout(enrolledAddTabLayout);
+        enrolledAddTabLayout.setHorizontalGroup(
+            enrolledAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(enrolledAddTabLayout.createSequentialGroup()
+                .addComponent(enrolledAddLabelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(enrolledAddMainLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(enrolledAddTabLayout.createSequentialGroup()
+                .addGap(341, 341, 341)
+                .addComponent(enrolledAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        enrolledAddTabLayout.setVerticalGroup(
+            enrolledAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(enrolledAddTabLayout.createSequentialGroup()
+                .addComponent(enrolledAddMainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(enrolledAddTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(enrolledAddLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(enrolledAddFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(enrolledAddSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(86, Short.MAX_VALUE))
+        );
 
-    enrolledTab.addTab("Add", enrolledAddTab);
+        enrolledTab.addTab("Add", enrolledAddTab);
 
-    enrolledUpdateTable.setModel(new javax.swing.table.DefaultTableModel(
-        enrData,
-        enrolledColumns
-    ) {
-        boolean[] canEdit = new boolean [] {
-            true, false, false, false, false
-        };
+        enrolledUpdateTable.setModel(new javax.swing.table.DefaultTableModel(
+            enrData,
+            enrolledColumns
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false, false
+            };
 
-        public boolean isCellEditable(int rowIndex, int columnIndex) {
-            return canEdit [columnIndex];
-        }
-    });
-    enrolledUpdateTable.addMouseListener(new java.awt.event.MouseAdapter() {
-        public void mousePressed(java.awt.event.MouseEvent evt) {
-            enrolledUpdateTableMousePressed(evt);
-        }
-    });
-    enrolledUpdateScrollPanel.setViewportView(enrolledUpdateTable);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        enrolledUpdateTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                enrolledUpdateTableMousePressed(evt);
+            }
+        });
+        enrolledUpdateScrollPanel.setViewportView(enrolledUpdateTable);
 
-    enrolledUpdateMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-    enrolledUpdateMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    enrolledUpdateMainLabel.setText("Update a student's enrollment");
+        enrolledUpdateMainLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        enrolledUpdateMainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        enrolledUpdateMainLabel.setText("Update a student's enrollment");
 
-    enrolledUpdateCourseLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    enrolledUpdateCourseLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-    enrolledUpdateCourseLabel.setText("Course:");
+        enrolledUpdateCourseLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        enrolledUpdateCourseLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        enrolledUpdateCourseLabel.setText("Course:");
 
-    enrolledUpdateStuLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    enrolledUpdateStuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-    enrolledUpdateStuLabel.setText("Student:");
+        enrolledUpdateStuLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        enrolledUpdateStuLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        enrolledUpdateStuLabel.setText("Student:");
 
-    enrolledUpdateE1Label.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    enrolledUpdateE1Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-    enrolledUpdateE1Label.setText("Exam 1:");
+        enrolledUpdateE1Label.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        enrolledUpdateE1Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        enrolledUpdateE1Label.setText("Exam 1:");
 
-    enrolledUpdateE2Label.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    enrolledUpdateE2Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-    enrolledUpdateE2Label.setText("Exam 2:");
+        enrolledUpdateE2Label.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        enrolledUpdateE2Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        enrolledUpdateE2Label.setText("Exam 2:");
 
-    enrolledUpdateE3Label.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    enrolledUpdateE3Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-    enrolledUpdateE3Label.setText("Exam 3:");
+        enrolledUpdateE3Label.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        enrolledUpdateE3Label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        enrolledUpdateE3Label.setText("Exam 3:");
 
-    javax.swing.GroupLayout enrolledUpdateLabelPanelLayout = new javax.swing.GroupLayout(enrolledUpdateLabelPanel);
-    enrolledUpdateLabelPanel.setLayout(enrolledUpdateLabelPanelLayout);
-    enrolledUpdateLabelPanelLayout.setHorizontalGroup(
-        enrolledUpdateLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(enrolledUpdateCourseLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(enrolledUpdateStuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
-        .addComponent(enrolledUpdateE1Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(enrolledUpdateE2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(enrolledUpdateE3Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-    );
-    enrolledUpdateLabelPanelLayout.setVerticalGroup(
-        enrolledUpdateLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(enrolledUpdateLabelPanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(enrolledUpdateCourseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledUpdateStuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledUpdateE1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledUpdateE2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledUpdateE3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(54, Short.MAX_VALUE))
-    );
+        javax.swing.GroupLayout enrolledUpdateLabelPanelLayout = new javax.swing.GroupLayout(enrolledUpdateLabelPanel);
+        enrolledUpdateLabelPanel.setLayout(enrolledUpdateLabelPanelLayout);
+        enrolledUpdateLabelPanelLayout.setHorizontalGroup(
+            enrolledUpdateLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(enrolledUpdateCourseLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(enrolledUpdateStuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+            .addComponent(enrolledUpdateE1Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(enrolledUpdateE2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(enrolledUpdateE3Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        enrolledUpdateLabelPanelLayout.setVerticalGroup(
+            enrolledUpdateLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(enrolledUpdateLabelPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(enrolledUpdateCourseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledUpdateStuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledUpdateE1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledUpdateE2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledUpdateE3Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
 
-    enrolledUpdateCourseCombo.setModel(new javax.swing.DefaultComboBoxModel(courseNames));
+        enrolledUpdateCourseCombo.setModel(new javax.swing.DefaultComboBoxModel(courseNames));
 
-    enrolledUpdateStuCombo.setModel(new javax.swing.DefaultComboBoxModel(studentNames));
+        enrolledUpdateStuCombo.setModel(new javax.swing.DefaultComboBoxModel(studentNames));
 
-    javax.swing.GroupLayout enrolledUpdateFieldPanelLayout = new javax.swing.GroupLayout(enrolledUpdateFieldPanel);
-    enrolledUpdateFieldPanel.setLayout(enrolledUpdateFieldPanelLayout);
-    enrolledUpdateFieldPanelLayout.setHorizontalGroup(
-        enrolledUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(enrolledUpdateFieldPanelLayout.createSequentialGroup()
-            .addGroup(enrolledUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(enrolledUpdateCourseCombo, 0, 480, Short.MAX_VALUE)
-                .addComponent(enrolledUpdateStuCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(enrolledUpdateE1Field)
-                .addComponent(enrolledUpdateE2Field)
-                .addComponent(enrolledUpdateE3Field))
-            .addContainerGap())
-    );
-    enrolledUpdateFieldPanelLayout.setVerticalGroup(
-        enrolledUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(enrolledUpdateFieldPanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(enrolledUpdateCourseCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledUpdateStuCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledUpdateE1Field, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledUpdateE2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledUpdateE3Field, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-    );
+        javax.swing.GroupLayout enrolledUpdateFieldPanelLayout = new javax.swing.GroupLayout(enrolledUpdateFieldPanel);
+        enrolledUpdateFieldPanel.setLayout(enrolledUpdateFieldPanelLayout);
+        enrolledUpdateFieldPanelLayout.setHorizontalGroup(
+            enrolledUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(enrolledUpdateFieldPanelLayout.createSequentialGroup()
+                .addGroup(enrolledUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(enrolledUpdateCourseCombo, 0, 480, Short.MAX_VALUE)
+                    .addComponent(enrolledUpdateStuCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(enrolledUpdateE1Field)
+                    .addComponent(enrolledUpdateE2Field)
+                    .addComponent(enrolledUpdateE3Field))
+                .addContainerGap())
+        );
+        enrolledUpdateFieldPanelLayout.setVerticalGroup(
+            enrolledUpdateFieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(enrolledUpdateFieldPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(enrolledUpdateCourseCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledUpdateStuCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledUpdateE1Field, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledUpdateE2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledUpdateE3Field, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-    enrolledUpdateSubmitButton.setText("Submit");
-    enrolledUpdateSubmitButton.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            enrolledUpdateSubmitButtonActionPerformed(evt);
-        }
-    });
-    enrolledUpdateSplitPane.setLeftComponent(enrolledUpdateSubmitButton);
+        enrolledUpdateSubmitButton.setText("Submit");
+        enrolledUpdateSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enrolledUpdateSubmitButtonActionPerformed(evt);
+            }
+        });
+        enrolledUpdateSplitPane.setLeftComponent(enrolledUpdateSubmitButton);
 
-    enrolledUpdateClearButton.setText("Clear");
-    enrolledUpdateClearButton.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            enrolledUpdateClearButtonActionPerformed(evt);
-        }
-    });
-    enrolledUpdateSplitPane.setRightComponent(enrolledUpdateClearButton);
+        enrolledUpdateClearButton.setText("Clear");
+        enrolledUpdateClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enrolledUpdateClearButtonActionPerformed(evt);
+            }
+        });
+        enrolledUpdateSplitPane.setRightComponent(enrolledUpdateClearButton);
 
-    javax.swing.GroupLayout enrolledUpdateTabLayout = new javax.swing.GroupLayout(enrolledUpdateTab);
-    enrolledUpdateTab.setLayout(enrolledUpdateTabLayout);
-    enrolledUpdateTabLayout.setHorizontalGroup(
-        enrolledUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(enrolledUpdateScrollPanel)
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledUpdateTabLayout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(enrolledUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addContainerGap())
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledUpdateTabLayout.createSequentialGroup()
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addComponent(enrolledUpdateLabelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledUpdateFieldPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGroup(enrolledUpdateTabLayout.createSequentialGroup()
-            .addGap(336, 336, 336)
-            .addComponent(enrolledUpdateSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-    );
-    enrolledUpdateTabLayout.setVerticalGroup(
-        enrolledUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledUpdateTabLayout.createSequentialGroup()
-            .addComponent(enrolledUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledUpdateScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(enrolledUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                .addComponent(enrolledUpdateLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(enrolledUpdateFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledUpdateSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(46, 46, 46))
-    );
+        javax.swing.GroupLayout enrolledUpdateTabLayout = new javax.swing.GroupLayout(enrolledUpdateTab);
+        enrolledUpdateTab.setLayout(enrolledUpdateTabLayout);
+        enrolledUpdateTabLayout.setHorizontalGroup(
+            enrolledUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(enrolledUpdateScrollPanel)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledUpdateTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(enrolledUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledUpdateTabLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(enrolledUpdateLabelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledUpdateFieldPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(enrolledUpdateTabLayout.createSequentialGroup()
+                .addGap(336, 336, 336)
+                .addComponent(enrolledUpdateSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        enrolledUpdateTabLayout.setVerticalGroup(
+            enrolledUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledUpdateTabLayout.createSequentialGroup()
+                .addComponent(enrolledUpdateMainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledUpdateScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(enrolledUpdateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(enrolledUpdateLabelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(enrolledUpdateFieldPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledUpdateSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
+        );
 
-    enrolledTab.addTab("Update", enrolledUpdateTab);
+        enrolledTab.addTab("Update", enrolledUpdateTab);
 
-    enrolledDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
-        enrData,
-        enrolledColumns
-    ) {
-        boolean[] canEdit = new boolean [] {
-            false, false, false, true, true
-        };
+        enrolledDeleteTable.setModel(new javax.swing.table.DefaultTableModel(
+            enrData,
+            enrolledColumns
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
 
-        public boolean isCellEditable(int rowIndex, int columnIndex) {
-            return canEdit [columnIndex];
-        }
-    });
-    enrolledDeleteTable.addMouseListener(new java.awt.event.MouseAdapter() {
-        public void mousePressed(java.awt.event.MouseEvent evt) {
-            enrolledDeleteTableMousePressed(evt);
-        }
-    });
-    enrolledDeleteScroll.setViewportView(enrolledDeleteTable);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        enrolledDeleteTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                enrolledDeleteTableMousePressed(evt);
+            }
+        });
+        enrolledDeleteScroll.setViewportView(enrolledDeleteTable);
 
-    enrolledDelButton.setText("Delete");
-    enrolledDelButton.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            enrolledDelButtonActionPerformed(evt);
-        }
-    });
+        enrolledDelButton.setText("Delete");
+        enrolledDelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enrolledDelButtonActionPerformed(evt);
+            }
+        });
 
-    javax.swing.GroupLayout enrolledDeleteButtonPaneLayout = new javax.swing.GroupLayout(enrolledDeleteButtonPane);
-    enrolledDeleteButtonPane.setLayout(enrolledDeleteButtonPaneLayout);
-    enrolledDeleteButtonPaneLayout.setHorizontalGroup(
-        enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
-            .addGroup(enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
-                    .addContainerGap(749, Short.MAX_VALUE)
-                    .addComponent(enrolledDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
-                    .addGap(322, 322, 322)
-                    .addComponent(enrolledDelButton)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledDelStuField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(42, 42, 42))
-    );
-    enrolledDeleteButtonPaneLayout.setVerticalGroup(
-        enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
-            .addGroup(enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
-                    .addComponent(enrolledDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(enrolledDelButton))
-                .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(enrolledDelStuField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addContainerGap(43, Short.MAX_VALUE))
-    );
+        javax.swing.GroupLayout enrolledDeleteButtonPaneLayout = new javax.swing.GroupLayout(enrolledDeleteButtonPane);
+        enrolledDeleteButtonPane.setLayout(enrolledDeleteButtonPaneLayout);
+        enrolledDeleteButtonPaneLayout.setHorizontalGroup(
+            enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
+                .addGroup(enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
+                        .addContainerGap(743, Short.MAX_VALUE)
+                        .addComponent(enrolledDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
+                        .addGap(322, 322, 322)
+                        .addComponent(enrolledDelButton)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledDelStuField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+        );
+        enrolledDeleteButtonPaneLayout.setVerticalGroup(
+            enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
+                .addGroup(enrolledDeleteButtonPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
+                        .addComponent(enrolledDelIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(enrolledDelButton))
+                    .addGroup(enrolledDeleteButtonPaneLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(enrolledDelStuField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
 
-    javax.swing.GroupLayout enrolledDeleteTabLayout = new javax.swing.GroupLayout(enrolledDeleteTab);
-    enrolledDeleteTab.setLayout(enrolledDeleteTabLayout);
-    enrolledDeleteTabLayout.setHorizontalGroup(
-        enrolledDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(enrolledDeleteScroll, javax.swing.GroupLayout.Alignment.TRAILING)
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledDeleteTabLayout.createSequentialGroup()
-            .addGap(70, 70, 70)
-            .addComponent(enrolledDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-    );
-    enrolledDeleteTabLayout.setVerticalGroup(
-        enrolledDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(enrolledDeleteTabLayout.createSequentialGroup()
-            .addComponent(enrolledDeleteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(enrolledDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addContainerGap())
-    );
+        javax.swing.GroupLayout enrolledDeleteTabLayout = new javax.swing.GroupLayout(enrolledDeleteTab);
+        enrolledDeleteTab.setLayout(enrolledDeleteTabLayout);
+        enrolledDeleteTabLayout.setHorizontalGroup(
+            enrolledDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(enrolledDeleteScroll, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enrolledDeleteTabLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(enrolledDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        enrolledDeleteTabLayout.setVerticalGroup(
+            enrolledDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(enrolledDeleteTabLayout.createSequentialGroup()
+                .addComponent(enrolledDeleteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enrolledDeleteButtonPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
-    enrolledTab.addTab("Delete", enrolledDeleteTab);
+        enrolledTab.addTab("Delete", enrolledDeleteTab);
 
-    jTabbedPane1.addTab("Enrolled", enrolledTab);
+        jTabbedPane1.addTab("Enrolled", enrolledTab);
 
-    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-    getContentPane().setLayout(layout);
-    layout.setHorizontalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(jTabbedPane1)
-    );
-    layout.setVerticalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(jTabbedPane1)
-    );
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
+        );
 
-    pack();
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void studentUpdateTabMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentUpdateTabMousePressed

@@ -84,6 +84,9 @@ public class FacultyForm extends javax.swing.JFrame {
         courseSearchE1Field = new javax.swing.JTextField();
         courseSEarchE2Field = new javax.swing.JTextField();
         courseSearchFField = new javax.swing.JTextField();
+        jSplitPane3 = new javax.swing.JSplitPane();
+        courseSearchButton = new javax.swing.JButton();
+        courseClearButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,7 +108,7 @@ public class FacultyForm extends javax.swing.JFrame {
             facultyInfoLabelPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
         );
         facultyInfoLabelPane1Layout.setVerticalGroup(
             facultyInfoLabelPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,6 +210,11 @@ public class FacultyForm extends javax.swing.JFrame {
         jSplitPane1.setLeftComponent(studentASSearchButton);
 
         studentASClearButton.setText("Clear");
+        studentASClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentASClearButtonActionPerformed(evt);
+            }
+        });
         jSplitPane1.setRightComponent(studentASClearButton);
 
         studentASMajorCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -233,7 +241,7 @@ public class FacultyForm extends javax.swing.JFrame {
                             .addComponent(studentASAgeField, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(studentASMajorCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(studentASLevelCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                    .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -291,20 +299,24 @@ public class FacultyForm extends javax.swing.JFrame {
 
         jLabel13.setText("Age:");
 
-        studentMCIdField.setText("jTextField6");
-
-        studentMCNameField.setText("jTextField7");
-
         studentMCMajorField.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         studentMCLevelField.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        studentMCAgeField.setText("jTextField8");
-
         studentMCSearchButton.setText("Search");
+        studentMCSearchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentMCSearchButtonActionPerformed(evt);
+            }
+        });
         jSplitPane2.setLeftComponent(studentMCSearchButton);
 
         studentMCClearButton.setText("Clear");
+        studentMCClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentMCClearButtonActionPerformed(evt);
+            }
+        });
         jSplitPane2.setRightComponent(studentMCClearButton);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -325,7 +337,7 @@ public class FacultyForm extends javax.swing.JFrame {
                     .addComponent(studentMCMajorField, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(studentMCLevelField, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(studentMCAgeField, javax.swing.GroupLayout.Alignment.TRAILING)))
-            .addComponent(jSplitPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+            .addComponent(jSplitPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,11 +411,21 @@ public class FacultyForm extends javax.swing.JFrame {
 
         courseSearchStudentCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        courseSearchE1Field.setText("jTextField1");
+        courseSearchButton.setText("Search");
+        courseSearchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                courseSearchButtonActionPerformed(evt);
+            }
+        });
+        jSplitPane3.setLeftComponent(courseSearchButton);
 
-        courseSEarchE2Field.setText("jTextField2");
-
-        courseSearchFField.setText("jTextField3");
+        courseClearButton.setText("Clear");
+        courseClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                courseClearButtonActionPerformed(evt);
+            }
+        });
+        jSplitPane3.setRightComponent(courseClearButton);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -417,10 +439,14 @@ public class FacultyForm extends javax.swing.JFrame {
                     .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(courseSearchStudentCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, 108, Short.MAX_VALUE)
+                    .addComponent(courseSearchStudentCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, 122, Short.MAX_VALUE)
                     .addComponent(courseSearchE1Field, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(courseSEarchE2Field)
                     .addComponent(courseSearchFField, javax.swing.GroupLayout.Alignment.TRAILING)))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jSplitPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -441,6 +467,8 @@ public class FacultyForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(courseSearchFField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(82, 82, 82)
+                .addComponent(jSplitPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -479,6 +507,26 @@ public class FacultyForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_studentASSearchButtonActionPerformed
 
+    private void studentASClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentASClearButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentASClearButtonActionPerformed
+
+    private void studentMCSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentMCSearchButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentMCSearchButtonActionPerformed
+
+    private void studentMCClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentMCClearButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentMCClearButtonActionPerformed
+
+    private void courseSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseSearchButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_courseSearchButtonActionPerformed
+
+    private void courseClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseClearButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_courseClearButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -516,7 +564,9 @@ public class FacultyForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField StudentASNameField;
+    private javax.swing.JButton courseClearButton;
     private javax.swing.JTextField courseSEarchE2Field;
+    private javax.swing.JButton courseSearchButton;
     private javax.swing.JTextField courseSearchE1Field;
     private javax.swing.JTextField courseSearchFField;
     private javax.swing.JComboBox courseSearchStudentCombo;
@@ -552,6 +602,7 @@ public class FacultyForm extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JSplitPane jSplitPane2;
+    private javax.swing.JSplitPane jSplitPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField studentASAgeField;

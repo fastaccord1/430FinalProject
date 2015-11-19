@@ -74,7 +74,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
                       <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel6" alignment="0" pref="322" max="32767" attributes="0"/>
+                      <Component id="jLabel6" alignment="0" pref="336" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -207,7 +207,7 @@
                                       <Component id="studentASLevelCombo" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="jSplitPane1" pref="233" max="32767" attributes="0"/>
+                              <Component id="jSplitPane1" pref="247" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
@@ -338,6 +338,9 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Clear"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentASClearButtonActionPerformed"/>
+                      </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
                           <JSplitPaneConstraints position="right"/>
@@ -442,7 +445,7 @@
                                   <Component id="studentMCAgeField" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jSplitPane2" alignment="1" pref="228" max="32767" attributes="0"/>
+                          <Component id="jSplitPane2" alignment="1" pref="242" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -507,14 +510,8 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="studentMCIdField">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField6"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="studentMCNameField">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField7"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="studentMCMajorField">
                       <Properties>
@@ -541,9 +538,6 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="studentMCAgeField">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField8"/>
-                      </Properties>
                     </Component>
                     <Container class="javax.swing.JSplitPane" name="jSplitPane2">
 
@@ -553,6 +547,9 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Search"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentMCSearchButtonActionPerformed"/>
+                          </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
                               <JSplitPaneConstraints position="left"/>
@@ -563,6 +560,9 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Clear"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentMCClearButtonActionPerformed"/>
+                          </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
                               <JSplitPaneConstraints position="right"/>
@@ -627,7 +627,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="jLabel17" pref="70" max="32767" attributes="0"/>
                               <Component id="jLabel16" max="32767" attributes="0"/>
@@ -636,11 +636,16 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="courseSearchStudentCombo" alignment="1" pref="108" max="32767" attributes="0"/>
+                              <Component id="courseSearchStudentCombo" alignment="1" pref="122" max="32767" attributes="0"/>
                               <Component id="courseSearchE1Field" alignment="1" max="32767" attributes="0"/>
                               <Component id="courseSEarchE2Field" max="32767" attributes="0"/>
                               <Component id="courseSearchFField" alignment="1" max="32767" attributes="0"/>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <Component id="jSplitPane3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -667,6 +672,8 @@
                               <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="courseSearchFField" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                          <Component id="jSplitPane3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -706,20 +713,43 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="courseSearchE1Field">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="courseSEarchE2Field">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField2"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="courseSearchFField">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField3"/>
-                  </Properties>
                 </Component>
+                <Container class="javax.swing.JSplitPane" name="jSplitPane3">
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JButton" name="courseSearchButton">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Search"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="courseSearchButtonActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
+                          <JSplitPaneConstraints position="left"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="courseClearButton">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Clear"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="courseClearButtonActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
+                          <JSplitPaneConstraints position="right"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                  </SubComponents>
+                </Container>
               </SubComponents>
             </Container>
           </SubComponents>

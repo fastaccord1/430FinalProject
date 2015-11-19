@@ -28,101 +28,355 @@ public class FacultyForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        facultyTab = new javax.swing.JTabbedPane();
-        facultyInfoTab = new javax.swing.JPanel();
-        facultyInfoLabelPane = new javax.swing.JPanel();
+        facultyTab = new javax.swing.JPanel();
+        facultyInfoLabelPane1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        facultyInfoFieldPane1 = new javax.swing.JPanel();
+        facultyInfoIdField1 = new javax.swing.JTextField();
+        facultyInfoNameField1 = new javax.swing.JTextField();
+        facultyInfoDepField1 = new javax.swing.JTextField();
+        studentTab = new javax.swing.JTabbedPane();
+        studentASTab = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        studentASTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        facultyInfoFieldPane = new javax.swing.JPanel();
-        facultyInfoIdField = new javax.swing.JTextField();
-        facultyInfoNameField = new javax.swing.JTextField();
-        facultyInfoDepField = new javax.swing.JTextField();
-        studentTab = new javax.swing.JTabbedPane();
-        courseTab = new javax.swing.JTabbedPane();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        studentASIdField = new javax.swing.JTextField();
+        StudentASNameField = new javax.swing.JTextField();
+        studentASAgeField = new javax.swing.JTextField();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        studentASSearchButton = new javax.swing.JButton();
+        studentASClearButton = new javax.swing.JButton();
+        studentASMajorCombo = new javax.swing.JComboBox();
+        studentASLevelCombo = new javax.swing.JComboBox();
+        studentMCTab = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        studentMCTable = new javax.swing.JTable();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        studentMCIdField = new javax.swing.JTextField();
+        studentMCNameField = new javax.swing.JTextField();
+        studentMCMajorField = new javax.swing.JComboBox();
+        studentMCLevelField = new javax.swing.JComboBox();
+        studentMCAgeField = new javax.swing.JTextField();
+        jSplitPane2 = new javax.swing.JSplitPane();
+        studentMCSearchButton = new javax.swing.JButton();
+        studentMCClearButton = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setText("My ID:");
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("My ID:");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("My Name:");
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("My Name:");
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("My Department:");
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("My Department:");
 
-        javax.swing.GroupLayout facultyInfoLabelPaneLayout = new javax.swing.GroupLayout(facultyInfoLabelPane);
-        facultyInfoLabelPane.setLayout(facultyInfoLabelPaneLayout);
-        facultyInfoLabelPaneLayout.setHorizontalGroup(
-            facultyInfoLabelPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+        javax.swing.GroupLayout facultyInfoLabelPane1Layout = new javax.swing.GroupLayout(facultyInfoLabelPane1);
+        facultyInfoLabelPane1.setLayout(facultyInfoLabelPane1Layout);
+        facultyInfoLabelPane1Layout.setHorizontalGroup(
+            facultyInfoLabelPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
         );
-        facultyInfoLabelPaneLayout.setVerticalGroup(
-            facultyInfoLabelPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(facultyInfoLabelPaneLayout.createSequentialGroup()
+        facultyInfoLabelPane1Layout.setVerticalGroup(
+            facultyInfoLabelPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyInfoLabelPane1Layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(jLabel1)
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addContainerGap(251, Short.MAX_VALUE))
+                .addComponent(jLabel6)
+                .addContainerGap(277, Short.MAX_VALUE))
         );
 
-        facultyInfoIdField.setEditable(false);
+        facultyInfoIdField1.setEditable(false);
 
-        facultyInfoNameField.setEditable(false);
+        facultyInfoNameField1.setEditable(false);
 
-        facultyInfoDepField.setEditable(false);
+        facultyInfoDepField1.setEditable(false);
 
-        javax.swing.GroupLayout facultyInfoFieldPaneLayout = new javax.swing.GroupLayout(facultyInfoFieldPane);
-        facultyInfoFieldPane.setLayout(facultyInfoFieldPaneLayout);
-        facultyInfoFieldPaneLayout.setHorizontalGroup(
-            facultyInfoFieldPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(facultyInfoIdField)
-            .addComponent(facultyInfoNameField)
-            .addComponent(facultyInfoDepField, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+        javax.swing.GroupLayout facultyInfoFieldPane1Layout = new javax.swing.GroupLayout(facultyInfoFieldPane1);
+        facultyInfoFieldPane1.setLayout(facultyInfoFieldPane1Layout);
+        facultyInfoFieldPane1Layout.setHorizontalGroup(
+            facultyInfoFieldPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(facultyInfoIdField1)
+            .addComponent(facultyInfoNameField1)
+            .addComponent(facultyInfoDepField1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
         );
-        facultyInfoFieldPaneLayout.setVerticalGroup(
-            facultyInfoFieldPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(facultyInfoFieldPaneLayout.createSequentialGroup()
+        facultyInfoFieldPane1Layout.setVerticalGroup(
+            facultyInfoFieldPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyInfoFieldPane1Layout.createSequentialGroup()
                 .addGap(62, 62, 62)
-                .addComponent(facultyInfoIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(facultyInfoIdField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(facultyInfoNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(facultyInfoNameField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(facultyInfoDepField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(facultyInfoDepField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout facultyInfoTabLayout = new javax.swing.GroupLayout(facultyInfoTab);
-        facultyInfoTab.setLayout(facultyInfoTabLayout);
-        facultyInfoTabLayout.setHorizontalGroup(
-            facultyInfoTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(facultyInfoTabLayout.createSequentialGroup()
-                .addComponent(facultyInfoLabelPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout facultyTabLayout = new javax.swing.GroupLayout(facultyTab);
+        facultyTab.setLayout(facultyTabLayout);
+        facultyTabLayout.setHorizontalGroup(
+            facultyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facultyTabLayout.createSequentialGroup()
+                .addComponent(facultyInfoLabelPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(facultyInfoFieldPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(facultyInfoFieldPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        facultyInfoTabLayout.setVerticalGroup(
-            facultyInfoTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(facultyInfoLabelPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(facultyInfoTabLayout.createSequentialGroup()
+        facultyTabLayout.setVerticalGroup(
+            facultyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(facultyInfoLabelPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(facultyTabLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(facultyInfoFieldPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(facultyInfoFieldPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        facultyTab.addTab("Personal Info", facultyInfoTab);
+        jTabbedPane1.addTab("My info", facultyTab);
 
-        jTabbedPane1.addTab("My Info", facultyTab);
+        studentASTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(studentASTable);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
+
+        jLabel1.setText("ID:");
+
+        jLabel2.setText("Name:");
+
+        jLabel3.setText("Major:");
+
+        jLabel7.setText("Level:");
+
+        jLabel8.setText("Age:");
+
+        studentASSearchButton.setText("Search");
+        studentASSearchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentASSearchButtonActionPerformed(evt);
+            }
+        });
+        jSplitPane1.setLeftComponent(studentASSearchButton);
+
+        studentASClearButton.setText("Clear");
+        jSplitPane1.setRightComponent(studentASClearButton);
+
+        studentASMajorCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        studentASLevelCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout studentASTabLayout = new javax.swing.GroupLayout(studentASTab);
+        studentASTab.setLayout(studentASTabLayout);
+        studentASTabLayout.setHorizontalGroup(
+            studentASTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentASTabLayout.createSequentialGroup()
+                .addGroup(studentASTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(studentASTabLayout.createSequentialGroup()
+                        .addGroup(studentASTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(studentASTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(studentASIdField)
+                            .addComponent(StudentASNameField)
+                            .addComponent(studentASAgeField, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(studentASMajorCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(studentASLevelCombo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        studentASTabLayout.setVerticalGroup(
+            studentASTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(studentASTabLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(studentASTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(studentASIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(studentASTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(StudentASNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(studentASTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(studentASMajorCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(studentASTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(studentASLevelCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(studentASTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(studentASAgeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(59, 59, 59)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(113, Short.MAX_VALUE))
+        );
+
+        studentTab.addTab("All Students", studentASTab);
+
+        studentMCTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(studentMCTable);
+
+        jLabel9.setText("ID:");
+
+        jLabel10.setText("Name:");
+
+        jLabel11.setText("Major:");
+
+        jLabel12.setText("Level:");
+
+        jLabel13.setText("Age:");
+
+        studentMCIdField.setText("jTextField6");
+
+        studentMCNameField.setText("jTextField7");
+
+        studentMCMajorField.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        studentMCLevelField.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        studentMCAgeField.setText("jTextField8");
+
+        studentMCSearchButton.setText("Search");
+        jSplitPane2.setLeftComponent(studentMCSearchButton);
+
+        studentMCClearButton.setText("Clear");
+        jSplitPane2.setRightComponent(studentMCClearButton);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(studentMCIdField, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(studentMCNameField, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(studentMCMajorField, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(studentMCLevelField, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(studentMCAgeField, javax.swing.GroupLayout.Alignment.TRAILING)))
+            .addComponent(jSplitPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(studentMCIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(studentMCNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(studentMCMajorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(studentMCLevelField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(studentMCAgeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addComponent(jSplitPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+        );
+
+        javax.swing.GroupLayout studentMCTabLayout = new javax.swing.GroupLayout(studentMCTab);
+        studentMCTab.setLayout(studentMCTabLayout);
+        studentMCTabLayout.setHorizontalGroup(
+            studentMCTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentMCTabLayout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        studentMCTabLayout.setVerticalGroup(
+            studentMCTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(studentMCTabLayout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(32, 32, 32))
+        );
+
+        studentTab.addTab("Students in my Classes", studentMCTab);
+
         jTabbedPane1.addTab("Students", studentTab);
-        jTabbedPane1.addTab("Courses", courseTab);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 651, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 418, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Courses", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,6 +391,10 @@ public class FacultyForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void studentASSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentASSearchButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentASSearchButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,18 +432,51 @@ public class FacultyForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane courseTab;
-    private javax.swing.JTextField facultyInfoDepField;
-    private javax.swing.JPanel facultyInfoFieldPane;
-    private javax.swing.JTextField facultyInfoIdField;
-    private javax.swing.JPanel facultyInfoLabelPane;
-    private javax.swing.JTextField facultyInfoNameField;
-    private javax.swing.JPanel facultyInfoTab;
-    private javax.swing.JTabbedPane facultyTab;
+    private javax.swing.JTextField StudentASNameField;
+    private javax.swing.JTextField facultyInfoDepField1;
+    private javax.swing.JPanel facultyInfoFieldPane1;
+    private javax.swing.JTextField facultyInfoIdField1;
+    private javax.swing.JPanel facultyInfoLabelPane1;
+    private javax.swing.JTextField facultyInfoNameField1;
+    private javax.swing.JPanel facultyTab;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField studentASAgeField;
+    private javax.swing.JButton studentASClearButton;
+    private javax.swing.JTextField studentASIdField;
+    private javax.swing.JComboBox studentASLevelCombo;
+    private javax.swing.JComboBox studentASMajorCombo;
+    private javax.swing.JButton studentASSearchButton;
+    private javax.swing.JPanel studentASTab;
+    private javax.swing.JTable studentASTable;
+    private javax.swing.JTextField studentMCAgeField;
+    private javax.swing.JButton studentMCClearButton;
+    private javax.swing.JTextField studentMCIdField;
+    private javax.swing.JComboBox studentMCLevelField;
+    private javax.swing.JComboBox studentMCMajorField;
+    private javax.swing.JTextField studentMCNameField;
+    private javax.swing.JButton studentMCSearchButton;
+    private javax.swing.JPanel studentMCTab;
+    private javax.swing.JTable studentMCTable;
     private javax.swing.JTabbedPane studentTab;
     // End of variables declaration//GEN-END:variables
 }

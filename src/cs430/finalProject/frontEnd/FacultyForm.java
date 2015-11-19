@@ -5,6 +5,11 @@
  */
 package cs430.finalProject.frontEnd;
 
+import cs430.finalProject.backEnd.FacultyDatabase;
+import cs430.finalProject.backEnd.GeneralDatabase;
+import cs430.finalProject.backEnd.MainClassHolder;
+import cs430.finalProject.backEnd.StudentDatabase;
+
 /**
  *
  * @author kreuter
@@ -12,11 +17,31 @@ package cs430.finalProject.frontEnd;
 public class FacultyForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form FacultyForm
+     * Creates the faculty form
+     * @param fid Faculty ID that was used to open the form
      */
-    public FacultyForm() {
+    public FacultyForm(int fid) {
+        FacultyDatabase facultyDatabase = MainClassHolder.getFacultyDatabase();
+        StudentDatabase studentDatabase = MainClassHolder.getStudentDatabase();
+        GeneralDatabase generalDatabase = MainClassHolder.getGeneralDatabase();
+
+        majorList = studentDatabase.getMajors();
+        levelList = studentDatabase.getLEVELS();
+        courseList = generalDatabase.getCourses();
+        studentList = studentDatabase.getStudents();
+
+        studentData = studentDatabase.searchStudent();
+        courseData = generalDatabase.searchCourse();
+
+        this.fid = fid;
+
+        Object[][] facultyData = facultyDatabase.facultySearch(fid, null, null);
+        fName = (String) facultyData[0][1];
+        did = (Integer) facultyData[0][2];
+
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -554,10 +579,11 @@ public class FacultyForm extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FacultyForm().setVisible(true);
+                new FacultyForm(Integer.parseInt(args[0])).setVisible(true);
             }
         });
     }
@@ -623,5 +649,11 @@ public class FacultyForm extends javax.swing.JFrame {
     private javax.swing.JPanel studentMCTab;
     private javax.swing.JTable studentMCTable;
     private javax.swing.JTabbedPane studentTab;
+    private String[] majorList, levelList, courseList, studentList;
+    private Object[][] studentData, courseData;
+    private String[] studentColumns = {"ID", "Name", "Major", "Level", "Age"};
+    private String[] courseColumns = {"Course", "Student", "Exam 1", "Exam 2", "Final"};
+    private int fid, did;
+    private String fName;
     // End of variables declaration//GEN-END:variables
 }

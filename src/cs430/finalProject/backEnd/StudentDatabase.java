@@ -12,11 +12,15 @@ import java.util.ArrayList;
  * @author Kevin Reuter
  */
 public class StudentDatabase extends Database {
-
+    private final String[] LEVELS = {"Freshman", "Sophomore", "Junior", "Senior", "Masters", "PhD"};
 
     public StudentDatabase(Connection conn) {
         super();
         super.conn = conn;
+    }
+
+    public String[] getLEVELS() {
+        return LEVELS;
     }
 
     /**

@@ -10,6 +10,9 @@ import cs430.finalProject.backEnd.GeneralDatabase;
 import cs430.finalProject.backEnd.MainClassHolder;
 import cs430.finalProject.backEnd.StudentDatabase;
 
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author kreuter
@@ -21,9 +24,9 @@ public class FacultyForm extends javax.swing.JFrame {
      * @param fid Faculty ID that was used to open the form
      */
     public FacultyForm(int fid) {
-        FacultyDatabase facultyDatabase = MainClassHolder.getFacultyDatabase();
-        StudentDatabase studentDatabase = MainClassHolder.getStudentDatabase();
-        GeneralDatabase generalDatabase = MainClassHolder.getGeneralDatabase();
+        facultyDatabase = MainClassHolder.getFacultyDatabase();
+        studentDatabase = MainClassHolder.getStudentDatabase();
+        generalDatabase = MainClassHolder.getGeneralDatabase();
 
         majorList = studentDatabase.getMajors();
         levelList = studentDatabase.getLEVELS();
@@ -40,6 +43,17 @@ public class FacultyForm extends javax.swing.JFrame {
         did = (Integer) facultyData[0][2];
 
         initComponents();
+    }
+
+    private void refresh(JTable table, String[] columns, Object[][] data) {
+        DefaultTableModel defaultTableModel = new DefaultTableModel(data, columns) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        table.setModel(defaultTableModel);
+        defaultTableModel.fireTableDataChanged();
     }
 
 
@@ -530,18 +544,86 @@ public class FacultyForm extends javax.swing.JFrame {
 
     private void studentASSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentASSearchButtonActionPerformed
         // TODO add your handling code here:
+        int id = -1;
+        if (!studentASIdField.getText().equals("")) {
+            id = Integer.parseInt(studentASIdField.getText());
+        }
+        String name = null;
+        if (!StudentASNameField.getText().equals("")) {
+            name = StudentASNameField.getText();
+        }
+        String major = null;
+        if (studentASMajorCombo.getSelectedIndex() != 0) {
+            major = (String) studentASMajorCombo.getSelectedItem();
+        }
+        String level = null;
+        if (studentASLevelCombo.getSelectedIndex() != 0) {
+            level = (String) studentASLevelCombo.getSelectedItem();
+        }
+        int age = -1;
+        if (!studentASAgeField.getText().equals("")) {
+            age = Integer.parseInt(studentASAgeField.getText());
+        }
+
+        Object[][] data;
+        if (id == -1 && name == null && major == null && level == null && age == -1) {
+            data = studentDatabase.searchStudent();
+        } else {
+            data = studentDatabase.searchStudent(id, name, major, level, age);
+        }
+        refresh(studentASTable, studentColumns, data);
     }//GEN-LAST:event_studentASSearchButtonActionPerformed
 
     private void studentASClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentASClearButtonActionPerformed
         // TODO add your handling code here:
+        studentASIdField.setText("");
+        StudentASNameField.setText("");
+        studentASAgeField.setText("");
+        studentASMajorCombo.setSelectedIndex(0);
+        studentASLevelCombo.setSelectedIndex(0);
     }//GEN-LAST:event_studentASClearButtonActionPerformed
 
     private void studentMCSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentMCSearchButtonActionPerformed
         // TODO add your handling code here:
+        int id = -1;
+        if (!studentMCIdField.getText().equals("")) {
+            id = Integer.parseInt(studentMCIdField.getText());
+        }
+        String name = null;
+        if (!studentMCNameField.getText().equals("")) {
+            name = studentMCNameField.getText();
+        }
+        String major = null;
+        if (studentMCMajorField.getSelectedIndex() != 0) {
+            major = (String) studentMCMajorField.getSelectedItem();
+        }
+        String level = null;
+        if (studentMCLevelField.getSelectedIndex() != 0) {
+            level = (String) studentMCLevelField.getSelectedItem();
+        }
+        int age = -1;
+        if (!studentMCAgeField.getText().equals("")) {
+            age = Integer.parseInt(studentMCAgeField.getText());
+        }
+
+        Object[][] data;
+        if (id == -1 && name == null && major == null && level == null && age == -1) {
+            data = studentDatabase.searchEnrolled(fid);
+        } else {
+            data = studentDatabase.searchEnrolled(fid, id, name, major, level, age);
+        }
+        refresh(studentMCTable, studentColumns, data);
+        studentMCClearButtonActionPerformed(null);
+
     }//GEN-LAST:event_studentMCSearchButtonActionPerformed
 
     private void studentMCClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentMCClearButtonActionPerformed
         // TODO add your handling code here:
+        studentMCIdField.setText("");
+        studentMCNameField.setText("");
+        studentMCMajorField.setSelectedIndex(0);
+        studentMCLevelField.setSelectedIndex(0);
+        studentMCAgeField.setText("");
     }//GEN-LAST:event_studentMCClearButtonActionPerformed
 
     private void courseSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseSearchButtonActionPerformed
@@ -655,5 +737,8 @@ public class FacultyForm extends javax.swing.JFrame {
     private String[] courseColumns = {"Course", "Student", "Exam 1", "Exam 2", "Final"};
     private int fid, did;
     private String fName;
+    private StudentDatabase studentDatabase;
+    private FacultyDatabase facultyDatabase;
+    private GeneralDatabase generalDatabase;
     // End of variables declaration//GEN-END:variables
 }

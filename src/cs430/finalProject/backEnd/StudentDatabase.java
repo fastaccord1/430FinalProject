@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Kevin Reuter
  */
 public class StudentDatabase extends Database {
-    private final String[] LEVELS = {"Freshman", "Sophomore", "Junior", "Senior", "Masters", "PhD"};
+    private final String[] LEVELS = {"<Select>", "Freshman", "Sophomore", "Junior", "Senior", "Masters", "PhD"};
 
     public StudentDatabase(Connection conn) {
         super();
@@ -56,17 +56,7 @@ public class StudentDatabase extends Database {
 
         query = finishQuery(query, conditions);
         try {
-            int length = getCount(query);
-            Object[][] output = new Object[length][5];
-            ResultSet rs = executeQuery(query);
-            for (int i = 0; rs.next(); i++) {
-                output[i][0] = rs.getInt("sid");
-                output[i][1] = rs.getString("sname");
-                output[i][2] = rs.getString("major");
-                output[i][3] = rs.getString("s_level");
-                output[i][4] = rs.getInt("age");
-            }
-            return output;
+            return getStudentResults(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -81,20 +71,7 @@ public class StudentDatabase extends Database {
     public Object[][] searchStudent() {
         String query = "SELECT * FROM Student";
         try {
-            int length = getCount(query);
-            Object[][] output = new Object[length][5];
-            ResultSet rs = executeQuery(query);
-            int i = 0;
-            while (rs.next()) {
-                output[i][0] = rs.getInt("sid");
-                output[i][1] = rs.getString("sname");
-                output[i][2] = rs.getString("major");
-                output[i][3] = rs.getString("s_level");
-                output[i][4] = rs.getInt("age");
-                i++;
-            }
-            rs.close();
-            return output;
+            return getStudentResults(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -215,6 +192,43 @@ public class StudentDatabase extends Database {
                 output[i] = rs.getString("sname");
             }
             return output;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Object[][] searchEnrolled(int fid, int sid, String sName, String major, String level, int age) {
+        String query = "SELECT * FROM enrolledStudent WHERE fid = " + fid + " AND";
+        ArrayList<String> conditions = new ArrayList<>();
+        if (sid != -1) {
+            conditions.add(" sid = " + sid);
+        }
+        if (sName != null) {
+            conditions.add(" sname LIKE '%" + sName + "%'");
+        }
+        if (major != null) {
+            conditions.add(" major = '" + major + "'");
+        }
+        if (level != null) {
+            conditions.add(" level = '" + level + "'");
+        }
+        if (age != -1) {
+            conditions.add(" age = " + age);
+        }
+        query = finishQuery(query, conditions);
+        try {
+            return getStudentResults(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Object[][] searchEnrolled(int fid) {
+        String query = "SELECT * FROM enrolledStudent WHERE fid = " + fid;
+        try {
+            return getStudentResults(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }

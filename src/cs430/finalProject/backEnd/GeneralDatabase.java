@@ -242,16 +242,7 @@ public class GeneralDatabase extends Database {
     public Object[][] searchEnrolled() {
         String query = "SELECT * FROM enrolledStudent";
         try {
-            Object[][] output = new Object[getCount(query)][5];
-            ResultSet rs = executeQuery(query);
-            for (int i = 0; rs.next(); i++) {
-                output[i][0] = rs.getString("cid");
-                output[i][1] = rs.getString("sname");
-                output[i][2] = rs.getInt("exam1");
-                output[i][3] = rs.getInt("exam2");
-                output[i][4] = rs.getInt("final");
-            }
-            return output;
+            return getEnrolledResults(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -280,16 +271,42 @@ public class GeneralDatabase extends Database {
         query = finishQuery(query, conditions);
 
         try {
-            Object[][] output = new Object[getCount(query)][5];
-            ResultSet rs = executeQuery(query);
-            for (int i = 0; rs.next(); i++) {
-                output[i][0] = rs.getString("cid");
-                output[i][1] = rs.getString("sname");
-                output[i][2] = rs.getInt("exam1");
-                output[i][3] = rs.getInt("exam2");
-                output[i][4] = rs.getInt("final");
-            }
-            return output;
+            return getEnrolledResults(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Object[][] searchEnrolled(int fid) {
+        String query = "SELECT * FROM enrolledStudent WHERE fid = " + fid;
+        try {
+            return getEnrolledResults(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Object[][] searchEnrolled(int fid, String sName, int exam1, int exam2, int finalExam) {
+        String query = "SELECT * FROM enrolledStudent WHERE fid = " + fid;
+        ArrayList<String> conditions = new ArrayList<>();
+        if (sName != null) {
+            conditions.add(" sname = '" + sName + "'");
+
+        }
+        if (exam1 != -1) {
+            conditions.add(" exam1 = " + exam1);
+        }
+        if (exam2 != -1) {
+            conditions.add(" exam2 = " + exam2);
+        }
+        if (finalExam != -1) {
+            conditions.add(" final = " + finalExam);
+        }
+        query = finishQuery(query, conditions);
+        try {
+            return getEnrolledResults(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }

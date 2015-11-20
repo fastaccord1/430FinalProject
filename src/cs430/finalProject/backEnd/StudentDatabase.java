@@ -225,10 +225,21 @@ public class StudentDatabase extends Database {
         return null;
     }
 
+
     public Object[][] searchEnrolled(int fid) {
         String query = "SELECT * FROM enrolledStudent WHERE fid = " + fid;
         try {
             return getStudentResults(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Object[][] getMyCourses(int sid) {
+        String query = "SELECT * FROM enrolledStudent WHERE sid = " + sid;
+        try {
+            return getFacultyEnrolledResults(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }

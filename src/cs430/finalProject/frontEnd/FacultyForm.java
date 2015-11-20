@@ -113,7 +113,7 @@ public class FacultyForm extends javax.swing.JFrame {
         studentMCClearButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        courseNormSearchTable = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -207,15 +207,8 @@ public class FacultyForm extends javax.swing.JFrame {
         jTabbedPane1.addTab("My info", facultyTab);
 
         studentASTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
+            studentData,
+            studentColumns
         ));
         jScrollPane1.setViewportView(studentASTable);
 
@@ -256,9 +249,9 @@ public class FacultyForm extends javax.swing.JFrame {
         });
         jSplitPane1.setRightComponent(studentASClearButton);
 
-        studentASMajorCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        studentASMajorCombo.setModel(new javax.swing.DefaultComboBoxModel(majorList));
 
-        studentASLevelCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        studentASLevelCombo.setModel(new javax.swing.DefaultComboBoxModel(levelList));
 
         javax.swing.GroupLayout studentASTabLayout = new javax.swing.GroupLayout(studentASTab);
         studentASTab.setLayout(studentASTabLayout);
@@ -316,15 +309,8 @@ public class FacultyForm extends javax.swing.JFrame {
         studentTab.addTab("All Students", studentASTab);
 
         studentMCTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
+            studentData,
+            studentColumns
         ));
         jScrollPane2.setViewportView(studentMCTable);
 
@@ -338,9 +324,9 @@ public class FacultyForm extends javax.swing.JFrame {
 
         jLabel13.setText("Age:");
 
-        studentMCMajorField.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        studentMCMajorField.setModel(new javax.swing.DefaultComboBoxModel(majorList));
 
-        studentMCLevelField.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        studentMCLevelField.setModel(new javax.swing.DefaultComboBoxModel(levelList));
 
         studentMCSearchButton.setText("Search");
         studentMCSearchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -427,28 +413,21 @@ public class FacultyForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Students", studentTab);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
+        courseNormSearchTable.setModel(new javax.swing.table.DefaultTableModel(
+            courseData,
+            courseColumns
         ));
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(courseNormSearchTable);
 
-        jLabel14.setText("jLabel14");
+        jLabel14.setText("Student:");
 
-        jLabel15.setText("jLabel15");
+        jLabel15.setText("Exam 1:");
 
-        jLabel16.setText("jLabel16");
+        jLabel16.setText("Exam 2:");
 
-        jLabel17.setText("jLabel17");
+        jLabel17.setText("Final:");
 
-        courseSearchStudentCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        courseSearchStudentCombo.setModel(new javax.swing.DefaultComboBoxModel(studentList));
 
         courseSearchButton.setText("Search");
         courseSearchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -696,6 +675,7 @@ public class FacultyForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField StudentASNameField;
     private javax.swing.JButton courseClearButton;
+    private javax.swing.JTable courseNormSearchTable;
     private javax.swing.JTextField courseSEarchE2Field;
     private javax.swing.JButton courseSearchButton;
     private javax.swing.JTextField courseSearchE1Field;
@@ -735,7 +715,6 @@ public class FacultyForm extends javax.swing.JFrame {
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JSplitPane jSplitPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField studentASAgeField;
     private javax.swing.JButton studentASClearButton;
     private javax.swing.JTextField studentASIdField;
@@ -754,6 +733,7 @@ public class FacultyForm extends javax.swing.JFrame {
     private javax.swing.JPanel studentMCTab;
     private javax.swing.JTable studentMCTable;
     private javax.swing.JTabbedPane studentTab;
+    // End of variables declaration//GEN-END:variables
     private String[] majorList, levelList, courseList, studentList;
     private Object[][] studentData, courseData;
     private String[] studentColumns = {"ID", "Name", "Major", "Level", "Age"};
@@ -763,5 +743,4 @@ public class FacultyForm extends javax.swing.JFrame {
     private StudentDatabase studentDatabase;
     private FacultyDatabase facultyDatabase;
     private GeneralDatabase generalDatabase;
-    // End of variables declaration//GEN-END:variables
 }

@@ -50,9 +50,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="facultyInfoLabelPane1" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="facultyInfoFieldPane1" min="-2" max="-2" attributes="0"/>
+                      <Component id="facultyInfoLabelPane1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="facultyInfoFieldPane1" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -74,7 +74,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
                       <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel6" alignment="0" pref="336" max="32767" attributes="0"/>
+                      <Component id="jLabel6" alignment="0" pref="254" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -128,7 +128,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="facultyInfoIdField1" alignment="0" max="32767" attributes="0"/>
                       <Component id="facultyInfoNameField1" alignment="0" max="32767" attributes="0"/>
-                      <Component id="facultyInfoDepField1" alignment="0" pref="323" max="32767" attributes="0"/>
+                      <Component id="facultyInfoDepField1" alignment="0" pref="399" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -203,11 +203,15 @@
                                       <Component id="studentASIdField" max="32767" attributes="0"/>
                                       <Component id="StudentASNameField" max="32767" attributes="0"/>
                                       <Component id="studentASAgeField" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="studentASMajorCombo" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="studentASMajorCombo" alignment="1" pref="160" max="32767" attributes="0"/>
                                       <Component id="studentASLevelCombo" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="jSplitPane1" pref="247" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Component id="jSplitPane1" min="-2" pref="159" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
@@ -243,9 +247,9 @@
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="studentASAgeField" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                           <Component id="jSplitPane1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="113" max="32767" attributes="0"/>
+                          <EmptySpace pref="110" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -426,12 +430,16 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="studentMCIdField" alignment="1" max="32767" attributes="0"/>
                                   <Component id="studentMCNameField" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="studentMCMajorField" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="studentMCMajorField" alignment="1" pref="175" max="32767" attributes="0"/>
                                   <Component id="studentMCLevelField" max="32767" attributes="0"/>
                                   <Component id="studentMCAgeField" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jSplitPane2" alignment="1" pref="242" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="jSplitPane2" min="-2" pref="163" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -462,9 +470,9 @@
                                   <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="studentMCAgeField" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="79" max="32767" attributes="0"/>
+                              <EmptySpace pref="80" max="32767" attributes="0"/>
                               <Component id="jSplitPane2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>

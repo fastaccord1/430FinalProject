@@ -34,7 +34,8 @@ public class FacultyForm extends javax.swing.JFrame {
         studentList = studentDatabase.getStudents();
 
         studentData = studentDatabase.searchStudent();
-        courseData = generalDatabase.searchCourse();
+        enrolledData = generalDatabase.searchEnrolled();
+        studentMyData = studentDatabase.searchEnrolled(fid);
 
         this.fid = fid;
 
@@ -43,6 +44,10 @@ public class FacultyForm extends javax.swing.JFrame {
         dName = (String) facultyData[0][2];
 
         initComponents();
+
+        facultyInfoIdField1.setText(fid + "");
+        facultyInfoNameField1.setText(fName);
+        facultyInfoDepField1.setText(dName);
     }
 
     private void refresh(JTable table, String[] columns, Object[][] data) {
@@ -420,7 +425,7 @@ public class FacultyForm extends javax.swing.JFrame {
         jTabbedPane1.addTab("Students", studentTab);
 
         courseNormSearchTable.setModel(new javax.swing.table.DefaultTableModel(
-            courseData,
+                enrolledData,
             courseColumns
         ));
         jScrollPane3.setViewportView(courseNormSearchTable);
@@ -741,7 +746,7 @@ public class FacultyForm extends javax.swing.JFrame {
     private javax.swing.JTabbedPane studentTab;
     // End of variables declaration//GEN-END:variables
     private String[] majorList, levelList, courseList, studentList;
-    private Object[][] studentData, courseData;
+    private Object[][] studentData, enrolledData, studentMyData;
     private String[] studentColumns = {"ID", "Name", "Major", "Level", "Age"};
     private String[] courseColumns = {"Course", "Student", "Exam 1", "Exam 2", "Final"};
     private int fid;

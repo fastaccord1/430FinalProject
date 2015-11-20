@@ -628,6 +628,29 @@ public class FacultyForm extends javax.swing.JFrame {
 
     private void courseSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseSearchButtonActionPerformed
         // TODO add your handling code here:
+        String sName = null;
+        if (courseSearchStudentCombo.getSelectedIndex() != 0) {
+            sName = (String) courseSearchStudentCombo.getSelectedItem();
+        }
+        int exam1 = -1;
+        if (courseSearchE1Field.getText().equals("")) {
+            exam1 = Integer.parseInt(courseSearchE1Field.getText());
+        }
+        int exam2 = -1;
+        if (courseSEarchE2Field.getText().equals("")) {
+            exam2 = Integer.parseInt(courseSEarchE2Field.getText());
+        }
+        int finalExam = -1;
+        if (courseSearchFField.getText().equals("")) {
+            finalExam = Integer.parseInt(courseSearchFField.getText());
+        }
+        Object[][] data;
+        if (sName == null && exam1 == -1 && exam2 == -1 && finalExam == -1) {
+            data = generalDatabase.searchEnrolled(fid);
+        } else {
+            data = generalDatabase.searchEnrolled(fid, sName, exam1, exam2, finalExam);
+        }
+
     }//GEN-LAST:event_courseSearchButtonActionPerformed
 
     private void courseClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseClearButtonActionPerformed

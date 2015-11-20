@@ -3,6 +3,7 @@ package cs430.finalProject.backEnd;
 import cs430.finalProject.frontEnd.SelectRole;
 import oracle.jdbc.driver.OracleDriver;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -82,7 +83,23 @@ public class MainClassHolder {
      * This method is called when a fresh install isn't required.
      */
     public void noInstall() {
-        SelectRole.main(null);
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            if ("Nimbus".equals(info.getName())) {
+                try {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (UnsupportedLookAndFeelException e) {
+                    e.printStackTrace();
+                }
+                break;
+            }
+        }
+        java.awt.EventQueue.invokeLater(() -> new SelectRole().setVisible(true));
     }
 
     /**

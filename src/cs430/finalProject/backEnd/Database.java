@@ -198,7 +198,7 @@ public class Database {
             output[i][0] = rs.getInt("sid");
             output[i][1] = rs.getString("sname");
             output[i][2] = rs.getString("major");
-            output[i][3] = rs.getString("level");
+            output[i][3] = rs.getString("s_level");
             output[i][4] = rs.getInt("age");
         }
         return output;

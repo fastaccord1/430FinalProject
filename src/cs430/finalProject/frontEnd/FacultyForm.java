@@ -40,7 +40,7 @@ public class FacultyForm extends javax.swing.JFrame {
 
         Object[][] facultyData = facultyDatabase.facultySearch(fid, null, null);
         fName = (String) facultyData[0][1];
-        did = (Integer) facultyData[0][2];
+        dName = (String) facultyData[0][2];
 
         initComponents();
     }
@@ -738,8 +738,8 @@ public class FacultyForm extends javax.swing.JFrame {
     private Object[][] studentData, courseData;
     private String[] studentColumns = {"ID", "Name", "Major", "Level", "Age"};
     private String[] courseColumns = {"Course", "Student", "Exam 1", "Exam 2", "Final"};
-    private int fid, did;
-    private String fName;
+    private int fid;
+    private String fName, dName;
     private StudentDatabase studentDatabase;
     private FacultyDatabase facultyDatabase;
     private GeneralDatabase generalDatabase;

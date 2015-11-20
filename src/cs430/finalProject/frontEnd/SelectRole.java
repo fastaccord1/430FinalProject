@@ -125,11 +125,12 @@ public class SelectRole extends javax.swing.JFrame {
         String idString = userName.getText();
         int id = Integer.parseInt(idString);
         if (staffDatabase.isStaff(id)) {
-            StaffForm.main(null);
+            java.awt.EventQueue.invokeLater(() -> new StaffForm().setVisible(true));
         } else if (studentDatabase.isStudent(id)) {
-            System.out.println("Student");
+            java.awt.EventQueue.invokeLater(() -> new StudentForm().setVisible(true));
         } else if (facultyDatabase.isFaculty(id)) {
-            System.out.println("Faculty");
+            java.awt.EventQueue.invokeLater(() -> new FacultyForm(id).setVisible(true));
+
         } else {
             System.out.println("Not found");
         }

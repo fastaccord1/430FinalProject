@@ -281,7 +281,7 @@ public class GeneralDatabase extends Database {
     public Object[][] searchEnrolled(int fid) {
         String query = "SELECT * FROM enrolledStudent WHERE fid = " + fid;
         try {
-            return getEnrolledResults(query);
+            return getStudentEnrolledResults(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -289,7 +289,7 @@ public class GeneralDatabase extends Database {
     }
 
     public Object[][] searchEnrolled(int fid, String sName, int exam1, int exam2, int finalExam) {
-        String query = "SELECT * FROM enrolledStudent WHERE fid = " + fid;
+        String query = "SELECT * FROM enrolledStudent WHERE fid = " + fid + " AND";
         ArrayList<String> conditions = new ArrayList<>();
         if (sName != null) {
             conditions.add(" sname = '" + sName + "'");
@@ -306,7 +306,7 @@ public class GeneralDatabase extends Database {
         }
         query = finishQuery(query, conditions);
         try {
-            return getEnrolledResults(query);
+            return getStudentEnrolledResults(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }

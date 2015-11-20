@@ -34,7 +34,7 @@ public class FacultyForm extends javax.swing.JFrame {
         studentList = studentDatabase.getStudents();
 
         studentData = studentDatabase.searchStudent();
-        enrolledData = generalDatabase.searchEnrolled();
+        enrolledData = generalDatabase.searchEnrolled(fid);
         studentMyData = studentDatabase.searchEnrolled(fid);
 
         this.fid = fid;
@@ -548,6 +548,7 @@ public class FacultyForm extends javax.swing.JFrame {
             data = studentDatabase.searchStudent(id, name, major, level, age);
         }
         refresh(studentASTable, studentColumns, data);
+        studentASClearButtonActionPerformed(null);
     }//GEN-LAST:event_studentASSearchButtonActionPerformed
 
     private void studentASClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentASClearButtonActionPerformed
@@ -609,15 +610,15 @@ public class FacultyForm extends javax.swing.JFrame {
             sName = (String) courseSearchStudentCombo.getSelectedItem();
         }
         int exam1 = -1;
-        if (courseSearchE1Field.getText().equals("")) {
+        if (!courseSearchE1Field.getText().equals("")) {
             exam1 = Integer.parseInt(courseSearchE1Field.getText());
         }
         int exam2 = -1;
-        if (courseSEarchE2Field.getText().equals("")) {
+        if (!courseSEarchE2Field.getText().equals("")) {
             exam2 = Integer.parseInt(courseSEarchE2Field.getText());
         }
         int finalExam = -1;
-        if (courseSearchFField.getText().equals("")) {
+        if (!courseSearchFField.getText().equals("")) {
             finalExam = Integer.parseInt(courseSearchFField.getText());
         }
         Object[][] data;
@@ -627,10 +628,17 @@ public class FacultyForm extends javax.swing.JFrame {
             data = generalDatabase.searchEnrolled(fid, sName, exam1, exam2, finalExam);
         }
 
+        refresh(courseNormSearchTable, courseColumns, data);
+        courseClearButtonActionPerformed(null);
+
     }//GEN-LAST:event_courseSearchButtonActionPerformed
 
     private void courseClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseClearButtonActionPerformed
         // TODO add your handling code here:
+        courseSearchStudentCombo.setSelectedIndex(0);
+        courseSearchE1Field.setText("");
+        courseSEarchE2Field.setText("");
+        courseSearchFField.setText("");
     }//GEN-LAST:event_courseClearButtonActionPerformed
 
     /**

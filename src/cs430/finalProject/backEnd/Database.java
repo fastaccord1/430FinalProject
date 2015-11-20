@@ -216,4 +216,17 @@ public class Database {
         }
         return output;
     }
+
+    protected Object[][] getStudentEnrolledResults(String query) throws SQLException {
+        Object[][] output = new Object[getCount(query)][5];
+        ResultSet rs = executeQuery(query);
+        for (int i = 0; rs.next(); i++) {
+            output[i][0] = rs.getString("cid");
+            output[i][1] = rs.getString("sname");
+            output[i][2] = rs.getInt("exam1");
+            output[i][3] = rs.getInt("exam2");
+            output[i][4] = rs.getInt("final");
+        }
+        return output;
+    }
 }

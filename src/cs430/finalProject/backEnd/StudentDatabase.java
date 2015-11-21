@@ -1,5 +1,6 @@
 package cs430.finalProject.backEnd;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -244,5 +245,35 @@ public class StudentDatabase extends Database {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void enroll(String cid, int sid) {
+        String countQuery = "SELECT COUNT(sid) FROM Enrolled WHERE cid = '" + cid + "'";
+        int count = 0, limit = 0;
+        String limitQuery = "SELECT limit FROM Courses WHERE cid = '" + cid + "'";
+        try {
+            ResultSet countRs = executeQuery(countQuery);
+            if (countRs.next()) {
+                count = countRs.getInt(0);
+            }
+            ResultSet limitRs = executeQuery(limitQuery);
+            if (limitRs.next()) {
+                limit = limitRs.getInt("limit");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if (count < limit) {
+            String statement = "INSERT INTO Enrolled (sid, cid) VALUES(" + sid + ", '" + cid + "')";
+            try {
+                executeInsertUpdate(statement);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "You cannot register for this class because it is at the limit");
+        }
+
     }
 }

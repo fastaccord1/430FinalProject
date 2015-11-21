@@ -371,4 +371,23 @@ public class GeneralDatabase extends Database {
         }
     }
 
+    public Object[] getCourseInfo(String cid) {
+        String query = "SELECT * FROM courseView WHERE cid = '" + cid + "'";
+        Object[] data = new Object[5];
+        try {
+            ResultSet rs = executeQuery(query);
+            if (rs.next()) {
+                data[0] = rs.getString("cname");
+                data[1] = rs.getString("meets_at");
+                data[2] = rs.getString("room");
+                data[3] = rs.getString("fname");
+                data[4] = rs.getInt("limit");
+            }
+            return data;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

@@ -7,7 +7,11 @@ package cs430.finalProject.frontEnd;
 
 import cs430.finalProject.backEnd.FacultyDatabase;
 import cs430.finalProject.backEnd.GeneralDatabase;
+import cs430.finalProject.backEnd.MainClassHolder;
 import cs430.finalProject.backEnd.StudentDatabase;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,11 +24,25 @@ public class StudentForm extends javax.swing.JFrame {
      */
     public StudentForm(int sid) {
         this.sid = sid;
+        generalDatabase = MainClassHolder.getGeneralDatabase();
+        studentDatabase = MainClassHolder.getStudentDatabase();
+        facultyDatabase = MainClassHolder.getFacultyDatabase();
         courseData = generalDatabase.searchCourse();
         enrolledData = studentDatabase.getMyCourses(sid);
         facultyNames = facultyDatabase.getFacNames();
         courseId = generalDatabase.getCourses();
         initComponents();
+    }
+
+    public void refresh(JTable table, String[] columns, Object[][] data) {
+        DefaultTableModel tableModel = new DefaultTableModel(data, columns) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        table.setModel(tableModel);
+        tableModel.fireTableDataChanged();
     }
 
     /**
@@ -395,27 +413,83 @@ public class StudentForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enrollSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollSubmitButtonActionPerformed
-        // TODO add your handling code here:
+        String cid = null;
+        if (enrollCourseIdCombo.getSelectedIndex() != 0) {
+            cid = (String) enrollCourseIdCombo.getSelectedItem();
+        } else {
+            JOptionPane.showMessageDialog(null, "You must select a course");
+        }
+        studentDatabase.enroll(cid, sid);
+        enrollClearButtonActionPerformed(null);
     }//GEN-LAST:event_enrollSubmitButtonActionPerformed
 
     private void enrollClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollClearButtonActionPerformed
-        // TODO add your handling code here:
+        enrollCourseIdCombo.setSelectedIndex(0);
+        enrollCourseNameField.setText("");
+        enrollMeetsField.setText("");
+        enrollRoomField.setText("");
+        enrollFacultyField.setText("");
+        enrollLimitField.setText("");
     }//GEN-LAST:event_enrollClearButtonActionPerformed
 
     private void courseSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseSearchButtonActionPerformed
-        // TODO add your handling code here:
+        String cid = null;
+        if (!courseIdField.getText().equals("")) {
+            cid = courseIdField.getText();
+        }
+        String fName = null;
+        if (courseFacCombo.getSelectedIndex() != 0) {
+            fName = (String) courseFacCombo.getSelectedItem();
+        }
+        String meets = null;
+        if (!courseMeetField.getText().equals("")) {
+            meets = courseMeetField.getText();
+        }
+        int limit = -1;
+        if (!courseLimitField.getText().equals("")) {
+            limit = Integer.parseInt(courseLimitField.getText());
+        }
+        Object[][] data;
+        if (cid == null && fName == null && meets == null && limit == -1) {
+            data = generalDatabase.searchCourse();
+        } else {
+            data = generalDatabase.searchCourse(cid, null, meets, null, fName, limit);
+        }
+        refresh(jTable1, COURSECOLUMNS, data);
+        courseClearButtonActionPerformed(null);
     }//GEN-LAST:event_courseSearchButtonActionPerformed
 
     private void courseClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseClearButtonActionPerformed
-        // TODO add your handling code here:
+        courseIdField.setText("");
+        courseFacCombo.setSelectedIndex(0);
+        courseMeetField.setText("");
+        courseLimitField.setText("");
     }//GEN-LAST:event_courseClearButtonActionPerformed
 
     private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
-        // TODO add your handling code here:
+        JTable target = (JTable) evt.getSource();
+        int row = target.getSelectedRow();
+
+        String cid = (String) target.getValueAt(row, 0);
+
+        enrollCourseIdCombo.setSelectedItem(cid);
+
+
     }//GEN-LAST:event_jTable1MousePressed
 
     private void enrollCourseIdComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollCourseIdComboActionPerformed
-        // TODO add your handling code here:
+        String cid = null;
+        if (enrollCourseIdCombo.getSelectedIndex() != 0) {
+            cid = (String) enrollCourseIdCombo.getSelectedItem();
+        }
+        Object[] data = generalDatabase.getCourseInfo(cid);
+        if (data != null) {
+            enrollCourseNameField.setText((String) data[0]);
+            enrollMeetsField.setText((String) data[1]);
+            enrollRoomField.setText((String) data[2]);
+            enrollFacultyField.setText((String) data[3]);
+            enrollLimitField.setText(data[4] + "");
+        }
     }//GEN-LAST:event_enrollCourseIdComboActionPerformed
 
     /**

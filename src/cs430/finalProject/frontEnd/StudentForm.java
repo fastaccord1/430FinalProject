@@ -68,7 +68,7 @@ public class StudentForm extends javax.swing.JFrame {
         myInfoAgeField = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        courseTable = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -176,23 +176,16 @@ public class StudentForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("My Info", jPanel1);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
+        courseTable.setModel(new javax.swing.table.DefaultTableModel(
+            courseData,
+            COURSECOLUMNS
         ));
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        courseTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jTable1MousePressed(evt);
+                courseTableMousePressed(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(courseTable);
 
         jLabel6.setText("Course:");
 
@@ -202,7 +195,7 @@ public class StudentForm extends javax.swing.JFrame {
 
         jLabel9.setText("Limit:");
 
-        courseFacCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        courseFacCombo.setModel(new javax.swing.DefaultComboBoxModel(facultyNames));
 
         courseSearchButton.setText("Search");
         courseSearchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -290,7 +283,7 @@ public class StudentForm extends javax.swing.JFrame {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel15.setText("Limit");
 
-        enrollCourseIdCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        enrollCourseIdCombo.setModel(new javax.swing.DefaultComboBoxModel(courseId));
         enrollCourseIdCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enrollCourseIdComboActionPerformed(evt);
@@ -384,15 +377,8 @@ public class StudentForm extends javax.swing.JFrame {
         jTabbedPane1.addTab("Enroll in Course", jPanel3);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
+            enrolledData,
+            ENROLLEDCOLUMNS
         ));
         jScrollPane2.setViewportView(jTable2);
 
@@ -455,7 +441,7 @@ public class StudentForm extends javax.swing.JFrame {
         } else {
             data = generalDatabase.searchCourse(cid, null, meets, null, fName, limit);
         }
-        refresh(jTable1, COURSECOLUMNS, data);
+        refresh(courseTable, COURSECOLUMNS, data);
         courseClearButtonActionPerformed(null);
     }//GEN-LAST:event_courseSearchButtonActionPerformed
 
@@ -466,7 +452,7 @@ public class StudentForm extends javax.swing.JFrame {
         courseLimitField.setText("");
     }//GEN-LAST:event_courseClearButtonActionPerformed
 
-    private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
+    private void courseTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_courseTableMousePressed
         JTable target = (JTable) evt.getSource();
         int row = target.getSelectedRow();
 
@@ -475,7 +461,7 @@ public class StudentForm extends javax.swing.JFrame {
         enrollCourseIdCombo.setSelectedItem(cid);
 
 
-    }//GEN-LAST:event_jTable1MousePressed
+    }//GEN-LAST:event_courseTableMousePressed
 
     private void enrollCourseIdComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollCourseIdComboActionPerformed
         String cid = null;
@@ -534,6 +520,7 @@ public class StudentForm extends javax.swing.JFrame {
     private javax.swing.JTextField courseLimitField;
     private javax.swing.JTextField courseMeetField;
     private javax.swing.JButton courseSearchButton;
+    private javax.swing.JTable courseTable;
     private javax.swing.JButton enrollClearButton;
     private javax.swing.JComboBox enrollCourseIdCombo;
     private javax.swing.JTextField enrollCourseNameField;
@@ -565,7 +552,6 @@ public class StudentForm extends javax.swing.JFrame {
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField myInfoAgeField;
     private javax.swing.JTextField myInfoIdField;

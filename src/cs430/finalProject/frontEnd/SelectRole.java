@@ -127,7 +127,7 @@ public class SelectRole extends javax.swing.JFrame {
         if (staffDatabase.isStaff(id)) {
             java.awt.EventQueue.invokeLater(() -> new StaffForm().setVisible(true));
         } else if (studentDatabase.isStudent(id)) {
-            java.awt.EventQueue.invokeLater(() -> new StudentForm().setVisible(true));
+            java.awt.EventQueue.invokeLater(() -> new StudentForm(id).setVisible(true));
         } else if (facultyDatabase.isFaculty(id)) {
             java.awt.EventQueue.invokeLater(() -> new FacultyForm(id).setVisible(true));
 

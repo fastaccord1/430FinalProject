@@ -32,6 +32,13 @@ public class StudentForm extends javax.swing.JFrame {
         facultyNames = facultyDatabase.getFacNames();
         courseId = generalDatabase.getCourses();
         initComponents();
+
+        Object[][] myData = studentDatabase.searchStudent(sid, null, null, null, -1);
+        myInfoIdField.setText(myData[0][0] + "");
+        myInfoNameField.setText(myData[0][1] + "");
+        myInfoMajorField.setText(myData[0][2] + "");
+        myInfoLevelField.setText(myData[0][3] + "");
+        myInfoAgeField.setText(myData[0][4] + "");
     }
 
     public void refresh(JTable table, String[] columns, Object[][] data) {
@@ -459,7 +466,7 @@ public class StudentForm extends javax.swing.JFrame {
         String cid = (String) target.getValueAt(row, 0);
 
         enrollCourseIdCombo.setSelectedItem(cid);
-
+        jTabbedPane1.setSelectedIndex(2);
 
     }//GEN-LAST:event_courseTableMousePressed
 
@@ -476,6 +483,8 @@ public class StudentForm extends javax.swing.JFrame {
             enrollFacultyField.setText((String) data[3]);
             enrollLimitField.setText(data[4] + "");
         }
+        Object[][] myData = studentDatabase.getMyCourses(sid);
+        refresh(jTable2, ENROLLEDCOLUMNS, myData);
     }//GEN-LAST:event_enrollCourseIdComboActionPerformed
 
     /**

@@ -72,7 +72,8 @@ CREATE VIEW enrolledStudent AS
   SELECT *
   FROM Student
     NATURAL JOIN Enrolled
-    NATURAL JOIN Courses;
+    NATURAL JOIN Courses
+    NATURAL JOIN Faculty;
 
 CREATE VIEW courseView AS
   SELECT *

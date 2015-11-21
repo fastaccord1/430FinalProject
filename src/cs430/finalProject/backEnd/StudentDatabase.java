@@ -254,7 +254,7 @@ public class StudentDatabase extends Database {
         try {
             ResultSet countRs = executeQuery(countQuery);
             if (countRs.next()) {
-                count = countRs.getInt(0);
+                count = countRs.getInt("COUNT(sid)");
             }
             ResultSet limitRs = executeQuery(limitQuery);
             if (limitRs.next()) {

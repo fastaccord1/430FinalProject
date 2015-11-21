@@ -273,9 +273,9 @@ public class StudentForm extends javax.swing.JFrame {
         jLabel15.setText("Limit");
 
         enrollCourseIdCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        enrollCourseIdCombo.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                enrollCourseIdComboItemStateChanged(evt);
+        enrollCourseIdCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enrollCourseIdComboActionPerformed(evt);
             }
         });
 
@@ -394,10 +394,6 @@ public class StudentForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void enrollCourseIdComboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_enrollCourseIdComboItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_enrollCourseIdComboItemStateChanged
-
     private void enrollSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollSubmitButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_enrollSubmitButtonActionPerformed
@@ -417,6 +413,10 @@ public class StudentForm extends javax.swing.JFrame {
     private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable1MousePressed
+
+    private void enrollCourseIdComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollCourseIdComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enrollCourseIdComboActionPerformed
 
     /**
      * @param args the command line arguments

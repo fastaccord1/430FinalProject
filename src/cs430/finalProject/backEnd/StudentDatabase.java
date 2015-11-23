@@ -212,7 +212,7 @@ public class StudentDatabase extends Database {
             conditions.add(" major = '" + major + "'");
         }
         if (level != null) {
-            conditions.add(" level = '" + level + "'");
+            conditions.add(" s_level = '" + level + "'");
         }
         if (age != -1) {
             conditions.add(" age = " + age);

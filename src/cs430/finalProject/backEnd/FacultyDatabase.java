@@ -41,8 +41,8 @@ public class FacultyDatabase extends Database {
     /**
      * Searches Faculty table for specific entries
      *
-     * @param fid    Faculty ID to be found -1 if not searched
-     * @param fname  Name of faculty member to be found null if not searched
+     * @param fid   Faculty ID to be found -1 if not searched
+     * @param fname Name of faculty member to be found null if not searched
      * @param dName Department ID of faculty -1 if not searched
      * @return Two-dimensional array of items found from database
      */

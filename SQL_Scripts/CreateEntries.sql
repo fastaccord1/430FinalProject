@@ -31,16 +31,16 @@ INSERT INTO Staff VALUES (369356, 'Judy Stanley', 470741);
 INSERT INTO Staff VALUES (346411, 'Bruce Montgomery', 477363);
 INSERT INTO Staff VALUES (378544, 'Helen Ross', 416684);
 
-INSERT INTO Student VALUES(119731, 'Kimberleigh Vernon', 'Computer Science', 'Junior', 21);
-INSERT INTO Student VALUES(139386, 'Fern Aukes', 'Electrical Engineering', 'Sophomore', 20);
-INSERT INTO Student VALUES(159995, 'Gerlinde Ravenna', 'English', 'Freshman', 18);
-INSERT INTO Student VALUES(117335, 'Lois P. Huff', 'Philosophy', 'Masters', 24);
-INSERT INTO Student VALUES(123932, 'Lorraine J. Bailey', 'Computer Science', 'Senior', 22);
-INSERT INTO Student VALUES(192090, 'Anthony B. Lucero', 'English', 'PhD', 26);
-INSERT INTO Student VALUES(115982, 'Donna A. Wegman', 'Information Systems Technology', 'Freshman', 18);
-INSERT INTO Student VALUES(173541, 'Margaret J. Bishop', 'Business Administration', 'Masters', 24);
-INSERT INTO Student VALUES(169810, 'Vivian D. Shive', 'Computer Science', 'PhD', 25);
-INSERT INTO Student VALUES(130412, 'Joann O. Cormack', 'Electrical Engineering', 'Junior', 30);
+INSERT INTO Student VALUES (119731, 'Kimberleigh Vernon', 'Computer Science', 'Junior', 21);
+INSERT INTO Student VALUES (139386, 'Fern Aukes', 'Electrical Engineering', 'Sophomore', 20);
+INSERT INTO Student VALUES (159995, 'Gerlinde Ravenna', 'English', 'Freshman', 18);
+INSERT INTO Student VALUES (117335, 'Lois P. Huff', 'Philosophy', 'Masters', 24);
+INSERT INTO Student VALUES (123932, 'Lorraine J. Bailey', 'Computer Science', 'Senior', 22);
+INSERT INTO Student VALUES (192090, 'Anthony B. Lucero', 'English', 'PhD', 26);
+INSERT INTO Student VALUES (115982, 'Donna A. Wegman', 'Information Systems Technology', 'Freshman', 18);
+INSERT INTO Student VALUES (173541, 'Margaret J. Bishop', 'Business Administration', 'Masters', 24);
+INSERT INTO Student VALUES (169810, 'Vivian D. Shive', 'Computer Science', 'PhD', 25);
+INSERT INTO Student VALUES (130412, 'Joann O. Cormack', 'Electrical Engineering', 'Junior', 30);
 
 INSERT INTO Courses VALUES ('CS 430', 'Introduction to Databases', 'MWF 10-11', 'A320', 221320, 35);
 INSERT INTO Courses VALUES ('ENGL 101', 'English Literature and Comp', 'MWF 1-2', 'B1024', 269040, 100);

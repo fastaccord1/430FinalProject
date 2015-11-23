@@ -89,9 +89,6 @@ public class Database {
     }
 
 
-
-
-
     /**
      * Finishes the query from the conditions in the ArrayList
      *
@@ -183,7 +180,7 @@ public class Database {
         int count = getCount(query);
         output = new Object[count][3];
         ResultSet rs = executeQuery(query);
-        for(int i = 0; rs.next(); i++) {
+        for (int i = 0; rs.next(); i++) {
             output[i][0] = rs.getInt(columnNames[0]);
             output[i][1] = rs.getString(columnNames[1]);
             output[i][2] = rs.getString(columnNames[2]);

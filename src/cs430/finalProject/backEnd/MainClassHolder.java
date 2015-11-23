@@ -29,10 +29,10 @@ public class MainClassHolder {
     private static FacultyDatabase facultyDatabase;
     private static StaffDatabase staffDatabase;
     private static GeneralDatabase generalDatabase;
+    protected final String URL = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
     // String constant for the path to the config file
     private final String PATH = "/cs430/finalProject/config/database.conf";
     private Connection conn;
-    protected final String URL = "jdbc:oracle:thin:@dbserv.cs.siu.edu:1521:cs";
 
     /**
      * Default constructor to initialize variables
@@ -63,18 +63,38 @@ public class MainClassHolder {
         }
     }
 
+    /**
+     * Getter for the StudentDatabase object
+     *
+     * @return Returns the Student Database object
+     */
     public static StudentDatabase getStudentDatabase() {
         return studentDatabase;
     }
 
+    /**
+     * Getter for faculty database
+     *
+     * @return FacultyDatabase object to be used
+     */
     public static FacultyDatabase getFacultyDatabase() {
         return facultyDatabase;
     }
 
+    /**
+     * Getter for staff database
+     *
+     * @return StaffDatabase object to be used
+     */
     public static StaffDatabase getStaffDatabase() {
         return staffDatabase;
     }
 
+    /**
+     * Getter for the general database
+     *
+     * @return GeneralDatabase object to be used
+     */
     public static GeneralDatabase getGeneralDatabase() {
         return generalDatabase;
     }

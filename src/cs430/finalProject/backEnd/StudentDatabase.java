@@ -106,12 +106,12 @@ public class StudentDatabase extends Database {
     /**
      * Method to udpate an existing student entry in the database.
      *
-     * @param oldSid Old SID of the student before the change
-     * @param newSid New SID of the student after the change
-     * @param sname New name for the student
-     * @param major New major for the student
+     * @param oldSid  Old SID of the student before the change
+     * @param newSid  New SID of the student after the change
+     * @param sname   New name for the student
+     * @param major   New major for the student
      * @param s_level New level for the student
-     * @param age New age for the student
+     * @param age     New age for the student
      */
     public void updateStudent(int oldSid, int newSid, String sname, String major, String s_level, int age) {
         String statement = "UPDATE Student SET ";
@@ -130,6 +130,7 @@ public class StudentDatabase extends Database {
 
     /**
      * Checks to see if the ID belongs to a student
+     *
      * @param id The ID to be checked in the database
      * @return True if the ID belongs to a student. False if it doesn't.
      */
@@ -143,14 +144,14 @@ public class StudentDatabase extends Database {
         return false;
     }
 
-    public String[] getMajors () {
+    public String[] getMajors() {
         String query = "SELECT major FROM Student";
         try {
             int count = getCount(query);
             ResultSet rs = executeQuery(query);
             String[] output = new String[count + 1];
             output[0] = "Any";
-            for(int i = 1; rs.next(); i++){
+            for (int i = 1; rs.next(); i++) {
                 output[i] = rs.getString("major");
             }
             return output;

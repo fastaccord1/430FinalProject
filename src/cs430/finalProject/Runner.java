@@ -16,8 +16,6 @@ public class Runner {
      */
     public static void main(String[] args) {
         MainClassHolder mainClass = new MainClassHolder();
-
         mainClass.noInstall();
-
     }
 }

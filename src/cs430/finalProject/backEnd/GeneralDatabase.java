@@ -242,7 +242,7 @@ public class GeneralDatabase extends Database {
     public Object[][] searchEnrolled() {
         String query = "SELECT * FROM enrolledStudent";
         try {
-            return getEnrolledResults(query);
+            return getStudentEnrolledResults(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -271,7 +271,7 @@ public class GeneralDatabase extends Database {
         query = finishQuery(query, conditions);
 
         try {
-            return getEnrolledResults(query);
+            return getStudentEnrolledResults(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }

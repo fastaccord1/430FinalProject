@@ -131,7 +131,8 @@ public class FacultyForm extends javax.swing.JFrame {
         courseSearchButton = new javax.swing.JButton();
         courseClearButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Faculty Form");
 
         facultyInfoIdField1.setEditable(false);
 

@@ -15,7 +15,7 @@ public class StaffDatabase extends Database {
     /**
      * Constructor for the StaffDatabase Class
      *
-     * @param connection
+     * @param connection The Connection object for the database to be used
      */
     public StaffDatabase(Connection connection) {
         super();
@@ -57,8 +57,8 @@ public class StaffDatabase extends Database {
     /**
      * Searches Staff table for a specific staff member
      *
-     * @param sid    ID for the staff member to be found. -1 if not searched
-     * @param sName  Name for the staff member to be found. null if not searched
+     * @param sid   ID for the staff member to be found. -1 if not searched
+     * @param sName Name for the staff member to be found. null if not searched
      * @param dName Department ID for the staff member to be found. -1 if not searched
      * @return Two-dimensional array of the results.
      */
@@ -83,7 +83,6 @@ public class StaffDatabase extends Database {
         }
         return null;
     }
-
 
 
     /**
@@ -124,6 +123,11 @@ public class StaffDatabase extends Database {
         }
     }
 
+    /**
+     * Deletes a staff member from the database
+     *
+     * @param id The ID for the staff member to be deleted
+     */
     public void deleteStaff(int id) {
         String statement = "DELETE FROM Staff WHERE sid = " + id;
         try {

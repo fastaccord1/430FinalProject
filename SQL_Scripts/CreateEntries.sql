@@ -42,13 +42,25 @@ INSERT INTO Student VALUES(173541, 'Margaret J. Bishop', 'Business Administratio
 INSERT INTO Student VALUES(169810, 'Vivian D. Shive', 'Computer Science', 'PhD', 25);
 INSERT INTO Student VALUES(130412, 'Joann O. Cormack', 'Electrical Engineering', 'Junior', 30);
 
-INSERT INTO Courses VALUES ('CS 430', 'Introduction to Databases', 'MWF 10-11', 'A320', 214074, 35);
-INSERT INTO Courses VALUES ('ENGL 101', 'English Literature and Comp', 'MWF 1-2', 'B1024', 283132, 100);
-INSERT INTO Courses VALUES ('EL 102', 'Introduction to Electrical Eng', 'TR 10-12', 'B1020', 268862, 40);
-INSERT INTO Courses VALUES ('PHIL 304', 'Philosophy Through the Years', 'MWF 8-9', 'A200', 292016, 30);
-INSERT INTO Courses VALUES ('LAW 400', 'Contract Law', 'TR 6-8', 'B2048', 217222, 150);
-INSERT INTO Courses VALUES ('CS 201', 'Introduction to CS', 'TR 1-3', 'A304', 215748, 150);
-INSERT INTO Courses VALUES ('MED 101', 'Introduction to Med', 'MWF 12-1', 'C5113', 221320, 30);
+INSERT INTO Courses VALUES ('CS 430', 'Introduction to Databases', 'MWF 10-11', 'A320', 221320, 35);
+INSERT INTO Courses VALUES ('ENGL 101', 'English Literature and Comp', 'MWF 1-2', 'B1024', 269040, 100);
+INSERT INTO Courses VALUES ('EL 102', 'Introduction to Electrical Eng', 'TR 10-12', 'B1020', 214074, 40);
+INSERT INTO Courses VALUES ('PHIL 304', 'Philosophy Through the Years', 'MWF 8-9', 'A200', 217222, 30);
+INSERT INTO Courses VALUES ('LAW 400', 'Contract Law', 'TR 6-8', 'B2048', 268862, 150);
+INSERT INTO Courses VALUES ('CS 201', 'Introduction to CS', 'TR 1-3', 'A304', 283132, 150);
+INSERT INTO Courses VALUES ('MED 101', 'Introduction to Med', 'MWF 12-1', 'C5113', 299657, 30);
+INSERT INTO Courses VALUES ('IST 302', 'Network Security', 'MWF 3-4', 'A102', 271928, 45);
+INSERT INTO Courses VALUES ('CHEM 310', 'Organic Chemistry', 'TR 3-5', 'C1020', 215748, 50);
+INSERT INTO Courses VALUES ('BIO 101', 'Introduction to Biology', 'TR 8-10', 'A100', 292016, 150);
 
 INSERT INTO Enrolled VALUES (119731, 'CS 430', 70, 80, 75);
-INSERT INTO Enrolled VALUES (192090, 'PHIL 304', 85, 90, 87);
+INSERT INTO Enrolled VALUES (139386, 'ENGL 101', 85, 90, 87);
+INSERT INTO Enrolled VALUES (159995, 'EL 102', 65, 70, 85);
+INSERT INTO Enrolled VALUES (117335, 'PHIL 304', 90, 95, 100);
+INSERT INTO Enrolled VALUES (123932, 'LAW 400', 100, 98, 100);
+INSERT INTO Enrolled VALUES (192090, 'CS 201', 86, 91, 88);
+INSERT INTO Enrolled VALUES (115982, 'MED 101', 96, 97, 95);
+INSERT INTO Enrolled VALUES (173541, 'IST 302', 56, 62, 75);
+INSERT INTO Enrolled VALUES (169810, 'CHEM 310', 76, 82, 87);
+INSERT INTO Enrolled VALUES (130412, 'BIO 101', 91, 93, 97);
+

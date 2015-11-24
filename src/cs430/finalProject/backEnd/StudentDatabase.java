@@ -15,11 +15,21 @@ import java.util.ArrayList;
 public class StudentDatabase extends Database {
     private final String[] LEVELS = {"<Select>", "Freshman", "Sophomore", "Junior", "Senior", "Masters", "PhD"};
 
+    /**
+     * Constructor for StudentDatabase
+     *
+     * @param conn A connection object to be used for the database
+     */
     public StudentDatabase(Connection conn) {
         super();
         super.conn = conn;
     }
 
+    /**
+     * Gets possible levels
+     *
+     * @return String array of levels
+     */
     public String[] getLEVELS() {
         return LEVELS;
     }
@@ -144,6 +154,11 @@ public class StudentDatabase extends Database {
         return false;
     }
 
+    /**
+     * Gets all majors from the database that are currently in there
+     *
+     * @return String array of all majors
+     */
     public String[] getMajors() {
         String query = "SELECT major FROM Student";
         try {
@@ -161,6 +176,11 @@ public class StudentDatabase extends Database {
         return null;
     }
 
+    /**
+     * Deletes a student from the database
+     *
+     * @param id ID for the student to be deleted
+     */
     public void deleteStudent(int id) {
         String statement = "DELETE FROM Student WHERE sid = " + id;
         try {
@@ -170,6 +190,12 @@ public class StudentDatabase extends Database {
         }
     }
 
+    /**
+     * Gets student's ID from name
+     *
+     * @param name The name to be found
+     * @return The student's ID
+     */
     public int getStudentId(String name) {
         String query = "SELECT sid FROM Student WHERE sname = '" + name + "'";
         try {
@@ -184,6 +210,11 @@ public class StudentDatabase extends Database {
         return -1;
     }
 
+    /**
+     * Gets list of all student names
+     *
+     * @return String aray of all student names
+     */
     public String[] getStudents() {
         String query = "SELECT sname FROM Student";
         try {
@@ -200,6 +231,17 @@ public class StudentDatabase extends Database {
         return null;
     }
 
+    /**
+     * Searches Enrolled table for student view
+     *
+     * @param fid   The faculty ID
+     * @param sid   The student ID
+     * @param sName The student's name
+     * @param major The student's major
+     * @param level The student's level
+     * @param age   The student's age
+     * @return Two-dimensional array to be used for table
+     */
     public Object[][] searchEnrolled(int fid, int sid, String sName, String major, String level, int age) {
         String query = "SELECT * FROM enrolledStudent WHERE fid = " + fid + " AND";
         ArrayList<String> conditions = new ArrayList<>();
@@ -227,7 +269,12 @@ public class StudentDatabase extends Database {
         return null;
     }
 
-
+    /**
+     * Gets results from Enrolled table for student view
+     *
+     * @param fid The faculty ID
+     * @return Two-dimensional array for the table
+     */
     public Object[][] searchEnrolled(int fid) {
         String query = "SELECT * FROM enrolledStudent WHERE fid = " + fid;
         try {
@@ -238,6 +285,12 @@ public class StudentDatabase extends Database {
         return null;
     }
 
+    /**
+     * Gets all courses a student is enrolled in
+     *
+     * @param sid Student ID to be found
+     * @return Two-dimensional array for the table
+     */
     public Object[][] getMyCourses(int sid) {
         String query = "SELECT * FROM enrolledStudent WHERE sid = " + sid;
         try {
@@ -248,6 +301,12 @@ public class StudentDatabase extends Database {
         return null;
     }
 
+    /**
+     * Enrolls a student in a course
+     *
+     * @param cid The course to be enrolled in
+     * @param sid The student that is being enrolled
+     */
     public void enroll(String cid, int sid) {
         String countQuery = "SELECT COUNT(sid) FROM Enrolled WHERE cid = '" + cid + "'";
         int count = 0, limit = 0;

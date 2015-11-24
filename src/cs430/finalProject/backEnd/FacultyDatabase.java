@@ -87,7 +87,13 @@ public class FacultyDatabase extends Database {
         return null;
     }
 
-
+    /**
+     * Executes an insert of a faculty member into the database
+     *
+     * @param fid    The ID for the new faculty
+     * @param fName  The name for the new faculty
+     * @param deptId The department ID for the new faculty
+     */
     public void insertFaculty(int fid, String fName, int deptId) {
         String statement = "INSERT INTO Faculty VALUES (" + fid + ", '" + fName + "', " + deptId + ")";
         try {
@@ -97,6 +103,14 @@ public class FacultyDatabase extends Database {
         }
     }
 
+    /**
+     * Executes an update on a faculty member in the database
+     *
+     * @param oldFid The old ID of the faculty member
+     * @param fid    The new ID of the faculty member
+     * @param name   The new name of the faculty member
+     * @param deptId The new department ID of the faculty member
+     */
     public void updateFaculty(int oldFid, int fid, String name, int deptId) {
         String statement = "UPDATE Faculty SET";
         statement += " fid = " + fid + ", ";
@@ -110,6 +124,11 @@ public class FacultyDatabase extends Database {
         }
     }
 
+    /**
+     * Gets all faculty member names from the database
+     *
+     * @return String array of faculty names
+     */
     public String[] getFacNames() {
         String query = "SELECT fname FROM Faculty";
         try {
@@ -126,6 +145,12 @@ public class FacultyDatabase extends Database {
         return null;
     }
 
+    /**
+     * Gets the faculty member's ID from their name
+     *
+     * @param fName The name of the faculty member
+     * @return The ID of the faculty member
+     */
     public int getFacId(String fName) {
         String query = "SELECT fid FROM Faculty WHERE fname = '" + fName + "'";
         try {
@@ -139,6 +164,11 @@ public class FacultyDatabase extends Database {
         return -1;
     }
 
+    /**
+     * Deletes a faculty member from the database
+     *
+     * @param id The ID for the faculty to be deleted
+     */
     public void deleteFaculty(int id) {
         String statement = "DELETE FROM Faculty WHERE fid = " + id;
         try {

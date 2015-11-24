@@ -8,12 +8,14 @@ __Requirements:__
 
 
 __Compiling:__
-Run ant inside the base directory(where the build.xml file is). The jar will be output to out/jar/430FinalProject.jar
+
+Run `ant` inside the base directory(where the build.xml file is). The jar will be output to out/jar/430FinalProject.jar
 
 # Running the program
 Once you have compiled the program you run it with `java -jar 430FinalProject.jar`
 
 __Selecting your Role:__
+
 Once you run your program, you will be prompted to enter your ID. Depending on your role, you will see a window. 
 
 ## Setting up Database

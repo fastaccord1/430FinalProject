@@ -130,11 +130,12 @@ public class SelectRole extends javax.swing.JFrame {
         FacultyDatabase facultyDatabase = MainClassHolder.getFacultyDatabase();
         StaffDatabase staffDatabase = MainClassHolder.getStaffDatabase();
         String idString = userName.getText();
-        int id = -1;
+        int id;
         try {
             id = Integer.parseInt(idString);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "You must enter a valid ID");
+            return;
         }
         if (staffDatabase.isStaff(id)) {
             java.awt.EventQueue.invokeLater(() -> new StaffForm().setVisible(true));

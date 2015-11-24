@@ -10,6 +10,8 @@ import cs430.finalProject.backEnd.MainClassHolder;
 import cs430.finalProject.backEnd.StaffDatabase;
 import cs430.finalProject.backEnd.StudentDatabase;
 
+import javax.swing.*;
+
 /**
  *
  * @author kreuter
@@ -137,9 +139,9 @@ public class SelectRole extends javax.swing.JFrame {
             java.awt.EventQueue.invokeLater(() -> new FacultyForm(id).setVisible(true));
 
         } else {
-            System.out.println("Not found");
+            JOptionPane.showMessageDialog(null, "This ID was not found.");
         }
-
+        clearButtonActionPerformed(null);
 
     }//GEN-LAST:event_submitButtonActionPerformed
 

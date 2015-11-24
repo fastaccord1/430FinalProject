@@ -130,13 +130,20 @@ public class SelectRole extends javax.swing.JFrame {
         FacultyDatabase facultyDatabase = MainClassHolder.getFacultyDatabase();
         StaffDatabase staffDatabase = MainClassHolder.getStaffDatabase();
         String idString = userName.getText();
-        int id = Integer.parseInt(idString);
+        int id = -1;
+        try {
+            id = Integer.parseInt(idString);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "You must enter a valid ID");
+        }
         if (staffDatabase.isStaff(id)) {
             java.awt.EventQueue.invokeLater(() -> new StaffForm().setVisible(true));
         } else if (studentDatabase.isStudent(id)) {
-            java.awt.EventQueue.invokeLater(() -> new StudentForm(id).setVisible(true));
+            final int finalId = id;
+            java.awt.EventQueue.invokeLater(() -> new StudentForm(finalId).setVisible(true));
         } else if (facultyDatabase.isFaculty(id)) {
-            java.awt.EventQueue.invokeLater(() -> new FacultyForm(id).setVisible(true));
+            final int finalId1 = id;
+            java.awt.EventQueue.invokeLater(() -> new FacultyForm(finalId1).setVisible(true));
 
         } else {
             JOptionPane.showMessageDialog(null, "This ID was not found.");

@@ -117,6 +117,11 @@ public class SelectRole extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Action listener for select role Submit button
+     *
+     * @param evt The event that took place
+     */
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
         StudentDatabase studentDatabase = MainClassHolder.getStudentDatabase();
@@ -138,6 +143,10 @@ public class SelectRole extends javax.swing.JFrame {
 
     }//GEN-LAST:event_submitButtonActionPerformed
 
+    /**
+     * Action listener for select roll clear button
+     * @param evt The event that was performed
+     */
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         // TODO add your handling code here:
         userName.setText("");

@@ -673,7 +673,7 @@ public class FacultyForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FacultyForm(Integer.parseInt(args[0])).setVisible(true);
+                new FacultyForm(-1).setVisible(true);
             }
         });
     }

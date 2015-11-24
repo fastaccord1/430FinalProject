@@ -119,7 +119,13 @@ public class MainClassHolder {
                 break;
             }
         }
-        java.awt.EventQueue.invokeLater(() -> new SelectRole().setVisible(true));
+        java.awt.EventQueue.invokeLater(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                new SelectRole().setVisible(true);
+                                            }
+                                        }
+        );
     }
 
     /**
